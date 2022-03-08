@@ -60,6 +60,7 @@ void main(void)
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
+        // Add your application code
 
     // Enable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptEnable();
@@ -67,9 +68,18 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
+    LEDB_SetHigh();
+    LEDG_SetHigh(); 
+    
     while (1)
     {
-        // Add your application code
+        
+        if(BTN1_GetValue() == 0){
+            LEDG_SetHigh();
+        } else {
+            LEDG_SetLow();
+        }
+        
     }
 }
 /**
