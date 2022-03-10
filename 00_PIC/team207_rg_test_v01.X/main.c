@@ -48,6 +48,9 @@
 /*
                          Main application
  */
+i2c1_error_t fakeError; 
+i2c1_error_t realError;
+
 void main(void)
 {
     // Initialize the device
@@ -73,14 +76,23 @@ void main(void)
     LEDB_SetHigh();
     LEDG_SetHigh(); 
     
-    I2C1_Initialize(); 
+    __delay_ms(2000);
     
-    I2C1_Open(RGB_SLVADDR);
+    // I2C1_Initialize();
+    // Wait until connection made
+    // while(!I2C1_Open(0x85));
+    
+    I2C1_SetTimeout(100);
+       
+    fakeError = I2C1_Open(0x85); 
+    realError = I2C1_Open(RGB_SLVADDR);
+    
+    while(!I2C1_Open(RGB_SLVADDR));
     
     LEDB_SetLow();
     I2C1_Write1ByteRegister(RGB_SLVADDR, RGB_REGA, 0x31);
     I2C1_Write1ByteRegister(RGB_SLVADDR, RGB_REGEN, RGB_ALLON);
-    LEDG_SetLow();
+    LEDB_SetHigh();
     
     while (1)
     {
@@ -91,6 +103,13 @@ void main(void)
             LEDG_SetLow();
         }
         
+        i2c_write1ByteRegister(RGB_SLVADDR, RGB_REGA, 0x31);
+        
+        __delay_ms(1000);
+        
+        i2c_write1ByteRegister(RGB_SLVADDR, RGB_REGA, 0x00);
+        
+        __delay_ms(1000);
         
         
     }

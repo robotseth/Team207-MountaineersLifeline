@@ -14,6 +14,10 @@
          <string>class com.microchip.mcc.mcu8.modules.extint.EXTINT</string>
       </entry>
       <entry>
+         <string>I2CSIMPLE</string>
+         <string>class com.microchip.mcc.foundationservices.modules.softwaredriver.I2CSimple.I2CSIMPLE</string>
+      </entry>
+      <entry>
          <string>INTERNAL OSCILLATOR</string>
          <string>class com.microchip.mcc.mcu8.systemManager.osc.Osc</string>
       </entry>
@@ -44,6 +48,7 @@
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu8.Mcu8PeripheralLibrary" version="1.81.7"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -120,11 +125,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="clockFreq"/>
-         <value>1000000</value>
+         <value>4000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="conversionTime"/>
-         <value>23.0 us</value>
+         <value>5.75 us</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="defaultTadValue"/>
@@ -140,7 +145,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="samplingFrequency"/>
-         <value>37.037 kHz</value>
+         <value>148.1481 kHz</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="sysClock"/>
@@ -148,7 +153,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="tadValue"/>
-         <value>2.0 us</value>
+         <value>500.0 ns</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="validateSignal"/>
@@ -472,7 +477,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="systemClockValue"/>
-         <value>1000000</value>
+         <value>4000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="templateNameValue"/>
@@ -664,7 +669,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART1" registerAlias="SPBRGL"/>
-         <value>25</value>
+         <value>103</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART1" registerAlias="TXREG"/>
@@ -923,6 +928,30 @@
          <value>disabled</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name=" I2CSIMPLE_CustomKeyName"/>
+         <value>InitialValue</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="I2CSIMPLE_I2CMASTER/Functions"/>
+         <value>MSSP1-PIC10 / PIC12 / PIC16 / PIC18 MCUs </value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="comboSettings"/>
+         <value>I2CMASTER1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="enableModule"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="pubSubI2CSIMPLE_I2CMASTER/Functions"/>
+         <value>3361.253273177115</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="useCaseComboBoxSettings"/>
+         <value>None</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CLKOUT_ENABLE"/>
          <value>disabled</value>
       </entry>
@@ -932,7 +961,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CurrentSystemClockInHz"/>
-         <value>1000000</value>
+         <value>4000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CustomFEXTOSC"/>
@@ -940,7 +969,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CustomFOSC"/>
-         <value>EC+PLL (CLKO-RA6), USB-EC+PLL</value>
+         <value>INTOSC</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CustomHardwarePll"/>
@@ -960,7 +989,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="FOSCClockValue"/>
-         <value>1000000</value>
+         <value>4000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="HFIntOscClockInHz"/>
@@ -1004,7 +1033,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="pinHiderKey"/>
-         <value>external</value>
+         <value>internal</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="pllMultiplier"/>
@@ -1028,7 +1057,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON"/>
-         <value>96</value>
+         <value>99</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON2"/>
@@ -1060,7 +1089,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON" settingAlias="SCS"/>
-         <value>FOSC</value>
+         <value>INTOSC</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON2" settingAlias="PRISD"/>
@@ -1132,7 +1161,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="ActI2cClkSpeed"/>
-         <value>62500.00</value>
+         <value>100000.00</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="ActSpiClkSpeed"/>
@@ -1180,7 +1209,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="foscClockValue"/>
-         <value>1000000</value>
+         <value>4000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="generalCallEnable"/>
@@ -1192,11 +1221,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="i2cClockFreq_MAX"/>
-         <value>62500</value>
+         <value>250000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="i2cClockFreq_MIN"/>
-         <value>977</value>
+         <value>3907</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="i2cMaskAddr"/>
@@ -1268,11 +1297,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="spiClockFreq_MAX"/>
-         <value>125000</value>
+         <value>500000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="spiClockFreq_MIN"/>
-         <value>977</value>
+         <value>3907</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="spiComMode"/>
@@ -1540,7 +1569,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="MSSP1" registerAlias="SSPADD"/>
-         <value>3</value>
+         <value>9</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="MSSP1" registerAlias="SSPBUF"/>
@@ -1580,7 +1609,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="MSSP1" registerAlias="SSPADD" settingAlias="SSPADD"/>
-         <value>3</value>
+         <value>9</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="MSSP1" registerAlias="SSPBUF" settingAlias="SSPBUF"/>
@@ -3356,7 +3385,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="CONFIG2L"/>
-         <value>247</value>
+         <value>240</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="CONFIG3H"/>
@@ -3420,7 +3449,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG2L" settingAlias="OSC"/>
-         <value>ECPLL</value>
+         <value>INTOSC</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG2L" settingAlias="SOSCSEL"/>
@@ -3492,7 +3521,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR0" name="clockFreqKey"/>
-         <value>1000000</value>
+         <value>4000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR0" name="externalFrequency"/>
@@ -3665,20 +3694,28 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
+         <file>mcc_generated_files\interrupt_manager.h</file>
+         <hash>3c11ca7d02ed8fbb247e2786e91848a5814e46b7e772678e8a62376cc48d630e</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>52ec1409303151c63c89d5212fde2a511322692f35c51dfe4c4ba2f5dc6c1291</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\device_config.h</file>
+         <hash>a3f8cc35ff87a87296e884972fcecbc346f270add6ebfc0d6694c57295606d98</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\docs\i2c_simple.dox</file>
+         <hash>1192d1c2a9473538887a2fae1d9c6e67d9d7833010dccb831311a503f3a29da6</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\ext_int.c</file>
          <hash>fd62346ea0fc2a90369bfc9b24b04bd7fae38af6f2eaed82307df1ee1e5bded1</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>061aeb7a3618a01242d889f54499773208908cf31783d556a4d3f3d650810403</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\device_config.h</file>
-         <hash>33830541179fe242b54fa3dbaf85cce107504ad4cb884852af9fa18fdb9b0f3b</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\interrupt_manager.h</file>
-         <hash>3c11ca7d02ed8fbb247e2786e91848a5814e46b7e772678e8a62376cc48d630e</hash>
+         <file>mcc_generated_files\drivers\i2c_simple_master.c</file>
+         <hash>ba50350955f60eba5472723ee0319caec5701e036e01de6f92bcb3ebd2c7e81d</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\eusart1.h</file>
@@ -3698,11 +3735,15 @@
       </entry>
       <entry>
          <file>mcc_generated_files\device_config.c</file>
-         <hash>c9a327586238f9cebdd360df468a3a7b885eec9325341ed5591948554a609be9</hash>
+         <hash>fb0c626778e989a0678f93d4fc69eaa8d1321fe578a2ce051d0314039ebec7ae</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
          <hash>2f6a918ac450d8f4013f247912c439b62c64fed1d560f617f21fc44cea7cdd30</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\drivers\i2c_simple_master.h</file>
+         <hash>4d313ea4669cc110baeed2f4a8491a4df811e3613b401940a12d8162b4fdd0bc</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\adc.h</file>
@@ -3729,24 +3770,24 @@
          <hash>a925a56ff868821e75b9f1946daa3b2dade3740a3395180d19f1848e987c23d2</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\ext_int.h</file>
-         <hash>e77ac611530ea75c2d6d1e4dfdf6d2b32275ae0938d6a840dddc14d312b9f57c</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\mcc.c</file>
-         <hash>c7b9b9d04e524e3f86f30ab5e9bbabd53cf5fb258925e5fdeeb287e6b552ed83</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\interrupt_manager.c</file>
          <hash>2f837ef2d83300a20f90561e40379fa5f135ecbabc6ce6532dfc7ec7b4be5bb7</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\mcc.c</file>
+         <hash>9e4c627fd14e52faa85305dc3f97678ee50bad510bcd36b8d4ac40f31429724a</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\ext_int.h</file>
+         <hash>e77ac611530ea75c2d6d1e4dfdf6d2b32275ae0938d6a840dddc14d312b9f57c</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\i2c1_master.c</file>
-         <hash>e2385f1364be62a71c86e9fe9df06cad996dbd95aab78d6e178423bfc75469d5</hash>
+         <hash>94527021d67f591bbcc55f23e4177be968138356cb919eb35300951d861992b1</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\eusart1.c</file>
-         <hash>3c6658dddd125d7b2f1033a1e15a82cc0d98858a70431b20aabc272607eb1b7d</hash>
+         <hash>a79607412285092fbb5bc2f6f2d5a32b7bf6565d443235fcd9ec4ea477b33b7e</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

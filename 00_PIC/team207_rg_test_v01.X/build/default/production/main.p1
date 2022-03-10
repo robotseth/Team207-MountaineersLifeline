@@ -1,7 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"51 main.c
+[; ;main.c: 51: i2c1_error_t fakeError;
+[c E6580 0 1 2 .. ]
+[n E6580 . I2C1_NOERR I2C1_BUSY I2C1_FAIL  ]
 [p mainexit ]
-"75 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
+"76 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 76: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "9483 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9483:     struct {
@@ -18,13 +22,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9500
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9500: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
 [v _LATCbits `VS443 ~T0 @X0 0 e@3979 ]
-"89 ./mcc_generated_files/examples/../i2c1_master.h
-[v _I2C1_Initialize `(v ~T0 @X0 0 ef ]
-"78 main.c
-[; ;main.c: 78:     I2C1_Open(0x66);
-[c E6580 0 1 2 .. ]
-[n E6580 . I2C1_NOERR I2C1_BUSY I2C1_FAIL  ]
-"101 ./mcc_generated_files/examples/../i2c1_master.h
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
+"142 ./mcc_generated_files/examples/../i2c1_master.h
+[v _I2C1_SetTimeout `(v ~T0 @X0 0 ef1`uc ]
+"101
 [v _I2C1_Open `(E6580 ~T0 @X0 0 ef1`uc ]
 "56 ./mcc_generated_files/examples/i2c1_master_example.h
 [; ;./mcc_generated_files/examples/i2c1_master_example.h: 56: void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
@@ -76,6 +80,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8835
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 8835: extern volatile PORTCbits_t PORTCbits __attribute__((address(0xF82)));
 [v _PORTCbits `VS416 ~T0 @X0 0 e@3970 ]
+"39 ./mcc_generated_files/drivers/i2c_simple_master.h
+[; ;./mcc_generated_files/drivers/i2c_simple_master.h: 39: void i2c_write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
+[v _i2c_write1ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 55: __asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
@@ -1018,99 +1025,136 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17908
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17908: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
+"23 ./rgbled.h
+[; ;./rgbled.h: 23: i2c1_address_t RGB_SLVADDR = 0x66;
+[v _RGB_SLVADDR `uc ~T0 @X0 1 e ]
+[i _RGB_SLVADDR
+-> -> 102 `i `uc
+]
 "51 main.c
-[; ;main.c: 51: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;main.c: 51: i2c1_error_t fakeError;
+[v _fakeError `E6580 ~T0 @X0 1 e ]
 "52
-[; ;main.c: 52: {
+[; ;main.c: 52: i2c1_error_t realError;
+[v _realError `E6580 ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"54
+[; ;main.c: 54: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"55
+[; ;main.c: 55: {
 {
 [e :U _main ]
 [f ]
-"54
-[; ;main.c: 54:     SYSTEM_Initialize();
+"57
+[; ;main.c: 57:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"73
-[; ;main.c: 73:     do { LATCbits.LATC2 = 1; } while(0);
+"76
+[; ;main.c: 76:     do { LATCbits.LATC2 = 1; } while(0);
 [e :U 860 ]
 {
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 859 ]
-"74
-[; ;main.c: 74:     do { LATCbits.LATC1 = 1; } while(0);
+"77
+[; ;main.c: 77:     do { LATCbits.LATC1 = 1; } while(0);
 [e :U 863 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 862 ]
-"76
-[; ;main.c: 76:     I2C1_Initialize();
-[e ( _I2C1_Initialize ..  ]
-"78
-[; ;main.c: 78:     I2C1_Open(0x66);
-[e ( _I2C1_Open (1 -> -> 102 `i `uc ]
-"80
-[; ;main.c: 80:     do { LATCbits.LATC2 = 0; } while(0);
+"79
+[; ;main.c: 79:     _delay((unsigned long)((2000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"85
+[; ;main.c: 85:     I2C1_SetTimeout(100);
+[e ( _I2C1_SetTimeout (1 -> -> 100 `i `uc ]
+"87
+[; ;main.c: 87:     fakeError = I2C1_Open(0x85);
+[e = _fakeError ( _I2C1_Open (1 -> -> 133 `i `uc ]
+"88
+[; ;main.c: 88:     realError = I2C1_Open(RGB_SLVADDR);
+[e = _realError ( _I2C1_Open (1 _RGB_SLVADDR ]
+"90
+[; ;main.c: 90:     while(!I2C1_Open(RGB_SLVADDR));
+[e $U 864  ]
+[e :U 865 ]
+[e :U 864 ]
+[e $ ! != -> ( _I2C1_Open (1 _RGB_SLVADDR `ui -> -> 0 `i `ui 865  ]
 [e :U 866 ]
+"92
+[; ;main.c: 92:     do { LATCbits.LATC2 = 0; } while(0);
+[e :U 869 ]
 {
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 865 ]
-"81
-[; ;main.c: 81:     I2C1_Write1ByteRegister(0x66, 0x00, 0x31);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc -> -> 49 `i `uc ]
-"82
-[; ;main.c: 82:     I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 63 `i `uc ]
-"83
-[; ;main.c: 83:     do { LATCbits.LATC1 = 0; } while(0);
-[e :U 869 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
 [e :U 868 ]
-"85
-[; ;main.c: 85:     while (1)
+"93
+[; ;main.c: 93:     I2C1_Write1ByteRegister(RGB_SLVADDR, 0x00, 0x31);
+[e ( _I2C1_Write1ByteRegister (3 , , _RGB_SLVADDR -> -> 0 `i `uc -> -> 49 `i `uc ]
+"94
+[; ;main.c: 94:     I2C1_Write1ByteRegister(RGB_SLVADDR, 0x03, 0x3F);
+[e ( _I2C1_Write1ByteRegister (3 , , _RGB_SLVADDR -> -> 3 `i `uc -> -> 63 `i `uc ]
+"95
+[; ;main.c: 95:     do { LATCbits.LATC2 = 1; } while(0);
+[e :U 872 ]
+{
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+}
 [e :U 871 ]
-"86
-[; ;main.c: 86:     {
+"97
+[; ;main.c: 97:     while (1)
+[e :U 874 ]
+"98
+[; ;main.c: 98:     {
 {
-"88
-[; ;main.c: 88:         if(PORTCbits.RC0 == 0){
-[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 873  ]
+"100
+[; ;main.c: 100:         if(PORTCbits.RC0 == 0){
+[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 876  ]
 {
-"89
-[; ;main.c: 89:             do { LATCbits.LATC1 = 1; } while(0);
-[e :U 876 ]
+"101
+[; ;main.c: 101:             do { LATCbits.LATC1 = 1; } while(0);
+[e :U 879 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 875 ]
-"90
-[; ;main.c: 90:         } else {
+[e :U 878 ]
+"102
+[; ;main.c: 102:         } else {
 }
-[e $U 877  ]
-[e :U 873 ]
+[e $U 880  ]
+[e :U 876 ]
 {
-"91
-[; ;main.c: 91:             do { LATCbits.LATC1 = 0; } while(0);
-[e :U 880 ]
+"103
+[; ;main.c: 103:             do { LATCbits.LATC1 = 0; } while(0);
+[e :U 883 ]
 {
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 879 ]
-"92
-[; ;main.c: 92:         }
+[e :U 882 ]
+"104
+[; ;main.c: 104:         }
 }
-[e :U 877 ]
-"96
-[; ;main.c: 96:     }
+[e :U 880 ]
+"106
+[; ;main.c: 106:         i2c_write1ByteRegister(RGB_SLVADDR, 0x00, 0x31);
+[e ( _i2c_write1ByteRegister (3 , , _RGB_SLVADDR -> -> 0 `i `uc -> -> 49 `i `uc ]
+"108
+[; ;main.c: 108:         _delay((unsigned long)((1000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"110
+[; ;main.c: 110:         i2c_write1ByteRegister(RGB_SLVADDR, 0x00, 0x00);
+[e ( _i2c_write1ByteRegister (3 , , _RGB_SLVADDR -> -> 0 `i `uc -> -> 0 `i `uc ]
+"112
+[; ;main.c: 112:         _delay((unsigned long)((1000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"115
+[; ;main.c: 115:     }
 }
-[e :U 870 ]
-[e $U 871  ]
-[e :U 872 ]
-"97
-[; ;main.c: 97: }
+[e :U 873 ]
+[e $U 874  ]
+[e :U 875 ]
+"116
+[; ;main.c: 116: }
 [e :UE 857 ]
 }

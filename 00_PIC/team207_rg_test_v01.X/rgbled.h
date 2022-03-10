@@ -5,6 +5,8 @@
  * Created on March 7, 2022, 2:33 PM
  */
 
+#include "mcc_generated_files/mcc.h"
+
 #ifndef RGBLED_H
 #define	RGBLED_H
 
@@ -17,9 +19,11 @@ extern "C" {
 // RegC is Red
 // RegEn turns individual channels on and off
     
-#define RGB_SLVADDR 0x66
-#define RGB_SLVADDR_W ((RGB_SLVADDR << 1) || 0)
-#define RGB_SLVADDR_R ((RGB_SLVADDR << 1) || 1)
+// #define RGB_SLVADDR 0x66
+i2c1_address_t RGB_SLVADDR = 0x66; 
+    
+// #define RGB_SLVADDR_W ((RGB_SLVADDR << 1) || 0)
+// #define RGB_SLVADDR_R ((RGB_SLVADDR << 1) || 1)
     
 #define RGB_REGA 0x00
 #define RGB_REGB 0x01

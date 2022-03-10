@@ -55,9 +55,10 @@
 #include "interrupt_manager.h"
 #include "i2c1_master.h"
 #include "ext_int.h"
-#include "adc.h"
 #include "tmr0.h"
+#include "adc.h"
 #include "eusart1.h"
+#include "drivers/i2c_simple_master.h"
 
 
 

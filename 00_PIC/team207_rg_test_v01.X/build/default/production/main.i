@@ -10917,6 +10917,23 @@ extern void (*INT2_InterruptHandler)(void);
 void INT2_DefaultInterruptHandler(void);
 # 57 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 100 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "./mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 196 "./mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 271 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 310 "./mcc_generated_files/tmr0.h"
+_Bool TMR0_HasOverflowOccured(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/adc.h" 1
 # 72 "./mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
@@ -10951,23 +10968,6 @@ adc_result_t ADC_GetConversionResult(void);
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 316 "./mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 58 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 100 "./mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "./mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 161 "./mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 196 "./mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 235 "./mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 271 "./mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 310 "./mcc_generated_files/tmr0.h"
-_Bool TMR0_HasOverflowOccured(void);
 # 59 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart1.h" 1
@@ -11002,13 +11002,27 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 397 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 60 "./mcc_generated_files/mcc.h" 2
-# 75 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/drivers/i2c_simple_master.h" 1
+# 37 "./mcc_generated_files/drivers/i2c_simple_master.h"
+uint8_t i2c_read1ByteRegister(i2c1_address_t address, uint8_t reg);
+uint16_t i2c_read2ByteRegister(i2c1_address_t address, uint8_t reg);
+void i2c_write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
+void i2c_write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
+
+void i2c_writeNBytes(i2c1_address_t address, void* data, size_t len);
+void i2c_readDataBlock(i2c1_address_t address, uint8_t reg, void *data, size_t len);
+void i2c_readNBytes(i2c1_address_t address, void *data, size_t len);
+# 61 "./mcc_generated_files/mcc.h" 2
+# 76 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 88 "./mcc_generated_files/mcc.h"
+# 89 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 44 "main.c" 2
 
 # 1 "./rgbled.h" 1
+# 23 "./rgbled.h"
+i2c1_address_t RGB_SLVADDR = 0x66;
 # 45 "main.c" 2
 
 # 1 "./mcc_generated_files/examples/i2c1_master_example.h" 1
@@ -11026,22 +11040,34 @@ void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size
 
 
 
+i2c1_error_t fakeError;
+i2c1_error_t realError;
+
 void main(void)
 {
 
     SYSTEM_Initialize();
-# 73 "main.c"
+# 76 "main.c"
     do { LATCbits.LATC2 = 1; } while(0);
     do { LATCbits.LATC1 = 1; } while(0);
 
-    I2C1_Initialize();
+    _delay((unsigned long)((2000)*(4000000/4000.0)));
 
-    I2C1_Open(0x66);
+
+
+
+
+    I2C1_SetTimeout(100);
+
+    fakeError = I2C1_Open(0x85);
+    realError = I2C1_Open(RGB_SLVADDR);
+
+    while(!I2C1_Open(RGB_SLVADDR));
 
     do { LATCbits.LATC2 = 0; } while(0);
-    I2C1_Write1ByteRegister(0x66, 0x00, 0x31);
-    I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
-    do { LATCbits.LATC1 = 0; } while(0);
+    I2C1_Write1ByteRegister(RGB_SLVADDR, 0x00, 0x31);
+    I2C1_Write1ByteRegister(RGB_SLVADDR, 0x03, 0x3F);
+    do { LATCbits.LATC2 = 1; } while(0);
 
     while (1)
     {
@@ -11052,6 +11078,13 @@ void main(void)
             do { LATCbits.LATC1 = 0; } while(0);
         }
 
+        i2c_write1ByteRegister(RGB_SLVADDR, 0x00, 0x31);
+
+        _delay((unsigned long)((1000)*(4000000/4000.0)));
+
+        i2c_write1ByteRegister(RGB_SLVADDR, 0x00, 0x00);
+
+        _delay((unsigned long)((1000)*(4000000/4000.0)));
 
 
     }

@@ -58,7 +58,7 @@
 #pragma config CP0 = OFF    // Code Protect->Program memory is not code-protected
 
 // CONFIG2L
-#pragma config OSC = ECPLL    // Oscillator->EC+PLL (CLKO-RA6), USB-EC+PLL
+#pragma config OSC = INTOSC    // Oscillator->INTOSC
 #pragma config SOSCSEL = DIG    // T1OSC/SOSC Power Selection Bits->Digital (SCLKI) mode selected
 #pragma config CLKOEC = ON    // EC Clock Out Enable Bit ->CLKO output enabled on the RA6 pin
 #pragma config FCMEN = ON    // Fail-Safe Clock Monitor->Enabled
