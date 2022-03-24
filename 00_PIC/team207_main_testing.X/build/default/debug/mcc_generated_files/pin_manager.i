@@ -10664,7 +10664,7 @@ void PIN_MANAGER_Initialize(void)
 
     TRISA = 0x2F;
     TRISB = 0xFF;
-    TRISC = 0x44;
+    TRISC = 0x84;
 
 
 
@@ -10688,8 +10688,8 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    RPOR18 = 0x06;
-    RPINR16 = 0x11;
+    RPINR16 = 0x12;
+    RPOR17 = 0x06;
 
 
 }

@@ -59,6 +59,17 @@
 #define RGB_BON 0x0C
 #define RGB_CON 0x30
 #define RGB_ALLON 0x3F
+
+// RH sensor I2C constants
+#define RHADDR 0x40
+#define RH_HOLD 0xE5
+#define RH_NOHOLD 0xF5
+
+// P&T sensor I2C constants
+#define BAROADDR 0x76
+#define BARO_RESET 0xFE
+size_t cmd_length = sizeof(BARO_RESET);
+
 /*
                          Main application
  */
@@ -100,16 +111,22 @@ void main(void)
         __delay_ms(50);
         BDBG_SetHigh();
         __delay_ms(50);
-        printf("testing");
+        printf("Testing\r\n");
         I2C1_SetBuffer(*bufferPointer, i2cSize);
         
         
-        //READ i2c
+        //Read temp sensor
         //printf("Read attempt \r\n");
         //uint8_t read = I2C1_Read1ByteRegister(TCaddress, READ_REG);// read=-1;
+        
         //Write to RGB LED driver
         I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x31);
         I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLON);
+        
+        //Reset barometer
+        uint8_t baro_reset_cmd = BARO_RESET;
+        cmd_length = sizeof(baro_reset_cmd); 
+        I2C1_WriteNBytes(BAROADDR, &baro_reset_cmd, cmd_length);
         //__delay_ms(5);
     }
 }

@@ -11029,7 +11029,12 @@ void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
 # 45 "main.c" 2
-# 56 "main.c"
+# 71 "main.c"
+size_t cmd_length = sizeof(0xFE);
+
+
+
+
 void main(void)
 {
 
@@ -11068,7 +11073,7 @@ void main(void)
         _delay((unsigned long)((50)*(48000000/4000.0)));
         do { LATAbits.LATA6 = 1; } while(0);
         _delay((unsigned long)((50)*(48000000/4000.0)));
-        printf("testing");
+        printf("Testing\r\n");
         I2C1_SetBuffer(*bufferPointer, i2cSize);
 
 
@@ -11076,6 +11081,14 @@ void main(void)
 
 
 
+
+        I2C1_Write1ByteRegister(0x66, 0x00, 0x31);
+        I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
+
+
+        uint8_t baro_reset_cmd = 0xFE;
+        cmd_length = sizeof(baro_reset_cmd);
+        I2C1_WriteNBytes(0x76, &baro_reset_cmd, cmd_length);
 
     }
 }
