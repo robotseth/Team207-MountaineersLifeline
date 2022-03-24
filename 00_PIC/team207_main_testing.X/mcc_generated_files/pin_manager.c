@@ -62,14 +62,14 @@ void PIN_MANAGER_Initialize(void)
     TRISx registers
     */
     TRISA = 0x2F;
-    TRISB = 0xF7;
-    TRISC = 0xC4;
+    TRISB = 0xFF;
+    TRISC = 0x44;
 
     /**
     ANSELx registers
     */
     ANCON0 = 0x00;
-    ANCON1 = 0x0F;
+    ANCON1 = 0x0E;
 
     /**
     WPUx registers
@@ -87,8 +87,8 @@ void PIN_MANAGER_Initialize(void)
     /**
     RPINRx and RPORx registers
     */
-    RPINR16 = 0x05;   //RB2->EUSART2:RX2;
-    RPOR6 = 0x06;   //RB3->EUSART2:TX2;
+    RPOR18 = 0x06;   //RC7->EUSART2:TX2;
+    RPINR16 = 0x11;   //RC6->EUSART2:RX2;
    
 
 }
