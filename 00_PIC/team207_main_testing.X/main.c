@@ -50,6 +50,15 @@
 #define TCaddress 0x48 //TC74A0 1001 000
 #define READ_REG 0x00
 
+#define RGBLEDADDR 0x66 //CAT3626 1100 110
+#define RGB_REGA 0x00
+#define RGB_REGB 0x01
+#define RGB_REGC 0x02
+#define RGB_REGEN 0x03
+#define RGB_AON 0x03
+#define RGB_BON 0x0C
+#define RGB_CON 0x30
+#define RGB_ALLON 0x3F
 /*
                          Main application
  */
@@ -98,7 +107,9 @@ void main(void)
         //READ i2c
         //printf("Read attempt \r\n");
         //uint8_t read = I2C1_Read1ByteRegister(TCaddress, READ_REG);// read=-1;
-        
+        //Write to RGB LED driver
+        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x31);
+        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLON);
         //__delay_ms(5);
     }
 }
