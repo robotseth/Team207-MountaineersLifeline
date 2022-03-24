@@ -448,7 +448,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART2" name="baudRateComboBox"/>
-         <value>9600</value>
+         <value>1200</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART2" name="baudRateErrorLabel"/>
@@ -652,11 +652,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART2" registerAlias="SPBRGH"/>
-         <value>4</value>
+         <value>39</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART2" registerAlias="SPBRGL"/>
-         <value>225</value>
+         <value>15</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART2" registerAlias="TXREG"/>
@@ -1959,11 +1959,11 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RX2DT2%aux0"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RX2DT2%aux1"/>
          <value>5</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1G%aux1"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1G%aux0"/>
          <value>%DESELECT%</value>
       </entry>
       <entry>
@@ -5025,6 +5025,10 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
+         <file>mcc_generated_files\interrupt_manager.h</file>
+         <hash>3c11ca7d02ed8fbb247e2786e91848a5814e46b7e772678e8a62376cc48d630e</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\mcc.h</file>
          <hash>270395e5dd144d5feffe04dec44d12063165b511107fa514dd43d62ef984e9f2</hash>
       </entry>
@@ -5034,11 +5038,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\eusart2.c</file>
-         <hash>c39b9e391a27cc756c2c0b4544f676355da972997eea80cf6c9cda597e5ced85</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\interrupt_manager.h</file>
-         <hash>3c11ca7d02ed8fbb247e2786e91848a5814e46b7e772678e8a62376cc48d630e</hash>
+         <hash>8b05ae341f50a92b07c85dc8ca7a49693af5b950369ff351787153186f074a18</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr1.h</file>
@@ -5065,12 +5065,12 @@
          <hash>afce5ab377b39c0caeae16ba88aa015951138cb3e9844dfa2fdc3b7d0faca88a</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\pin_manager.h</file>
-         <hash>651dd5ae939b60341597f70471aab8cd8ed59d63906a05d21ea7876c5dd5ae34</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\tmr2.c</file>
          <hash>ddf14d4cff9ebca5c7caafc8d1525cc3409532d283fb72cfdfd734cc1a49c0be</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pin_manager.h</file>
+         <hash>651dd5ae939b60341597f70471aab8cd8ed59d63906a05d21ea7876c5dd5ae34</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr1.c</file>
@@ -5097,12 +5097,12 @@
          <hash>a925a56ff868821e75b9f1946daa3b2dade3740a3395180d19f1848e987c23d2</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\mcc.c</file>
-         <hash>45810117a5acadca5fe7b35a24f1ae35e906e814608f7315698e6531abc2592e</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\interrupt_manager.c</file>
          <hash>c36b3eb63361451b7c6696c959aeb829b9db985eca88c00e2be24f89f81aa976</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\mcc.c</file>
+         <hash>45810117a5acadca5fe7b35a24f1ae35e906e814608f7315698e6531abc2592e</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\i2c1_master.c</file>

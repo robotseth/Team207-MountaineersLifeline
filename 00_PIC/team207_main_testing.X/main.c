@@ -75,6 +75,12 @@ void main(void)
     BDBG_SetHigh();
     HRLED_SetLow();
     
+    size_t i2cSize = 1;
+    char *bufferPointer;
+    char buffer = 'A';
+    
+    bufferPointer = &buffer;
+    
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
@@ -82,14 +88,12 @@ void main(void)
     {
         
         BDBG_SetLow();
-        __delay_ms(500);
+        __delay_ms(50);
         BDBG_SetHigh();
-        __delay_ms(500);
+        __delay_ms(50);
+        printf("testing");
+        I2C1_SetBuffer(*bufferPointer, i2cSize);
         
-        
-
-        
-        //rintf("test");
         
         //READ i2c
         //printf("Read attempt \r\n");

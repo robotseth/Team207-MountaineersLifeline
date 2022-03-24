@@ -57,6 +57,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
+"105 C:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdio.h: 105: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"152 ./mcc_generated_files/examples/../i2c1_master.h
+[v _I2C1_SetBuffer `(v ~T0 @X0 0 ef2`*v`ui ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 55: __asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
@@ -1033,53 +1038,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
 [e :U 862 ]
-"81
-[; ;main.c: 81:     while (1)
-[e :U 865 ]
-"82
-[; ;main.c: 82:     {
+"76
+[; ;main.c: 76:     do { LATCbits.LATC0 = 0; } while(0);
+[e :U 866 ]
 {
-"84
-[; ;main.c: 84:         do { LATAbits.LATA6 = 0; } while(0);
-[e :U 869 ]
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 865 ]
+"78
+[; ;main.c: 78:     size_t i2cSize = 1;
+[v _i2cSize `ui ~T0 @X0 1 a ]
+[e = _i2cSize -> -> 1 `i `ui ]
+"79
+[; ;main.c: 79:     char *bufferPointer;
+[v _bufferPointer `*uc ~T0 @X0 1 a ]
+"80
+[; ;main.c: 80:     char buffer = 'A';
+[v _buffer `uc ~T0 @X0 1 a ]
+[e = _buffer -> -> 65 `ui `uc ]
+"82
+[; ;main.c: 82:     bufferPointer = &buffer;
+[e = _bufferPointer &U _buffer ]
+"87
+[; ;main.c: 87:     while (1)
+[e :U 868 ]
+"88
+[; ;main.c: 88:     {
+{
+"90
+[; ;main.c: 90:         do { LATAbits.LATA6 = 0; } while(0);
+[e :U 872 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 868 ]
-"85
-[; ;main.c: 85:         do { LATCbits.LATC0 = 1; } while(0);
-[e :U 872 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
 [e :U 871 ]
-"86
-[; ;main.c: 86:         _delay((unsigned long)((500)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"87
-[; ;main.c: 87:         do { LATAbits.LATA6 = 1; } while(0);
+"91
+[; ;main.c: 91:         _delay((unsigned long)((50)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"92
+[; ;main.c: 92:         do { LATAbits.LATA6 = 1; } while(0);
 [e :U 875 ]
 {
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
 [e :U 874 ]
-"88
-[; ;main.c: 88:         do { LATCbits.LATC0 = 0; } while(0);
-[e :U 878 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+"93
+[; ;main.c: 93:         _delay((unsigned long)((50)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"94
+[; ;main.c: 94:         printf("testing");
+[e ( _printf :s 1C ]
+"95
+[; ;main.c: 95:         I2C1_SetBuffer(*bufferPointer, i2cSize);
+[e ( _I2C1_SetBuffer (2 , -> *U _bufferPointer `*v _i2cSize ]
+"103
+[; ;main.c: 103:     }
 }
-[e :U 877 ]
-"89
-[; ;main.c: 89:         _delay((unsigned long)((500)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"101
-[; ;main.c: 101:     }
-}
-[e :U 864 ]
-[e $U 865  ]
-[e :U 866 ]
-"102
-[; ;main.c: 102: }
+[e :U 867 ]
+[e $U 868  ]
+[e :U 869 ]
+"104
+[; ;main.c: 104: }
 [e :UE 857 ]
 }
+[p f _printf 8388608 ]
+[a 1C 116 101 115 116 105 110 103 0 ]
