@@ -57,11 +57,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
-"105 C:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdio.h: 105: int printf(const char *restrict, ...);
+"105 C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\stdio.h: 105: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"152 ./mcc_generated_files/examples/../i2c1_master.h
-[v _I2C1_SetBuffer `(v ~T0 @X0 0 ef2`*v`ui ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 55: __asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
@@ -1007,98 +1005,95 @@ Version 4.0 HI-TECH Software Intermediate Code
 "213 ./mcc_generated_files/examples/../i2c1_master.h
 [v _MSSP1_InterruptHandler `*F6653 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"56 main.c
-[; ;main.c: 56: void main(void)
+"66 main.c
+[; ;main.c: 66: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"57
-[; ;main.c: 57: {
+"67
+[; ;main.c: 67: {
 {
 [e :U _main ]
 [f ]
-"59
-[; ;main.c: 59:     SYSTEM_Initialize();
+"69
+[; ;main.c: 69:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"66
-[; ;main.c: 66:     (INTCONbits.GIE = 1);
+"76
+[; ;main.c: 76:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     (INTCONbits.PEIE = 1);
+"82
+[; ;main.c: 82:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"74
-[; ;main.c: 74:     do { LATAbits.LATA7 = 1; } while(0);
+"84
+[; ;main.c: 84:     do { LATAbits.LATA7 = 1; } while(0);
 [e :U 860 ]
 {
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 }
 [e :U 859 ]
-"75
-[; ;main.c: 75:     do { LATAbits.LATA6 = 1; } while(0);
+"85
+[; ;main.c: 85:     do { LATAbits.LATA6 = 1; } while(0);
 [e :U 863 ]
 {
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
 [e :U 862 ]
-"76
-[; ;main.c: 76:     do { LATCbits.LATC0 = 0; } while(0);
+"86
+[; ;main.c: 86:     do { LATCbits.LATC0 = 0; } while(0);
 [e :U 866 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 865 ]
-"78
-[; ;main.c: 78:     size_t i2cSize = 1;
+"88
+[; ;main.c: 88:     size_t i2cSize = 1;
 [v _i2cSize `ui ~T0 @X0 1 a ]
 [e = _i2cSize -> -> 1 `i `ui ]
-"79
-[; ;main.c: 79:     char *bufferPointer;
+"89
+[; ;main.c: 89:     char *bufferPointer;
 [v _bufferPointer `*uc ~T0 @X0 1 a ]
-"80
-[; ;main.c: 80:     char buffer = 'A';
+"90
+[; ;main.c: 90:     char buffer = 'A';
 [v _buffer `uc ~T0 @X0 1 a ]
 [e = _buffer -> -> 65 `ui `uc ]
-"82
-[; ;main.c: 82:     bufferPointer = &buffer;
+"92
+[; ;main.c: 92:     bufferPointer = &buffer;
 [e = _bufferPointer &U _buffer ]
-"87
-[; ;main.c: 87:     while (1)
+"97
+[; ;main.c: 97:     while (1)
 [e :U 868 ]
-"88
-[; ;main.c: 88:     {
+"98
+[; ;main.c: 98:     {
 {
-"90
-[; ;main.c: 90:         do { LATAbits.LATA6 = 0; } while(0);
+"100
+[; ;main.c: 100:         do { LATAbits.LATA6 = 0; } while(0);
 [e :U 872 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
 [e :U 871 ]
-"91
-[; ;main.c: 91:         _delay((unsigned long)((50)*(48000000/4000.0)));
+"101
+[; ;main.c: 101:         _delay((unsigned long)((50)*(48000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"92
-[; ;main.c: 92:         do { LATAbits.LATA6 = 1; } while(0);
+"102
+[; ;main.c: 102:         do { LATAbits.LATA6 = 1; } while(0);
 [e :U 875 ]
 {
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
 [e :U 874 ]
-"93
-[; ;main.c: 93:         _delay((unsigned long)((50)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"94
-[; ;main.c: 94:         printf("testing");
-[e ( _printf :s 1C ]
-"95
-[; ;main.c: 95:         I2C1_SetBuffer(*bufferPointer, i2cSize);
-[e ( _I2C1_SetBuffer (2 , -> *U _bufferPointer `*v _i2cSize ]
 "103
-[; ;main.c: 103:     }
+[; ;main.c: 103:         _delay((unsigned long)((50)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"104
+[; ;main.c: 104:         printf("testing");
+[e ( _printf :s 1C ]
+"119
+[; ;main.c: 119:     }
 }
 [e :U 867 ]
 [e $U 868  ]
 [e :U 869 ]
-"104
-[; ;main.c: 104: }
+"120
+[; ;main.c: 120: }
 [e :UE 857 ]
 }
 [p f _printf 8388608 ]
