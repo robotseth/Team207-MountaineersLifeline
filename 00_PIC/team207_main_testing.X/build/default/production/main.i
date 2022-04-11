@@ -11029,7 +11029,7 @@ void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
 # 45 "main.c" 2
-# 69 "main.c"
+# 77 "main.c"
 void main(void)
 {
 
@@ -11052,11 +11052,6 @@ void main(void)
     do { LATAbits.LATA6 = 1; } while(0);
     do { LATCbits.LATC0 = 0; } while(0);
 
-    size_t i2cSize = 1;
-    char *bufferPointer;
-    char buffer = 'A';
-
-    bufferPointer = &buffer;
 
 
 
@@ -11065,25 +11060,81 @@ void main(void)
     {
 
         do { LATAbits.LATA6 = 0; } while(0);
-        _delay((unsigned long)((50)*(48000000/4000.0)));
+        _delay((unsigned long)((100)*(48000000/4000.0)));
         do { LATAbits.LATA6 = 1; } while(0);
-        _delay((unsigned long)((50)*(48000000/4000.0)));
-        printf("testing");
-        I2C1_SetBuffer(*bufferPointer, i2cSize);
+        _delay((unsigned long)((100)*(48000000/4000.0)));
+        printf("Testing\r\n");
+
+
+
+        I2C1_Write1ByteRegister(0x66, 0x03, 0xFF);
+        I2C1_Write1ByteRegister(0x66, 0x02, 0x19);
+
+
+        for(uint8_t j = 0; j < 3; j++){
+            if(j == 0){
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x03);
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    I2C1_Write1ByteRegister(0x66, 0x00, (uint8_t) i);
+                    _delay((unsigned long)((250)*(48000000/4000.0)));
+                }
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            } else if(j == 1){
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x0C);
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    I2C1_Write1ByteRegister(0x66, 0x01, (uint8_t) i);
+                    _delay((unsigned long)((250)*(48000000/4000.0)));
+                }
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            } else {
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x30);
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    I2C1_Write1ByteRegister(0x66, 0x02, (uint8_t) i);
+                    _delay((unsigned long)((250)*(48000000/4000.0)));
+                }
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            }
+        }
+
+        I2C1_Write1ByteRegister(0x66, 0x00, 0x00);
+        I2C1_Write1ByteRegister(0x66, 0x01, 0x00);
+        I2C1_Write1ByteRegister(0x66, 0x02, 0x00);
+
+        for(uint8_t i = 0; i < 10; i++){
+            I2C1_Write1ByteRegister(0x66, 0x00, 0x0D);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x03);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+            I2C1_Write1ByteRegister(0x66, 0x00, 0x00);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+        }
+
+        for(uint8_t i = 0; i < 10; i++){
+            I2C1_Write1ByteRegister(0x66, 0x01, 0x0D);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x0C);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+            I2C1_Write1ByteRegister(0x66, 0x01, 0x00);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+        }
+
+        for(uint8_t i = 0; i < 10; i++){
+            I2C1_Write1ByteRegister(0x66, 0x02, 0x0D);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x30);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+            I2C1_Write1ByteRegister(0x66, 0x02, 0x00);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+        }
+
+        I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+        _delay((unsigned long)((1000)*(48000000/4000.0)));
 
 
 
 
 
 
-
-        I2C1_Write1ByteRegister(0x66, 0x00, 0x31);
-        I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
-
-
-        uint8_t baro_reset = 0xFE;
-        size_t cmd_length = sizeof(baro_reset);
-        I2C1_WriteNBytes(0x76, &baro_reset, cmd_length);
 
     }
 }

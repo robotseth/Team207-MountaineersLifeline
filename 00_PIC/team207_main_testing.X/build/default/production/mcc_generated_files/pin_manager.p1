@@ -51,12 +51,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5075
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 5075: extern volatile unsigned char ODCON3 __attribute__((address(0xF40)));
 [v _ODCON3 `Vuc ~T0 @X0 0 e@3904 ]
-"1202
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 1202: extern volatile unsigned char RPOR18 __attribute__((address(0xED2)));
-[v _RPOR18 `Vuc ~T0 @X0 0 e@3794 ]
 "1293
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 1293: extern volatile unsigned char RPINR16 __attribute__((address(0xEF7)));
 [v _RPINR16 `Vuc ~T0 @X0 0 e@3831 ]
+"1195
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 1195: extern volatile unsigned char RPOR17 __attribute__((address(0xED1)));
+[v _RPOR17 `Vuc ~T0 @X0 0 e@3793 ]
 "17488
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17488:     struct {
 [s S828 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -1042,8 +1042,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 65:     TRISB = 0xFF;
 [e = _TRISB -> -> 255 `i `uc ]
 "66
-[; ;mcc_generated_files/pin_manager.c: 66:     TRISC = 0x44;
-[e = _TRISC -> -> 68 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 66:     TRISC = 0x84;
+[e = _TRISC -> -> 132 `i `uc ]
 "71
 [; ;mcc_generated_files/pin_manager.c: 71:     ANCON0 = 0x00;
 [e = _ANCON0 -> -> 0 `i `uc ]
@@ -1063,11 +1063,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 84:     ODCON3 = 0x00;
 [e = _ODCON3 -> -> 0 `i `uc ]
 "90
-[; ;mcc_generated_files/pin_manager.c: 90:     RPOR18 = 0x06;
-[e = _RPOR18 -> -> 6 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 90:     RPINR16 = 0x12;
+[e = _RPINR16 -> -> 18 `i `uc ]
 "91
-[; ;mcc_generated_files/pin_manager.c: 91:     RPINR16 = 0x11;
-[e = _RPINR16 -> -> 17 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 91:     RPOR17 = 0x06;
+[e = _RPOR17 -> -> 6 `i `uc ]
 "94
 [; ;mcc_generated_files/pin_manager.c: 94: }
 [e :UE 852 ]

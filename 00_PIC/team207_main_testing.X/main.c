@@ -47,8 +47,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#define TCaddress 0x48 //TC74A0 1001 000
-#define READ_REG 0x00
+//#define TCaddress 0x48 //TC74A0 1001 000
+//#define READ_REG 0x00
 
 #define RGBLEDADDR 0x66 //CAT3626 1100 110
 #define RGB_REGA 0x00
@@ -58,17 +58,18 @@
 #define RGB_AON 0x03
 #define RGB_BON 0x0C
 #define RGB_CON 0x30
-#define RGB_ALLON 0x3F
+#define RGB_ALLON 0xFF
+#define RGB_ALLOFF 0x00
 
 // RH sensor I2C constants
-#define RHADDR 0x40
-#define RH_HOLD 0xE5
-#define RH_NOHOLD 0xF5
+//#define RHADDR 0x40
+//#define RH_HOLD 0xE5
+//#define RH_NOHOLD 0xF5
 
 // P&T sensor I2C constants
-#define BAROADDR 0x76
-#define BARO_RESET 0xFE
-size_t cmd_length = sizeof(BARO_RESET);
+//#define BAROADDR 0x76
+//#define BARO_RESET 0xFE
+//size_t cmd_length = sizeof(BARO_RESET);
 
 /*
                          Main application
@@ -95,11 +96,6 @@ void main(void)
     BDBG_SetHigh();
     HRLED_SetLow();
     
-    size_t i2cSize = 1;
-    char *bufferPointer;
-    char buffer = 'A';
-    
-    bufferPointer = &buffer;
     
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
@@ -108,25 +104,81 @@ void main(void)
     {
         
         BDBG_SetLow();
-        __delay_ms(50);
+        __delay_ms(100);
         BDBG_SetHigh();
-        __delay_ms(50);
+        __delay_ms(100);
         printf("Testing\r\n");
-        I2C1_SetBuffer(*bufferPointer, i2cSize);
         
-        
-        //Read temp sensor
-        //printf("Read attempt \r\n");
-        //uint8_t read = I2C1_Read1ByteRegister(TCaddress, READ_REG);// read=-1;
-        
+               
         //Write to RGB LED driver
-        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x31);
         I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLON);
+        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x19);
+
+        
+        for(uint8_t j = 0; j < 3; j++){
+            if(j == 0){
+                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_AON);
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, (uint8_t) i);
+                    __delay_ms(250);
+                }
+                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+            } else if(j == 1){
+                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_BON);
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, (uint8_t) i);
+                    __delay_ms(250);
+                }
+                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+            } else {
+                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_CON);
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, (uint8_t) i);
+                    __delay_ms(250);
+                } 
+                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+            }
+        }
+        
+        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x00);
+        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, 0x00);
+        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x00);
+        
+        for(uint8_t i = 0; i < 10; i++){
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x0D);
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_AON);
+            __delay_ms(250);
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x00);
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+            __delay_ms(250);
+        }
+        
+        for(uint8_t i = 0; i < 10; i++){
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, 0x0D);
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_BON);
+            __delay_ms(250);
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, 0x00);
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+            __delay_ms(250);
+        }
+        
+        for(uint8_t i = 0; i < 10; i++){
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x0D);
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_CON);
+            __delay_ms(250);
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x00);
+            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+            __delay_ms(250);
+        }
+        
+        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+        __delay_ms(1000);
+        
         
         //Reset barometer
-        uint8_t baro_reset_cmd = BARO_RESET;
-        cmd_length = sizeof(baro_reset_cmd); 
-        I2C1_WriteNBytes(BAROADDR, &baro_reset_cmd, cmd_length);
+        //uint8_t baro_reset_cmd = BARO_RESET;
+        //cmd_length = sizeof(baro_reset_cmd); 
+        //I2C1_WriteNBytes(BAROADDR, &baro_reset_cmd, cmd_length);
         //__delay_ms(5);
     }
 }
