@@ -15,6 +15,8 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include "mcc_generated_files/mcc.h"
+#include "timers.h"
     
 #define RGBLEDADDR 0x66 //CAT3626 1100 110
 #define RGB_REGA 0x00
@@ -26,14 +28,17 @@ extern "C" {
 #define RGB_CON 0x30
 #define RGB_ALLON 0xFF
 #define RGB_ALLOFF 0x00
-    
-    
-    
-    
-void update_disp_vals(uint8_t mode, long alti, double temp, int heartrate);
-void update_disp_anim();
-void update_led(uint8_t update, long alti, double temp, int heartrate);
 
+    
+void updateDispVals(uint8_t mode, long alt, double temp, int hr);
+void updateDispAnim();
+void updateLED(uint8_t update, long alt, double temp, int hr);
+
+void displayHR(int hr);
+void displayTemp(int temp);
+void displayAlt(int alt);
+void displayAltFine(int alt);
+void displayOff(void);
 
 
 #ifdef	__cplusplus
