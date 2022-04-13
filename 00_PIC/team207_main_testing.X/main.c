@@ -96,6 +96,19 @@ void main(void)
     BDBG_SetHigh();
     HRLED_SetLow();
     
+    //All possible I2C commands that could possible relate to the barometer
+    //I2C1_SetTimeout(40); // doesnt work
+    //I2C1_Initialize();
+    //I2C1_Open(BAROADDR); // No known effect.
+    //I2C1_MasterOperation(true); // true for read, false for write. 
+    //I2C1_SetBuffer(buffer,i2cSize);
+    // stuff from the master example file
+    //read = I2C1_Read1ByteRegister(BAROADDR,???); // registers not clarified in datasheet. same issue with Read2ByteRegister
+    //I2C1_Write1ByteRegister(BAROADDR,???,baro_reset_cmd);
+    //I2C1_WriteNBytes(BAROADDR, baro_reset_cmd, cmd_length);
+    //I2C1_ReadNBytes(BAROADDR, readPointer,3);
+    //I2C1_Close();
+    // 
     
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
