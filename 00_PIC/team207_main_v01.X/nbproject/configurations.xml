@@ -20,6 +20,10 @@
         <itemPath>mcc_generated_files/tmr0.h</itemPath>
         <itemPath>mcc_generated_files/i2c1_master.h</itemPath>
       </logicalFolder>
+      <itemPath>rgbledfx.h</itemPath>
+      <itemPath>display.h</itemPath>
+      <itemPath>ESP32.h</itemPath>
+      <itemPath>timers.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -45,12 +49,10 @@
         <itemPath>mcc_generated_files/i2c1_master.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>timers.h</itemPath>
       <itemPath>timers.c</itemPath>
       <itemPath>ESP32.c</itemPath>
-      <itemPath>ESP32.h</itemPath>
-      <itemPath>display.h</itemPath>
       <itemPath>display.c</itemPath>
+      <itemPath>rgbledfx.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

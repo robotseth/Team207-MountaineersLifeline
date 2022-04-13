@@ -15,6 +15,7 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <math.h>
 #include "mcc_generated_files/mcc.h"
 #include "timers.h"
     
@@ -30,14 +31,18 @@ extern "C" {
 #define RGB_ALLOFF 0x00
 
     
-void updateDispVals(uint8_t mode, long alt, double temp, int hr);
-void updateDispAnim();
-void updateLED(uint8_t update, long alt, double temp, int hr);
+void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt);
 
-void displayHR(int hr);
-void displayTemp(int temp);
-void displayAlt(int alt);
-void displayAltFine(int alt);
+void updateAllDispVals(int hr, int temp, int alt);
+void updateDispHeartRate(int hr);
+void updateDispTemp(int temp);
+void updateDispAltitude(int alt);
+void updateDispAnim(uint8_t mode);
+
+void displayHR(int frame, int hr);
+void displayTemp(int frame, int temp);
+void displayAlt(int frame, int alt);
+void displayAltFine(int frame, int alt);
 void displayOff(void);
 
 
