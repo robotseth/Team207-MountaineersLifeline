@@ -27,9 +27,12 @@ extern "C" {
 #define RGB_AON 0x03
 #define RGB_BON 0x0C
 #define RGB_CON 0x30
+#define RGB_ANMASK 0x3C
+#define RGB_BNMASK 0x33
+#define RGB_CNMASK 0x0F
 #define RGB_ALLON 0xFF
 #define RGB_ALLOFF 0x00
-
+#define RGB_MAX 0x12
     
 void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt);
 
@@ -44,6 +47,11 @@ void displayTemp(int frame, int temp);
 void displayAlt(int frame, int alt);
 void displayAltFine(int frame, int alt);
 void displayOff(void);
+
+void setLED(uint8_t red, uint8_t green, uint8_t blue);
+
+uint8_t byteMax(uint8_t a, uint8_t b);
+uint8_t byteMin(uint8_t a, uint8_t b);
 
 
 #ifdef	__cplusplus

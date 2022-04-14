@@ -103,9 +103,12 @@ void displayHR(int frame, int heartRate){
     
     static long currentMillis = 0;
     static long previousMillis = 0; 
-    static uint8_t brightness = 0; 
-    
-    uint8_t maxBrightness = 255; 
+    static uint8_t level = 0; 
+       
+    uint8_t maxLevel = RGB_MAX; 
+    uint8_t levelFade = 0;
+    // fadeFactor = RGB_MAX / fade_delay = 18 / 1000ms
+    float fadeFactor = 0.018;
     
     // Animation look: 
     // Red LED turns on and then fades at the heart rate specified
@@ -120,13 +123,15 @@ void displayHR(int frame, int heartRate){
     currentMillis = millis();
     
     if(currentMillis - previousMillis >= beatDelay){
-        brightness = maxBrightness;
+        level = maxLevel;
         previousMillis = currentMillis;
     } else {
         // Set brightness
-        brightness = maxBrightness;
+        levelFade = (uint8_t) fmin(fadeFactor*(currentMillis-previousMillis),(float) maxLevel);
         // Output color
+        
     }
+    setLED(maxLevel - levelFade, 0, 0);
     
 }
 
@@ -152,4 +157,51 @@ void displayAltFine(int frame, int alt){
 
 void displayOff(void){
     // turn off LED
+}
+
+void setLED(uint8_t red, uint8_t green, uint8_t blue){
+    static uint8_t currentR = 0;
+    static uint8_t currentG = 0;
+    static uint8_t currentB = 0;
+    
+    currentR = byteMax(red, RGB_MAX);
+    currentG = byteMax(green, RGB_MAX);
+    currentB = byteMax(blue, RGB_MAX);
+    
+    uint8_t enableByte = 0x00;
+    
+    // Sets enables
+    if(currentR == 0){
+        enableByte = enableByte && RGB_CNMASK;
+    } else {
+        enableByte = enableByte || RGB_CON;
+    }
+    
+    if(currentG == 0){
+        enableByte = enableByte && RGB_BNMASK;
+    } else {
+        enableByte = enableByte || RGB_BON;
+    }
+    
+    if(currentR == 0){
+        enableByte = enableByte && RGB_ANMASK;
+    } else {
+        enableByte = enableByte || RGB_AON;
+    }
+    
+    // Set the enable register
+    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, enableByte);
+    
+    // Set the brightness values
+    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, currentR);
+    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, currentG);
+    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, currentB);
+}
+
+uint8_t byteMax(uint8_t a, uint8_t b){
+    return (((a) > (b)) ? (a) : (b));
+}
+
+uint8_t byteMin(uint8_t a, uint8_t b){
+    return (((a) < (b)) ? (a) : (b));
 }
