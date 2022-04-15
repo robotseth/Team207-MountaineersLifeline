@@ -2,8 +2,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "110 mcc_generated_files/interrupt_manager.h
 [; ;mcc_generated_files/interrupt_manager.h: 110: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
-"262 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 262: void PIN_MANAGER_Initialize (void);
+"89 mcc_generated_files/i2c1_master.h
+[; ;mcc_generated_files/i2c1_master.h: 89: void I2C1_Initialize(void);
+[v _I2C1_Initialize `(v ~T0 @X0 0 ef ]
+"218 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 218: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "88 mcc_generated_files/mcc.h
 [; ;mcc_generated_files/mcc.h: 88: void OSCILLATOR_Initialize(void);
@@ -20,9 +23,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "110 mcc_generated_files/eusart1.h
 [; ;mcc_generated_files/eusart1.h: 110: void EUSART1_Initialize(void);
 [v _EUSART1_Initialize `(v ~T0 @X0 0 ef ]
-"111 mcc_generated_files/eusart2.h
-[; ;mcc_generated_files/eusart2.h: 111: void EUSART2_Initialize(void);
-[v _EUSART2_Initialize `(v ~T0 @X0 0 ef ]
 "16583 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 16583: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
@@ -989,29 +989,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 53:     INTERRUPT_Initialize();
 [e ( _INTERRUPT_Initialize ..  ]
 "54
-[; ;mcc_generated_files/mcc.c: 54:     PIN_MANAGER_Initialize();
-[e ( _PIN_MANAGER_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 54:     I2C1_Initialize();
+[e ( _I2C1_Initialize ..  ]
 "55
-[; ;mcc_generated_files/mcc.c: 55:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 55:     PIN_MANAGER_Initialize();
+[e ( _PIN_MANAGER_Initialize ..  ]
 "56
-[; ;mcc_generated_files/mcc.c: 56:     ADC_Initialize();
-[e ( _ADC_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 56:     OSCILLATOR_Initialize();
+[e ( _OSCILLATOR_Initialize ..  ]
 "57
-[; ;mcc_generated_files/mcc.c: 57:     EXT_INT_Initialize();
-[e ( _EXT_INT_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 57:     ADC_Initialize();
+[e ( _ADC_Initialize ..  ]
 "58
-[; ;mcc_generated_files/mcc.c: 58:     TMR0_Initialize();
-[e ( _TMR0_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 58:     EXT_INT_Initialize();
+[e ( _EXT_INT_Initialize ..  ]
 "59
-[; ;mcc_generated_files/mcc.c: 59:     EUSART1_Initialize();
-[e ( _EUSART1_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 59:     TMR0_Initialize();
+[e ( _TMR0_Initialize ..  ]
 "60
-[; ;mcc_generated_files/mcc.c: 60:     EUSART2_Initialize();
-[e ( _EUSART2_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 60:     EUSART1_Initialize();
+[e ( _EUSART1_Initialize ..  ]
 "61
 [; ;mcc_generated_files/mcc.c: 61: }
-[e :UE 859 ]
+[e :UE 857 ]
 }
 "63
 [; ;mcc_generated_files/mcc.c: 63: void OSCILLATOR_Initialize(void)
@@ -1035,5 +1035,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _OSCCON2 -> -> 20 `i `uc ]
 "73
 [; ;mcc_generated_files/mcc.c: 73: }
-[e :UE 860 ]
+[e :UE 858 ]
 }

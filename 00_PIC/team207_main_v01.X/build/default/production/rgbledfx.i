@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/eusart2.c"
+# 1 "rgbledfx.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,644 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/eusart2.c" 2
-# 50 "mcc_generated_files/eusart2.c"
-# 1 "mcc_generated_files/eusart2.h" 1
-# 54 "mcc_generated_files/eusart2.h"
+# 1 "rgbledfx.c" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
+# 1 "rgbledfx.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdbool.h" 1 3
+# 2 "rgbledfx.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 2 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 3 "rgbledfx.c" 2
+
+# 1 "./rgbledfx.h" 1
+# 18 "./rgbledfx.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 1 3
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef float float_t;
+
+
+
+
+typedef double double_t;
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 2 3
+# 42 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+int __fpclassifyf(float);
+
+
+
+
+
+
+
+int __signbitf(float);
+# 59 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+double acos(double);
+float acosf(float);
+long double acosl(long double);
+
+
+
+double acosh(double);
+float acoshf(float);
+long double acoshl(long double);
+
+
+
+double asin(double);
+float asinf(float);
+long double asinl(long double);
+
+
+
+double asinh(double);
+float asinhf(float);
+long double asinhl(long double);
+
+
+
+double atan(double);
+float atanf(float);
+long double atanl(long double);
+
+
+
+double atan2(double, double);
+float atan2f(float, float);
+long double atan2l(long double, long double);
+
+
+
+double atanh(double);
+float atanhf(float);
+long double atanhl(long double);
+
+
+
+double cbrt(double);
+float cbrtf(float);
+long double cbrtl(long double);
+
+
+
+double ceil(double);
+float ceilf(float);
+long double ceill(long double);
+
+
+
+double copysign(double, double);
+float copysignf(float, float);
+long double copysignl(long double, long double);
+
+
+
+double cos(double);
+float cosf(float);
+long double cosl(long double);
+
+
+
+double cosh(double);
+float coshf(float);
+long double coshl(long double);
+
+
+
+double erf(double);
+float erff(float);
+long double erfl(long double);
+
+
+
+double erfc(double);
+float erfcf(float);
+long double erfcl(long double);
+
+
+
+double exp(double);
+float expf(float);
+long double expl(long double);
+
+
+
+double exp2(double);
+float exp2f(float);
+long double exp2l(long double);
+
+
+
+double expm1(double);
+float expm1f(float);
+long double expm1l(long double);
+
+
+
+double fabs(double);
+float fabsf(float);
+long double fabsl(long double);
+
+
+
+double fdim(double, double);
+float fdimf(float, float);
+long double fdiml(long double, long double);
+
+
+
+double floor(double);
+float floorf(float);
+long double floorl(long double);
+
+
+
+double fma(double, double, double);
+float fmaf(float, float, float);
+long double fmal(long double, long double, long double);
+
+
+
+double fmax(double, double);
+float fmaxf(float, float);
+long double fmaxl(long double, long double);
+
+
+
+double fmin(double, double);
+float fminf(float, float);
+long double fminl(long double, long double);
+
+
+
+double fmod(double, double);
+float fmodf(float, float);
+long double fmodl(long double, long double);
+
+
+
+double frexp(double, int *);
+float frexpf(float, int *);
+long double frexpl(long double, int *);
+
+
+
+double hypot(double, double);
+float hypotf(float, float);
+long double hypotl(long double, long double);
+
+
+
+int ilogb(double);
+int ilogbf(float);
+int ilogbl(long double);
+
+
+
+double ldexp(double, int);
+float ldexpf(float, int);
+long double ldexpl(long double, int);
+
+
+
+double lgamma(double);
+float lgammaf(float);
+long double lgammal(long double);
+
+
+
+long long llrint(double);
+long long llrintf(float);
+long long llrintl(long double);
+
+
+
+long long llround(double);
+long long llroundf(float);
+long long llroundl(long double);
+
+
+
+double log(double);
+float logf(float);
+long double logl(long double);
+
+
+
+double log10(double);
+float log10f(float);
+long double log10l(long double);
+
+
+
+double log1p(double);
+float log1pf(float);
+long double log1pl(long double);
+
+
+
+double log2(double);
+float log2f(float);
+long double log2l(long double);
+
+
+
+double logb(double);
+float logbf(float);
+long double logbl(long double);
+
+
+
+long lrint(double);
+long lrintf(float);
+long lrintl(long double);
+
+
+
+long lround(double);
+long lroundf(float);
+long lroundl(long double);
+
+
+
+double modf(double, double *);
+float modff(float, float *);
+long double modfl(long double, long double *);
+
+
+
+double nan(const char *);
+float nanf(const char *);
+long double nanl(const char *);
+
+
+
+double nearbyint(double);
+float nearbyintf(float);
+long double nearbyintl(long double);
+
+
+
+double nextafter(double, double);
+float nextafterf(float, float);
+long double nextafterl(long double, long double);
+
+
+
+double nexttoward(double, long double);
+float nexttowardf(float, long double);
+long double nexttowardl(long double, long double);
+# 323 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+double pow(double, double);
+__attribute__((nonreentrant)) float powf(float, float);
+long double powl(long double, long double);
+
+
+
+double remainder(double, double);
+float remainderf(float, float);
+long double remainderl(long double, long double);
+
+
+
+double remquo(double, double, int *);
+float remquof(float, float, int *);
+long double remquol(long double, long double, int *);
+
+
+
+double rint(double);
+float rintf(float);
+long double rintl(long double);
+
+
+
+double round(double);
+float roundf(float);
+long double roundl(long double);
+
+
+
+double scalbln(double, long);
+float scalblnf(float, long);
+long double scalblnl(long double, long);
+
+
+
+double scalbn(double, int);
+float scalbnf(float, int);
+long double scalbnl(long double, int);
+
+
+
+double sin(double);
+float sinf(float);
+long double sinl(long double);
+
+
+
+double sinh(double);
+float sinhf(float);
+long double sinhl(long double);
+
+
+
+double sqrt(double);
+float sqrtf(float);
+long double sqrtl(long double);
+
+
+
+double tan(double);
+float tanf(float);
+long double tanl(long double);
+
+
+
+double tanh(double);
+float tanhf(float);
+long double tanhl(long double);
+
+
+
+double tgamma(double);
+float tgammaf(float);
+long double tgammal(long double);
+
+
+
+double trunc(double);
+float truncf(float);
+long double truncl(long double);
+# 428 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+extern int signgam;
+
+double j0(double);
+double j1(double);
+double jn(int, double);
+
+double y0(double);
+double y1(double);
+double yn(int, double);
+# 18 "./rgbledfx.h" 2
+
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -23,29 +657,10 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 168 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 204 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -120,92 +735,7 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
 
-
-
-
-typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\builtins.h" 2 3
 
 
 #pragma intrinsic(__nop)
@@ -10641,11 +11171,184 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/eusart2.h" 2
+# 49 "./mcc_generated_files/mcc.h" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdbool.h" 1 3
-# 55 "mcc_generated_files/eusart2.h" 2
-# 75 "mcc_generated_files/eusart2.h"
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 218 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 230 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "./mcc_generated_files/mcc.h" 2
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\conio.h" 1 3
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 110 "./mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/i2c1_master.h" 1
+# 58 "./mcc_generated_files/i2c1_master.h"
+typedef enum {
+    I2C1_NOERR,
+    I2C1_BUSY,
+    I2C1_FAIL
+
+
+} i2c1_error_t;
+
+typedef enum
+{
+    I2C1_STOP=1,
+    I2C1_RESTART_READ,
+    I2C1_RESTART_WRITE,
+    I2C1_CONTINUE,
+    I2C1_RESET_LINK
+} i2c1_operations_t;
+
+typedef uint8_t i2c1_address_t;
+typedef i2c1_operations_t (*i2c1_callback_t)(void *funPtr);
+
+
+i2c1_operations_t I2C1_CallbackReturnStop(void *funPtr);
+i2c1_operations_t I2C1_CallbackReturnReset(void *funPtr);
+i2c1_operations_t I2C1_CallbackRestartWrite(void *funPtr);
+i2c1_operations_t I2C1_CallbackRestartRead(void *funPtr);
+
+
+
+
+
+
+void I2C1_Initialize(void);
+# 101 "./mcc_generated_files/i2c1_master.h"
+i2c1_error_t I2C1_Open(i2c1_address_t address);
+# 111 "./mcc_generated_files/i2c1_master.h"
+i2c1_error_t I2C1_Close(void);
+# 123 "./mcc_generated_files/i2c1_master.h"
+i2c1_error_t I2C1_MasterOperation(_Bool read);
+
+
+
+
+i2c1_error_t I2C1_MasterWrite(void);
+
+
+
+
+i2c1_error_t I2C1_MasterRead(void);
+# 142 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetTimeout(uint8_t timeOut);
+# 152 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetBuffer(void *buffer, size_t bufferSize);
+# 164 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetDataCompleteCallback(i2c1_callback_t cb, void *ptr);
+# 174 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetWriteCollisionCallback(i2c1_callback_t cb, void *ptr);
+# 184 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetAddressNackCallback(i2c1_callback_t cb, void *ptr);
+# 194 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetDataNackCallback(i2c1_callback_t cb, void *ptr);
+# 204 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetTimeoutCallback(i2c1_callback_t cb, void *ptr);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/ext_int.h" 1
+# 562 "./mcc_generated_files/ext_int.h"
+void EXT_INT_Initialize(void);
+# 584 "./mcc_generated_files/ext_int.h"
+void INT0_ISR(void);
+# 608 "./mcc_generated_files/ext_int.h"
+void INT0_CallBack(void);
+# 631 "./mcc_generated_files/ext_int.h"
+void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 655 "./mcc_generated_files/ext_int.h"
+extern void (*INT0_InterruptHandler)(void);
+# 679 "./mcc_generated_files/ext_int.h"
+void INT0_DefaultInterruptHandler(void);
+# 697 "./mcc_generated_files/ext_int.h"
+void INT1_ISR(void);
+# 721 "./mcc_generated_files/ext_int.h"
+void INT1_CallBack(void);
+# 744 "./mcc_generated_files/ext_int.h"
+void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 768 "./mcc_generated_files/ext_int.h"
+extern void (*INT1_InterruptHandler)(void);
+# 792 "./mcc_generated_files/ext_int.h"
+void INT1_DefaultInterruptHandler(void);
+# 810 "./mcc_generated_files/ext_int.h"
+void INT2_ISR(void);
+# 834 "./mcc_generated_files/ext_int.h"
+void INT2_CallBack(void);
+# 857 "./mcc_generated_files/ext_int.h"
+void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 881 "./mcc_generated_files/ext_int.h"
+extern void (*INT2_InterruptHandler)(void);
+# 905 "./mcc_generated_files/ext_int.h"
+void INT2_DefaultInterruptHandler(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 100 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "./mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 196 "./mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 271 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 310 "./mcc_generated_files/tmr0.h"
+_Bool TMR0_HasOverflowOccured(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/adc.h" 1
+# 72 "./mcc_generated_files/adc.h"
+typedef uint16_t adc_result_t;
+
+
+
+
+typedef struct
+{
+    adc_result_t adcResult1;
+    adc_result_t adcResult2;
+} adc_sync_double_result_t;
+# 95 "./mcc_generated_files/adc.h"
+typedef enum
+{
+    channel_AN0 = 0x0,
+    channel_AN1 = 0x1,
+    channel_VDDCORE = 0xE,
+    channel_VBG = 0xF
+} adc_channel_t;
+# 136 "./mcc_generated_files/adc.h"
+void ADC_Initialize(void);
+# 166 "./mcc_generated_files/adc.h"
+void ADC_SelectChannel(adc_channel_t channel);
+# 193 "./mcc_generated_files/adc.h"
+void ADC_StartConversion(void);
+# 225 "./mcc_generated_files/adc.h"
+_Bool ADC_IsConversionDone(void);
+# 258 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversionResult(void);
+# 288 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversion(adc_channel_t channel);
+# 316 "./mcc_generated_files/adc.h"
+void ADC_TemperatureAcquisitionDelay(void);
+# 59 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/eusart1.h" 1
+# 75 "./mcc_generated_files/eusart1.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -10654,149 +11357,366 @@ typedef union {
         unsigned reserved : 5;
     };
     uint8_t status;
-}eusart2_status_t;
-# 111 "mcc_generated_files/eusart2.h"
-void EUSART2_Initialize(void);
-# 159 "mcc_generated_files/eusart2.h"
-_Bool EUSART2_is_tx_ready(void);
-# 207 "mcc_generated_files/eusart2.h"
-_Bool EUSART2_is_rx_ready(void);
-# 254 "mcc_generated_files/eusart2.h"
-_Bool EUSART2_is_tx_done(void);
-# 302 "mcc_generated_files/eusart2.h"
-eusart2_status_t EUSART2_get_last_status(void);
-# 322 "mcc_generated_files/eusart2.h"
-uint8_t EUSART2_Read(void);
-# 342 "mcc_generated_files/eusart2.h"
-void EUSART2_Write(uint8_t txData);
-# 362 "mcc_generated_files/eusart2.h"
-void EUSART2_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 380 "mcc_generated_files/eusart2.h"
-void EUSART2_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 398 "mcc_generated_files/eusart2.h"
-void EUSART2_SetErrorHandler(void (* interruptHandler)(void));
-# 50 "mcc_generated_files/eusart2.c" 2
+}eusart1_status_t;
+# 110 "./mcc_generated_files/eusart1.h"
+void EUSART1_Initialize(void);
+# 158 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_ready(void);
+# 206 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_rx_ready(void);
+# 253 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_done(void);
+# 301 "./mcc_generated_files/eusart1.h"
+eusart1_status_t EUSART1_get_last_status(void);
+# 321 "./mcc_generated_files/eusart1.h"
+uint8_t EUSART1_Read(void);
+# 341 "./mcc_generated_files/eusart1.h"
+void EUSART1_Write(uint8_t txData);
+# 361 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 379 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 397 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+# 60 "./mcc_generated_files/mcc.h" 2
+# 75 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 88 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 19 "./rgbledfx.h" 2
+
+# 1 "./timers.h" 1
+# 13 "./timers.h"
+uint16_t currentTime;
+float scale = 1;
+
+uint16_t millis(void);
+# 20 "./rgbledfx.h" 2
+# 37 "./rgbledfx.h"
+void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt);
+
+void updateAllDispVals(int hr, int temp, int alt);
+void updateDispHeartRate(int hr);
+void updateDispTemp(int temp);
+void updateDispAltitude(int alt);
+void updateDispAnim(uint8_t mode);
+
+void displayHR(int hr);
+void displayTemp(int temp);
+void displayAlt(int alt);
+void displayOff(void);
+
+void setLED(uint8_t red, uint8_t green, uint8_t blue);
+
+uint8_t byteMax(uint8_t a, uint8_t b);
+uint8_t byteMin(uint8_t a, uint8_t b);
+# 4 "rgbledfx.c" 2
 
 
-volatile eusart2_status_t eusart2RxLastError;
 
 
+void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt){
+    static int currentHR = 0;
+    static int currentTemp = 0;
+    static int currentAlt = 0;
+# 20 "rgbledfx.c"
+    if(update == 0){
+
+        switch(mode){
+            case 0:
+
+                displayHR(currentHR);
+                break;
+            case 1:
+
+                displayTemp(currentTemp);
+                break;
+            case 2:
+
+                displayAlt(currentAlt);
+                break;
+            default:
+
+                displayOff();
+                break;
+        }
 
 
-void (*EUSART2_FramingErrorHandler)(void);
-void (*EUSART2_OverrunErrorHandler)(void);
-void (*EUSART2_ErrorHandler)(void);
+    } else if(update == 1){
 
-void EUSART2_DefaultFramingErrorHandler(void);
-void EUSART2_DefaultOverrunErrorHandler(void);
-void EUSART2_DefaultErrorHandler(void);
-
-void EUSART2_Initialize(void)
-{
-
-
-
-    BAUDCON2 = 0x08;
-
-
-    RCSTA2 = 0x90;
-
-
-    TXSTA2 = 0xB4;
-
-
-    SPBRG2 = 0x19;
-
-
-    SPBRGH2 = 0x00;
-
-
-    EUSART2_SetFramingErrorHandler(EUSART2_DefaultFramingErrorHandler);
-    EUSART2_SetOverrunErrorHandler(EUSART2_DefaultOverrunErrorHandler);
-    EUSART2_SetErrorHandler(EUSART2_DefaultErrorHandler);
-
-    eusart2RxLastError.status = 0;
-
-}
-
-_Bool EUSART2_is_tx_ready(void)
-{
-    return (_Bool)(PIR3bits.TX2IF && TXSTA2bits.TXEN);
-}
-
-_Bool EUSART2_is_rx_ready(void)
-{
-    return (_Bool)(PIR3bits.RC2IF);
-}
-
-_Bool EUSART2_is_tx_done(void)
-{
-    return TXSTA2bits.TRMT;
-}
-
-eusart2_status_t EUSART2_get_last_status(void){
-    return eusart2RxLastError;
-}
-
-uint8_t EUSART2_Read(void)
-{
-    RCSTA2bits.SREN = 1;
-    while(!PIR3bits.RC2IF)
-    {
+        currentHR = hr;
+        currentTemp = temp;
+        currentAlt = alt;
+    } else if(update == 2){
+        currentHR = hr;
+    } else if(update == 3){
+        currentTemp = temp;
+    } else if(update == 4){
+        currentAlt = alt;
     }
 
-    eusart2RxLastError.status = 0;
 
-    if(RCSTA2bits.FERR){
-        eusart2RxLastError.ferr = 1;
-        EUSART2_FramingErrorHandler();
+}
+
+
+void updateAllDispVals(int hr, int temp, int alt){
+    updateLED(1, 0, hr, temp, alt);
+}
+
+void updateDispHeartRate(int hr){
+    updateLED(2, 0, hr, 0, 0);
+}
+
+void updateDispTemp(int temp){
+    updateLED(3, 0, 0, temp, 0);
+}
+
+void updateDispAltitude(int alt){
+    updateLED(4, 0, 0, 0, alt);
+}
+
+
+
+void updateDispAnim(uint8_t mode){
+
+
+
+
+
+
+    updateLED(0, mode, 0, 0, 0);
+}
+
+
+void displayHR(int heartRate){
+
+
+
+
+    static long currentMillis = 0;
+    static long previousMillis = 0;
+    static uint8_t level = 0;
+
+    uint8_t maxLevel = 0x12;
+    uint8_t levelFade = 0;
+
+    float fadeFactor = 0.018;
+# 109 "rgbledfx.c"
+    double currentHR = (double) heartRate;
+    long beatDelay = (long) roundf(1000.0/(currentHR*0.0167));
+
+    currentMillis = millis();
+
+    if(currentMillis - previousMillis >= beatDelay){
+        level = maxLevel;
+        previousMillis = currentMillis;
+    } else {
+
+        levelFade = (uint8_t) fminf(fadeFactor*(currentMillis-previousMillis),(float) maxLevel);
+
+
+    }
+    setLED(maxLevel - levelFade, 0, 0);
+
+}
+
+void displayTemp(int temp){
+
+
+    static long currentMillis = 0;
+    static long previousMillis = 0;
+    long blinkDelay = 750;
+    long rapidDelay = 250;
+    long currentDelay = 0;
+    static uint8_t ledOn = 0;
+
+    uint8_t calcR = 0;
+    uint8_t calcG = 0;
+    uint8_t calcB = 0;
+# 153 "rgbledfx.c"
+    if(temp < 20){
+        calcB = 0x12;
+        currentDelay = rapidDelay;
+    } else if(temp >= 20 && temp < 32){
+        calcB = 0x12;
+        currentDelay = blinkDelay;
+    } else if(temp >= 32 && temp < 45){
+        calcB = 0x12;
+    } else if(temp >= 45 && temp < 65){
+        calcB = 0x12;
+        calcG = 0x12;
+    } else if(temp >= 65 && temp < 75){
+        calcG = 0x12;
+    } else if(temp >= 75 && temp < 85){
+        calcG = 0x12;
+    } else if(temp >= 85 && temp < 95){
+        calcG = 0x12;
+        calcR = 0x12;
+    } else if(temp >= 95 && temp < 105){
+        calcR = 0x12;
+    } else if(temp >= 105 && temp < 115){
+        calcR = 0x12;
+        currentDelay = blinkDelay;
+    } else if(temp >= 115){
+        calcR = 0x12;
+        currentDelay = rapidDelay;
     }
 
-    if(RCSTA2bits.OERR){
-        eusart2RxLastError.oerr = 1;
-        EUSART2_OverrunErrorHandler();
+    if(currentDelay > 0){
+        currentMillis = millis();
+        if(currentMillis - previousMillis >= currentDelay){
+            previousMillis = currentMillis;
+            ledOn = !ledOn;
+        }
+    } else {
+        ledOn = 1;
     }
 
-    if(eusart2RxLastError.status){
-        EUSART2_ErrorHandler();
+    setLED(calcR*ledOn, calcG*ledOn, calcB*ledOn);
+
+}
+
+void displayAlt(int alt){
+# 204 "rgbledfx.c"
+    static uint8_t dispStep = 0;
+    static int currentAlt = 0;
+    static int altThou = 0;
+    static int altHund = 0;
+
+    int onNumDelay = 250;
+    int offNumDelay = 500;
+    int placeSeperatorDelay = 1000;
+    int completeDispDelay = 5000;
+
+    static long currentMillis = 0;
+    static long previousMillis = 0;
+    static uint8_t ledOn = 0;
+    static uint8_t counter = 0;
+
+    currentMillis = millis();
+
+    if (dispStep == 0){
+
+        currentAlt = alt;
+        altThou = alt % 1000;
+        altHund = (alt - altThou*1000) % 100;
+        dispStep = 1;
+    } else if(dispStep == 1){
+
+        if(ledOn == 1){
+            if(currentMillis - previousMillis >= onNumDelay){
+                previousMillis = currentMillis;
+                ledOn = 0;
+            }
+        } else {
+            if(currentMillis - previousMillis >= offNumDelay){
+                previousMillis = currentMillis;
+                ledOn = 1;
+            }
+        }
+        counter++;
+
+        if(counter >= altThou){
+            dispStep = 2;
+            counter = 0;
+            ledOn = 0;
+        }
+
+    } else if (dispStep == 2){
+
+        if(currentMillis - previousMillis >= placeSeperatorDelay){
+            previousMillis = currentMillis;
+            dispStep = 3;
+        }
+    } else if (dispStep == 3){
+
+        if(ledOn == 1){
+            if(currentMillis - previousMillis >= onNumDelay){
+                previousMillis = currentMillis;
+                ledOn = 0;
+            }
+        } else {
+            if(currentMillis - previousMillis >= offNumDelay){
+                previousMillis = currentMillis;
+                ledOn = 1;
+            }
+        }
+        counter++;
+
+        if(counter >= altHund){
+            dispStep = 4;
+            counter = 0;
+            ledOn = 0;
+        }
+    } else if (dispStep == 4){
+
+        if(currentMillis - previousMillis >= completeDispDelay){
+            previousMillis = currentMillis;
+            dispStep = 0;
+        }
+    } else {
+        dispStep = 0;
     }
 
-    return RCREG2;
-}
-
-void EUSART2_Write(uint8_t txData)
-{
-    RCSTA2bits.SREN = 0;
-    RCSTA2bits.CREN = 0;
-    while(0 == PIR3bits.TX2IF)
-    {
+    if(ledOn == 1 && dispStep == 1){
+        setLED(0x12, 0x12, 0x12);
+    } else if (ledOn == 1 && dispStep == 3) {
+        setLED(0, 0, 0x12);
+    } else {
+        setLED(0, 0x12, 0);
     }
 
-    TXREG2 = txData;
-}
-
-
-void EUSART2_DefaultFramingErrorHandler(void){}
-
-void EUSART2_DefaultOverrunErrorHandler(void){
-
-
-    RCSTA2bits.CREN = 0;
-    RCSTA2bits.CREN = 1;
 
 }
 
-void EUSART2_DefaultErrorHandler(void){
+void displayOff(void){
+
+    setLED(0, 0, 0);
 }
 
-void EUSART2_SetFramingErrorHandler(void (* interruptHandler)(void)){
-    EUSART2_FramingErrorHandler = interruptHandler;
+void setLED(uint8_t red, uint8_t green, uint8_t blue){
+    static uint8_t currentR = 0;
+    static uint8_t currentG = 0;
+    static uint8_t currentB = 0;
+
+    currentR = byteMin(red, 0x12);
+    currentG = byteMin(green, 0x12);
+    currentB = byteMin(blue, 0x12);
+
+    uint8_t enableByte = 0x00;
+
+
+    if(currentR == 0){
+        enableByte = enableByte & 0x0F;
+    } else {
+        enableByte = enableByte | 0x30;
+    }
+
+    if(currentG == 0){
+        enableByte = enableByte & 0x33;
+    } else {
+        enableByte = enableByte | 0x0C;
+    }
+
+    if(currentR == 0){
+        enableByte = enableByte & 0x3C;
+    } else {
+        enableByte = enableByte | 0x03;
+    }
+
+
+    I2C1_Write1ByteRegister(0x66, 0x03, enableByte);
+
+
+    I2C1_Write1ByteRegister(0x66, 0x02, currentR);
+    I2C1_Write1ByteRegister(0x66, 0x01, currentG);
+    I2C1_Write1ByteRegister(0x66, 0x00, currentB);
 }
 
-void EUSART2_SetOverrunErrorHandler(void (* interruptHandler)(void)){
-    EUSART2_OverrunErrorHandler = interruptHandler;
+uint8_t byteMax(uint8_t a, uint8_t b){
+    return (((a) > (b)) ? (a) : (b));
 }
 
-void EUSART2_SetErrorHandler(void (* interruptHandler)(void)){
-    EUSART2_ErrorHandler = interruptHandler;
+uint8_t byteMin(uint8_t a, uint8_t b){
+    return (((a) < (b)) ? (a) : (b));
 }

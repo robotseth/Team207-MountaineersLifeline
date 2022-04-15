@@ -10652,9 +10652,9 @@ unsigned char __t3rd16on(void);
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 262 "mcc_generated_files/pin_manager.h"
+# 218 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 274 "mcc_generated_files/pin_manager.h"
+# 230 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -10817,6 +10817,72 @@ char *tempnam(const char *, const char *);
 # 54 "mcc_generated_files/mcc.h" 2
 
 
+# 1 "mcc_generated_files/i2c1_master.h" 1
+# 58 "mcc_generated_files/i2c1_master.h"
+typedef enum {
+    I2C1_NOERR,
+    I2C1_BUSY,
+    I2C1_FAIL
+
+
+} i2c1_error_t;
+
+typedef enum
+{
+    I2C1_STOP=1,
+    I2C1_RESTART_READ,
+    I2C1_RESTART_WRITE,
+    I2C1_CONTINUE,
+    I2C1_RESET_LINK
+} i2c1_operations_t;
+
+typedef uint8_t i2c1_address_t;
+typedef i2c1_operations_t (*i2c1_callback_t)(void *funPtr);
+
+
+i2c1_operations_t I2C1_CallbackReturnStop(void *funPtr);
+i2c1_operations_t I2C1_CallbackReturnReset(void *funPtr);
+i2c1_operations_t I2C1_CallbackRestartWrite(void *funPtr);
+i2c1_operations_t I2C1_CallbackRestartRead(void *funPtr);
+
+
+
+
+
+
+void I2C1_Initialize(void);
+# 101 "mcc_generated_files/i2c1_master.h"
+i2c1_error_t I2C1_Open(i2c1_address_t address);
+# 111 "mcc_generated_files/i2c1_master.h"
+i2c1_error_t I2C1_Close(void);
+# 123 "mcc_generated_files/i2c1_master.h"
+i2c1_error_t I2C1_MasterOperation(_Bool read);
+
+
+
+
+i2c1_error_t I2C1_MasterWrite(void);
+
+
+
+
+i2c1_error_t I2C1_MasterRead(void);
+# 142 "mcc_generated_files/i2c1_master.h"
+void I2C1_SetTimeout(uint8_t timeOut);
+# 152 "mcc_generated_files/i2c1_master.h"
+void I2C1_SetBuffer(void *buffer, size_t bufferSize);
+# 164 "mcc_generated_files/i2c1_master.h"
+void I2C1_SetDataCompleteCallback(i2c1_callback_t cb, void *ptr);
+# 174 "mcc_generated_files/i2c1_master.h"
+void I2C1_SetWriteCollisionCallback(i2c1_callback_t cb, void *ptr);
+# 184 "mcc_generated_files/i2c1_master.h"
+void I2C1_SetAddressNackCallback(i2c1_callback_t cb, void *ptr);
+# 194 "mcc_generated_files/i2c1_master.h"
+void I2C1_SetDataNackCallback(i2c1_callback_t cb, void *ptr);
+# 204 "mcc_generated_files/i2c1_master.h"
+void I2C1_SetTimeoutCallback(i2c1_callback_t cb, void *ptr);
+# 56 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/ext_int.h" 1
 # 562 "mcc_generated_files/ext_int.h"
 void EXT_INT_Initialize(void);
@@ -10850,7 +10916,24 @@ void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT2_InterruptHandler)(void);
 # 905 "mcc_generated_files/ext_int.h"
 void INT2_DefaultInterruptHandler(void);
-# 56 "mcc_generated_files/mcc.h" 2
+# 57 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/tmr0.h" 1
+# 100 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 196 "mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 235 "mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 271 "mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 310 "mcc_generated_files/tmr0.h"
+_Bool TMR0_HasOverflowOccured(void);
+# 58 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/adc.h" 1
 # 72 "mcc_generated_files/adc.h"
@@ -10886,56 +10969,6 @@ adc_result_t ADC_GetConversionResult(void);
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 316 "mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 57 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
-# 100 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 161 "mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 196 "mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 235 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 271 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 310 "mcc_generated_files/tmr0.h"
-_Bool TMR0_HasOverflowOccured(void);
-# 58 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/eusart2.h" 1
-# 75 "mcc_generated_files/eusart2.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart2_status_t;
-# 111 "mcc_generated_files/eusart2.h"
-void EUSART2_Initialize(void);
-# 159 "mcc_generated_files/eusart2.h"
-_Bool EUSART2_is_tx_ready(void);
-# 207 "mcc_generated_files/eusart2.h"
-_Bool EUSART2_is_rx_ready(void);
-# 254 "mcc_generated_files/eusart2.h"
-_Bool EUSART2_is_tx_done(void);
-# 302 "mcc_generated_files/eusart2.h"
-eusart2_status_t EUSART2_get_last_status(void);
-# 322 "mcc_generated_files/eusart2.h"
-uint8_t EUSART2_Read(void);
-# 342 "mcc_generated_files/eusart2.h"
-void EUSART2_Write(uint8_t txData);
-# 362 "mcc_generated_files/eusart2.h"
-void EUSART2_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 380 "mcc_generated_files/eusart2.h"
-void EUSART2_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 398 "mcc_generated_files/eusart2.h"
-void EUSART2_SetErrorHandler(void (* interruptHandler)(void));
 # 59 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart1.h" 1

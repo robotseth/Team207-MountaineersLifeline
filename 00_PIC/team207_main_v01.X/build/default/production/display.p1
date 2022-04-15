@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"196 ./mcc_generated_files/tmr0.h
-[; ;./mcc_generated_files/tmr0.h: 196: uint8_t TMR0_ReadTimer(void);
-[v _TMR0_ReadTimer `(uc ~T0 @X0 0 ef ]
+"16 ./timers.h
+[; ;./timers.h: 16: uint16_t millis(void);
+[v _millis `(us ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 55: __asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
@@ -944,6 +944,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17908
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17908: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"12 ./display.h
+[; ;./display.h: 12: _Bool displayActive = 0;
+[v _displayActive `a ~T0 @X0 1 e ]
+[i _displayActive
+-> -> 0 `i `a
+]
 "13 ./timers.h
 [; ;./timers.h: 13: uint16_t currentTime;
 [v _currentTime `us ~T0 @X0 1 e ]
@@ -953,20 +959,112 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _scale
 -> -> 1 `i `f
 ]
-"3 timers.c
-[; ;timers.c: 3: uint16_t millis(){
-[v _millis `(us ~T0 @X0 1 ef ]
-{
-[e :U _millis ]
-[f ]
-"4
-[; ;timers.c: 4:     currentTime = TMR0_ReadTimer()*scale;
-[e = _currentTime -> * -> -> ( _TMR0_ReadTimer ..  `i `f _scale `us ]
+"4 display.c
+[; ;display.c: 4: void displayHR(int heartRate)
+[v _displayHR `(v ~T0 @X0 1 ef1`i ]
 "5
-[; ;timers.c: 5:     return currentTime;
-[e ) _currentTime ]
-[e $UE 857  ]
-"6
-[; ;timers.c: 6: }
+[; ;display.c: 5: {
+{
+[e :U _displayHR ]
+"4
+[; ;display.c: 4: void displayHR(int heartRate)
+[v _heartRate `i ~T0 @X0 1 r1 ]
+"5
+[; ;display.c: 5: {
+[f ]
+"8
+[; ;display.c: 8: }
 [e :UE 857 ]
+}
+"10
+[; ;display.c: 10: void displayTemp(int temp)
+[v _displayTemp `(v ~T0 @X0 1 ef1`i ]
+"11
+[; ;display.c: 11: {
+{
+[e :U _displayTemp ]
+"10
+[; ;display.c: 10: void displayTemp(int temp)
+[v _temp `i ~T0 @X0 1 r1 ]
+"11
+[; ;display.c: 11: {
+[f ]
+"13
+[; ;display.c: 13: }
+[e :UE 858 ]
+}
+"15
+[; ;display.c: 15: void displayAlt(int alt)
+[v _displayAlt `(v ~T0 @X0 1 ef1`i ]
+"16
+[; ;display.c: 16: {
+{
+[e :U _displayAlt ]
+"15
+[; ;display.c: 15: void displayAlt(int alt)
+[v _alt `i ~T0 @X0 1 r1 ]
+"16
+[; ;display.c: 16: {
+[f ]
+"17
+[; ;display.c: 17:     displayActive = 1;
+[e = _displayActive -> -> 1 `i `a ]
+"19
+[; ;display.c: 19:     float rate = alt * 0.00161290322;
+[v _rate `f ~T0 @X0 1 a ]
+[e = _rate -> * -> _alt `d .0.00161290322 `f ]
+"20
+[; ;display.c: 20:     int delay_ms = (int)(1/rate);
+[v _delay_ms `i ~T0 @X0 1 a ]
+[e = _delay_ms -> / -> -> 1 `i `f _rate `i ]
+"21
+[; ;display.c: 21:     unsigned long time = 0;
+[v _time `ul ~T0 @X0 1 a ]
+[e = _time -> -> -> 0 `i `l `ul ]
+"22
+[; ;display.c: 22:     if (millis() - time >= delay_ms && displayActive == 1){
+[e $ ! && >= - -> ( _millis ..  `ul _time -> -> _delay_ms `l `ul == -> _displayActive `i -> 1 `i 860  ]
+{
+"24
+[; ;display.c: 24:         time = millis();
+[e = _time -> ( _millis ..  `ul ]
+"25
+[; ;display.c: 25:     }
+}
+[e :U 860 ]
+"26
+[; ;display.c: 26: }
+[e :UE 859 ]
+}
+"28
+[; ;display.c: 28: void displayAltFine(int alt)
+[v _displayAltFine `(v ~T0 @X0 1 ef1`i ]
+"29
+[; ;display.c: 29: {
+{
+[e :U _displayAltFine ]
+"28
+[; ;display.c: 28: void displayAltFine(int alt)
+[v _alt `i ~T0 @X0 1 r1 ]
+"29
+[; ;display.c: 29: {
+[f ]
+"32
+[; ;display.c: 32: }
+[e :UE 861 ]
+}
+"34
+[; ;display.c: 34: void displayOff(void)
+[v _displayOff `(v ~T0 @X0 1 ef ]
+"35
+[; ;display.c: 35: {
+{
+[e :U _displayOff ]
+[f ]
+"37
+[; ;display.c: 37:     displayActive = 0;
+[e = _displayActive -> -> 0 `i `a ]
+"38
+[; ;display.c: 38: }
+[e :UE 862 ]
 }

@@ -42,10 +42,9 @@ void updateDispTemp(int temp);
 void updateDispAltitude(int alt);
 void updateDispAnim(uint8_t mode);
 
-void displayHR(int frame, int hr);
-void displayTemp(int frame, int temp);
-void displayAlt(int frame, int alt);
-void displayAltFine(int frame, int alt);
+void displayHR(int hr);
+void displayTemp(int temp);
+void displayAlt(int alt);
 void displayOff(void);
 
 void setLED(uint8_t red, uint8_t green, uint8_t blue);

@@ -1021,59 +1021,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _SYSTEM_Initialize ..  ]
 "71
 [; ;main.c: 71:     do { LATCbits.LATC2 = 1; } while(0);
-[e :U 862 ]
+[e :U 860 ]
 {
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 861 ]
+[e :U 859 ]
 "72
 [; ;main.c: 72:     do { LATCbits.LATC1 = 1; } while(0);
-[e :U 865 ]
+[e :U 863 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 864 ]
+[e :U 862 ]
 "74
 [; ;main.c: 74:     while (1)
-[e :U 867 ]
+[e :U 865 ]
 "75
 [; ;main.c: 75:     {
 {
 "77
 [; ;main.c: 77:         if(PORTCbits.RC0 == 0){
-[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 869  ]
+[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 867  ]
 {
 "78
 [; ;main.c: 78:             do { LATCbits.LATC1 = 1; } while(0);
-[e :U 872 ]
+[e :U 870 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 871 ]
+[e :U 869 ]
 "79
 [; ;main.c: 79:         } else {
 }
-[e $U 873  ]
-[e :U 869 ]
+[e $U 871  ]
+[e :U 867 ]
 {
 "80
 [; ;main.c: 80:             do { LATCbits.LATC1 = 0; } while(0);
-[e :U 876 ]
+[e :U 874 ]
 {
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 875 ]
+[e :U 873 ]
 "81
 [; ;main.c: 81:         }
 }
-[e :U 873 ]
+[e :U 871 ]
 "83
 [; ;main.c: 83:     }
 }
+[e :U 864 ]
+[e $U 865  ]
 [e :U 866 ]
-[e $U 867  ]
-[e :U 868 ]
 "84
 [; ;main.c: 84: }
-[e :UE 859 ]
+[e :UE 857 ]
 }

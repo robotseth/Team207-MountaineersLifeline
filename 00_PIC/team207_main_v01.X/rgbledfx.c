@@ -10,7 +10,6 @@ void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt){
     static int currentTemp = 0;
     static int currentAlt = 0;
     
-    static int animFrame = 0;
     
     // Update determines whether there is a simple frame update or if the values
     // are being updated.
@@ -23,25 +22,21 @@ void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt){
         switch(mode){
             case 0:
                 // Heart rate display
-                displayHR(animFrame, currentHR);
+                displayHR(currentHR);
                 break;
             case 1:
                 // Temperature display
+                displayTemp(currentTemp);
                 break;
             case 2:
                 // Altitude display
-                break;
-            case 3:
-                // Fine altitude display
+                displayAlt(currentAlt);
                 break;
             default:
                 // Turn display off
                 displayOff();
                 break;
         }
-        
-        // Increment the animation frame
-        animFrame++;
         
         
     } else if(update == 1){
@@ -57,11 +52,6 @@ void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt){
         currentAlt = alt;
     }
     
-    // If the display values are being updated, then reset the frame counter
-    // Test and remove if necessary
-    if(update > 0){
-        animFrame = 0;
-    }
         
 }
 
@@ -90,13 +80,12 @@ void updateDispAnim(uint8_t mode){
     //  0 = Heart rate
     //  1 = Temperature
     //  2 = Altitude
-    //  3 = Fine altitude
-    // >3 = Display off
+    // >2 = Display off
     updateLED(0, mode, 0, 0, 0);
 }
 
 // Animation functions that actually set the colors depending on inputted values
-void displayHR(int frame, int heartRate){
+void displayHR(int heartRate){
     // turn on blue LED
     // pulse (other?) LED at heart rate
     // Heart rate units are in BPM
@@ -135,7 +124,7 @@ void displayHR(int frame, int heartRate){
     
 }
 
-void displayTemp(int frame, int temp){
+void displayTemp(int temp){
     // set LED color based on temp
     
     static long currentMillis = 0;
@@ -203,24 +192,109 @@ void displayTemp(int frame, int temp){
     
 }
 
-void displayAlt(int frame, int alt){
-    // turn off LED
-    float rate = alt * 0.00161290322;
-    int delay_ms = (int)(1/rate);
-    unsigned long time = 0;
-    if (millis() - time >= delay_ms){
-        // toggle LED
-        time = millis();
+void displayAlt(int alt){
+    // Display protocol: 
+    // Show green if not blinking
+    // Blink in white the number of the thousands digit
+    // Pause for a second
+    // Blink in blue the number of the hundreds digit
+    // Pause for five seconds
+    // Repeat
+    
+    static uint8_t dispStep = 0;
+    static int currentAlt = 0;
+    static int altThou = 0;
+    static int altHund = 0;
+    
+    int onNumDelay = 250;
+    int offNumDelay = 500;
+    int placeSeperatorDelay = 1000;
+    int completeDispDelay = 5000;
+    
+    static long currentMillis = 0;
+    static long previousMillis = 0;
+    static uint8_t ledOn = 0;
+    static uint8_t counter = 0;
+    
+    currentMillis = millis();
+    
+    if (dispStep == 0){
+        // Take in altitude value to display
+        currentAlt = alt;
+        altThou = alt % 1000;
+        altHund = (alt - altThou*1000) % 100;
+        dispStep = 1;
+    } else if(dispStep == 1){
+        // Blink thousands
+        if(ledOn == 1){
+            if(currentMillis - previousMillis >= onNumDelay){
+                previousMillis = currentMillis;
+                ledOn = 0;
+            }
+        } else {
+            if(currentMillis - previousMillis >= offNumDelay){
+                previousMillis = currentMillis;
+                ledOn = 1;
+            }
+        }
+        counter++;
+        
+        if(counter >= altThou){
+            dispStep = 2;
+            counter = 0;
+            ledOn = 0;
+        }
+                
+    } else if (dispStep == 2){
+        // Pause for a second
+        if(currentMillis - previousMillis >= placeSeperatorDelay){
+            previousMillis = currentMillis;
+            dispStep = 3;
+        }
+    } else if (dispStep == 3){
+        // Blink hundreds
+        if(ledOn == 1){
+            if(currentMillis - previousMillis >= onNumDelay){
+                previousMillis = currentMillis;
+                ledOn = 0;
+            }
+        } else {
+            if(currentMillis - previousMillis >= offNumDelay){
+                previousMillis = currentMillis;
+                ledOn = 1;
+            }
+        }
+        counter++;
+        
+        if(counter >= altHund){
+            dispStep = 4;
+            counter = 0;
+            ledOn = 0;
+        }
+    } else if (dispStep == 4){
+        // Pause for five seconds
+        if(currentMillis - previousMillis >= completeDispDelay){
+            previousMillis = currentMillis;
+            dispStep = 0;
+        }
+    } else {
+        dispStep = 0;
     }
-}
-
-void displayAltFine(int frame, int alt){
-    // turn on blue LED
-    // pulse (other?) LED for altitude
+    
+    if(ledOn == 1 && dispStep == 1){
+        setLED(RGB_MAX, RGB_MAX, RGB_MAX);
+    } else if (ledOn == 1 && dispStep == 3) {
+        setLED(0, 0, RGB_MAX);
+    } else {
+        setLED(0, RGB_MAX, 0);
+    }
+    
+    
 }
 
 void displayOff(void){
     // turn off LED
+    setLED(0, 0, 0);
 }
 
 void setLED(uint8_t red, uint8_t green, uint8_t blue){
@@ -228,29 +302,29 @@ void setLED(uint8_t red, uint8_t green, uint8_t blue){
     static uint8_t currentG = 0;
     static uint8_t currentB = 0;
     
-    currentR = byteMax(red, RGB_MAX);
-    currentG = byteMax(green, RGB_MAX);
-    currentB = byteMax(blue, RGB_MAX);
+    currentR = byteMin(red, RGB_MAX);
+    currentG = byteMin(green, RGB_MAX);
+    currentB = byteMin(blue, RGB_MAX);
     
     uint8_t enableByte = 0x00;
     
     // Sets enables
     if(currentR == 0){
-        enableByte = enableByte && RGB_CNMASK;
+        enableByte = enableByte & RGB_CNMASK;
     } else {
-        enableByte = enableByte || RGB_CON;
+        enableByte = enableByte | RGB_CON;
     }
     
     if(currentG == 0){
-        enableByte = enableByte && RGB_BNMASK;
+        enableByte = enableByte & RGB_BNMASK;
     } else {
-        enableByte = enableByte || RGB_BON;
+        enableByte = enableByte | RGB_BON;
     }
     
     if(currentR == 0){
-        enableByte = enableByte && RGB_ANMASK;
+        enableByte = enableByte & RGB_ANMASK;
     } else {
-        enableByte = enableByte || RGB_AON;
+        enableByte = enableByte | RGB_AON;
     }
     
     // Set the enable register
