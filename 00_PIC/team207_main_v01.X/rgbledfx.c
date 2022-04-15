@@ -137,6 +137,70 @@ void displayHR(int frame, int heartRate){
 
 void displayTemp(int frame, int temp){
     // set LED color based on temp
+    
+    static long currentMillis = 0;
+    static long previousMillis = 0;
+    long blinkDelay = 750;
+    long rapidDelay = 250;
+    long currentDelay = 0;
+    static uint8_t ledOn = 0;
+    
+    uint8_t calcR = 0;
+    uint8_t calcG = 0;
+    uint8_t calcB = 0;
+    
+    // Temp brackets: 
+    // T < 20 = rapidly blinking blue
+    // 20 <= T < 32 = blinking blue
+    // 32 <= T < 45 = blue
+    // 45 <= T < 65 = cyan
+    // 65 <= T < 75 = green
+    // 75 <= T < 85 = yellow
+    // 85 <= T < 95 = orange
+    // 95 <= T < 105 = red
+    // 105 <= T < 115 = blinking red
+    // T > 115 = rapidly blinking red
+    
+    if(temp < 20){
+        calcB = RGB_MAX;
+        currentDelay = rapidDelay;
+    } else if(temp >= 20 && temp < 32){
+        calcB = RGB_MAX;
+        currentDelay = blinkDelay;
+    } else if(temp >= 32 && temp < 45){
+        calcB = RGB_MAX;
+    } else if(temp >= 45 && temp < 65){
+        calcB = RGB_MAX;
+        calcG = RGB_MAX;
+    } else if(temp >= 65 && temp < 75){
+        calcG = RGB_MAX;
+    } else if(temp >= 75 && temp < 85){
+        calcG = RGB_MAX;
+    } else if(temp >= 85 && temp < 95){
+        calcG = RGB_MAX;
+        calcR = RGB_MAX;
+    } else if(temp >= 95 && temp < 105){
+        calcR = RGB_MAX;
+    } else if(temp >= 105 && temp < 115){
+        calcR = RGB_MAX;
+        currentDelay = blinkDelay;
+    } else if(temp >= 115){
+        calcR = RGB_MAX;
+        currentDelay = rapidDelay;
+    }
+    
+    if(currentDelay > 0){
+        currentMillis = millis();
+        if(currentMillis - previousMillis >= currentDelay){
+            previousMillis = currentMillis;
+            ledOn = !ledOn;
+        }
+    } else {
+        ledOn = 1;
+    }
+    
+    setLED(calcR*ledOn, calcG*ledOn, calcB*ledOn);
+    
 }
 
 void displayAlt(int frame, int alt){
@@ -144,7 +208,7 @@ void displayAlt(int frame, int alt){
     float rate = alt * 0.00161290322;
     int delay_ms = (int)(1/rate);
     unsigned long time = 0;
-    if (millis() - time >= delay_ms && displayActive == 1){
+    if (millis() - time >= delay_ms){
         // toggle LED
         time = millis();
     }
