@@ -235,9 +235,9 @@ void displayAlt(int alt){
             if(currentMillis - previousMillis >= offNumDelay){
                 previousMillis = currentMillis;
                 ledOn = 1;
+                counter++;
             }
         }
-        counter++;
         
         if(counter >= altThou){
             dispStep = 2;
@@ -262,9 +262,10 @@ void displayAlt(int alt){
             if(currentMillis - previousMillis >= offNumDelay){
                 previousMillis = currentMillis;
                 ledOn = 1;
+                counter++;
             }
         }
-        counter++;
+        
         
         if(counter >= altHund){
             dispStep = 4;
