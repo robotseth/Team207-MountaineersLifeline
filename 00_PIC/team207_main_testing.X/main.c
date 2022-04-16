@@ -69,6 +69,7 @@
 // P&T sensor I2C constants
 //#define BAROADDR 0x76
 //#define BARO_RESET 0xFE
+//#define READ_ADC 0x00
 //size_t cmd_length = sizeof(BARO_RESET);
 
 /*
@@ -109,6 +110,32 @@ void main(void)
     //I2C1_ReadNBytes(BAROADDR, readPointer,3);
     //I2C1_Close();
     // 
+
+    //Possible Route 1: Basic write/read
+    //I2C1_Initialize();
+    //I2C1_Open(BAROADDR);
+    //I2C1_MasterOperation(false);
+    //char buffer = READ_ADC;
+    //size_t i2cSize = sizeof(READ_ADC);
+    //I2C1_SetBuffer(buffer,i2cSize);
+    //I2C1_MasterOperation(true); //not clear what happens from here
+
+    //Possible Route 2: WriteNBytes/ReadNBytes
+    //I2C1_Initialize();
+    //I2C1_Open(BAROADDR);
+    //char buffer = READ_ADC;
+    //size_t i2cSize = sizeof(READ_ADC);
+    //I2C1_WriteNBytes(BAROADDR, READ_ADC, i2cSize);
+    //uint8_t read = 0;
+    //uint8_t *readPointer;
+    //I2C1_ReadNBytes(BAROADDR, readPointer,3);
+
+    //Possible Route 3: guessing registers (it probably won't work)
+    //                                ->        <- the problem
+    //I2C1_Write1ByteRegister(BAROADDR, BAROADDR , READ_ADC);
+    //uint8_t read = 0;
+    //read = I2C1_Read1ByteRegister(BAROADDR,  BAROADDR);
+
     
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
