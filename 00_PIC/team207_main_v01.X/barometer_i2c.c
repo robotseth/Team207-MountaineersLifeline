@@ -56,7 +56,7 @@ enum status_code {
 */
 
 void i2c_master_init(void){
-    
+    I2C1_Initialize();
     
 }
 
@@ -64,7 +64,22 @@ void i2c_master_init(void){
 enum status_code i2c_master_read_packet_wait(struct i2c_master_packet *const packet){
     enum status_code status;
     
+    uint8_t address = packet->address;
+    uint16_t len = packet->data_length;
+    uint8_t* dataptr = packet->data;
     
+    i2c1_error_t output_status;
+    
+    while(!I2C1_Open(address)); // sit here until we get the bus..
+    I2C1_SetBuffer(dataptr,len);
+    I2C1_MasterRead();
+    while(I2C1_BUSY == I2C1_Close()); // sit here until finished.
+    
+    if(output_status != I2C1_NOERR){
+        status = STATUS_ERR_TIMEOUT;
+    } else {
+        status = STATUS_OK;
+    }
     
     if( status != STATUS_OK){
 		return status;
@@ -77,7 +92,23 @@ enum status_code i2c_master_read_packet_wait(struct i2c_master_packet *const pac
 enum status_code i2c_master_write_packet_wait(struct i2c_master_packet *const packet){
     enum status_code status;
     
+    uint8_t address = packet->address;
+    uint16_t len = packet->data_length;
+    uint8_t* dataptr = packet->data;
     
+    i2c1_error_t output_status;
+    
+    while(!I2C1_Open(address)); // sit here until we get the bus..
+    I2C1_SetBuffer(dataptr,len);
+    I2C1_SetAddressNackCallback(NULL,NULL); //NACK polling?
+    output_status = I2C1_MasterWrite();
+    while(I2C1_BUSY == I2C1_Close()); // sit here until finished.
+    
+    if(output_status != I2C1_NOERR){
+        status = STATUS_ERR_TIMEOUT;
+    } else {
+        status = STATUS_OK;
+    }
     
     if( status != STATUS_OK){
 		return status;
@@ -90,7 +121,23 @@ enum status_code i2c_master_write_packet_wait(struct i2c_master_packet *const pa
 enum status_code i2c_master_write_packet_wait_no_stop(struct i2c_master_packet *const packet){
     enum status_code status;
     
+    uint8_t address = packet->address;
+    uint16_t len = packet->data_length;
+    uint8_t* dataptr = packet->data;
     
+    i2c1_error_t output_status;
+    
+    while(!I2C1_Open(address)); // sit here until we get the bus..
+    I2C1_SetBuffer(dataptr,len);
+    I2C1_SetAddressNackCallback(NULL,NULL); //NACK polling?
+    output_status = I2C1_MasterWrite();
+    //while(I2C1_BUSY == I2C1_Close()); // removed this because apparently we're not supposed to wait? 
+    
+    if(output_status != I2C1_NOERR){
+        status = STATUS_ERR_TIMEOUT;
+    } else {
+        status = STATUS_OK;
+    }
     
     if( status != STATUS_OK){
 		return status;

@@ -41,7 +41,7 @@
   * enum status_code i2c_master_write_packet_wait(struct i2c_master_packet *const packet);
   * enum status_code i2c_master_write_packet_wait_no_stop(struct i2c_master_packet *const packet);
   */
-#include "i2c.h"
+#include "barometer_i2c.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -475,7 +475,7 @@ enum ms8607_status  hsensor_reset(void)
 		return status;
 	
 	hsensor_conversion_time = HSENSOR_CONVERSION_TIME_12b;
-	delay_ms(HSENSOR_RESET_TIME);
+	__delay_ms(HSENSOR_RESET_TIME);
 	
 	return ms8607_status_ok;
 }
@@ -702,7 +702,7 @@ enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
 	else {
 		status = hsensor_write_command(HSENSOR_READ_HUMIDITY_WO_HOLD_COMMAND);
 		// delay depending on resolution
-		delay_ms(hsensor_conversion_time/1000);
+		__delay_ms(hsensor_conversion_time/1000);
 	}
 	if( status != ms8607_status_ok)
 		return status;
@@ -990,7 +990,7 @@ static enum ms8607_status psensor_conversion_and_read_adc(uint8_t cmd, uint32_t 
 
 	status = psensor_write_command(cmd);
 	// 20ms wait for conversion
-	delay_ms( psensor_conversion_time[ (cmd & PSENSOR_CONVERSION_OSR_MASK)/2 ]/1000 );
+	__delay_ms( psensor_conversion_time[ (cmd & PSENSOR_CONVERSION_OSR_MASK)/2 ]/1000 );
 	if( status != ms8607_status_ok)
 		return status;
 
