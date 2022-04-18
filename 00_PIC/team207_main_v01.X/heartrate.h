@@ -12,7 +12,13 @@
 extern "C" {
 #endif
 
-
+#include <stdint.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <math.h>
+#include "mcc_generated_files/mcc.h"
+#include "timers.h"
+    
 // Driver structure: 
 // When the heart rate needs to be read, ideally one function should be called 
 // that triggers a timed read. The main loop will then poll another function
@@ -20,18 +26,28 @@ extern "C" {
 // value while readings are taking place, and then once enough readings have 
 // been taken, it will return the actual value and reset. 
     
-    
+// Set up constants for calibration here
 #define CAPTURE_TIME 10000
     
-// Set up constants for calibration here
     
-    
-// Function that calls the pollHR function with initial settings and 
+// HrResults holds the return value of the HR sensor API
+// Status key: 
+// - 0: Ready to start polling
+// - 1: Busy polling
+// - 2: Polling complete
+struct HrResults {
+    uint8_t status;
+    double hr;
+};
+   
+
+// Main function that handles sensor polling
+struct HrResults pollHR(uint8_t mode);
+
+// Utility function that calls the pollHR function with initial settings
 void triggerHR();
 
-double pollHR();
-
-// Placeholder function  
+// Placeholder function for beat detection
 double detectBeats();
 
 
