@@ -46,6 +46,46 @@
 /*
                          Main application
  */
+
+// TODO
+/*
+ Subsystems: 
+ * RGB driver: test and ensure that all the functions work. Set up a simple test 
+ * where updateLED is updated at 30Hz while the sensor values are updated 
+ * slowly. 
+ * Barometer: 
+ * * Replace generic I2C API calls with equivalent MCC functions
+ * * Test barebones output
+ * * Write utility functions for easy calling from main program (after checkoff)
+ * Heart rate: 
+ * * Test reading signal continuously with ADC
+ * * Plot data and see if a consistent heartbeat test can be implemented
+ * * Implement heartbeat measurement
+ * * Add utility functions for easy interface with the main program. 
+ * ESP32: 
+ * * 
+
+ Main program: 
+ * Interrupt 1: Sensor check
+ * * Start 2 second poll of heart rate
+ * * Read the pressure and temperature
+ * * Write everything known to memory
+ * Interrupt 2: Button press
+ * 
+ * 
+* 
+ 
+ */
+
+
+// Program structure
+/*
+ 
+ 
+ 
+ */
+
+
 void main(void)
 {
     // Initialize the device

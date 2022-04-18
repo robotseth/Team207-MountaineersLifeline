@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "barometer.h"
+#include "barometer_i2c.h"
 
 //All possible I2C commands that could possible relate to the barometer
 //I2C1_SetTimeout(40); // doesnt work
@@ -41,3 +41,61 @@
 //I2C1_Write1ByteRegister(BAROADDR, BAROADDR , READ_ADC);
 //uint8_t read = 0;
 //read = I2C1_Read1ByteRegister(BAROADDR,  BAROADDR);
+
+/*
+enum i2c_transfer_direction {
+    I2C_TRANSFER_WRITE = 0,
+    I2C_TRANSFER_READ = 1,
+};
+
+enum status_code {
+    STATUS_OK = 0x00,
+    STATUS_ERR_OVERFLOW = 0x01,
+    STATUS_ERR_TIMEOUT = 0x02,
+};
+*/
+
+void i2c_master_init(void){
+    
+    
+}
+
+
+enum status_code i2c_master_read_packet_wait(struct i2c_master_packet *const packet){
+    enum status_code status;
+    
+    
+    
+    if( status != STATUS_OK){
+		return status;
+    }
+    
+    return STATUS_OK;
+}
+
+
+enum status_code i2c_master_write_packet_wait(struct i2c_master_packet *const packet){
+    enum status_code status;
+    
+    
+    
+    if( status != STATUS_OK){
+		return status;
+    }
+    
+    return STATUS_OK;
+}
+
+
+enum status_code i2c_master_write_packet_wait_no_stop(struct i2c_master_packet *const packet){
+    enum status_code status;
+    
+    
+    
+    if( status != STATUS_OK){
+		return status;
+    }
+    
+    return STATUS_OK;
+    
+}

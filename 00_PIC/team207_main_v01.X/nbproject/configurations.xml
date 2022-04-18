@@ -24,8 +24,8 @@
       <itemPath>display.h</itemPath>
       <itemPath>ESP32.h</itemPath>
       <itemPath>timers.h</itemPath>
-      <itemPath>barometer.h</itemPath>
       <itemPath>ms8607.h</itemPath>
+      <itemPath>barometer_i2c.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -55,8 +55,8 @@
       <itemPath>ESP32.c</itemPath>
       <itemPath>display.c</itemPath>
       <itemPath>rgbledfx.c</itemPath>
-      <itemPath>barometer.c</itemPath>
       <itemPath>ms8607.c</itemPath>
+      <itemPath>barometer_i2c.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
