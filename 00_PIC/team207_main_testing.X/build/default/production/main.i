@@ -9,7 +9,12 @@
 # 1 "main.c" 2
 # 44 "main.c"
 # 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 50 "./mcc_generated_files/mcc.h"
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 54 "./mcc_generated_files/pin_manager.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -10641,12 +10646,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
+# 54 "./mcc_generated_files/pin_manager.h" 2
 # 197 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 # 209 "./mcc_generated_files/pin_manager.h"
@@ -11029,7 +11029,7 @@ void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
 # 45 "main.c" 2
-# 66 "main.c"
+# 67 "main.c"
 void main(void)
 {
 
@@ -11069,18 +11069,73 @@ void main(void)
         do { LATAbits.LATA6 = 1; } while(0);
         _delay((unsigned long)((50)*(48000000/4000.0)));
         printf("testing");
+# 116 "main.c"
+        I2C1_Write1ByteRegister(0x66, 0x00, 0x31);
+        I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
 
 
+        I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
+        I2C1_Write1ByteRegister(0x66, 0x02, 0x19);
 
 
+        for(uint8_t j = 0; j < 3; j++){
+            if(j == 0){
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x03);
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    I2C1_Write1ByteRegister(0x66, 0x00, (uint8_t) i);
+                    _delay((unsigned long)((250)*(48000000/4000.0)));
+                }
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            } else if(j == 1){
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x0C);
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    I2C1_Write1ByteRegister(0x66, 0x01, (uint8_t) i);
+                    _delay((unsigned long)((250)*(48000000/4000.0)));
+                }
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            } else {
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x30);
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    I2C1_Write1ByteRegister(0x66, 0x02, (uint8_t) i);
+                    _delay((unsigned long)((250)*(48000000/4000.0)));
+                }
+                I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            }
+        }
 
+        I2C1_Write1ByteRegister(0x66, 0x00, 0x00);
+        I2C1_Write1ByteRegister(0x66, 0x01, 0x00);
+        I2C1_Write1ByteRegister(0x66, 0x02, 0x00);
 
+        for(uint8_t i = 0; i < 10; i++){
+            I2C1_Write1ByteRegister(0x66, 0x00, 0x0D);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x03);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+            I2C1_Write1ByteRegister(0x66, 0x00, 0x00);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+        }
 
-        while(!I2C1_Open(0x66)){}
+        for(uint8_t i = 0; i < 10; i++){
+            I2C1_Write1ByteRegister(0x66, 0x01, 0x0D);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x0C);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+            I2C1_Write1ByteRegister(0x66, 0x01, 0x00);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+        }
 
+        for(uint8_t i = 0; i < 10; i++){
+            I2C1_Write1ByteRegister(0x66, 0x02, 0x0D);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x30);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+            I2C1_Write1ByteRegister(0x66, 0x02, 0x00);
+            I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+            _delay((unsigned long)((250)*(48000000/4000.0)));
+        }
 
-
-
+        I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
+        _delay((unsigned long)((1000)*(48000000/4000.0)));
 
 
     }

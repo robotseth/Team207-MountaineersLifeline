@@ -1,65 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F6653 `(v ~T0 @X0 0 tf ]
-[p mainexit ]
-"75 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"17488 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17488:     struct {
-[s S828 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S828 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"17498
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17498:     struct {
-[s S829 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S829 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"17508
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17508:     struct {
-[s S830 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S830 . . GIEL GIEH ]
-"17487
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17487: typedef union {
-[u S827 `S828 1 `S829 1 `S830 1 ]
-[n S827 . . . . ]
-"17514
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17514: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS827 ~T0 @X0 0 e@4082 ]
-"9269
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9269:     struct {
-[s S438 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S438 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
-"9279
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9279:     struct {
-[s S439 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S439 . LA0 LA1 LA2 LA3 . LA5 LA6 LA7 ]
-"9268
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9268: typedef union {
-[u S437 `S438 1 `S439 1 ]
-[n S437 . . . ]
-"9290
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9290: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
-[v _LATAbits `VS437 ~T0 @X0 0 e@3977 ]
-"9483
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9483:     struct {
-[s S444 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S444 . LATC0 LATC1 LATC2 . LATC6 LATC7 ]
-"9491
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9491:     struct {
-[s S445 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S445 . LC0 LC1 LC2 . LC6 LC7 ]
-"9482
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9482: typedef union {
-[u S443 `S444 1 `S445 1 ]
-[n S443 . . . ]
-"9500
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9500: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
-[v _LATCbits `VS443 ~T0 @X0 0 e@3979 ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
-"105 C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\stdio.h: 105: int printf(const char *restrict, ...);
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"40 ./rgbledfx.h
+[; ;./rgbledfx.h: 40: uint8_t byteMin(uint8_t a, uint8_t b);
+[v _byteMin `(uc ~T0 @X0 0 ef2`uc`uc ]
 "56 ./mcc_generated_files/examples/i2c1_master_example.h
 [; ;./mcc_generated_files/examples/i2c1_master_example.h: 56: void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
 [v _I2C1_Write1ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`uc ]
@@ -1007,348 +950,151 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "213 ./mcc_generated_files/examples/../i2c1_master.h
 [v _MSSP1_InterruptHandler `*F6653 ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"67 main.c
-[; ;main.c: 67: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"68
-[; ;main.c: 68: {
+"7 rgbledfx.c
+[; ;rgbledfx.c: 7: void setLED(uint8_t red, uint8_t green, uint8_t blue){
+[v _setLED `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
-[e :U _main ]
+[e :U _setLED ]
+[v _red `uc ~T0 @X0 1 r1 ]
+[v _green `uc ~T0 @X0 1 r2 ]
+[v _blue `uc ~T0 @X0 1 r3 ]
 [f ]
-"70
-[; ;main.c: 70:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"77
-[; ;main.c: 77:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"83
-[; ;main.c: 83:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"85
-[; ;main.c: 85:     do { LATAbits.LATA7 = 1; } while(0);
-[e :U 860 ]
+"8
+[; ;rgbledfx.c: 8:     static uint8_t currentR = 0;
+[v F6786 `uc ~T0 @X0 1 s currentR ]
+[i F6786
+-> -> 0 `i `uc
+]
+"9
+[; ;rgbledfx.c: 9:     static uint8_t currentG = 0;
+[v F6787 `uc ~T0 @X0 1 s currentG ]
+[i F6787
+-> -> 0 `i `uc
+]
+"10
+[; ;rgbledfx.c: 10:     static uint8_t currentB = 0;
+[v F6788 `uc ~T0 @X0 1 s currentB ]
+[i F6788
+-> -> 0 `i `uc
+]
+"12
+[; ;rgbledfx.c: 12:     currentR = byteMin(red, 0x12);
+[e = F6786 ( _byteMin (2 , _red -> -> 18 `i `uc ]
+"13
+[; ;rgbledfx.c: 13:     currentG = byteMin(green, 0x12);
+[e = F6787 ( _byteMin (2 , _green -> -> 18 `i `uc ]
+"14
+[; ;rgbledfx.c: 14:     currentB = byteMin(blue, 0x12);
+[e = F6788 ( _byteMin (2 , _blue -> -> 18 `i `uc ]
+"16
+[; ;rgbledfx.c: 16:     uint8_t enableByte = 0x00;
+[v _enableByte `uc ~T0 @X0 1 a ]
+[e = _enableByte -> -> 0 `i `uc ]
+"19
+[; ;rgbledfx.c: 19:     if(currentR == 0){
+[e $ ! == -> F6786 `i -> 0 `i 858  ]
 {
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+"20
+[; ;rgbledfx.c: 20:         enableByte = enableByte & 0x0F;
+[e = _enableByte -> & -> _enableByte `i -> 15 `i `uc ]
+"21
+[; ;rgbledfx.c: 21:     } else {
+}
+[e $U 859  ]
+[e :U 858 ]
+{
+"22
+[; ;rgbledfx.c: 22:         enableByte = enableByte | 0x30;
+[e = _enableByte -> | -> _enableByte `i -> 48 `i `uc ]
+"23
+[; ;rgbledfx.c: 23:     }
 }
 [e :U 859 ]
-"86
-[; ;main.c: 86:     do { LATAbits.LATA6 = 1; } while(0);
-[e :U 863 ]
+"25
+[; ;rgbledfx.c: 25:     if(currentG == 0){
+[e $ ! == -> F6787 `i -> 0 `i 860  ]
 {
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+"26
+[; ;rgbledfx.c: 26:         enableByte = enableByte & 0x33;
+[e = _enableByte -> & -> _enableByte `i -> 51 `i `uc ]
+"27
+[; ;rgbledfx.c: 27:     } else {
 }
+[e $U 861  ]
+[e :U 860 ]
+{
+"28
+[; ;rgbledfx.c: 28:         enableByte = enableByte | 0x0C;
+[e = _enableByte -> | -> _enableByte `i -> 12 `i `uc ]
+"29
+[; ;rgbledfx.c: 29:     }
+}
+[e :U 861 ]
+"31
+[; ;rgbledfx.c: 31:     if(currentR == 0){
+[e $ ! == -> F6786 `i -> 0 `i 862  ]
+{
+"32
+[; ;rgbledfx.c: 32:         enableByte = enableByte & 0x3C;
+[e = _enableByte -> & -> _enableByte `i -> 60 `i `uc ]
+"33
+[; ;rgbledfx.c: 33:     } else {
+}
+[e $U 863  ]
 [e :U 862 ]
-"87
-[; ;main.c: 87:     do { LATCbits.LATC0 = 0; } while(0);
-[e :U 866 ]
 {
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+"34
+[; ;rgbledfx.c: 34:         enableByte = enableByte | 0x03;
+[e = _enableByte -> | -> _enableByte `i -> 3 `i `uc ]
+"35
+[; ;rgbledfx.c: 35:     }
 }
-[e :U 865 ]
-"89
-[; ;main.c: 89:     size_t i2cSize = 1;
-[v _i2cSize `ui ~T0 @X0 1 a ]
-[e = _i2cSize -> -> 1 `i `ui ]
-"90
-[; ;main.c: 90:     char *bufferPointer;
-[v _bufferPointer `*uc ~T0 @X0 1 a ]
-"91
-[; ;main.c: 91:     char buffer = 'A';
-[v _buffer `uc ~T0 @X0 1 a ]
-[e = _buffer -> -> 65 `ui `uc ]
-"93
-[; ;main.c: 93:     bufferPointer = &buffer;
-[e = _bufferPointer &U _buffer ]
-"98
-[; ;main.c: 98:     while (1)
-[e :U 868 ]
-"99
-[; ;main.c: 99:     {
-{
-"101
-[; ;main.c: 101:         do { LATAbits.LATA6 = 0; } while(0);
-[e :U 872 ]
-{
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 871 ]
-"102
-[; ;main.c: 102:         _delay((unsigned long)((50)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"103
-[; ;main.c: 103:         do { LATAbits.LATA6 = 1; } while(0);
-[e :U 875 ]
-{
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 874 ]
-"104
-[; ;main.c: 104:         _delay((unsigned long)((50)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"105
-[; ;main.c: 105:         printf("testing");
-[e ( _printf :s 1C ]
-"116
-[; ;main.c: 116:         I2C1_Write1ByteRegister(0x66, 0x00, 0x31);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc -> -> 49 `i `uc ]
-"117
-[; ;main.c: 117:         I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 63 `i `uc ]
-"120
-[; ;main.c: 120:         I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 63 `i `uc ]
-"121
-[; ;main.c: 121:         I2C1_Write1ByteRegister(0x66, 0x02, 0x19);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 2 `i `uc -> -> 25 `i `uc ]
-"124
-[; ;main.c: 124:         for(uint8_t j = 0; j < 3; j++){
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 3 `i 876  ]
-[e $U 877  ]
-[e :U 876 ]
-{
-"125
-[; ;main.c: 125:             if(j == 0){
-[e $ ! == -> _j `i -> 0 `i 879  ]
-{
-"126
-[; ;main.c: 126:                 I2C1_Write1ByteRegister(0x66, 0x03, 0x03);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 3 `i `uc ]
-"127
-[; ;main.c: 127:                 for(uint8_t i = 0x00; i < 0x0D; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 13 `i 880  ]
-[e $U 881  ]
-[e :U 880 ]
-{
-"128
-[; ;main.c: 128:                     I2C1_Write1ByteRegister(0x66, 0x00, (uint8_t) i);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc _i ]
-"129
-[; ;main.c: 129:                     _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"130
-[; ;main.c: 130:                 }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 13 `i 880  ]
-[e :U 881 ]
-}
-"131
-[; ;main.c: 131:                 I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 0 `i `uc ]
-"132
-[; ;main.c: 132:             } else if(j == 1){
-}
-[e $U 883  ]
-[e :U 879 ]
-[e $ ! == -> _j `i -> 1 `i 884  ]
-{
-"133
-[; ;main.c: 133:                 I2C1_Write1ByteRegister(0x66, 0x03, 0x0C);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 12 `i `uc ]
-"134
-[; ;main.c: 134:                 for(uint8_t i = 0x00; i < 0x0D; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 13 `i 885  ]
-[e $U 886  ]
-[e :U 885 ]
-{
-"135
-[; ;main.c: 135:                     I2C1_Write1ByteRegister(0x66, 0x01, (uint8_t) i);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 1 `i `uc _i ]
-"136
-[; ;main.c: 136:                     _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"137
-[; ;main.c: 137:                 }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 13 `i 885  ]
-[e :U 886 ]
-}
-"138
-[; ;main.c: 138:                 I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 0 `i `uc ]
-"139
-[; ;main.c: 139:             } else {
-}
-[e $U 888  ]
-[e :U 884 ]
-{
-"140
-[; ;main.c: 140:                 I2C1_Write1ByteRegister(0x66, 0x03, 0x30);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 48 `i `uc ]
-"141
-[; ;main.c: 141:                 for(uint8_t i = 0x00; i < 0x0D; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 13 `i 889  ]
-[e $U 890  ]
-[e :U 889 ]
-{
-"142
-[; ;main.c: 142:                     I2C1_Write1ByteRegister(0x66, 0x02, (uint8_t) i);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 2 `i `uc _i ]
-"143
-[; ;main.c: 143:                     _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"144
-[; ;main.c: 144:                 }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 13 `i 889  ]
-[e :U 890 ]
-}
-"145
-[; ;main.c: 145:                 I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 0 `i `uc ]
-"146
-[; ;main.c: 146:             }
-}
-[e :U 888 ]
-[e :U 883 ]
-"147
-[; ;main.c: 147:         }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 3 `i 876  ]
-[e :U 877 ]
-}
-"149
-[; ;main.c: 149:         I2C1_Write1ByteRegister(0x66, 0x00, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"150
-[; ;main.c: 150:         I2C1_Write1ByteRegister(0x66, 0x01, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
-"151
-[; ;main.c: 151:         I2C1_Write1ByteRegister(0x66, 0x02, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 2 `i `uc -> -> 0 `i `uc ]
-"153
-[; ;main.c: 153:         for(uint8_t i = 0; i < 10; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 892  ]
-[e $U 893  ]
-[e :U 892 ]
-{
-"154
-[; ;main.c: 154:             I2C1_Write1ByteRegister(0x66, 0x00, 0x0D);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc -> -> 13 `i `uc ]
-"155
-[; ;main.c: 155:             I2C1_Write1ByteRegister(0x66, 0x03, 0x03);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 3 `i `uc ]
-"156
-[; ;main.c: 156:             _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"157
-[; ;main.c: 157:             I2C1_Write1ByteRegister(0x66, 0x00, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"158
-[; ;main.c: 158:             I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 0 `i `uc ]
-"159
-[; ;main.c: 159:             _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"160
-[; ;main.c: 160:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 892  ]
-[e :U 893 ]
-}
-"162
-[; ;main.c: 162:         for(uint8_t i = 0; i < 10; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 895  ]
-[e $U 896  ]
-[e :U 895 ]
-{
-"163
-[; ;main.c: 163:             I2C1_Write1ByteRegister(0x66, 0x01, 0x0D);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 1 `i `uc -> -> 13 `i `uc ]
-"164
-[; ;main.c: 164:             I2C1_Write1ByteRegister(0x66, 0x03, 0x0C);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 12 `i `uc ]
-"165
-[; ;main.c: 165:             _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"166
-[; ;main.c: 166:             I2C1_Write1ByteRegister(0x66, 0x01, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
-"167
-[; ;main.c: 167:             I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 0 `i `uc ]
-"168
-[; ;main.c: 168:             _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"169
-[; ;main.c: 169:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 895  ]
-[e :U 896 ]
-}
-"171
-[; ;main.c: 171:         for(uint8_t i = 0; i < 10; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 898  ]
-[e $U 899  ]
-[e :U 898 ]
-{
-"172
-[; ;main.c: 172:             I2C1_Write1ByteRegister(0x66, 0x02, 0x0D);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 2 `i `uc -> -> 13 `i `uc ]
-"173
-[; ;main.c: 173:             I2C1_Write1ByteRegister(0x66, 0x03, 0x30);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 48 `i `uc ]
-"174
-[; ;main.c: 174:             _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"175
-[; ;main.c: 175:             I2C1_Write1ByteRegister(0x66, 0x02, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 2 `i `uc -> -> 0 `i `uc ]
-"176
-[; ;main.c: 176:             I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 0 `i `uc ]
-"177
-[; ;main.c: 177:             _delay((unsigned long)((250)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"178
-[; ;main.c: 178:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 898  ]
-[e :U 899 ]
-}
-"180
-[; ;main.c: 180:         I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc -> -> 0 `i `uc ]
-"181
-[; ;main.c: 181:         _delay((unsigned long)((1000)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"184
-[; ;main.c: 184:     }
-}
-[e :U 867 ]
-[e $U 868  ]
-[e :U 869 ]
-"185
-[; ;main.c: 185: }
+[e :U 863 ]
+"38
+[; ;rgbledfx.c: 38:     I2C1_Write1ByteRegister(0x66, 0x03, enableByte);
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc _enableByte ]
+"41
+[; ;rgbledfx.c: 41:     I2C1_Write1ByteRegister(0x66, 0x02, currentR);
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 2 `i `uc F6786 ]
+"42
+[; ;rgbledfx.c: 42:     I2C1_Write1ByteRegister(0x66, 0x01, currentG);
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 1 `i `uc F6787 ]
+"43
+[; ;rgbledfx.c: 43:     I2C1_Write1ByteRegister(0x66, 0x00, currentB);
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc F6788 ]
+"44
+[; ;rgbledfx.c: 44: }
 [e :UE 857 ]
 }
-[p f _printf 8388608 ]
-[a 1C 116 101 115 116 105 110 103 0 ]
+"46
+[; ;rgbledfx.c: 46: uint8_t byteMax(uint8_t a, uint8_t b){
+[v _byteMax `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _byteMax ]
+[v _a `uc ~T0 @X0 1 r1 ]
+[v _b `uc ~T0 @X0 1 r2 ]
+[f ]
+"47
+[; ;rgbledfx.c: 47:     return (((a) > (b)) ? (a) : (b));
+[e ) -> ? > -> _a `i -> _b `i : -> _a `i -> _b `i `uc ]
+[e $UE 864  ]
+"48
+[; ;rgbledfx.c: 48: }
+[e :UE 864 ]
+}
+"50
+[; ;rgbledfx.c: 50: uint8_t byteMin(uint8_t a, uint8_t b){
+[v _byteMin `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _byteMin ]
+[v _a `uc ~T0 @X0 1 r1 ]
+[v _b `uc ~T0 @X0 1 r2 ]
+[f ]
+"51
+[; ;rgbledfx.c: 51:     return (((a) < (b)) ? (a) : (b));
+[e ) -> ? < -> _a `i -> _b `i : -> _a `i -> _b `i `uc ]
+[e $UE 865  ]
+"52
+[; ;rgbledfx.c: 52: }
+[e :UE 865 ]
+}

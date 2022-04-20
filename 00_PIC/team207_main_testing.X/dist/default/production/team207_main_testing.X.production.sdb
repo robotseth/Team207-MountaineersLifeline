@@ -64,12 +64,6 @@ HRIN 1
 channel_VDDCORE 14
 channel_VBG 15
 ]
-"112 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\main.c
-[e E6580 . `uc
-I2C1_NOERR 0
-I2C1_BUSY 1
-I2C1_FAIL 2
-]
 "692 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\doprnt.c
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 "1390
@@ -106,7 +100,7 @@ I2C1_FAIL 2
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"66 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\main.c
+"67 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "61 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -140,7 +134,9 @@ I2C1_FAIL 2
 [v _EUSART2_SetTxInterruptHandler EUSART2_SetTxInterruptHandler `(v  1 e 1 0 ]
 "289
 [v _EUSART2_SetRxInterruptHandler EUSART2_SetRxInterruptHandler `(v  1 e 1 0 ]
-"142 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/examples/i2c1_master_example.c
+"91 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/examples/i2c1_master_example.c
+[v _I2C1_Write1ByteRegister I2C1_Write1ByteRegister `(v  1 e 1 0 ]
+"142
 [v _rd1RegCompleteHandler rd1RegCompleteHandler `(E360  1 s 1 rd1RegCompleteHandler ]
 "149
 [v _rd2RegCompleteHandler rd2RegCompleteHandler `(E360  1 s 1 rd2RegCompleteHandler ]
@@ -164,14 +160,17 @@ I2C1_FAIL 2
 [v _I2C1_MasterWrite I2C1_MasterWrite `(E355  1 e 1 0 ]
 "264
 [v _I2C1_SetBuffer I2C1_SetBuffer `(v  1 e 1 0 ]
+[v i2_I2C1_SetBuffer I2C1_SetBuffer `(v  1 e 1 0 ]
 "274
 [v _I2C1_SetDataCompleteCallback I2C1_SetDataCompleteCallback `(v  1 e 1 0 ]
+[v i2_I2C1_SetDataCompleteCallback I2C1_SetDataCompleteCallback `(v  1 e 1 0 ]
 "284
 [v _I2C1_SetAddressNackCallback I2C1_SetAddressNackCallback `(v  1 e 1 0 ]
 "299
 [v _I2C1_SetInterruptHandler I2C1_SetInterruptHandler `(v  1 e 1 0 ]
 "304
 [v _I2C1_SetCallback I2C1_SetCallback `(v  1 s 1 I2C1_SetCallback ]
+[v i2_I2C1_SetCallback I2C1_SetCallback `(v  1 s 1 i2_I2C1_SetCallback ]
 "318
 [v _I2C1_MasterIsr I2C1_MasterIsr `(v  1 s 1 I2C1_MasterIsr ]
 "323
@@ -920,50 +919,64 @@ I2C1_FAIL 2
 [v _I2C1_Status I2C1_Status `S605  1 e 36 0 ]
 "57 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
-"66 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\main.c
+"67 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"90
-[v main@buffer buffer `uc  1 a 1 31 ]
-"120
+"141
+[v main@i_2231 i `uc  1 a 1 20 ]
+"134
+[v main@i_2230 i `uc  1 a 1 19 ]
+"127
+[v main@i i `uc  1 a 1 18 ]
+"171
+[v main@i_2234 i `uc  1 a 1 17 ]
+"162
+[v main@i_2233 i `uc  1 a 1 16 ]
+"153
+[v main@i_2232 i `uc  1 a 1 15 ]
+"124
+[v main@j j `uc  1 a 1 21 ]
+"91
+[v main@buffer buffer `uc  1 a 1 14 ]
+"185
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.39v  1 a 2 19 ]
+[v printf@ap ap `[1]*.39v  1 a 2 10 ]
 "5
-[v printf@fmt fmt `*.25Cuc  1 p 2 17 ]
+[v printf@fmt fmt `*.25Cuc  1 p 2 8 ]
 "13
 } 0
 "1390 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1393
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 29 ]
-[s S2693 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 6 ]
+[s S2697 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.2S2693  1 p 2 11 ]
-[v vfprintf@fmt fmt `*.25Cuc  1 p 2 13 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 15 ]
+[v vfprintf@fp fp `*.2S2697  1 p 2 0 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 4 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S2693 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.2S2693  1 p 2 5 ]
-[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 7 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 9 ]
+[s S2697 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.2S2697  1 p 2 34 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 36 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 38 ]
 "1387
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 25 ]
-[u S2672 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2675 _IO_FILE 11 `S2672 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.2S2675  1 p 2 27 ]
+[u S2676 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2679 _IO_FILE 11 `S2676 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.2S2679  1 p 2 27 ]
 "24
 } 0
 "201 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/eusart2.c
@@ -1058,7 +1071,49 @@ I2C1_FAIL 2
 {
 "83
 } 0
-"176 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/i2c1_master.c
+"91 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/examples/i2c1_master_example.c
+[v _I2C1_Write1ByteRegister I2C1_Write1ByteRegister `(v  1 e 1 0 ]
+{
+[v I2C1_Write1ByteRegister@address address `uc  1 a 1 wreg ]
+[v I2C1_Write1ByteRegister@address address `uc  1 a 1 wreg ]
+[v I2C1_Write1ByteRegister@reg reg `uc  1 p 1 32 ]
+[v I2C1_Write1ByteRegister@data data `uc  1 p 1 33 ]
+[v I2C1_Write1ByteRegister@address address `uc  1 a 1 34 ]
+"99
+} 0
+"274 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/i2c1_master.c
+[v _I2C1_SetDataCompleteCallback I2C1_SetDataCompleteCallback `(v  1 e 1 0 ]
+{
+[v I2C1_SetDataCompleteCallback@cb cb `*.37(E360  1 p 2 28 ]
+[v I2C1_SetDataCompleteCallback@ptr ptr `*.39v  1 p 2 30 ]
+"277
+} 0
+"264
+[v _I2C1_SetBuffer I2C1_SetBuffer `(v  1 e 1 0 ]
+{
+[v I2C1_SetBuffer@buffer buffer `*.39v  1 p 2 23 ]
+[v I2C1_SetBuffer@bufferSize bufferSize `ui  1 p 2 25 ]
+"272
+} 0
+"284
+[v _I2C1_SetAddressNackCallback I2C1_SetAddressNackCallback `(v  1 e 1 0 ]
+{
+[v I2C1_SetAddressNackCallback@cb cb `*.37(E360  1 p 2 28 ]
+[v I2C1_SetAddressNackCallback@ptr ptr `*.2v  1 p 2 30 ]
+"287
+} 0
+"304
+[v _I2C1_SetCallback I2C1_SetCallback `(v  1 s 1 I2C1_SetCallback ]
+{
+[v I2C1_SetCallback@idx idx `E6673  1 a 1 wreg ]
+[v I2C1_SetCallback@idx idx `E6673  1 a 1 wreg ]
+[v I2C1_SetCallback@cb cb `*.37(E360  1 p 2 23 ]
+[v I2C1_SetCallback@ptr ptr `*.39v  1 p 2 25 ]
+"306
+[v I2C1_SetCallback@idx idx `E6673  1 a 1 27 ]
+"316
+} 0
+"176
 [v _I2C1_Open I2C1_Open `(E355  1 e 1 0 ]
 {
 [v I2C1_Open@address address `uc  1 a 1 wreg ]
@@ -1085,6 +1140,45 @@ I2C1_FAIL 2
 [v _I2C1_MasterEnableIrq I2C1_MasterEnableIrq `T(v  1 s 1 I2C1_MasterEnableIrq ]
 {
 "630
+} 0
+"252
+[v _I2C1_MasterWrite I2C1_MasterWrite `(E355  1 e 1 0 ]
+{
+"255
+} 0
+"226
+[v _I2C1_MasterOperation I2C1_MasterOperation `(E355  1 e 1 0 ]
+{
+[v I2C1_MasterOperation@read read `a  1 a 1 wreg ]
+"228
+[v I2C1_MasterOperation@returnValue returnValue `E355  1 a 1 24 ]
+"226
+[v I2C1_MasterOperation@read read `a  1 a 1 wreg ]
+"228
+[v I2C1_MasterOperation@read read `a  1 a 1 23 ]
+"245
+} 0
+"589
+[v _I2C1_MasterStart I2C1_MasterStart `T(v  1 s 1 I2C1_MasterStart ]
+{
+"592
+} 0
+"211
+[v _I2C1_Close I2C1_Close `(E355  1 e 1 0 ]
+{
+"213
+[v I2C1_Close@returnValue returnValue `E355  1 a 1 23 ]
+"224
+} 0
+"637
+[v _I2C1_MasterDisableIrq I2C1_MasterDisableIrq `T(v  1 s 1 I2C1_MasterDisableIrq ]
+{
+"640
+} 0
+"558
+[v _I2C1_MasterClose I2C1_MasterClose `T(v  1 s 1 I2C1_MasterClose ]
+{
+"562
 } 0
 "642
 [v _I2C1_MasterClearIrq I2C1_MasterClearIrq `T(v  1 s 1 I2C1_MasterClearIrq ]
@@ -1272,28 +1366,28 @@ I2C1_FAIL 2
 "168
 } 0
 "274 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/i2c1_master.c
-[v _I2C1_SetDataCompleteCallback I2C1_SetDataCompleteCallback `(v  1 e 1 0 ]
+[v i2_I2C1_SetDataCompleteCallback I2C1_SetDataCompleteCallback `(v  1 e 1 0 ]
 {
-[v I2C1_SetDataCompleteCallback@cb cb `*.37(E360  1 p 2 5 ]
-[v I2C1_SetDataCompleteCallback@ptr ptr `*.39v  1 p 2 7 ]
+[v i2I2C1_SetDataCompleteCallback@cb cb `*.37(E360  1 p 2 5 ]
+[v i2I2C1_SetDataCompleteCallback@ptr ptr `*.39v  1 p 2 7 ]
 "277
 } 0
 "304
-[v _I2C1_SetCallback I2C1_SetCallback `(v  1 s 1 I2C1_SetCallback ]
+[v i2_I2C1_SetCallback I2C1_SetCallback `(v  1 s 1 i2_I2C1_SetCallback ]
 {
-[v I2C1_SetCallback@idx idx `E6673  1 a 1 wreg ]
-[v I2C1_SetCallback@idx idx `E6673  1 a 1 wreg ]
-[v I2C1_SetCallback@cb cb `*.37(E360  1 p 2 0 ]
-[v I2C1_SetCallback@ptr ptr `*.39v  1 p 2 2 ]
+[v i2I2C1_SetCallback@idx idx `E6673  1 a 1 wreg ]
+[v i2I2C1_SetCallback@idx idx `E6673  1 a 1 wreg ]
+[v i2I2C1_SetCallback@cb cb `*.37(E360  1 p 2 0 ]
+[v i2I2C1_SetCallback@ptr ptr `*.39v  1 p 2 2 ]
 "306
-[v I2C1_SetCallback@idx idx `E6673  1 a 1 4 ]
+[v i2I2C1_SetCallback@idx idx `E6673  1 a 1 4 ]
 "316
 } 0
 "264
-[v _I2C1_SetBuffer I2C1_SetBuffer `(v  1 e 1 0 ]
+[v i2_I2C1_SetBuffer I2C1_SetBuffer `(v  1 e 1 0 ]
 {
-[v I2C1_SetBuffer@buffer buffer `*.39v  1 p 2 0 ]
-[v I2C1_SetBuffer@bufferSize bufferSize `ui  1 p 2 2 ]
+[v i2I2C1_SetBuffer@buffer buffer `*.39v  1 p 2 0 ]
+[v i2I2C1_SetBuffer@bufferSize bufferSize `ui  1 p 2 2 ]
 "272
 } 0
 "594
