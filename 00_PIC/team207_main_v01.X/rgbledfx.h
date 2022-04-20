@@ -17,6 +17,7 @@ extern "C" {
 #include <stdio.h>
 #include <math.h>
 #include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/examples/i2c1_master_example.h"
 #include "timers.h"
     
 #define RGBLEDADDR 0x66 //CAT3626 1100 110

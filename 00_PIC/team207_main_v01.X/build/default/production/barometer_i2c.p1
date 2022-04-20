@@ -1,7 +1,47 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"16 ./timers.h
-[; ;./timers.h: 16: uint16_t millis(void);
-[v _millis `(us ~T0 @X0 0 ef ]
+"89 ./mcc_generated_files/i2c1_master.h
+[; ;./mcc_generated_files/i2c1_master.h: 89: void I2C1_Initialize(void);
+[v _I2C1_Initialize `(v ~T0 @X0 0 ef ]
+"49 ./barometer_i2c.h
+[; ;./barometer_i2c.h: 49: struct i2c_master_packet {
+[s S857 `us 1 `us 1 `*uc 1 ]
+[n S857 i2c_master_packet address data_length data ]
+[v F6765 `*S857 ~T0 @X0 1 t ]
+"64 barometer_i2c.c
+[; ;barometer_i2c.c: 64: enum status_code i2c_master_read_packet_wait(struct i2c_master_packet *const packet){
+[c E6742 0 1 2 .. ]
+[n E6742 status_code STATUS_OK STATUS_ERR_OVERFLOW STATUS_ERR_TIMEOUT  ]
+"71
+[; ;barometer_i2c.c: 71:     i2c1_error_t output_status;
+[c E6580 0 1 2 .. ]
+[n E6580 . I2C1_NOERR I2C1_BUSY I2C1_FAIL  ]
+"101 ./mcc_generated_files/i2c1_master.h
+[; ;./mcc_generated_files/i2c1_master.h: 101: i2c1_error_t I2C1_Open(i2c1_address_t address);
+[v _I2C1_Open `(E6580 ~T0 @X0 0 ef1`uc ]
+"152
+[; ;./mcc_generated_files/i2c1_master.h: 152: void I2C1_SetBuffer(void *buffer, size_t bufferSize);
+[v _I2C1_SetBuffer `(v ~T0 @X0 0 ef2`*v`ui ]
+"133
+[; ;./mcc_generated_files/i2c1_master.h: 133: i2c1_error_t I2C1_MasterRead(void);
+[v _I2C1_MasterRead `(E6580 ~T0 @X0 0 ef ]
+"111
+[; ;./mcc_generated_files/i2c1_master.h: 111: i2c1_error_t I2C1_Close(void);
+[v _I2C1_Close `(E6580 ~T0 @X0 0 ef ]
+[v F6774 `*S857 ~T0 @X0 1 t ]
+"103 barometer_i2c.c
+[; ;barometer_i2c.c: 103:     I2C1_SetAddressNackCallback(((void*)0),((void*)0));
+[c E6585 1 2 3 4 5 .. ]
+[n E6585 . I2C1_STOP I2C1_RESTART_READ I2C1_RESTART_WRITE I2C1_CONTINUE I2C1_RESET_LINK  ]
+[v F6632 `(E6585 ~T0 @X0 0 tf1`*v ]
+"184 ./mcc_generated_files/i2c1_master.h
+[; ;./mcc_generated_files/i2c1_master.h: 184: void I2C1_SetAddressNackCallback(i2c1_callback_t cb, void *ptr);
+[v _I2C1_SetAddressNackCallback `(v ~T0 @X0 0 ef2`*F6632`*v ]
+[v F6782 `(E6585 ~T0 @X0 0 tf1`*v ]
+"128
+[; ;./mcc_generated_files/i2c1_master.h: 128: i2c1_error_t I2C1_MasterWrite(void);
+[v _I2C1_MasterWrite `(E6580 ~T0 @X0 0 ef ]
+[v F6785 `*S857 ~T0 @X0 1 t ]
+[v F6793 `(E6585 ~T0 @X0 0 tf1`*v ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 55: __asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
@@ -944,127 +984,273 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17908
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17908: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"12 ./display.h
-[; ;./display.h: 12: _Bool displayActive = 0;
-[v _displayActive `a ~T0 @X0 1 e ]
-[i _displayActive
--> -> 0 `i `a
-]
-"13 ./timers.h
-[; ;./timers.h: 13: uint16_t currentTime;
-[v _currentTime `us ~T0 @X0 1 e ]
-"14
-[; ;./timers.h: 14: float scale = 1;
-[v _scale `f ~T0 @X0 1 e ]
-[i _scale
--> -> 1 `i `f
-]
-"4 display.c
-[; ;display.c: 4: void displayHR(int heartRate)
-[v _displayHR `(v ~T0 @X0 1 ef1`i ]
-"5
-[; ;display.c: 5: {
+"58 barometer_i2c.c
+[; ;barometer_i2c.c: 58: void i2c_master_init(void){
+[v _i2c_master_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _displayHR ]
-"4
-[; ;display.c: 4: void displayHR(int heartRate)
-[v _heartRate `i ~T0 @X0 1 r1 ]
-"5
-[; ;display.c: 5: {
+[e :U _i2c_master_init ]
 [f ]
-"8
-[; ;display.c: 8: }
-[e :UE 857 ]
-}
-"10
-[; ;display.c: 10: void displayTemp(int temp)
-[v _displayTemp `(v ~T0 @X0 1 ef1`i ]
-"11
-[; ;display.c: 11: {
-{
-[e :U _displayTemp ]
-"10
-[; ;display.c: 10: void displayTemp(int temp)
-[v _temp `i ~T0 @X0 1 r1 ]
-"11
-[; ;display.c: 11: {
-[f ]
-"13
-[; ;display.c: 13: }
+"59
+[; ;barometer_i2c.c: 59:     I2C1_Initialize();
+[e ( _I2C1_Initialize ..  ]
+"61
+[; ;barometer_i2c.c: 61: }
 [e :UE 858 ]
 }
-"15
-[; ;display.c: 15: void displayAlt(int alt)
-[v _displayAlt `(v ~T0 @X0 1 ef1`i ]
-"16
-[; ;display.c: 16: {
+"64
+[; ;barometer_i2c.c: 64: enum status_code i2c_master_read_packet_wait(struct i2c_master_packet *const packet){
+[v _i2c_master_read_packet_wait `(E6742 ~T0 @X0 1 ef1`C*S857 ]
 {
-[e :U _displayAlt ]
-"15
-[; ;display.c: 15: void displayAlt(int alt)
-[v _alt `i ~T0 @X0 1 r1 ]
-"16
-[; ;display.c: 16: {
+[e :U _i2c_master_read_packet_wait ]
+[v F6767 `*S857 ~T0 @X0 1 t ]
+[v _packet `C*S857 ~T0 @X0 1 r1 ]
 [f ]
-"17
-[; ;display.c: 17:     displayActive = 1;
-[e = _displayActive -> -> 1 `i `a ]
-"19
-[; ;display.c: 19:     float rate = alt * 0.00161290322;
-[v _rate `f ~T0 @X0 1 a ]
-[e = _rate -> * -> _alt `d .0.00161290322 `f ]
-"20
-[; ;display.c: 20:     int delay_ms = (int)(1/rate);
-[v _delay_ms `i ~T0 @X0 1 a ]
-[e = _delay_ms -> / -> -> 1 `i `f _rate `i ]
-"21
-[; ;display.c: 21:     unsigned long time = 0;
-[v _time `ul ~T0 @X0 1 a ]
-[e = _time -> -> -> 0 `i `l `ul ]
-"22
-[; ;display.c: 22:     if (millis() - time >= delay_ms && displayActive == 1){
-[e $ ! && >= - -> ( _millis ..  `ul _time -> -> _delay_ms `l `ul == -> _displayActive `i -> 1 `i 860  ]
-{
-"24
-[; ;display.c: 24:         time = millis();
-[e = _time -> ( _millis ..  `ul ]
-"25
-[; ;display.c: 25:     }
-}
+"65
+[; ;barometer_i2c.c: 65:     enum status_code status;
+[v _status `E6742 ~T0 @X0 1 a ]
+"67
+[; ;barometer_i2c.c: 67:     uint8_t address = packet->address;
+[v _address `uc ~T0 @X0 1 a ]
+[e = _address -> . *U _packet 0 `uc ]
+"68
+[; ;barometer_i2c.c: 68:     uint16_t len = packet->data_length;
+[v _len `us ~T0 @X0 1 a ]
+[e = _len . *U _packet 1 ]
+"69
+[; ;barometer_i2c.c: 69:     uint8_t* dataptr = packet->data;
+[v _dataptr `*uc ~T0 @X0 1 a ]
+[e = _dataptr . *U _packet 2 ]
+"71
+[; ;barometer_i2c.c: 71:     i2c1_error_t output_status;
+[v _output_status `E6580 ~T0 @X0 1 a ]
+"73
+[; ;barometer_i2c.c: 73:     while(!I2C1_Open(address));
+[e $U 860  ]
+[e :U 861 ]
 [e :U 860 ]
-"26
-[; ;display.c: 26: }
+[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 861  ]
+[e :U 862 ]
+"74
+[; ;barometer_i2c.c: 74:     I2C1_SetBuffer(dataptr,len);
+[e ( _I2C1_SetBuffer (2 , -> _dataptr `*v -> _len `ui ]
+"75
+[; ;barometer_i2c.c: 75:     I2C1_MasterRead();
+[e ( _I2C1_MasterRead ..  ]
+"76
+[; ;barometer_i2c.c: 76:     while(I2C1_BUSY == I2C1_Close());
+[e $U 863  ]
+[e :U 864 ]
+[e :U 863 ]
+[e $ == -> . `E6580 1 `ui -> ( _I2C1_Close ..  `ui 864  ]
+[e :U 865 ]
+"78
+[; ;barometer_i2c.c: 78:     if(output_status != I2C1_NOERR){
+[e $ ! != -> _output_status `ui -> . `E6580 0 `ui 866  ]
+{
+"79
+[; ;barometer_i2c.c: 79:         status = STATUS_ERR_TIMEOUT;
+[e = _status . `E6742 2 ]
+"80
+[; ;barometer_i2c.c: 80:     } else {
+}
+[e $U 867  ]
+[e :U 866 ]
+{
+"81
+[; ;barometer_i2c.c: 81:         status = STATUS_OK;
+[e = _status . `E6742 0 ]
+"82
+[; ;barometer_i2c.c: 82:     }
+}
+[e :U 867 ]
+"84
+[; ;barometer_i2c.c: 84:     if( status != STATUS_OK){
+[e $ ! != -> _status `ui -> . `E6742 0 `ui 868  ]
+{
+"85
+[; ;barometer_i2c.c: 85:   return status;
+[e ) _status ]
+[e $UE 859  ]
+"86
+[; ;barometer_i2c.c: 86:     }
+}
+[e :U 868 ]
+"88
+[; ;barometer_i2c.c: 88:     return STATUS_OK;
+[e ) . `E6742 0 ]
+[e $UE 859  ]
+"89
+[; ;barometer_i2c.c: 89: }
 [e :UE 859 ]
 }
-"28
-[; ;display.c: 28: void displayAltFine(int alt)
-[v _displayAltFine `(v ~T0 @X0 1 ef1`i ]
-"29
-[; ;display.c: 29: {
+"92
+[; ;barometer_i2c.c: 92: enum status_code i2c_master_write_packet_wait(struct i2c_master_packet *const packet){
+[v _i2c_master_write_packet_wait `(E6742 ~T0 @X0 1 ef1`C*S857 ]
 {
-[e :U _displayAltFine ]
-"28
-[; ;display.c: 28: void displayAltFine(int alt)
-[v _alt `i ~T0 @X0 1 r1 ]
-"29
-[; ;display.c: 29: {
+[e :U _i2c_master_write_packet_wait ]
+[v F6776 `*S857 ~T0 @X0 1 t ]
+[v _packet `C*S857 ~T0 @X0 1 r1 ]
 [f ]
-"32
-[; ;display.c: 32: }
-[e :UE 861 ]
+"93
+[; ;barometer_i2c.c: 93:     enum status_code status;
+[v _status `E6742 ~T0 @X0 1 a ]
+"95
+[; ;barometer_i2c.c: 95:     uint8_t address = packet->address;
+[v _address `uc ~T0 @X0 1 a ]
+[e = _address -> . *U _packet 0 `uc ]
+"96
+[; ;barometer_i2c.c: 96:     uint16_t len = packet->data_length;
+[v _len `us ~T0 @X0 1 a ]
+[e = _len . *U _packet 1 ]
+"97
+[; ;barometer_i2c.c: 97:     uint8_t* dataptr = packet->data;
+[v _dataptr `*uc ~T0 @X0 1 a ]
+[e = _dataptr . *U _packet 2 ]
+"99
+[; ;barometer_i2c.c: 99:     i2c1_error_t output_status;
+[v _output_status `E6580 ~T0 @X0 1 a ]
+"101
+[; ;barometer_i2c.c: 101:     while(!I2C1_Open(address));
+[e $U 870  ]
+[e :U 871 ]
+[e :U 870 ]
+[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 871  ]
+[e :U 872 ]
+"102
+[; ;barometer_i2c.c: 102:     I2C1_SetBuffer(dataptr,len);
+[e ( _I2C1_SetBuffer (2 , -> _dataptr `*v -> _len `ui ]
+"103
+[; ;barometer_i2c.c: 103:     I2C1_SetAddressNackCallback(((void*)0),((void*)0));
+[e ( _I2C1_SetAddressNackCallback (2 , -> -> -> 0 `i `*v `*F6782 -> -> 0 `i `*v ]
+"104
+[; ;barometer_i2c.c: 104:     output_status = I2C1_MasterWrite();
+[e = _output_status ( _I2C1_MasterWrite ..  ]
+"105
+[; ;barometer_i2c.c: 105:     while(I2C1_BUSY == I2C1_Close());
+[e $U 873  ]
+[e :U 874 ]
+[e :U 873 ]
+[e $ == -> . `E6580 1 `ui -> ( _I2C1_Close ..  `ui 874  ]
+[e :U 875 ]
+"107
+[; ;barometer_i2c.c: 107:     if(output_status != I2C1_NOERR){
+[e $ ! != -> _output_status `ui -> . `E6580 0 `ui 876  ]
+{
+"108
+[; ;barometer_i2c.c: 108:         status = STATUS_ERR_TIMEOUT;
+[e = _status . `E6742 2 ]
+"109
+[; ;barometer_i2c.c: 109:     } else {
 }
-"34
-[; ;display.c: 34: void displayOff(void)
-[v _displayOff `(v ~T0 @X0 1 ef ]
-"35
-[; ;display.c: 35: {
+[e $U 877  ]
+[e :U 876 ]
 {
-[e :U _displayOff ]
+"110
+[; ;barometer_i2c.c: 110:         status = STATUS_OK;
+[e = _status . `E6742 0 ]
+"111
+[; ;barometer_i2c.c: 111:     }
+}
+[e :U 877 ]
+"113
+[; ;barometer_i2c.c: 113:     if( status != STATUS_OK){
+[e $ ! != -> _status `ui -> . `E6742 0 `ui 878  ]
+{
+"114
+[; ;barometer_i2c.c: 114:   return status;
+[e ) _status ]
+[e $UE 869  ]
+"115
+[; ;barometer_i2c.c: 115:     }
+}
+[e :U 878 ]
+"117
+[; ;barometer_i2c.c: 117:     return STATUS_OK;
+[e ) . `E6742 0 ]
+[e $UE 869  ]
+"118
+[; ;barometer_i2c.c: 118: }
+[e :UE 869 ]
+}
+"121
+[; ;barometer_i2c.c: 121: enum status_code i2c_master_write_packet_wait_no_stop(struct i2c_master_packet *const packet){
+[v _i2c_master_write_packet_wait_no_stop `(E6742 ~T0 @X0 1 ef1`C*S857 ]
+{
+[e :U _i2c_master_write_packet_wait_no_stop ]
+[v F6787 `*S857 ~T0 @X0 1 t ]
+[v _packet `C*S857 ~T0 @X0 1 r1 ]
 [f ]
-"37
-[; ;display.c: 37:     displayActive = 0;
-[e = _displayActive -> -> 0 `i `a ]
-"38
-[; ;display.c: 38: }
-[e :UE 862 ]
+"122
+[; ;barometer_i2c.c: 122:     enum status_code status;
+[v _status `E6742 ~T0 @X0 1 a ]
+"124
+[; ;barometer_i2c.c: 124:     uint8_t address = packet->address;
+[v _address `uc ~T0 @X0 1 a ]
+[e = _address -> . *U _packet 0 `uc ]
+"125
+[; ;barometer_i2c.c: 125:     uint16_t len = packet->data_length;
+[v _len `us ~T0 @X0 1 a ]
+[e = _len . *U _packet 1 ]
+"126
+[; ;barometer_i2c.c: 126:     uint8_t* dataptr = packet->data;
+[v _dataptr `*uc ~T0 @X0 1 a ]
+[e = _dataptr . *U _packet 2 ]
+"128
+[; ;barometer_i2c.c: 128:     i2c1_error_t output_status;
+[v _output_status `E6580 ~T0 @X0 1 a ]
+"130
+[; ;barometer_i2c.c: 130:     while(!I2C1_Open(address));
+[e $U 880  ]
+[e :U 881 ]
+[e :U 880 ]
+[e $ ! != -> ( _I2C1_Open (1 _address `ui -> -> 0 `i `ui 881  ]
+[e :U 882 ]
+"131
+[; ;barometer_i2c.c: 131:     I2C1_SetBuffer(dataptr,len);
+[e ( _I2C1_SetBuffer (2 , -> _dataptr `*v -> _len `ui ]
+"132
+[; ;barometer_i2c.c: 132:     I2C1_SetAddressNackCallback(((void*)0),((void*)0));
+[e ( _I2C1_SetAddressNackCallback (2 , -> -> -> 0 `i `*v `*F6793 -> -> 0 `i `*v ]
+"133
+[; ;barometer_i2c.c: 133:     output_status = I2C1_MasterWrite();
+[e = _output_status ( _I2C1_MasterWrite ..  ]
+"136
+[; ;barometer_i2c.c: 136:     if(output_status != I2C1_NOERR){
+[e $ ! != -> _output_status `ui -> . `E6580 0 `ui 883  ]
+{
+"137
+[; ;barometer_i2c.c: 137:         status = STATUS_ERR_TIMEOUT;
+[e = _status . `E6742 2 ]
+"138
+[; ;barometer_i2c.c: 138:     } else {
+}
+[e $U 884  ]
+[e :U 883 ]
+{
+"139
+[; ;barometer_i2c.c: 139:         status = STATUS_OK;
+[e = _status . `E6742 0 ]
+"140
+[; ;barometer_i2c.c: 140:     }
+}
+[e :U 884 ]
+"142
+[; ;barometer_i2c.c: 142:     if( status != STATUS_OK){
+[e $ ! != -> _status `ui -> . `E6742 0 `ui 885  ]
+{
+"143
+[; ;barometer_i2c.c: 143:   return status;
+[e ) _status ]
+[e $UE 879  ]
+"144
+[; ;barometer_i2c.c: 144:     }
+}
+[e :U 885 ]
+"146
+[; ;barometer_i2c.c: 146:     return STATUS_OK;
+[e ) . `E6742 0 ]
+[e $UE 879  ]
+"148
+[; ;barometer_i2c.c: 148: }
+[e :UE 879 ]
 }

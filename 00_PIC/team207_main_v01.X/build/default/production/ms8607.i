@@ -1,4 +1,4 @@
-# 1 "rgbledfx.c"
+# 1 "ms8607.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "rgbledfx.c" 2
+# 1 "ms8607.c" 2
+# 13 "ms8607.c"
+# 1 "./ms8607.h" 1
+# 11 "./ms8607.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -113,10 +116,7 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
-# 1 "rgbledfx.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdbool.h" 1 3
-# 2 "rgbledfx.c" 2
+# 11 "./ms8607.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 3
@@ -267,10 +267,11 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 3 "rgbledfx.c" 2
+# 12 "./ms8607.h" 2
 
-# 1 "./rgbledfx.h" 1
-# 18 "./rgbledfx.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdbool.h" 1 3
+# 13 "./ms8607.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 1 3
 # 15 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -640,8 +641,96 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 18 "./rgbledfx.h" 2
+# 14 "./ms8607.h" 2
 
+
+
+
+enum ms8607_humidity_i2c_master_mode {
+ ms8607_i2c_hold,
+ ms8607_i2c_no_hold
+};
+
+enum ms8607_status {
+ ms8607_status_ok,
+ ms8607_status_no_i2c_acknowledge,
+ ms8607_status_i2c_transfer_error,
+ ms8607_status_crc_error,
+ ms8607_status_heater_on_error
+};
+
+enum ms8607_humidity_resolution {
+ ms8607_humidity_resolution_12b = 0,
+ ms8607_humidity_resolution_8b,
+ ms8607_humidity_resolution_10b,
+ ms8607_humidity_resolution_11b
+};
+
+enum ms8607_battery_status {
+ ms8607_battery_ok,
+ ms8607_battery_low
+};
+
+enum ms8607_heater_status {
+ ms8607_heater_off,
+ ms8607_heater_on
+};
+
+enum ms8607_pressure_resolution {
+ ms8607_pressure_resolution_osr_256 = 0,
+ ms8607_pressure_resolution_osr_512,
+ ms8607_pressure_resolution_osr_1024,
+ ms8607_pressure_resolution_osr_2048,
+ ms8607_pressure_resolution_osr_4096,
+ ms8607_pressure_resolution_osr_8192
+};
+
+
+
+
+
+
+void ms8607_init(void);
+# 71 "./ms8607.h"
+_Bool ms8607_is_connected(void);
+# 81 "./ms8607.h"
+enum ms8607_status ms8607_reset(void);
+# 93 "./ms8607.h"
+enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution);
+
+
+
+
+
+
+
+void ms8607_set_pressure_resolution(enum ms8607_pressure_resolution);
+
+
+
+
+
+
+
+void ms8607_set_humidity_i2c_master_mode(enum ms8607_humidity_i2c_master_mode);
+# 124 "./ms8607.h"
+enum ms8607_status ms8607_read_temperature_pressure_humidity( float *, float *, float *);
+# 138 "./ms8607.h"
+enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status*);
+# 148 "./ms8607.h"
+enum ms8607_status ms8607_enable_heater(void);
+# 158 "./ms8607.h"
+enum ms8607_status ms8607_disable_heater(void);
+# 172 "./ms8607.h"
+enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status*);
+# 186 "./ms8607.h"
+enum ms8607_status ms8607_get_compensated_humidity( float, float, float*);
+# 200 "./ms8607.h"
+enum ms8607_status ms8607_get_dew_point( float, float, float*);
+# 13 "ms8607.c" 2
+# 44 "ms8607.c"
+# 1 "./barometer_i2c.h" 1
+# 18 "./barometer_i2c.h"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\xc.h" 1 3
@@ -11383,352 +11472,740 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 void SYSTEM_Initialize(void);
 # 88 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 19 "./rgbledfx.h" 2
+# 18 "./barometer_i2c.h" 2
+# 38 "./barometer_i2c.h"
+enum i2c_transfer_direction {
+ I2C_TRANSFER_WRITE = 0,
+ I2C_TRANSFER_READ = 1,
+};
 
-# 1 "./mcc_generated_files/examples/i2c1_master_example.h" 1
-# 54 "./mcc_generated_files/examples/i2c1_master_example.h"
-uint8_t I2C1_Read1ByteRegister(i2c1_address_t address, uint8_t reg);
-uint16_t I2C1_Read2ByteRegister(i2c1_address_t address, uint8_t reg);
-void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
-void I2C1_Write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
-void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
-void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
-void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
-# 20 "./rgbledfx.h" 2
+enum status_code {
+ STATUS_OK = 0x00,
+ STATUS_ERR_OVERFLOW = 0x01,
+ STATUS_ERR_TIMEOUT = 0x02,
+};
 
-# 1 "./timers.h" 1
-# 13 "./timers.h"
-uint16_t currentTime;
-float scale = 1;
+struct i2c_master_packet {
 
-uint16_t millis(void);
-# 21 "./rgbledfx.h" 2
-# 38 "./rgbledfx.h"
-void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt);
+ uint16_t address;
 
-void updateAllDispVals(int hr, int temp, int alt);
-void updateDispHeartRate(int hr);
-void updateDispTemp(int temp);
-void updateDispAltitude(int alt);
-void updateDispAnim(uint8_t mode);
+ uint16_t data_length;
 
-void displayHR(int hr);
-void displayTemp(int temp);
-void displayAlt(int alt);
-void displayOff(void);
+ uint8_t *data;
+};
 
-void setLED(uint8_t red, uint8_t green, uint8_t blue);
+void i2c_master_init(void);
+enum status_code i2c_master_read_packet_wait(struct i2c_master_packet *const packet);
+enum status_code i2c_master_write_packet_wait(struct i2c_master_packet *const packet);
+enum status_code i2c_master_write_packet_wait_no_stop(struct i2c_master_packet *const packet);
+# 44 "ms8607.c" 2
+# 149 "ms8607.c"
+uint32_t hsensor_conversion_time = 16000;
+enum ms8607_humidity_i2c_master_mode hsensor_i2c_master_mode;
+_Bool hsensor_heater_on = 0;
 
-uint8_t byteMax(uint8_t a, uint8_t b);
-uint8_t byteMin(uint8_t a, uint8_t b);
-# 4 "rgbledfx.c" 2
+enum ms8607_pressure_resolution psensor_resolution_osr;
 
-
-
-
-void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt){
-    static int currentHR = 0;
-    static int currentTemp = 0;
-    static int currentAlt = 0;
-# 20 "rgbledfx.c"
-    if(update == 0){
-
-        switch(mode){
-            case 0:
-
-                displayHR(currentHR);
-                break;
-            case 1:
-
-                displayTemp(currentTemp);
-                break;
-            case 2:
-
-                displayAlt(currentAlt);
-                break;
-            default:
-
-                displayOff();
-                break;
-        }
+_Bool psensor_coeff_read = 0;
+static uint16_t eeprom_coeff[7 +1];
+static uint32_t psensor_conversion_time[6] = { 1000,
+            2000,
+            3000,
+            5000,
+            9000,
+            18000
+            };
 
 
-    } else if(update == 1){
-
-        currentHR = hr;
-        currentTemp = temp;
-        currentAlt = alt;
-    } else if(update == 2){
-        currentHR = hr;
-    } else if(update == 3){
-        currentTemp = temp;
-    } else if(update == 4){
-        currentAlt = alt;
-    }
 
 
+static enum ms8607_status hsensor_reset(void);
+static _Bool hsensor_is_connected(void);
+static enum ms8607_status hsensor_write_command( uint8_t );
+static enum ms8607_status hsensor_write_command_no_stop( uint8_t );
+static enum ms8607_status hsensor_crc_check( uint16_t, uint8_t);
+static enum ms8607_status hsensor_read_user_register(uint8_t *);
+static enum ms8607_status hsensor_write_user_register(uint8_t );
+static enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *);
+static enum ms8607_status hsensor_read_relative_humidity(float *);
+
+
+static enum ms8607_status psensor_reset(void);
+static _Bool psensor_is_connected(void);
+static enum ms8607_status psensor_write_command(uint8_t);
+static enum ms8607_status psensor_read_eeprom_coeff(uint8_t, uint16_t*);
+static enum ms8607_status psensor_read_eeprom(void);
+static enum ms8607_status psensor_conversion_and_read_adc( uint8_t, uint32_t *);
+static _Bool psensor_crc_check (uint16_t *n_prom, uint8_t crc);
+enum ms8607_status psensor_read_pressure_and_temperature( float *, float *);
+
+
+
+
+void ms8607_init(void)
+{
+ hsensor_i2c_master_mode = ms8607_i2c_no_hold;
+ psensor_resolution_osr = ms8607_pressure_resolution_osr_8192;
+
+
+ i2c_master_init();
+}
+# 207 "ms8607.c"
+_Bool ms8607_is_connected(void)
+{
+ return (hsensor_is_connected() && psensor_is_connected());
+}
+# 220 "ms8607.c"
+enum ms8607_status ms8607_reset(void)
+{
+ enum ms8607_status status;
+
+ status = hsensor_reset();
+ if( status != ms8607_status_ok)
+  return status;
+ status = psensor_reset();
+ if( status != ms8607_status_ok)
+  return status;
+
+ return ms8607_status_ok;
+}
+# 245 "ms8607.c"
+enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution res)
+{
+ enum ms8607_status status;
+ uint8_t reg_value, tmp=0;
+ uint32_t conversion_time = 16000;
+
+ if( res == ms8607_humidity_resolution_12b) {
+  tmp = 0x00;
+  conversion_time = 16000;
+ }
+ else if( res == ms8607_humidity_resolution_10b) {
+  tmp = 0x80;
+  conversion_time = 5000;
+ }
+ else if( res == ms8607_humidity_resolution_8b) {
+  tmp = 0x01;
+  conversion_time = 3000;
+ }
+ else if( res == ms8607_humidity_resolution_11b) {
+  tmp = 0x81;
+  conversion_time = 9000;
+ }
+
+ status = hsensor_read_user_register(&reg_value);
+ if( status != ms8607_status_ok )
+  return status;
+
+
+ reg_value &= ~0x81;
+ reg_value |= tmp & 0x81;
+
+ hsensor_conversion_time = conversion_time;
+
+ status = hsensor_write_user_register(reg_value);
+
+ return status;
+}
+# 291 "ms8607.c"
+void ms8607_set_humidity_i2c_master_mode(enum ms8607_humidity_i2c_master_mode mode)
+{
+ hsensor_i2c_master_mode = mode;
+ return;
+}
+# 310 "ms8607.c"
+enum ms8607_status ms8607_read_temperature_pressure_humidity( float *t, float *p, float *h)
+{
+ enum ms8607_status status;
+
+ status = psensor_read_pressure_and_temperature(t,p);
+ if(status != ms8607_status_ok)
+  return status;
+
+ status = hsensor_read_relative_humidity(h);
+ if(status != ms8607_status_ok)
+  return status;
+
+ return ms8607_status_ok;
+}
+# 337 "ms8607.c"
+enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status *bat)
+{
+ enum ms8607_status status;
+ uint8_t reg_value;
+
+ status = hsensor_read_user_register(&reg_value);
+ if( status != ms8607_status_ok)
+  return status;
+
+ if( reg_value & 0x40 )
+  *bat = ms8607_battery_low;
+ else
+  *bat = ms8607_battery_ok;
+
+ return status;
+}
+# 362 "ms8607.c"
+enum ms8607_status ms8607_enable_heater(void)
+{
+ enum ms8607_status status;
+ uint8_t reg_value;
+
+ status = hsensor_read_user_register(&reg_value);
+ if( status != ms8607_status_ok )
+  return status;
+
+
+ reg_value |= 0x04;
+ hsensor_heater_on = 1;
+
+ status = hsensor_write_user_register(reg_value);
+
+ return status;
+}
+# 388 "ms8607.c"
+enum ms8607_status ms8607_disable_heater(void)
+{
+ enum ms8607_status status;
+ uint8_t reg_value;
+
+ status = hsensor_read_user_register(&reg_value);
+ if( status != ms8607_status_ok )
+  return status;
+
+
+ reg_value &= ~0x04;
+ hsensor_heater_on = 0;
+
+ status = hsensor_write_user_register(reg_value);
+
+ return status;
+}
+# 418 "ms8607.c"
+enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status *heater)
+{
+ enum ms8607_status status;
+ uint8_t reg_value;
+
+ status = hsensor_read_user_register(&reg_value);
+ if( status != ms8607_status_ok )
+  return status;
+
+
+ if( reg_value & 0x04)
+  *heater = ms8607_heater_on;
+ else
+  *heater = ms8607_heater_off;
+
+ return status;
+}
+# 445 "ms8607.c"
+_Bool hsensor_is_connected(void)
+{
+ enum status_code i2c_status;
+
+ struct i2c_master_packet transfer = {
+  .address = 0x40,
+  .data_length = 0,
+  .data = ((void*)0),
+ };
+
+ i2c_status = i2c_master_write_packet_wait(&transfer);
+ if( i2c_status != STATUS_OK)
+  return 0;
+
+ return 1;
+}
+# 470 "ms8607.c"
+enum ms8607_status hsensor_reset(void)
+{
+ enum ms8607_status status;
+
+ status = hsensor_write_command(0xFE);
+ if( status != ms8607_status_ok )
+  return status;
+
+ hsensor_conversion_time = 16000;
+ _delay((unsigned long)((15)*(1000000/4000.0)));
+
+ return ms8607_status_ok;
+}
+# 494 "ms8607.c"
+enum ms8607_status hsensor_write_command( uint8_t cmd)
+{
+ enum status_code i2c_status;
+ uint8_t data[1];
+
+ data[0] = cmd;
+
+ struct i2c_master_packet transfer = {
+  .address = 0x40,
+  .data_length = 1,
+  .data = data,
+ };
+
+ i2c_status = i2c_master_write_packet_wait(&transfer);
+ if( i2c_status == STATUS_ERR_OVERFLOW )
+  return ms8607_status_no_i2c_acknowledge;
+ if( i2c_status != STATUS_OK)
+  return ms8607_status_i2c_transfer_error;
+
+ return ms8607_status_ok;
+}
+# 527 "ms8607.c"
+enum ms8607_status hsensor_write_command_no_stop( uint8_t cmd)
+{
+ enum status_code i2c_status;
+ uint8_t data[1];
+
+ data[0] = cmd;
+
+ struct i2c_master_packet transfer = {
+  .address = 0x40,
+  .data_length = 1,
+  .data = data,
+ };
+
+
+ i2c_status = i2c_master_write_packet_wait_no_stop(&transfer);
+ if( i2c_status == STATUS_ERR_OVERFLOW )
+  return ms8607_status_no_i2c_acknowledge;
+ if( i2c_status != STATUS_OK)
+  return ms8607_status_i2c_transfer_error;
+
+ return ms8607_status_ok;
+}
+# 560 "ms8607.c"
+enum ms8607_status hsensor_crc_check( uint16_t value, uint8_t crc)
+{
+ uint32_t polynom = 0x988000;
+ uint32_t msb = 0x800000;
+ uint32_t mask = 0xFF8000;
+ uint32_t result = (uint32_t)value<<8;
+
+ while( msb != 0x80 ) {
+
+
+  if( result & msb )
+   result = ((result ^ polynom) & mask) | ( result & ~mask);
+
+
+  msb >>= 1;
+  mask >>= 1;
+  polynom >>=1;
+ }
+ if( result == crc )
+  return ms8607_status_ok;
+ else
+  return ms8607_status_crc_error;
+}
+# 594 "ms8607.c"
+enum ms8607_status hsensor_read_user_register(uint8_t *value)
+{
+ enum ms8607_status status;
+ enum status_code i2c_status;
+ uint8_t buffer[1];
+ buffer[0] = 0;
+
+
+ struct i2c_master_packet read_transfer = {
+  .address = 0x40,
+  .data_length = 1,
+  .data = buffer,
+ };
+
+
+ status = hsensor_write_command(0xE7);
+ if( status != ms8607_status_ok )
+  return status;
+
+ i2c_status = i2c_master_read_packet_wait(&read_transfer);
+ if( i2c_status == STATUS_ERR_OVERFLOW )
+  return ms8607_status_no_i2c_acknowledge;
+ if( i2c_status != STATUS_OK)
+  return ms8607_status_i2c_transfer_error;
+
+ *value = buffer[0];
+
+ return ms8607_status_ok;
+}
+# 635 "ms8607.c"
+enum ms8607_status hsensor_write_user_register(uint8_t value)
+{
+ enum ms8607_status status;
+ enum status_code i2c_status;
+ uint8_t reg;
+ uint8_t data[2];
+
+ status = hsensor_read_user_register(&reg);
+ if( status != ms8607_status_ok )
+  return status;
+
+
+ reg &= (~( 0x81 | 0x40 | 0x4 | 0x2 ));
+
+ reg |= (value & ~(~( 0x81 | 0x40 | 0x4 | 0x2 )));
+
+ data[0] = 0xE6;
+ data[1] = reg;
+
+ struct i2c_master_packet transfer = {
+  .address = 0x40,
+  .data_length = 2,
+  .data = data,
+ };
+
+
+ i2c_status = i2c_master_write_packet_wait(&transfer);
+ if( i2c_status == STATUS_ERR_OVERFLOW )
+  return ms8607_status_no_i2c_acknowledge;
+ if( i2c_status != STATUS_OK)
+  return ms8607_status_i2c_transfer_error;
+
+ return ms8607_status_ok;
+}
+# 681 "ms8607.c"
+enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
+{
+ enum ms8607_status status = ms8607_status_ok;
+ enum status_code i2c_status;
+ uint16_t _adc;
+ uint8_t buffer[3];
+ uint8_t crc;
+
+ buffer[0] = 0;
+ buffer[1] = 0;
+ buffer[2] = 0;
+
+
+    struct i2c_master_packet read_transfer = {
+  .address = 0x40,
+  .data_length = 3,
+  .data = buffer,
+ };
+
+ if( hsensor_i2c_master_mode == ms8607_i2c_hold) {
+  status = hsensor_write_command_no_stop(0xE5);
+ }
+ else {
+  status = hsensor_write_command(0xF5);
+
+  _delay((unsigned long)((hsensor_conversion_time/1000)*(1000000/4000.0)));
+ }
+ if( status != ms8607_status_ok)
+  return status;
+
+    i2c_status = i2c_master_read_packet_wait(&read_transfer);
+ if( i2c_status == STATUS_ERR_OVERFLOW )
+  return ms8607_status_no_i2c_acknowledge;
+ if( i2c_status != STATUS_OK)
+  return ms8607_status_i2c_transfer_error;
+
+ _adc = (buffer[0] << 8) | buffer[1];
+ crc = buffer[2];
+
+
+ status = hsensor_crc_check(_adc,crc);
+ if( status != ms8607_status_ok)
+  return status;
+
+ *adc = _adc;
+
+ return status;
+}
+# 741 "ms8607.c"
+enum ms8607_status hsensor_read_relative_humidity( float *humidity)
+{
+ enum ms8607_status status;
+ uint16_t adc;
+
+ status = hsensor_humidity_conversion_and_read_adc( &adc);
+ if( status != ms8607_status_ok)
+  return status;
+
+
+ *humidity = (float)adc * (125) / (1UL<<16) + (-6);
+
+ return status;
+}
+# 768 "ms8607.c"
+enum ms8607_status ms8607_get_compensated_humidity( float temperature, float relative_humidity, float *compensated_humidity)
+{
+ if( hsensor_heater_on )
+  return ms8607_status_heater_on_error;
+
+ *compensated_humidity = ( relative_humidity + (25 - temperature) * (float)(-0.15));
+
+ return ms8607_status_ok;
+}
+# 790 "ms8607.c"
+enum ms8607_status ms8607_get_dew_point(float temperature,float relative_humidity, float *dew_point)
+{
+ double partial_pressure;
+
+ if( hsensor_heater_on )
+  return ms8607_status_heater_on_error;
+
+
+ partial_pressure = powf(10,(float)(8.1332) - (float)(1762.39) / (temperature + (float)(235.66)));
+
+ *dew_point = - (float)(1762.39) / (log10f(relative_humidity * partial_pressure / 100) - (float)(8.1332)) - (float)(235.66);
+
+ return ms8607_status_ok;
+}
+# 814 "ms8607.c"
+_Bool psensor_is_connected(void)
+{
+ enum status_code i2c_status;
+
+ struct i2c_master_packet transfer = {
+  .address = 0x76,
+  .data_length = 0,
+  .data = ((void*)0),
+ };
+
+ i2c_status = i2c_master_write_packet_wait(&transfer);
+ if( i2c_status != STATUS_OK)
+  return 0;
+
+ return 1;
+}
+# 839 "ms8607.c"
+enum ms8607_status psensor_reset(void)
+{
+ return psensor_write_command(0x1E);
+}
+# 854 "ms8607.c"
+enum ms8607_status psensor_write_command( uint8_t cmd)
+{
+ enum status_code i2c_status;
+ uint8_t data[1];
+
+ data[0] = cmd;
+
+ struct i2c_master_packet transfer = {
+  .address = 0x76,
+  .data_length = 1,
+  .data = data,
+ };
+
+ i2c_status = i2c_master_write_packet_wait(&transfer);
+ if( i2c_status == STATUS_ERR_OVERFLOW )
+  return ms8607_status_no_i2c_acknowledge;
+ if( i2c_status != STATUS_OK)
+  return ms8607_status_i2c_transfer_error;
+
+ return ms8607_status_ok;
 }
 
 
-void updateAllDispVals(int hr, int temp, int alt){
-    updateLED(1, 0, hr, temp, alt);
+
+
+
+
+
+void ms8607_set_pressure_resolution(enum ms8607_pressure_resolution res)
+{
+ psensor_resolution_osr = res;
+ return;
 }
+# 900 "ms8607.c"
+enum ms8607_status psensor_read_eeprom_coeff(uint8_t command, uint16_t *coeff)
+{
+ enum ms8607_status status;
+ enum status_code i2c_status;
+ uint8_t buffer[2];
 
-void updateDispHeartRate(int hr){
-    updateLED(2, 0, hr, 0, 0);
+ buffer[0] = 0;
+ buffer[1] = 0;
+
+
+ struct i2c_master_packet read_transfer = {
+  .address = 0x76,
+  .data_length = 2,
+  .data = buffer,
+ };
+
+
+ status = psensor_write_command(command);
+ if(status != ms8607_status_ok)
+  return status;
+
+ i2c_status = i2c_master_read_packet_wait(&read_transfer);
+ if( i2c_status == STATUS_ERR_OVERFLOW )
+  return ms8607_status_no_i2c_acknowledge;
+ if( i2c_status != STATUS_OK)
+  return ms8607_status_i2c_transfer_error;
+
+ *coeff = (buffer[0] << 8) | buffer[1];
+
+    if (*coeff == 0)
+        return ms8607_status_i2c_transfer_error;
+
+ return ms8607_status_ok;
 }
+# 944 "ms8607.c"
+enum ms8607_status psensor_read_eeprom(void)
+{
+ enum ms8607_status status;
+ uint8_t i;
 
-void updateDispTemp(int temp){
-    updateLED(3, 0, 0, temp, 0);
+ for( i=0 ; i< 7 ; i++)
+ {
+  status = psensor_read_eeprom_coeff( 0xA0 + i*2, eeprom_coeff+i);
+  if(status != ms8607_status_ok)
+   return status;
+ }
+
+ if( !psensor_crc_check( eeprom_coeff, (eeprom_coeff[0] & 0xF000)>>12 ) )
+  return ms8607_status_crc_error;
+
+ psensor_coeff_read = 1;
+
+   return ms8607_status_ok;
 }
+# 975 "ms8607.c"
+static enum ms8607_status psensor_conversion_and_read_adc(uint8_t cmd, uint32_t *adc)
+{
+ enum ms8607_status status;
+ enum status_code i2c_status;
+ uint8_t buffer[3];
 
-void updateDispAltitude(int alt){
-    updateLED(4, 0, 0, 0, alt);
+ buffer[0] = 0;
+ buffer[1] = 0;
+ buffer[2] = 0;
+
+
+    struct i2c_master_packet read_transfer = {
+  .address = 0x76,
+  .data_length = 3,
+  .data = buffer,
+ };
+
+ status = psensor_write_command(cmd);
+
+ _delay((unsigned long)((psensor_conversion_time[ (cmd & 0x0F)/2 ]/1000)*(1000000/4000.0)));
+ if( status != ms8607_status_ok)
+  return status;
+
+
+ status = psensor_write_command(0x00);
+ if( status != ms8607_status_ok)
+  return status;
+
+    i2c_status = i2c_master_read_packet_wait(&read_transfer);
+ if( i2c_status == STATUS_ERR_OVERFLOW )
+  return ms8607_status_no_i2c_acknowledge;
+ if( i2c_status != STATUS_OK)
+  return ms8607_status_i2c_transfer_error;
+
+ *adc = ((uint32_t)buffer[0] << 16) | ((uint32_t)buffer[1] << 8) | buffer[2];
+
+ return status;
 }
+# 1026 "ms8607.c"
+enum ms8607_status psensor_read_pressure_and_temperature( float *temperature, float *pressure)
+{
+ enum ms8607_status status = ms8607_status_ok;
+ uint32_t adc_temperature, adc_pressure;
+ int32_t dT, TEMP;
+ int64_t OFF, SENS, P, T2, OFF2, SENS2;
+ uint8_t cmd;
 
 
-
-void updateDispAnim(uint8_t mode){
-
-
-
-
+ if( psensor_coeff_read == 0 )
+  status = psensor_read_eeprom();
+ if( status != ms8607_status_ok)
+  return status;
 
 
-    updateLED(0, mode, 0, 0, 0);
+ cmd = psensor_resolution_osr*2;
+ cmd |= 0x50;
+ status = psensor_conversion_and_read_adc( cmd, &adc_temperature);
+ if( status != ms8607_status_ok)
+  return status;
+
+
+ cmd = psensor_resolution_osr*2;
+ cmd |= 0x40;
+ status = psensor_conversion_and_read_adc( cmd, &adc_pressure);
+ if( status != ms8607_status_ok)
+  return status;
+
+    if (adc_temperature == 0 || adc_pressure == 0)
+        return ms8607_status_i2c_transfer_error;
+
+
+ dT = (int32_t)adc_temperature - ( (int32_t)eeprom_coeff[5] <<8 );
+
+
+ TEMP = 2000 + ((int64_t)dT * (int64_t)eeprom_coeff[6] >> 23) ;
+
+
+ if( TEMP < 2000 )
+ {
+  T2 = ( 3 * ( (int64_t)dT * (int64_t)dT ) ) >> 33;
+  OFF2 = 61 * ((int64_t)TEMP - 2000) * ((int64_t)TEMP - 2000) / 16 ;
+  SENS2 = 29 * ((int64_t)TEMP - 2000) * ((int64_t)TEMP - 2000) / 16 ;
+
+  if( TEMP < -1500 )
+  {
+   OFF2 += 17 * ((int64_t)TEMP + 1500) * ((int64_t)TEMP + 1500) ;
+   SENS2 += 9 * ((int64_t)TEMP + 1500) * ((int64_t)TEMP + 1500) ;
+  }
+ }
+ else
+ {
+  T2 = ( 5 * ( (int64_t)dT * (int64_t)dT ) ) >> 38;
+  OFF2 = 0 ;
+  SENS2 = 0 ;
+ }
+
+
+ OFF = ( (int64_t)(eeprom_coeff[2]) << 17 ) + ( ( (int64_t)(eeprom_coeff[4]) * dT ) >> 6 ) ;
+ OFF -= OFF2 ;
+
+
+ SENS = ( (int64_t)eeprom_coeff[1] << 16 ) + ( ((int64_t)eeprom_coeff[3] * dT) >> 7 ) ;
+ SENS -= SENS2 ;
+
+
+ P = ( ( (adc_pressure * SENS) >> 21 ) - OFF ) >> 15 ;
+
+ *temperature = ( (float)TEMP - T2 ) / 100;
+ *pressure = (float)P / 100;
+
+ return status;
 }
+# 1108 "ms8607.c"
+_Bool psensor_crc_check (uint16_t *n_prom, uint8_t crc)
+{
+ uint8_t cnt, n_bit;
+ uint16_t n_rem, crc_read;
+
+ n_rem = 0x00;
+ crc_read = n_prom[0];
+ n_prom[7] = 0;
+ n_prom[0] = (0x0FFF & (n_prom[0]));
+
+ for( cnt = 0 ; cnt < (7 +1)*2 ; cnt++ ) {
 
 
-void displayHR(int heartRate){
+  if (cnt%2 == 1)
+   n_rem ^= n_prom[cnt>>1] & 0x00FF ;
+  else
+   n_rem ^= n_prom[cnt>>1]>>8 ;
 
+  for( n_bit = 8; n_bit > 0 ; n_bit-- ) {
 
+   if( n_rem & 0x8000 )
+    n_rem = (n_rem << 1) ^ 0x3000;
+   else
+    n_rem <<= 1;
+  }
+ }
+ n_rem >>= 12;
+ n_prom[0] = crc_read;
 
-
-    static long currentMillis = 0;
-    static long previousMillis = 0;
-    static uint8_t level = 0;
-
-    uint8_t maxLevel = 0x12;
-    uint8_t levelFade = 0;
-
-    float fadeFactor = 0.018;
-# 109 "rgbledfx.c"
-    double currentHR = (double) heartRate;
-    long beatDelay = (long) roundf(1000.0/(currentHR*0.0167));
-
-    currentMillis = millis();
-
-    if(currentMillis - previousMillis >= beatDelay){
-        level = maxLevel;
-        previousMillis = currentMillis;
-    } else {
-
-        levelFade = (uint8_t) fminf(fadeFactor*(currentMillis-previousMillis),(float) maxLevel);
-
-
-    }
-    setLED(maxLevel - levelFade, 0, 0);
-
-}
-
-void displayTemp(int temp){
-
-
-    static long currentMillis = 0;
-    static long previousMillis = 0;
-    long blinkDelay = 750;
-    long rapidDelay = 250;
-    long currentDelay = 0;
-    static uint8_t ledOn = 0;
-
-    uint8_t calcR = 0;
-    uint8_t calcG = 0;
-    uint8_t calcB = 0;
-# 153 "rgbledfx.c"
-    if(temp < 20){
-        calcB = 0x12;
-        currentDelay = rapidDelay;
-    } else if(temp >= 20 && temp < 32){
-        calcB = 0x12;
-        currentDelay = blinkDelay;
-    } else if(temp >= 32 && temp < 45){
-        calcB = 0x12;
-    } else if(temp >= 45 && temp < 65){
-        calcB = 0x12;
-        calcG = 0x12;
-    } else if(temp >= 65 && temp < 75){
-        calcG = 0x12;
-    } else if(temp >= 75 && temp < 85){
-        calcG = 0x12;
-    } else if(temp >= 85 && temp < 95){
-        calcG = 0x12;
-        calcR = 0x12;
-    } else if(temp >= 95 && temp < 105){
-        calcR = 0x12;
-    } else if(temp >= 105 && temp < 115){
-        calcR = 0x12;
-        currentDelay = blinkDelay;
-    } else if(temp >= 115){
-        calcR = 0x12;
-        currentDelay = rapidDelay;
-    }
-
-    if(currentDelay > 0){
-        currentMillis = millis();
-        if(currentMillis - previousMillis >= currentDelay){
-            previousMillis = currentMillis;
-            ledOn = !ledOn;
-        }
-    } else {
-        ledOn = 1;
-    }
-
-    setLED(calcR*ledOn, calcG*ledOn, calcB*ledOn);
-
-}
-
-void displayAlt(int alt){
-# 204 "rgbledfx.c"
-    static uint8_t dispStep = 0;
-    static int currentAlt = 0;
-    static int altThou = 0;
-    static int altHund = 0;
-
-    int onNumDelay = 250;
-    int offNumDelay = 500;
-    int placeSeperatorDelay = 1000;
-    int completeDispDelay = 5000;
-
-    static long currentMillis = 0;
-    static long previousMillis = 0;
-    static uint8_t ledOn = 0;
-    static uint8_t counter = 0;
-
-    currentMillis = millis();
-
-    if (dispStep == 0){
-
-        currentAlt = alt;
-        altThou = alt % 1000;
-        altHund = (alt - altThou*1000) % 100;
-        dispStep = 1;
-    } else if(dispStep == 1){
-
-        if(ledOn == 1){
-            if(currentMillis - previousMillis >= onNumDelay){
-                previousMillis = currentMillis;
-                ledOn = 0;
-            }
-        } else {
-            if(currentMillis - previousMillis >= offNumDelay){
-                previousMillis = currentMillis;
-                ledOn = 1;
-                counter++;
-            }
-        }
-
-        if(counter >= altThou){
-            dispStep = 2;
-            counter = 0;
-            ledOn = 0;
-        }
-
-    } else if (dispStep == 2){
-
-        if(currentMillis - previousMillis >= placeSeperatorDelay){
-            previousMillis = currentMillis;
-            dispStep = 3;
-        }
-    } else if (dispStep == 3){
-
-        if(ledOn == 1){
-            if(currentMillis - previousMillis >= onNumDelay){
-                previousMillis = currentMillis;
-                ledOn = 0;
-            }
-        } else {
-            if(currentMillis - previousMillis >= offNumDelay){
-                previousMillis = currentMillis;
-                ledOn = 1;
-                counter++;
-            }
-        }
-
-
-        if(counter >= altHund){
-            dispStep = 4;
-            counter = 0;
-            ledOn = 0;
-        }
-    } else if (dispStep == 4){
-
-        if(currentMillis - previousMillis >= completeDispDelay){
-            previousMillis = currentMillis;
-            dispStep = 0;
-        }
-    } else {
-        dispStep = 0;
-    }
-
-    if(ledOn == 1 && dispStep == 1){
-        setLED(0x12, 0x12, 0x12);
-    } else if (ledOn == 1 && dispStep == 3) {
-        setLED(0, 0, 0x12);
-    } else {
-        setLED(0, 0x12, 0);
-    }
-
-
-}
-
-void displayOff(void){
-
-    setLED(0, 0, 0);
-}
-
-void setLED(uint8_t red, uint8_t green, uint8_t blue){
-    static uint8_t currentR = 0;
-    static uint8_t currentG = 0;
-    static uint8_t currentB = 0;
-
-    currentR = byteMin(red, 0x12);
-    currentG = byteMin(green, 0x12);
-    currentB = byteMin(blue, 0x12);
-
-    uint8_t enableByte = 0x00;
-
-
-    if(currentR == 0){
-        enableByte = enableByte & 0x0F;
-    } else {
-        enableByte = enableByte | 0x30;
-    }
-
-    if(currentG == 0){
-        enableByte = enableByte & 0x33;
-    } else {
-        enableByte = enableByte | 0x0C;
-    }
-
-    if(currentR == 0){
-        enableByte = enableByte & 0x3C;
-    } else {
-        enableByte = enableByte | 0x03;
-    }
-
-
-    I2C1_Write1ByteRegister(0x66, 0x03, enableByte);
-
-
-    I2C1_Write1ByteRegister(0x66, 0x02, currentR);
-    I2C1_Write1ByteRegister(0x66, 0x01, currentG);
-    I2C1_Write1ByteRegister(0x66, 0x00, currentB);
-}
-
-uint8_t byteMax(uint8_t a, uint8_t b){
-    return (((a) > (b)) ? (a) : (b));
-}
-
-uint8_t byteMin(uint8_t a, uint8_t b){
-    return (((a) < (b)) ? (a) : (b));
+ return ( n_rem == crc );
 }

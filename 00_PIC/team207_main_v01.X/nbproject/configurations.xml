@@ -21,7 +21,6 @@
         <itemPath>mcc_generated_files/i2c1_master.h</itemPath>
       </logicalFolder>
       <itemPath>rgbledfx.h</itemPath>
-      <itemPath>display.h</itemPath>
       <itemPath>ESP32.h</itemPath>
       <itemPath>timers.h</itemPath>
       <itemPath>ms8607.h</itemPath>
@@ -54,7 +53,6 @@
       <itemPath>main.c</itemPath>
       <itemPath>timers.c</itemPath>
       <itemPath>ESP32.c</itemPath>
-      <itemPath>display.c</itemPath>
       <itemPath>rgbledfx.c</itemPath>
       <itemPath>ms8607.c</itemPath>
       <itemPath>barometer_i2c.c</itemPath>
@@ -80,7 +78,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>snap</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.36</languageToolchainVersion>
+        <languageToolchainVersion>2.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

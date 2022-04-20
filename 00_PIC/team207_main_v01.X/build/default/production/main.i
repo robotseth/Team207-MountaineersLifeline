@@ -11007,16 +11007,12 @@ void SYSTEM_Initialize(void);
 # 88 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 44 "main.c" 2
-
-
-
-
-
+# 90 "main.c"
 void main(void)
 {
 
     SYSTEM_Initialize();
-# 71 "main.c"
+# 112 "main.c"
     do { LATCbits.LATC2 = 1; } while(0);
     do { LATCbits.LATC1 = 1; } while(0);
 

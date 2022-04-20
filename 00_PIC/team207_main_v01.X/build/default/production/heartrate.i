@@ -1,4 +1,4 @@
-# 1 "rgbledfx.c"
+# 1 "heartrate.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "rgbledfx.c" 2
+# 1 "heartrate.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -113,10 +113,10 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
-# 1 "rgbledfx.c" 2
+# 1 "heartrate.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdbool.h" 1 3
-# 2 "rgbledfx.c" 2
+# 2 "heartrate.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 3
@@ -267,10 +267,10 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 3 "rgbledfx.c" 2
+# 3 "heartrate.c" 2
 
-# 1 "./rgbledfx.h" 1
-# 18 "./rgbledfx.h"
+# 1 "./heartrate.h" 1
+# 18 "./heartrate.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 1 3
 # 15 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -640,7 +640,7 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 18 "./rgbledfx.h" 2
+# 18 "./heartrate.h" 2
 
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
@@ -11383,18 +11383,7 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 void SYSTEM_Initialize(void);
 # 88 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 19 "./rgbledfx.h" 2
-
-# 1 "./mcc_generated_files/examples/i2c1_master_example.h" 1
-# 54 "./mcc_generated_files/examples/i2c1_master_example.h"
-uint8_t I2C1_Read1ByteRegister(i2c1_address_t address, uint8_t reg);
-uint16_t I2C1_Read2ByteRegister(i2c1_address_t address, uint8_t reg);
-void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
-void I2C1_Write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
-void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
-void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
-void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
-# 20 "./rgbledfx.h" 2
+# 19 "./heartrate.h" 2
 
 # 1 "./timers.h" 1
 # 13 "./timers.h"
@@ -11402,333 +11391,103 @@ uint16_t currentTime;
 float scale = 1;
 
 uint16_t millis(void);
-# 21 "./rgbledfx.h" 2
-# 38 "./rgbledfx.h"
-void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt);
-
-void updateAllDispVals(int hr, int temp, int alt);
-void updateDispHeartRate(int hr);
-void updateDispTemp(int temp);
-void updateDispAltitude(int alt);
-void updateDispAnim(uint8_t mode);
-
-void displayHR(int hr);
-void displayTemp(int temp);
-void displayAlt(int alt);
-void displayOff(void);
-
-void setLED(uint8_t red, uint8_t green, uint8_t blue);
-
-uint8_t byteMax(uint8_t a, uint8_t b);
-uint8_t byteMin(uint8_t a, uint8_t b);
-# 4 "rgbledfx.c" 2
+# 20 "./heartrate.h" 2
+# 38 "./heartrate.h"
+struct HrResults {
+    uint8_t status;
+    double hr;
+};
 
 
 
-
-void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt){
-    static int currentHR = 0;
-    static int currentTemp = 0;
-    static int currentAlt = 0;
-# 20 "rgbledfx.c"
-    if(update == 0){
-
-        switch(mode){
-            case 0:
-
-                displayHR(currentHR);
-                break;
-            case 1:
-
-                displayTemp(currentTemp);
-                break;
-            case 2:
-
-                displayAlt(currentAlt);
-                break;
-            default:
-
-                displayOff();
-                break;
-        }
+struct HrResults pollHR(uint8_t mode);
 
 
-    } else if(update == 1){
-
-        currentHR = hr;
-        currentTemp = temp;
-        currentAlt = alt;
-    } else if(update == 2){
-        currentHR = hr;
-    } else if(update == 3){
-        currentTemp = temp;
-    } else if(update == 4){
-        currentAlt = alt;
-    }
+void triggerHR();
 
 
-}
-
-
-void updateAllDispVals(int hr, int temp, int alt){
-    updateLED(1, 0, hr, temp, alt);
-}
-
-void updateDispHeartRate(int hr){
-    updateLED(2, 0, hr, 0, 0);
-}
-
-void updateDispTemp(int temp){
-    updateLED(3, 0, 0, temp, 0);
-}
-
-void updateDispAltitude(int alt){
-    updateLED(4, 0, 0, 0, alt);
-}
+double detectBeats();
+# 4 "heartrate.c" 2
 
 
 
-void updateDispAnim(uint8_t mode){
+struct HrResults pollHR(uint8_t mode){
+    struct HrResults currentResults;
+
+    static uint8_t scanning = 0;
+
+    static unsigned long currentMillis = 0;
+    static unsigned long startScanMillis = 0;
+
+    static double currentReading = 0;
+    static double currentHR = 0;
 
 
 
 
 
 
-    updateLED(0, mode, 0, 0, 0);
-}
 
-
-void displayHR(int heartRate){
-
-
-
-
-    static long currentMillis = 0;
-    static long previousMillis = 0;
-    static uint8_t level = 0;
-
-    uint8_t maxLevel = 0x12;
-    uint8_t levelFade = 0;
-
-    float fadeFactor = 0.018;
-# 109 "rgbledfx.c"
-    double currentHR = (double) heartRate;
-    long beatDelay = (long) roundf(1000.0/(currentHR*0.0167));
+    currentResults.hr = 0.0;
+    currentResults.status = 0;
 
     currentMillis = millis();
 
-    if(currentMillis - previousMillis >= beatDelay){
-        level = maxLevel;
-        previousMillis = currentMillis;
-    } else {
-
-        levelFade = (uint8_t) fminf(fadeFactor*(currentMillis-previousMillis),(float) maxLevel);
 
 
-    }
-    setLED(maxLevel - levelFade, 0, 0);
 
-}
+    if(mode == 1 && scanning == 0){
+        scanning = 1;
+        startScanMillis = currentMillis;
+    } else if (scanning == 1) {
+        currentReading = ADC_GetConversion(0);
+        int deltaT = currentMillis - startScanMillis;
 
-void displayTemp(int temp){
+
+        currentHR = detectBeats([currentReading], 28000, deltaT);
 
 
-    static long currentMillis = 0;
-    static long previousMillis = 0;
-    long blinkDelay = 750;
-    long rapidDelay = 250;
-    long currentDelay = 0;
-    static uint8_t ledOn = 0;
+        currentResults.hr = currentHR;
+        currentResults.status = 1;
 
-    uint8_t calcR = 0;
-    uint8_t calcG = 0;
-    uint8_t calcB = 0;
-# 153 "rgbledfx.c"
-    if(temp < 20){
-        calcB = 0x12;
-        currentDelay = rapidDelay;
-    } else if(temp >= 20 && temp < 32){
-        calcB = 0x12;
-        currentDelay = blinkDelay;
-    } else if(temp >= 32 && temp < 45){
-        calcB = 0x12;
-    } else if(temp >= 45 && temp < 65){
-        calcB = 0x12;
-        calcG = 0x12;
-    } else if(temp >= 65 && temp < 75){
-        calcG = 0x12;
-    } else if(temp >= 75 && temp < 85){
-        calcG = 0x12;
-    } else if(temp >= 85 && temp < 95){
-        calcG = 0x12;
-        calcR = 0x12;
-    } else if(temp >= 95 && temp < 105){
-        calcR = 0x12;
-    } else if(temp >= 105 && temp < 115){
-        calcR = 0x12;
-        currentDelay = blinkDelay;
-    } else if(temp >= 115){
-        calcR = 0x12;
-        currentDelay = rapidDelay;
-    }
 
-    if(currentDelay > 0){
-        currentMillis = millis();
-        if(currentMillis - previousMillis >= currentDelay){
-            previousMillis = currentMillis;
-            ledOn = !ledOn;
+        if(currentMillis - startScanMillis >= 10000){
+            scanning = 0;
+            startScanMillis = currentMillis;
+            currentResults.hr = currentHR;
+
+
+            currentResults.status = 2;
+
         }
-    } else {
-        ledOn = 1;
     }
 
-    setLED(calcR*ledOn, calcG*ledOn, calcB*ledOn);
-
+    return currentResults;
 }
 
-void displayAlt(int alt){
-# 204 "rgbledfx.c"
-    static uint8_t dispStep = 0;
-    static int currentAlt = 0;
-    static int altThou = 0;
-    static int altHund = 0;
 
-    int onNumDelay = 250;
-    int offNumDelay = 500;
-    int placeSeperatorDelay = 1000;
-    int completeDispDelay = 5000;
+void triggerHR(){
+    pollHR(1);
+}
 
-    static long currentMillis = 0;
-    static long previousMillis = 0;
-    static uint8_t ledOn = 0;
-    static uint8_t counter = 0;
 
-    currentMillis = millis();
-
-    if (dispStep == 0){
-
-        currentAlt = alt;
-        altThou = alt % 1000;
-        altHund = (alt - altThou*1000) % 100;
-        dispStep = 1;
-    } else if(dispStep == 1){
-
-        if(ledOn == 1){
-            if(currentMillis - previousMillis >= onNumDelay){
-                previousMillis = currentMillis;
-                ledOn = 0;
-            }
+double detectBeats(float data[], int threshold, int time){
+    _Bool currentPeak = 0;
+    int peaks = 0;
+    int len = sizeof(data) / sizeof(data[0]);
+    for (int i = 0; i <= len; i++)
+    {
+        if (data[i] > threshold && currentPeak == 0) {
+            peaks++;
+            currentPeak = 1;
         } else {
-            if(currentMillis - previousMillis >= offNumDelay){
-                previousMillis = currentMillis;
-                ledOn = 1;
-                counter++;
-            }
+            currentPeak = 0;
         }
-
-        if(counter >= altThou){
-            dispStep = 2;
-            counter = 0;
-            ledOn = 0;
-        }
-
-    } else if (dispStep == 2){
-
-        if(currentMillis - previousMillis >= placeSeperatorDelay){
-            previousMillis = currentMillis;
-            dispStep = 3;
-        }
-    } else if (dispStep == 3){
-
-        if(ledOn == 1){
-            if(currentMillis - previousMillis >= onNumDelay){
-                previousMillis = currentMillis;
-                ledOn = 0;
-            }
-        } else {
-            if(currentMillis - previousMillis >= offNumDelay){
-                previousMillis = currentMillis;
-                ledOn = 1;
-                counter++;
-            }
-        }
-
-
-        if(counter >= altHund){
-            dispStep = 4;
-            counter = 0;
-            ledOn = 0;
-        }
-    } else if (dispStep == 4){
-
-        if(currentMillis - previousMillis >= completeDispDelay){
-            previousMillis = currentMillis;
-            dispStep = 0;
-        }
-    } else {
-        dispStep = 0;
     }
 
-    if(ledOn == 1 && dispStep == 1){
-        setLED(0x12, 0x12, 0x12);
-    } else if (ledOn == 1 && dispStep == 3) {
-        setLED(0, 0, 0x12);
-    } else {
-        setLED(0, 0x12, 0);
-    }
+    float BPM = (peaks / time)*60000;
 
 
-}
 
-void displayOff(void){
-
-    setLED(0, 0, 0);
-}
-
-void setLED(uint8_t red, uint8_t green, uint8_t blue){
-    static uint8_t currentR = 0;
-    static uint8_t currentG = 0;
-    static uint8_t currentB = 0;
-
-    currentR = byteMin(red, 0x12);
-    currentG = byteMin(green, 0x12);
-    currentB = byteMin(blue, 0x12);
-
-    uint8_t enableByte = 0x00;
-
-
-    if(currentR == 0){
-        enableByte = enableByte & 0x0F;
-    } else {
-        enableByte = enableByte | 0x30;
-    }
-
-    if(currentG == 0){
-        enableByte = enableByte & 0x33;
-    } else {
-        enableByte = enableByte | 0x0C;
-    }
-
-    if(currentR == 0){
-        enableByte = enableByte & 0x3C;
-    } else {
-        enableByte = enableByte | 0x03;
-    }
-
-
-    I2C1_Write1ByteRegister(0x66, 0x03, enableByte);
-
-
-    I2C1_Write1ByteRegister(0x66, 0x02, currentR);
-    I2C1_Write1ByteRegister(0x66, 0x01, currentG);
-    I2C1_Write1ByteRegister(0x66, 0x00, currentB);
-}
-
-uint8_t byteMax(uint8_t a, uint8_t b){
-    return (((a) > (b)) ? (a) : (b));
-}
-
-uint8_t byteMin(uint8_t a, uint8_t b){
-    return (((a) < (b)) ? (a) : (b));
+    return BPM;
 }

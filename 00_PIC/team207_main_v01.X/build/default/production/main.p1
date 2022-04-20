@@ -1008,72 +1008,72 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17908: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"49 main.c
-[; ;main.c: 49: void main(void)
+"90 main.c
+[; ;main.c: 90: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"50
-[; ;main.c: 50: {
+"91
+[; ;main.c: 91: {
 {
 [e :U _main ]
 [f ]
-"52
-[; ;main.c: 52:     SYSTEM_Initialize();
+"93
+[; ;main.c: 93:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"71
-[; ;main.c: 71:     do { LATCbits.LATC2 = 1; } while(0);
+"112
+[; ;main.c: 112:     do { LATCbits.LATC2 = 1; } while(0);
 [e :U 860 ]
 {
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 859 ]
-"72
-[; ;main.c: 72:     do { LATCbits.LATC1 = 1; } while(0);
+"113
+[; ;main.c: 113:     do { LATCbits.LATC1 = 1; } while(0);
 [e :U 863 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 862 ]
-"74
-[; ;main.c: 74:     while (1)
+"115
+[; ;main.c: 115:     while (1)
 [e :U 865 ]
-"75
-[; ;main.c: 75:     {
+"116
+[; ;main.c: 116:     {
 {
-"77
-[; ;main.c: 77:         if(PORTCbits.RC0 == 0){
+"118
+[; ;main.c: 118:         if(PORTCbits.RC0 == 0){
 [e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 867  ]
 {
-"78
-[; ;main.c: 78:             do { LATCbits.LATC1 = 1; } while(0);
+"119
+[; ;main.c: 119:             do { LATCbits.LATC1 = 1; } while(0);
 [e :U 870 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 869 ]
-"79
-[; ;main.c: 79:         } else {
+"120
+[; ;main.c: 120:         } else {
 }
 [e $U 871  ]
 [e :U 867 ]
 {
-"80
-[; ;main.c: 80:             do { LATCbits.LATC1 = 0; } while(0);
+"121
+[; ;main.c: 121:             do { LATCbits.LATC1 = 0; } while(0);
 [e :U 874 ]
 {
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 }
 [e :U 873 ]
-"81
-[; ;main.c: 81:         }
+"122
+[; ;main.c: 122:         }
 }
 [e :U 871 ]
-"83
-[; ;main.c: 83:     }
+"124
+[; ;main.c: 124:     }
 }
 [e :U 864 ]
 [e $U 865  ]
 [e :U 866 ]
-"84
-[; ;main.c: 84: }
+"125
+[; ;main.c: 125: }
 [e :UE 857 ]
 }
