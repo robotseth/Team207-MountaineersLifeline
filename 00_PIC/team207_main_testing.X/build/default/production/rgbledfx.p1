@@ -961,38 +961,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "8
 [; ;rgbledfx.c: 8:     static uint8_t currentR = 0;
-[v F6785 `uc ~T0 @X0 1 s currentR ]
-[i F6785
+[v F6786 `uc ~T0 @X0 1 s currentR ]
+[i F6786
 -> -> 0 `i `uc
 ]
 "9
 [; ;rgbledfx.c: 9:     static uint8_t currentG = 0;
-[v F6786 `uc ~T0 @X0 1 s currentG ]
-[i F6786
+[v F6787 `uc ~T0 @X0 1 s currentG ]
+[i F6787
 -> -> 0 `i `uc
 ]
 "10
 [; ;rgbledfx.c: 10:     static uint8_t currentB = 0;
-[v F6787 `uc ~T0 @X0 1 s currentB ]
-[i F6787
+[v F6788 `uc ~T0 @X0 1 s currentB ]
+[i F6788
 -> -> 0 `i `uc
 ]
 "12
 [; ;rgbledfx.c: 12:     currentR = byteMin(red, 0x12);
-[e = F6785 ( _byteMin (2 , _red -> -> 18 `i `uc ]
+[e = F6786 ( _byteMin (2 , _red -> -> 18 `i `uc ]
 "13
 [; ;rgbledfx.c: 13:     currentG = byteMin(green, 0x12);
-[e = F6786 ( _byteMin (2 , _green -> -> 18 `i `uc ]
+[e = F6787 ( _byteMin (2 , _green -> -> 18 `i `uc ]
 "14
 [; ;rgbledfx.c: 14:     currentB = byteMin(blue, 0x12);
-[e = F6787 ( _byteMin (2 , _blue -> -> 18 `i `uc ]
+[e = F6788 ( _byteMin (2 , _blue -> -> 18 `i `uc ]
 "16
 [; ;rgbledfx.c: 16:     uint8_t enableByte = 0x00;
 [v _enableByte `uc ~T0 @X0 1 a ]
 [e = _enableByte -> -> 0 `i `uc ]
 "19
 [; ;rgbledfx.c: 19:     if(currentR == 0){
-[e $ ! == -> F6785 `i -> 0 `i 858  ]
+[e $ ! == -> F6786 `i -> 0 `i 858  ]
 {
 "20
 [; ;rgbledfx.c: 20:         enableByte = enableByte & 0x0F;
@@ -1012,7 +1012,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 859 ]
 "25
 [; ;rgbledfx.c: 25:     if(currentG == 0){
-[e $ ! == -> F6786 `i -> 0 `i 860  ]
+[e $ ! == -> F6787 `i -> 0 `i 860  ]
 {
 "26
 [; ;rgbledfx.c: 26:         enableByte = enableByte & 0x33;
@@ -1032,7 +1032,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 861 ]
 "31
 [; ;rgbledfx.c: 31:     if(currentR == 0){
-[e $ ! == -> F6785 `i -> 0 `i 862  ]
+[e $ ! == -> F6786 `i -> 0 `i 862  ]
 {
 "32
 [; ;rgbledfx.c: 32:         enableByte = enableByte & 0x3C;
@@ -1055,13 +1055,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc _enableByte ]
 "41
 [; ;rgbledfx.c: 41:     I2C1_Write1ByteRegister(0x66, 0x02, currentR);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 2 `i `uc F6785 ]
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 2 `i `uc F6786 ]
 "42
 [; ;rgbledfx.c: 42:     I2C1_Write1ByteRegister(0x66, 0x01, currentG);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 1 `i `uc F6786 ]
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 1 `i `uc F6787 ]
 "43
 [; ;rgbledfx.c: 43:     I2C1_Write1ByteRegister(0x66, 0x00, currentB);
-[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc F6787 ]
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc F6788 ]
 "44
 [; ;rgbledfx.c: 44: }
 [e :UE 857 ]

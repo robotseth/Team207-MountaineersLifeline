@@ -65,6 +65,20 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set BAT aliases
+#define BAT_TRIS                 TRISAbits.TRISA0
+#define BAT_LAT                  LATAbits.LATA0
+#define BAT_PORT                 PORTAbits.RA0
+#define BAT_ANS                  ANCON0bits.PCFG0
+#define BAT_SetHigh()            do { LATAbits.LATA0 = 1; } while(0)
+#define BAT_SetLow()             do { LATAbits.LATA0 = 0; } while(0)
+#define BAT_Toggle()             do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0)
+#define BAT_GetValue()           PORTAbits.RA0
+#define BAT_SetDigitalInput()    do { TRISAbits.TRISA0 = 1; } while(0)
+#define BAT_SetDigitalOutput()   do { TRISAbits.TRISA0 = 0; } while(0)
+#define BAT_SetAnalogMode()      do { ANCON0bits.PCFG0 = 1; } while(0)
+#define BAT_SetDigitalMode()     do { ANCON0bits.PCFG0 = 0; } while(0)
+
 // get/set HRIN aliases
 #define HRIN_TRIS                 TRISAbits.TRISA1
 #define HRIN_LAT                  LATAbits.LATA1

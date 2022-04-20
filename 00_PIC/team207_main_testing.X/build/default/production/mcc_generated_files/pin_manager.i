@@ -10642,9 +10642,9 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\xc.h" 2 3
 # 54 "mcc_generated_files/pin_manager.h" 2
-# 189 "mcc_generated_files/pin_manager.h"
+# 203 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 201 "mcc_generated_files/pin_manager.h"
+# 215 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 

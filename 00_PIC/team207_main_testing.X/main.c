@@ -41,15 +41,25 @@
     SOFTWARE.
 */
 
+#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/examples/i2c1_master_example.h"
 #include <stdint.h>        /* For uint8_t definition */
 #include <stdbool.h>
 #include <stdio.h>
-#include "mcc_generated_files/mcc.h"
-#include "mcc_generated_files/examples/i2c1_master_example.h"
-#include "rgbledfx.h"
 
 //#define TCaddress 0x48 //TC74A0 1001 000
 //#define READ_REG 0x00
+
+#define RGBLEDADDR 0x66 //CAT3626 1100 110
+#define RGB_REGA 0x00
+#define RGB_REGB 0x01
+#define RGB_REGC 0x02
+#define RGB_REGEN 0x03
+#define RGB_AON 0x03
+#define RGB_BON 0x0C
+#define RGB_CON 0x30
+#define RGB_ALLON 0xFF
+#define RGB_ALLOFF 0x00
 
 // RH sensor I2C constants
 //#define RHADDR 0x40
@@ -100,7 +110,10 @@ void main(void)
     //I2C1_ReadNBytes(BAROADDR, readPointer,3);
     //I2C1_Close();
     // 
-
+    uint16_t convertedValue;
+    uint16_t BatteryValue;
+    ADC_Initialize();
+    ADC_StartConversion();
     //Possible Route 1: Basic write/read
     //I2C1_Initialize();
     //I2C1_Open(BAROADDR);
@@ -132,23 +145,18 @@ void main(void)
 
     while (1)
     {
-        
+        convertedValue = ADC_GetConversion(HRIN);
+        BatteryValue = ADC_GetConversion(BAT);
         BDBG_SetLow();
+        HRLED_SetHigh();
         __delay_ms(100);
         BDBG_SetHigh();
+        //HRLED_SetLow();
         __delay_ms(100);
-        printf("Testing\r\n");
-        
-        setLED(RGB_MAX, 0, 0);
-        __delay_ms(500);
-        setLED(0, RGB_MAX, 0);
-        __delay_ms(500);
-        setLED(0, 0, RGB_MAX);
-        __delay_ms(500);
-        setLED(0, 0, 0);
-        __delay_ms(500);
-        
-        //Reset barometer
+        printf("Light Value = %d \r\n",convertedValue);
+        printf("Battery Value = %d \r\n",BatteryValue);
+        //printf("Testing\r\n");
+
         //uint8_t baro_reset_cmd = BARO_RESET;
         //cmd_length = sizeof(baro_reset_cmd); 
         //I2C1_WriteNBytes(BAROADDR, &baro_reset_cmd, cmd_length);

@@ -56,7 +56,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="AN0"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="AN1"/>
@@ -1772,7 +1772,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA0"/>
-         <value/>
+         <value>BAT</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA1"/>
@@ -2012,7 +2012,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RA0"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RA1"/>
@@ -5033,24 +5033,24 @@
          <hash>b9128c5ef47f44477975f79d21d8ef95587b8e4bf6b0d7088adba49eaa696a30</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\interrupt_manager.h</file>
-         <hash>3c11ca7d02ed8fbb247e2786e91848a5814e46b7e772678e8a62376cc48d630e</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\eusart2.c</file>
          <hash>8b05ae341f50a92b07c85dc8ca7a49693af5b950369ff351787153186f074a18</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\interrupt_manager.h</file>
+         <hash>3c11ca7d02ed8fbb247e2786e91848a5814e46b7e772678e8a62376cc48d630e</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr1.h</file>
          <hash>43a92cbfad1ea8792a5a96004971e3ea93c83b7db5da508a9bf35e841773be61</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\eusart2.h</file>
-         <hash>af41ddacfdf1fb16bb089562e0f0139b0064cd649cc0aecd58eecabe9ee094c1</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\examples\i2c1_master_example.c</file>
          <hash>3c14ac5c77bdd0f41233b870baf98d9e63aedd00433eec5dad9e3bcafc614e65</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\eusart2.h</file>
+         <hash>af41ddacfdf1fb16bb089562e0f0139b0064cd649cc0aecd58eecabe9ee094c1</hash>
       </entry>
       <entry>
          <file>main.c</file>
@@ -5066,7 +5066,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
-         <hash>ff51b79522caf88615385b21c0030ada1c0d86f6353c6f50880c5bc47c3d4c20</hash>
+         <hash>c8dc7f5d34abdd0ca3fa87962a8762228bef31dcb874baeb6ef8697c71f57750</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr2.c</file>
@@ -5078,7 +5078,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\adc.h</file>
-         <hash>5dbc99a29c57656bd62d5558a37874ee230d92a46c882c22e4b36a02b7853978</hash>
+         <hash>5573660d2f452ecb7f42192b0962f9a65087bd122a026dfbe8c7d2e5b7eb27cf</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>

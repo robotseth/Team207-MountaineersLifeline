@@ -1,5 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F6279 `(v ~T0 @X0 0 tf ]
+[v F6280 `(v ~T0 @X0 0 tf ]
 "13721 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 13721: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
@@ -20,8 +20,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
 "85 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 85: void ADC_SelectChannel(adc_channel_t channel)
-[c E6264 1 14 15 .. ]
-[n E6264 . HRIN channel_VDDCORE channel_VBG  ]
+[c E6264 0 1 14 15 .. ]
+[n E6264 . BAT HRIN channel_VDDCORE channel_VBG  ]
 "13824 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 13824:     struct {
 [s S638 :1 `uc 1 :1 `uc 1 ]
@@ -1009,7 +1009,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "55 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 55: void (*ADC_InterruptHandler)(void);
-[v _ADC_InterruptHandler `*F6279 ~T0 @X0 1 e ]
+[v _ADC_InterruptHandler `*F6280 ~T0 @X0 1 e ]
 "61
 [; ;mcc_generated_files/adc.c: 61: void ADC_Initialize(void)
 [v _ADC_Initialize `(v ~T0 @X0 1 ef ]

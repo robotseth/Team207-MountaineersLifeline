@@ -94,6 +94,7 @@ typedef struct
 
 typedef enum
 {
+    BAT =  0x0,
     HRIN =  0x1,
     channel_VDDCORE =  0xE,
     channel_VBG =  0xF

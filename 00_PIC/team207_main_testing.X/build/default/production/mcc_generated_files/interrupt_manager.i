@@ -10652,9 +10652,9 @@ unsigned char __t3rd16on(void);
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 189 "mcc_generated_files/pin_manager.h"
+# 203 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 201 "mcc_generated_files/pin_manager.h"
+# 215 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -10940,23 +10940,24 @@ typedef struct
 # 95 "mcc_generated_files/adc.h"
 typedef enum
 {
+    BAT = 0x0,
     HRIN = 0x1,
     channel_VDDCORE = 0xE,
     channel_VBG = 0xF
 } adc_channel_t;
-# 135 "mcc_generated_files/adc.h"
+# 136 "mcc_generated_files/adc.h"
 void ADC_Initialize(void);
-# 165 "mcc_generated_files/adc.h"
+# 166 "mcc_generated_files/adc.h"
 void ADC_SelectChannel(adc_channel_t channel);
-# 192 "mcc_generated_files/adc.h"
+# 193 "mcc_generated_files/adc.h"
 void ADC_StartConversion(void);
-# 224 "mcc_generated_files/adc.h"
+# 225 "mcc_generated_files/adc.h"
 _Bool ADC_IsConversionDone(void);
-# 257 "mcc_generated_files/adc.h"
+# 258 "mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversionResult(void);
-# 287 "mcc_generated_files/adc.h"
+# 288 "mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 315 "mcc_generated_files/adc.h"
+# 316 "mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
 # 59 "mcc_generated_files/mcc.h" 2
 
