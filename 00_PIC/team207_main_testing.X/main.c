@@ -41,25 +41,15 @@
     SOFTWARE.
 */
 
-#include "mcc_generated_files/mcc.h"
-#include "mcc_generated_files/examples/i2c1_master_example.h"
 #include <stdint.h>        /* For uint8_t definition */
 #include <stdbool.h>
 #include <stdio.h>
+#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/examples/i2c1_master_example.h"
+#include "rgbledfx.h"
 
 //#define TCaddress 0x48 //TC74A0 1001 000
 //#define READ_REG 0x00
-
-#define RGBLEDADDR 0x66 //CAT3626 1100 110
-#define RGB_REGA 0x00
-#define RGB_REGB 0x01
-#define RGB_REGC 0x02
-#define RGB_REGEN 0x03
-#define RGB_AON 0x03
-#define RGB_BON 0x0C
-#define RGB_CON 0x30
-#define RGB_ALLON 0xFF
-#define RGB_ALLOFF 0x00
 
 // RH sensor I2C constants
 //#define RHADDR 0x40
@@ -156,14 +146,14 @@ void main(void)
         printf("Testing\r\n");
         
         // Testing
-//        setLED(RGB_MAX, 0, 0);
-//        __delay_ms(500);
-//        setLED(0, RGB_MAX, 0);
-//        __delay_ms(500);
-//        setLED(0, 0, RGB_MAX);
-//        __delay_ms(500);
-//        setLED(0, 0, 0);
-//        __delay_ms(500);
+        setLED(RGB_MAX, 0, 0);
+        __delay_ms(500);
+        setLED(0, RGB_MAX, 0);
+        __delay_ms(500);
+        setLED(0, 0, RGB_MAX);
+        __delay_ms(500);
+        setLED(0, 0, 0);
+        __delay_ms(500);
         
         //Reset barometer
         printf("Light Value = %d \r\n",convertedValue);
