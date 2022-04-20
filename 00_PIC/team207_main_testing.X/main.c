@@ -153,6 +153,18 @@ void main(void)
         BDBG_SetHigh();
         //HRLED_SetLow();
         __delay_ms(100);
+        printf("Testing\r\n");
+        
+//        setLED(RGB_MAX, 0, 0);
+//        __delay_ms(500);
+//        setLED(0, RGB_MAX, 0);
+//        __delay_ms(500);
+//        setLED(0, 0, RGB_MAX);
+//        __delay_ms(500);
+//        setLED(0, 0, 0);
+//        __delay_ms(500);
+        
+        //Reset barometer
         printf("Light Value = %d \r\n",convertedValue);
         printf("Battery Value = %d \r\n",BatteryValue);
         //printf("Testing\r\n");

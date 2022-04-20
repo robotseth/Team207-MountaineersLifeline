@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "display.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,14 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 44 "main.c"
+# 1 "display.c" 2
+# 1 "./display.h" 1
+
+
+
+
+
+
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\xc.h" 1 3
@@ -10647,9 +10653,9 @@ unsigned char __t3rd16on(void);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 203 "./mcc_generated_files/pin_manager.h"
+# 218 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 215 "./mcc_generated_files/pin_manager.h"
+# 230 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -10880,48 +10886,58 @@ void I2C1_SetAddressNackCallback(i2c1_callback_t cb, void *ptr);
 void I2C1_SetDataNackCallback(i2c1_callback_t cb, void *ptr);
 # 204 "./mcc_generated_files/i2c1_master.h"
 void I2C1_SetTimeoutCallback(i2c1_callback_t cb, void *ptr);
-# 213 "./mcc_generated_files/i2c1_master.h"
-void (*MSSP1_InterruptHandler)(void);
-# 222 "./mcc_generated_files/i2c1_master.h"
-void I2C1_SetInterruptHandler(void (* InterruptHandler)(void));
 # 56 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/tmr1.h" 1
-# 100 "./mcc_generated_files/tmr1.h"
-void TMR1_Initialize(void);
-# 129 "./mcc_generated_files/tmr1.h"
-void TMR1_StartTimer(void);
-# 161 "./mcc_generated_files/tmr1.h"
-void TMR1_StopTimer(void);
-# 196 "./mcc_generated_files/tmr1.h"
-uint16_t TMR1_ReadTimer(void);
-# 235 "./mcc_generated_files/tmr1.h"
-void TMR1_WriteTimer(uint16_t timerVal);
-# 271 "./mcc_generated_files/tmr1.h"
-void TMR1_Reload(void);
-# 310 "./mcc_generated_files/tmr1.h"
-void TMR1_StartSinglePulseAcquisition(void);
-# 349 "./mcc_generated_files/tmr1.h"
-uint8_t TMR1_CheckGateValueStatus(void);
-# 387 "./mcc_generated_files/tmr1.h"
-_Bool TMR1_HasOverflowOccured(void);
+# 1 "./mcc_generated_files/ext_int.h" 1
+# 562 "./mcc_generated_files/ext_int.h"
+void EXT_INT_Initialize(void);
+# 584 "./mcc_generated_files/ext_int.h"
+void INT0_ISR(void);
+# 608 "./mcc_generated_files/ext_int.h"
+void INT0_CallBack(void);
+# 631 "./mcc_generated_files/ext_int.h"
+void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 655 "./mcc_generated_files/ext_int.h"
+extern void (*INT0_InterruptHandler)(void);
+# 679 "./mcc_generated_files/ext_int.h"
+void INT0_DefaultInterruptHandler(void);
+# 697 "./mcc_generated_files/ext_int.h"
+void INT1_ISR(void);
+# 721 "./mcc_generated_files/ext_int.h"
+void INT1_CallBack(void);
+# 744 "./mcc_generated_files/ext_int.h"
+void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 768 "./mcc_generated_files/ext_int.h"
+extern void (*INT1_InterruptHandler)(void);
+# 792 "./mcc_generated_files/ext_int.h"
+void INT1_DefaultInterruptHandler(void);
+# 810 "./mcc_generated_files/ext_int.h"
+void INT2_ISR(void);
+# 834 "./mcc_generated_files/ext_int.h"
+void INT2_CallBack(void);
+# 857 "./mcc_generated_files/ext_int.h"
+void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 881 "./mcc_generated_files/ext_int.h"
+extern void (*INT2_InterruptHandler)(void);
+# 905 "./mcc_generated_files/ext_int.h"
+void INT2_DefaultInterruptHandler(void);
 # 57 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/tmr2.h" 1
-# 103 "./mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-# 132 "./mcc_generated_files/tmr2.h"
-void TMR2_StartTimer(void);
-# 164 "./mcc_generated_files/tmr2.h"
-void TMR2_StopTimer(void);
-# 199 "./mcc_generated_files/tmr2.h"
-uint8_t TMR2_ReadTimer(void);
-# 238 "./mcc_generated_files/tmr2.h"
-void TMR2_WriteTimer(uint8_t timerVal);
-# 290 "./mcc_generated_files/tmr2.h"
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-# 325 "./mcc_generated_files/tmr2.h"
-_Bool TMR2_HasOverflowOccured(void);
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 100 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "./mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 196 "./mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 271 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 310 "./mcc_generated_files/tmr0.h"
+_Bool TMR0_HasOverflowOccured(void);
 # 58 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/adc.h" 1
@@ -10939,8 +10955,8 @@ typedef struct
 # 95 "./mcc_generated_files/adc.h"
 typedef enum
 {
-    BAT = 0x0,
-    HRIN = 0x1,
+    channel_AN0 = 0x0,
+    channel_AN1 = 0x1,
     channel_VDDCORE = 0xE,
     channel_VBG = 0xF
 } adc_channel_t;
@@ -10960,8 +10976,8 @@ adc_result_t ADC_GetConversion(adc_channel_t channel);
 void ADC_TemperatureAcquisitionDelay(void);
 # 59 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/eusart2.h" 1
-# 76 "./mcc_generated_files/eusart2.h"
+# 1 "./mcc_generated_files/eusart1.h" 1
+# 75 "./mcc_generated_files/eusart1.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -10970,116 +10986,88 @@ typedef union {
         unsigned reserved : 5;
     };
     uint8_t status;
-}eusart2_status_t;
-
-
-
-
-extern volatile uint8_t eusart2TxBufferRemaining;
-extern volatile uint8_t eusart2RxCount;
-
-
-
-
-extern void (*EUSART2_TxDefaultInterruptHandler)(void);
-extern void (*EUSART2_RxDefaultInterruptHandler)(void);
-# 118 "./mcc_generated_files/eusart2.h"
-void EUSART2_Initialize(void);
-# 166 "./mcc_generated_files/eusart2.h"
-_Bool EUSART2_is_tx_ready(void);
-# 214 "./mcc_generated_files/eusart2.h"
-_Bool EUSART2_is_rx_ready(void);
-# 261 "./mcc_generated_files/eusart2.h"
-_Bool EUSART2_is_tx_done(void);
-# 309 "./mcc_generated_files/eusart2.h"
-eusart2_status_t EUSART2_get_last_status(void);
-# 329 "./mcc_generated_files/eusart2.h"
-uint8_t EUSART2_Read(void);
-# 349 "./mcc_generated_files/eusart2.h"
-void EUSART2_Write(uint8_t txData);
-# 370 "./mcc_generated_files/eusart2.h"
-void EUSART2_Transmit_ISR(void);
-# 391 "./mcc_generated_files/eusart2.h"
-void EUSART2_Receive_ISR(void);
-# 412 "./mcc_generated_files/eusart2.h"
-void EUSART2_RxDataHandler(void);
-# 430 "./mcc_generated_files/eusart2.h"
-void EUSART2_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 448 "./mcc_generated_files/eusart2.h"
-void EUSART2_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 466 "./mcc_generated_files/eusart2.h"
-void EUSART2_SetErrorHandler(void (* interruptHandler)(void));
-# 486 "./mcc_generated_files/eusart2.h"
-void EUSART2_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 506 "./mcc_generated_files/eusart2.h"
-void EUSART2_SetRxInterruptHandler(void (* interruptHandler)(void));
+}eusart1_status_t;
+# 110 "./mcc_generated_files/eusart1.h"
+void EUSART1_Initialize(void);
+# 158 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_ready(void);
+# 206 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_rx_ready(void);
+# 253 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_done(void);
+# 301 "./mcc_generated_files/eusart1.h"
+eusart1_status_t EUSART1_get_last_status(void);
+# 321 "./mcc_generated_files/eusart1.h"
+uint8_t EUSART1_Read(void);
+# 341 "./mcc_generated_files/eusart1.h"
+void EUSART1_Write(uint8_t txData);
+# 361 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 379 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 397 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 60 "./mcc_generated_files/mcc.h" 2
 # 75 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 # 88 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 44 "main.c" 2
+# 7 "./display.h" 2
 
-# 1 "./mcc_generated_files/examples/i2c1_master_example.h" 1
-# 54 "./mcc_generated_files/examples/i2c1_master_example.h"
-uint8_t I2C1_Read1ByteRegister(i2c1_address_t address, uint8_t reg);
-uint16_t I2C1_Read2ByteRegister(i2c1_address_t address, uint8_t reg);
-void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
-void I2C1_Write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
-void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
-void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
-void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
-# 45 "main.c" 2
-# 78 "main.c"
-void main(void)
+
+
+
+
+_Bool displayActive = 0;
+
+void displayHR(int heartRate);
+void displayTemp(int temp);
+void displayAlt(int alt);
+void displayAltFine(int alt);
+void displayOff(void);
+# 1 "display.c" 2
+
+# 1 "./timers.h" 1
+# 13 "./timers.h"
+uint16_t currentTime;
+float scale = 1;
+
+uint16_t millis(void);
+# 2 "display.c" 2
+
+
+void displayHR(int heartRate)
 {
 
-    SYSTEM_Initialize();
 
+}
 
+void displayTemp(int temp)
+{
 
+}
 
+void displayAlt(int alt)
+{
+    displayActive = 1;
 
+    float rate = alt * 0.00161290322;
+    int delay_ms = (int)(1/rate);
+    unsigned long time = 0;
+    if (millis() - time >= delay_ms && displayActive == 1){
 
-    (INTCONbits.GIE = 1);
-
-
-
-
-
-    (INTCONbits.PEIE = 1);
-
-    do { LATAbits.LATA7 = 1; } while(0);
-    do { LATAbits.LATA6 = 1; } while(0);
-    do { LATCbits.LATC0 = 0; } while(0);
-# 113 "main.c"
-    uint16_t convertedValue;
-    uint16_t BatteryValue;
-    ADC_Initialize();
-    ADC_StartConversion();
-# 146 "main.c"
-    while (1)
-    {
-        convertedValue = ADC_GetConversion(HRIN);
-        BatteryValue = ADC_GetConversion(BAT);
-        do { LATAbits.LATA6 = 0; } while(0);
-        do { LATCbits.LATC0 = 1; } while(0);
-        _delay((unsigned long)((100)*(48000000/4000.0)));
-        do { LATAbits.LATA6 = 1; } while(0);
-
-        _delay((unsigned long)((100)*(48000000/4000.0)));
-<<<<<<< Updated upstream
-        printf("Light Value = %d \r\n",convertedValue);
-        printf("Battery Value = %d \r\n",BatteryValue);
-
-
-
-
-
-
-=======
-        printf("Testing\r\n");
-# 156 "main.c"
->>>>>>> Stashed changes
+        time = millis();
     }
+}
+
+void displayAltFine(int alt)
+{
+
+
+}
+
+void displayOff(void)
+{
+
+    displayActive = 0;
 }

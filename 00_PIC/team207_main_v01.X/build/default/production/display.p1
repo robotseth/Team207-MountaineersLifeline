@@ -1,78 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F6653 `(v ~T0 @X0 0 tf ]
-[p mainexit ]
-"75 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"17488 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17488:     struct {
-[s S828 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S828 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"17498
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17498:     struct {
-[s S829 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S829 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"17508
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17508:     struct {
-[s S830 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S830 . . GIEL GIEH ]
-"17487
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17487: typedef union {
-[u S827 `S828 1 `S829 1 `S830 1 ]
-[n S827 . . . . ]
-"17514
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17514: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS827 ~T0 @X0 0 e@4082 ]
-"9269
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9269:     struct {
-[s S438 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S438 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
-"9279
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9279:     struct {
-[s S439 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S439 . LA0 LA1 LA2 LA3 . LA5 LA6 LA7 ]
-"9268
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9268: typedef union {
-[u S437 `S438 1 `S439 1 ]
-[n S437 . . . ]
-"9290
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9290: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
-[v _LATAbits `VS437 ~T0 @X0 0 e@3977 ]
-"9483
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9483:     struct {
-[s S444 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S444 . LATC0 LATC1 LATC2 . LATC6 LATC7 ]
-"9491
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9491:     struct {
-[s S445 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S445 . LC0 LC1 LC2 . LC6 LC7 ]
-"9482
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9482: typedef union {
-[u S443 `S444 1 `S445 1 ]
-[n S443 . . . ]
-"9500
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9500: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
-[v _LATCbits `VS443 ~T0 @X0 0 e@3979 ]
-"136 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 136: void ADC_Initialize(void);
-[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
-"193
-[; ;./mcc_generated_files/adc.h: 193: void ADC_StartConversion(void);
-[v _ADC_StartConversion `(v ~T0 @X0 0 ef ]
-"148 main.c
-[; ;main.c: 148:         convertedValue = ADC_GetConversion(HRIN);
-[c E6682 0 1 14 15 .. ]
-[n E6682 . BAT HRIN channel_VDDCORE channel_VBG  ]
-"288 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 288: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E6682 ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
-"105 C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\stdio.h: 105: int printf(const char *restrict, ...);
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"16 ./timers.h
+[; ;./timers.h: 16: uint16_t millis(void);
+[v _millis `(us ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 55: __asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
@@ -1015,120 +944,127 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17908
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17908: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"213 ./mcc_generated_files/examples/../i2c1_master.h
-[v _MSSP1_InterruptHandler `*F6653 ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"78 main.c
-[; ;main.c: 78: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"79
-[; ;main.c: 79: {
+"12 ./display.h
+[; ;./display.h: 12: _Bool displayActive = 0;
+[v _displayActive `a ~T0 @X0 1 e ]
+[i _displayActive
+-> -> 0 `i `a
+]
+"13 ./timers.h
+[; ;./timers.h: 13: uint16_t currentTime;
+[v _currentTime `us ~T0 @X0 1 e ]
+"14
+[; ;./timers.h: 14: float scale = 1;
+[v _scale `f ~T0 @X0 1 e ]
+[i _scale
+-> -> 1 `i `f
+]
+"4 display.c
+[; ;display.c: 4: void displayHR(int heartRate)
+[v _displayHR `(v ~T0 @X0 1 ef1`i ]
+"5
+[; ;display.c: 5: {
 {
-[e :U _main ]
+[e :U _displayHR ]
+"4
+[; ;display.c: 4: void displayHR(int heartRate)
+[v _heartRate `i ~T0 @X0 1 r1 ]
+"5
+[; ;display.c: 5: {
 [f ]
-"81
-[; ;main.c: 81:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"88
-[; ;main.c: 88:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"94
-[; ;main.c: 94:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"96
-[; ;main.c: 96:     do { LATAbits.LATA7 = 1; } while(0);
-[e :U 860 ]
-{
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 859 ]
-"97
-[; ;main.c: 97:     do { LATAbits.LATA6 = 1; } while(0);
-[e :U 863 ]
-{
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 862 ]
-"98
-[; ;main.c: 98:     do { LATCbits.LATC0 = 0; } while(0);
-[e :U 866 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 865 ]
-"113
-[; ;main.c: 113:     uint16_t convertedValue;
-[v _convertedValue `us ~T0 @X0 1 a ]
-"114
-[; ;main.c: 114:     uint16_t BatteryValue;
-[v _BatteryValue `us ~T0 @X0 1 a ]
-"115
-[; ;main.c: 115:     ADC_Initialize();
-[e ( _ADC_Initialize ..  ]
-"116
-[; ;main.c: 116:     ADC_StartConversion();
-[e ( _ADC_StartConversion ..  ]
-"146
-[; ;main.c: 146:     while (1)
-[e :U 868 ]
-"147
-[; ;main.c: 147:     {
-{
-"148
-[; ;main.c: 148:         convertedValue = ADC_GetConversion(HRIN);
-[e = _convertedValue ( _ADC_GetConversion (1 . `E6682 1 ]
-"149
-[; ;main.c: 149:         BatteryValue = ADC_GetConversion(BAT);
-[e = _BatteryValue ( _ADC_GetConversion (1 . `E6682 0 ]
-"150
-[; ;main.c: 150:         do { LATAbits.LATA6 = 0; } while(0);
-[e :U 872 ]
-{
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 871 ]
-"151
-[; ;main.c: 151:         do { LATCbits.LATC0 = 1; } while(0);
-[e :U 875 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 874 ]
-"152
-[; ;main.c: 152:         _delay((unsigned long)((100)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"153
-[; ;main.c: 153:         do { LATAbits.LATA6 = 1; } while(0);
-[e :U 878 ]
-{
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 877 ]
-"155
-[; ;main.c: 155:         _delay((unsigned long)((100)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-<<<<<<< Updated upstream
-=======
-"140
-[; ;main.c: 140:         printf("Testing\r\n");
-[e ( _printf :s 1C ]
->>>>>>> Stashed changes
-"156
-[; ;main.c: 156:         printf("Light Value = %d \r\n",convertedValue);
-[e ( _printf , (. :s 1C -> _convertedValue `ui ]
-"157
-[; ;main.c: 157:         printf("Battery Value = %d \r\n",BatteryValue);
-[e ( _printf , (. :s 2C -> _BatteryValue `ui ]
-"164
-[; ;main.c: 164:     }
-}
-[e :U 867 ]
-[e $U 868  ]
-[e :U 869 ]
-"165
-[; ;main.c: 165: }
+"8
+[; ;display.c: 8: }
 [e :UE 857 ]
 }
-[p f _printf 8388736 ]
-[a 2C 66 97 116 116 101 114 121 32 86 97 108 117 101 32 61 32 37 100 32 13 10 0 ]
-[a 1C 76 105 103 104 116 32 86 97 108 117 101 32 61 32 37 100 32 13 10 0 ]
+"10
+[; ;display.c: 10: void displayTemp(int temp)
+[v _displayTemp `(v ~T0 @X0 1 ef1`i ]
+"11
+[; ;display.c: 11: {
+{
+[e :U _displayTemp ]
+"10
+[; ;display.c: 10: void displayTemp(int temp)
+[v _temp `i ~T0 @X0 1 r1 ]
+"11
+[; ;display.c: 11: {
+[f ]
+"13
+[; ;display.c: 13: }
+[e :UE 858 ]
+}
+"15
+[; ;display.c: 15: void displayAlt(int alt)
+[v _displayAlt `(v ~T0 @X0 1 ef1`i ]
+"16
+[; ;display.c: 16: {
+{
+[e :U _displayAlt ]
+"15
+[; ;display.c: 15: void displayAlt(int alt)
+[v _alt `i ~T0 @X0 1 r1 ]
+"16
+[; ;display.c: 16: {
+[f ]
+"17
+[; ;display.c: 17:     displayActive = 1;
+[e = _displayActive -> -> 1 `i `a ]
+"19
+[; ;display.c: 19:     float rate = alt * 0.00161290322;
+[v _rate `f ~T0 @X0 1 a ]
+[e = _rate -> * -> _alt `d .0.00161290322 `f ]
+"20
+[; ;display.c: 20:     int delay_ms = (int)(1/rate);
+[v _delay_ms `i ~T0 @X0 1 a ]
+[e = _delay_ms -> / -> -> 1 `i `f _rate `i ]
+"21
+[; ;display.c: 21:     unsigned long time = 0;
+[v _time `ul ~T0 @X0 1 a ]
+[e = _time -> -> -> 0 `i `l `ul ]
+"22
+[; ;display.c: 22:     if (millis() - time >= delay_ms && displayActive == 1){
+[e $ ! && >= - -> ( _millis ..  `ul _time -> -> _delay_ms `l `ul == -> _displayActive `i -> 1 `i 860  ]
+{
+"24
+[; ;display.c: 24:         time = millis();
+[e = _time -> ( _millis ..  `ul ]
+"25
+[; ;display.c: 25:     }
+}
+[e :U 860 ]
+"26
+[; ;display.c: 26: }
+[e :UE 859 ]
+}
+"28
+[; ;display.c: 28: void displayAltFine(int alt)
+[v _displayAltFine `(v ~T0 @X0 1 ef1`i ]
+"29
+[; ;display.c: 29: {
+{
+[e :U _displayAltFine ]
+"28
+[; ;display.c: 28: void displayAltFine(int alt)
+[v _alt `i ~T0 @X0 1 r1 ]
+"29
+[; ;display.c: 29: {
+[f ]
+"32
+[; ;display.c: 32: }
+[e :UE 861 ]
+}
+"34
+[; ;display.c: 34: void displayOff(void)
+[v _displayOff `(v ~T0 @X0 1 ef ]
+"35
+[; ;display.c: 35: {
+{
+[e :U _displayOff ]
+[f ]
+"37
+[; ;display.c: 37:     displayActive = 0;
+[e = _displayActive -> -> 0 `i `a ]
+"38
+[; ;display.c: 38: }
+[e :UE 862 ]
+}
