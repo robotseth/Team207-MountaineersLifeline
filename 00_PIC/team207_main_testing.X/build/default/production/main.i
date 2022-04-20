@@ -11029,7 +11029,469 @@ void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
 # 45 "main.c" 2
-# 67 "main.c"
+
+
+
+
+# 1 "./ms8607.h" 1
+# 14 "./ms8607.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 1 3
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef float float_t;
+
+
+
+
+typedef double double_t;
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 2 3
+# 42 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+int __fpclassifyf(float);
+
+
+
+
+
+
+
+int __signbitf(float);
+# 59 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+double acos(double);
+float acosf(float);
+long double acosl(long double);
+
+
+
+double acosh(double);
+float acoshf(float);
+long double acoshl(long double);
+
+
+
+double asin(double);
+float asinf(float);
+long double asinl(long double);
+
+
+
+double asinh(double);
+float asinhf(float);
+long double asinhl(long double);
+
+
+
+double atan(double);
+float atanf(float);
+long double atanl(long double);
+
+
+
+double atan2(double, double);
+float atan2f(float, float);
+long double atan2l(long double, long double);
+
+
+
+double atanh(double);
+float atanhf(float);
+long double atanhl(long double);
+
+
+
+double cbrt(double);
+float cbrtf(float);
+long double cbrtl(long double);
+
+
+
+double ceil(double);
+float ceilf(float);
+long double ceill(long double);
+
+
+
+double copysign(double, double);
+float copysignf(float, float);
+long double copysignl(long double, long double);
+
+
+
+double cos(double);
+float cosf(float);
+long double cosl(long double);
+
+
+
+double cosh(double);
+float coshf(float);
+long double coshl(long double);
+
+
+
+double erf(double);
+float erff(float);
+long double erfl(long double);
+
+
+
+double erfc(double);
+float erfcf(float);
+long double erfcl(long double);
+
+
+
+double exp(double);
+float expf(float);
+long double expl(long double);
+
+
+
+double exp2(double);
+float exp2f(float);
+long double exp2l(long double);
+
+
+
+double expm1(double);
+float expm1f(float);
+long double expm1l(long double);
+
+
+
+double fabs(double);
+float fabsf(float);
+long double fabsl(long double);
+
+
+
+double fdim(double, double);
+float fdimf(float, float);
+long double fdiml(long double, long double);
+
+
+
+double floor(double);
+float floorf(float);
+long double floorl(long double);
+
+
+
+double fma(double, double, double);
+float fmaf(float, float, float);
+long double fmal(long double, long double, long double);
+
+
+
+double fmax(double, double);
+float fmaxf(float, float);
+long double fmaxl(long double, long double);
+
+
+
+double fmin(double, double);
+float fminf(float, float);
+long double fminl(long double, long double);
+
+
+
+double fmod(double, double);
+float fmodf(float, float);
+long double fmodl(long double, long double);
+
+
+
+double frexp(double, int *);
+float frexpf(float, int *);
+long double frexpl(long double, int *);
+
+
+
+double hypot(double, double);
+float hypotf(float, float);
+long double hypotl(long double, long double);
+
+
+
+int ilogb(double);
+int ilogbf(float);
+int ilogbl(long double);
+
+
+
+double ldexp(double, int);
+float ldexpf(float, int);
+long double ldexpl(long double, int);
+
+
+
+double lgamma(double);
+float lgammaf(float);
+long double lgammal(long double);
+
+
+
+long long llrint(double);
+long long llrintf(float);
+long long llrintl(long double);
+
+
+
+long long llround(double);
+long long llroundf(float);
+long long llroundl(long double);
+
+
+
+double log(double);
+float logf(float);
+long double logl(long double);
+
+
+
+double log10(double);
+float log10f(float);
+long double log10l(long double);
+
+
+
+double log1p(double);
+float log1pf(float);
+long double log1pl(long double);
+
+
+
+double log2(double);
+float log2f(float);
+long double log2l(long double);
+
+
+
+double logb(double);
+float logbf(float);
+long double logbl(long double);
+
+
+
+long lrint(double);
+long lrintf(float);
+long lrintl(long double);
+
+
+
+long lround(double);
+long lroundf(float);
+long lroundl(long double);
+
+
+
+double modf(double, double *);
+float modff(float, float *);
+long double modfl(long double, long double *);
+
+
+
+double nan(const char *);
+float nanf(const char *);
+long double nanl(const char *);
+
+
+
+double nearbyint(double);
+float nearbyintf(float);
+long double nearbyintl(long double);
+
+
+
+double nextafter(double, double);
+float nextafterf(float, float);
+long double nextafterl(long double, long double);
+
+
+
+double nexttoward(double, long double);
+float nexttowardf(float, long double);
+long double nexttowardl(long double, long double);
+# 323 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+double pow(double, double);
+__attribute__((nonreentrant)) float powf(float, float);
+long double powl(long double, long double);
+
+
+
+double remainder(double, double);
+float remainderf(float, float);
+long double remainderl(long double, long double);
+
+
+
+double remquo(double, double, int *);
+float remquof(float, float, int *);
+long double remquol(long double, long double, int *);
+
+
+
+double rint(double);
+float rintf(float);
+long double rintl(long double);
+
+
+
+double round(double);
+float roundf(float);
+long double roundl(long double);
+
+
+
+double scalbln(double, long);
+float scalblnf(float, long);
+long double scalblnl(long double, long);
+
+
+
+double scalbn(double, int);
+float scalbnf(float, int);
+long double scalbnl(long double, int);
+
+
+
+double sin(double);
+float sinf(float);
+long double sinl(long double);
+
+
+
+double sinh(double);
+float sinhf(float);
+long double sinhl(long double);
+
+
+
+double sqrt(double);
+float sqrtf(float);
+long double sqrtl(long double);
+
+
+
+double tan(double);
+float tanf(float);
+long double tanl(long double);
+
+
+
+double tanh(double);
+float tanhf(float);
+long double tanhl(long double);
+
+
+
+double tgamma(double);
+float tgammaf(float);
+long double tgammal(long double);
+
+
+
+double trunc(double);
+float truncf(float);
+long double truncl(long double);
+# 428 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+extern int signgam;
+
+double j0(double);
+double j1(double);
+double jn(int, double);
+
+double y0(double);
+double y1(double);
+double yn(int, double);
+# 14 "./ms8607.h" 2
+
+
+
+
+enum ms8607_humidity_i2c_master_mode {
+ ms8607_i2c_hold,
+ ms8607_i2c_no_hold
+};
+
+enum ms8607_status {
+ ms8607_status_ok,
+ ms8607_status_no_i2c_acknowledge,
+ ms8607_status_i2c_transfer_error,
+ ms8607_status_crc_error,
+ ms8607_status_heater_on_error
+};
+
+enum ms8607_humidity_resolution {
+ ms8607_humidity_resolution_12b = 0,
+ ms8607_humidity_resolution_8b,
+ ms8607_humidity_resolution_10b,
+ ms8607_humidity_resolution_11b
+};
+
+enum ms8607_battery_status {
+ ms8607_battery_ok,
+ ms8607_battery_low
+};
+
+enum ms8607_heater_status {
+ ms8607_heater_off,
+ ms8607_heater_on
+};
+
+enum ms8607_pressure_resolution {
+ ms8607_pressure_resolution_osr_256 = 0,
+ ms8607_pressure_resolution_osr_512,
+ ms8607_pressure_resolution_osr_1024,
+ ms8607_pressure_resolution_osr_2048,
+ ms8607_pressure_resolution_osr_4096,
+ ms8607_pressure_resolution_osr_8192
+};
+
+
+
+
+
+
+void ms8607_init(void);
+# 71 "./ms8607.h"
+_Bool ms8607_is_connected(void);
+# 81 "./ms8607.h"
+enum ms8607_status ms8607_reset(void);
+# 93 "./ms8607.h"
+enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution);
+
+
+
+
+
+
+
+void ms8607_set_pressure_resolution(enum ms8607_pressure_resolution);
+
+
+
+
+
+
+
+void ms8607_set_humidity_i2c_master_mode(enum ms8607_humidity_i2c_master_mode);
+# 124 "./ms8607.h"
+enum ms8607_status ms8607_read_temperature_pressure_humidity( float *, float *, float *);
+# 138 "./ms8607.h"
+enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status*);
+# 148 "./ms8607.h"
+enum ms8607_status ms8607_enable_heater(void);
+# 158 "./ms8607.h"
+enum ms8607_status ms8607_disable_heater(void);
+# 172 "./ms8607.h"
+enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status*);
+# 186 "./ms8607.h"
+enum ms8607_status ms8607_get_compensated_humidity( float, float, float*);
+# 200 "./ms8607.h"
+enum ms8607_status ms8607_get_dew_point( float, float, float*);
+# 49 "main.c" 2
+# 68 "main.c"
 void main(void)
 {
 
@@ -11058,6 +11520,15 @@ void main(void)
 
     bufferPointer = &buffer;
 
+    ms8607_init();
+    if(ms8607_is_connected()){
+        do { LATAbits.LATA7 = 0; } while(0);
+        _delay((unsigned long)((1000)*(48000000/4000.0)));
+        do { LATAbits.LATA7 = 1; } while(0);
+        _delay((unsigned long)((1000)*(48000000/4000.0)));
+
+    }
+
 
 
 
@@ -11069,71 +11540,9 @@ void main(void)
         do { LATAbits.LATA6 = 1; } while(0);
         _delay((unsigned long)((50)*(48000000/4000.0)));
         printf("testing");
-# 116 "main.c"
-        I2C1_Write1ByteRegister(0x66, 0x00, 0x31);
-        I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
-
-
-        I2C1_Write1ByteRegister(0x66, 0x03, 0x3F);
-        I2C1_Write1ByteRegister(0x66, 0x02, 0x19);
-
-
-        for(uint8_t j = 0; j < 3; j++){
-            if(j == 0){
-                I2C1_Write1ByteRegister(0x66, 0x03, 0x03);
-                for(uint8_t i = 0x00; i < 0x0D; i++){
-                    I2C1_Write1ByteRegister(0x66, 0x00, (uint8_t) i);
-                    _delay((unsigned long)((250)*(48000000/4000.0)));
-                }
-                I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-            } else if(j == 1){
-                I2C1_Write1ByteRegister(0x66, 0x03, 0x0C);
-                for(uint8_t i = 0x00; i < 0x0D; i++){
-                    I2C1_Write1ByteRegister(0x66, 0x01, (uint8_t) i);
-                    _delay((unsigned long)((250)*(48000000/4000.0)));
-                }
-                I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-            } else {
-                I2C1_Write1ByteRegister(0x66, 0x03, 0x30);
-                for(uint8_t i = 0x00; i < 0x0D; i++){
-                    I2C1_Write1ByteRegister(0x66, 0x02, (uint8_t) i);
-                    _delay((unsigned long)((250)*(48000000/4000.0)));
-                }
-                I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-            }
-        }
-
-        I2C1_Write1ByteRegister(0x66, 0x00, 0x00);
-        I2C1_Write1ByteRegister(0x66, 0x01, 0x00);
-        I2C1_Write1ByteRegister(0x66, 0x02, 0x00);
-
-        for(uint8_t i = 0; i < 10; i++){
-            I2C1_Write1ByteRegister(0x66, 0x00, 0x0D);
-            I2C1_Write1ByteRegister(0x66, 0x03, 0x03);
-            _delay((unsigned long)((250)*(48000000/4000.0)));
-            I2C1_Write1ByteRegister(0x66, 0x00, 0x00);
-            I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-            _delay((unsigned long)((250)*(48000000/4000.0)));
-        }
-
-        for(uint8_t i = 0; i < 10; i++){
-            I2C1_Write1ByteRegister(0x66, 0x01, 0x0D);
-            I2C1_Write1ByteRegister(0x66, 0x03, 0x0C);
-            _delay((unsigned long)((250)*(48000000/4000.0)));
-            I2C1_Write1ByteRegister(0x66, 0x01, 0x00);
-            I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-            _delay((unsigned long)((250)*(48000000/4000.0)));
-        }
-
-        for(uint8_t i = 0; i < 10; i++){
-            I2C1_Write1ByteRegister(0x66, 0x02, 0x0D);
-            I2C1_Write1ByteRegister(0x66, 0x03, 0x30);
-            _delay((unsigned long)((250)*(48000000/4000.0)));
-            I2C1_Write1ByteRegister(0x66, 0x02, 0x00);
-            I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
-            _delay((unsigned long)((250)*(48000000/4000.0)));
-        }
-
+# 126 "main.c"
+        I2C1_Write1ByteRegister(0x40, 0xFE, 0x00);
+# 189 "main.c"
         I2C1_Write1ByteRegister(0x66, 0x03, 0x00);
         _delay((unsigned long)((1000)*(48000000/4000.0)));
 

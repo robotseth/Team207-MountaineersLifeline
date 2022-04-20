@@ -46,6 +46,7 @@
 #include <stdint.h>        /* For uint8_t definition */
 #include <stdbool.h>
 #include <stdio.h>
+#include "ms8607.h"
 
 #define TCaddress 0x48 //TC74A0 1001 000
 #define READ_REG 0x00
@@ -92,6 +93,15 @@ void main(void)
     
     bufferPointer = &buffer;
     
+    ms8607_init();
+    if(ms8607_is_connected()){
+        GDBG_SetLow();
+        __delay_ms(1000);
+        GDBG_SetHigh();
+        __delay_ms(1000);
+        
+    }
+    
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
@@ -113,69 +123,68 @@ void main(void)
         //printf(I2C1_Open(RGBLEDADDR));
         //Test commit
         //Write to RGB LED driver
-        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x31);
-        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLON);
+        I2C1_Write1ByteRegister(0x40, 0xFE, 0x00);
         
         //Write to RGB LED driver
-        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLON);
-        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x19);
-
-        
-        for(uint8_t j = 0; j < 3; j++){
-            if(j == 0){
-                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_AON);
-                for(uint8_t i = 0x00; i < 0x0D; i++){
-                    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, (uint8_t) i);
-                    __delay_ms(250);
-                }
-                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
-            } else if(j == 1){
-                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_BON);
-                for(uint8_t i = 0x00; i < 0x0D; i++){
-                    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, (uint8_t) i);
-                    __delay_ms(250);
-                }
-                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
-            } else {
-                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_CON);
-                for(uint8_t i = 0x00; i < 0x0D; i++){
-                    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, (uint8_t) i);
-                    __delay_ms(250);
-                } 
-                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
-            }
-        }
-        
-        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x00);
-        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, 0x00);
-        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x00);
-        
-        for(uint8_t i = 0; i < 10; i++){
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x0D);
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_AON);
-            __delay_ms(250);
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x00);
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
-            __delay_ms(250);
-        }
-        
-        for(uint8_t i = 0; i < 10; i++){
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, 0x0D);
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_BON);
-            __delay_ms(250);
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, 0x00);
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
-            __delay_ms(250);
-        }
-        
-        for(uint8_t i = 0; i < 10; i++){
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x0D);
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_CON);
-            __delay_ms(250);
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x00);
-            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
-            __delay_ms(250);
-        }
+//        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLON);
+//        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x19);
+//
+//        
+//        for(uint8_t j = 0; j < 3; j++){
+//            if(j == 0){
+//                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_AON);
+//                for(uint8_t i = 0x00; i < 0x0D; i++){
+//                    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, (uint8_t) i);
+//                    __delay_ms(250);
+//                }
+//                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+//            } else if(j == 1){
+//                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_BON);
+//                for(uint8_t i = 0x00; i < 0x0D; i++){
+//                    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, (uint8_t) i);
+//                    __delay_ms(250);
+//                }
+//                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+//            } else {
+//                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_CON);
+//                for(uint8_t i = 0x00; i < 0x0D; i++){
+//                    I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, (uint8_t) i);
+//                    __delay_ms(250);
+//                } 
+//                I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+//            }
+//        }
+//        
+//        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x00);
+//        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, 0x00);
+//        I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x00);
+//        
+//        for(uint8_t i = 0; i < 10; i++){
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x0D);
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_AON);
+//            __delay_ms(250);
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x00);
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+//            __delay_ms(250);
+//        }
+//        
+//        for(uint8_t i = 0; i < 10; i++){
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, 0x0D);
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_BON);
+//            __delay_ms(250);
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGB, 0x00);
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+//            __delay_ms(250);
+//        }
+//        
+//        for(uint8_t i = 0; i < 10; i++){
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x0D);
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_CON);
+//            __delay_ms(250);
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGC, 0x00);
+//            I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
+//            __delay_ms(250);
+//        }
         
         I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLOFF);
         __delay_ms(1000);

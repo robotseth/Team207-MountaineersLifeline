@@ -9,4 +9,5 @@ mcc_generated_files/tmr1.h  \
 mcc_generated_files/tmr2.h  \
 mcc_generated_files/adc.h  \
 mcc_generated_files/eusart2.h  \
-mcc_generated_files/examples/i2c1_master_example.h 
+mcc_generated_files/examples/i2c1_master_example.h  \
+ms8607.h 
