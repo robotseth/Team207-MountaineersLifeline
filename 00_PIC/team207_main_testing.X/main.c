@@ -155,6 +155,7 @@ void main(void)
         __delay_ms(100);
         printf("Testing\r\n");
         
+        // Testing
 //        setLED(RGB_MAX, 0, 0);
 //        __delay_ms(500);
 //        setLED(0, RGB_MAX, 0);
