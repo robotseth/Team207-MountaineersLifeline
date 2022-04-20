@@ -42,7 +42,7 @@
   * enum status_code i2c_master_write_packet_wait_no_stop(struct i2c_master_packet *const packet);
   */
 #include "barometer_i2c.h"
-
+// NOTE: TWO DELAY FUNCTIONS PREVENT COMPILING. RECOMMEND ADDING FOR LOOPS.
 #ifdef __cplusplus
 extern "C" {
 #endif

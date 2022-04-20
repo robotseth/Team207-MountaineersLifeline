@@ -1,6 +1,6 @@
 #include "display.h"
 #include "timers.h"
-
+// NOTE: DOUBLE DECLARATION OF FUNCTIONS
 void displayHR(int heartRate)
 {
     // turn on blue LED
