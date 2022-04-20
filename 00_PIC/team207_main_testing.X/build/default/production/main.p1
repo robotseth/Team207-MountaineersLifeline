@@ -1107,12 +1107,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "155
 [; ;main.c: 155:         _delay((unsigned long)((100)*(48000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-<<<<<<< Updated upstream
-=======
-"140
-[; ;main.c: 140:         printf("Testing\r\n");
-[e ( _printf :s 1C ]
->>>>>>> Stashed changes
 "156
 [; ;main.c: 156:         printf("Light Value = %d \r\n",convertedValue);
 [e ( _printf , (. :s 1C -> _convertedValue `ui ]
