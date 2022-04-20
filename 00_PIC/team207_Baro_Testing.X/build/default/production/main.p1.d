@@ -8,4 +8,5 @@ mcc_generated_files/i2c1_master.h  \
 mcc_generated_files/ext_int.h  \
 mcc_generated_files/tmr0.h  \
 mcc_generated_files/adc.h  \
-mcc_generated_files/eusart1.h 
+mcc_generated_files/eusart1.h  \
+ms8607.h 

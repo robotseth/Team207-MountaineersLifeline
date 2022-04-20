@@ -10,19 +10,19 @@
 # 13 "ms8607.c"
 # 1 "./ms8607.h" 1
 # 11 "./ms8607.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 2 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
@@ -45,7 +45,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -74,9 +74,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
 
 
 typedef int8_t int_fast8_t;
@@ -109,21 +109,21 @@ typedef uint24_t uint_fast24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/stdint.h" 1 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/stdint.h" 1 3
 typedef int16_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 2 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdint.h" 2 3
 # 11 "./ms8607.h" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdio.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdio.h" 2 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 2 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
 
 
@@ -135,16 +135,16 @@ typedef void * va_list[1];
 
 
 typedef void * __isoc_va_list[1];
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdio.h" 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdio.h" 3
 typedef union _G_fpos64_t {
  char __opaque[16];
  double __align;
@@ -269,21 +269,21 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 12 "./ms8607.h" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdbool.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdbool.h" 1 3
 # 13 "./ms8607.h" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\math.h" 1 3
-# 15 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\math.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 33 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 1 3
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef float float_t;
 
 
 
 
 typedef double double_t;
-# 15 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\math.h" 2 3
-# 42 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\math.h" 3
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 2 3
+# 42 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
 int __fpclassifyf(float);
 
 
@@ -293,7 +293,7 @@ int __fpclassifyf(float);
 
 
 int __signbitf(float);
-# 59 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\math.h" 3
+# 59 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
 double acos(double);
 float acosf(float);
 long double acosl(long double);
@@ -549,7 +549,7 @@ long double nextafterl(long double, long double);
 double nexttoward(double, long double);
 float nexttowardf(float, long double);
 long double nexttowardl(long double, long double);
-# 323 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\math.h" 3
+# 323 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
 double pow(double, double);
 __attribute__((nonreentrant)) float powf(float, float);
 long double powl(long double, long double);
@@ -631,7 +631,7 @@ long double tgammal(long double);
 double trunc(double);
 float truncf(float);
 long double truncl(long double);
-# 428 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\math.h" 3
+# 428 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\math.h" 3
 extern int signgam;
 
 double j0(double);
@@ -741,16 +741,16 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\xc8debug.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdlib.h" 1 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdlib.h" 1 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 int atoi (const char *);
@@ -808,7 +808,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\xc8debug.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\xc8debug.h" 2 3
 
 
 
@@ -11274,7 +11274,7 @@ void PIN_MANAGER_IOC(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\conio.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\conio.h" 1 3
 # 54 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
@@ -11554,8 +11554,9 @@ void ms8607_init(void)
 _Bool ms8607_is_connected(void)
 {
  return (hsensor_is_connected() && psensor_is_connected());
+
 }
-# 219 "ms8607.c"
+# 220 "ms8607.c"
 enum ms8607_status ms8607_reset(void)
 {
  enum ms8607_status status;
@@ -11569,7 +11570,7 @@ enum ms8607_status ms8607_reset(void)
 
  return ms8607_status_ok;
 }
-# 244 "ms8607.c"
+# 245 "ms8607.c"
 enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution res)
 {
  enum ms8607_status status;
@@ -11607,13 +11608,13 @@ enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolutio
 
  return status;
 }
-# 290 "ms8607.c"
+# 291 "ms8607.c"
 void ms8607_set_humidity_i2c_master_mode(enum ms8607_humidity_i2c_master_mode mode)
 {
  hsensor_i2c_master_mode = mode;
  return;
 }
-# 309 "ms8607.c"
+# 310 "ms8607.c"
 enum ms8607_status ms8607_read_temperature_pressure_humidity( float *t, float *p, float *h)
 {
  enum ms8607_status status;
@@ -11628,7 +11629,7 @@ enum ms8607_status ms8607_read_temperature_pressure_humidity( float *t, float *p
 
  return ms8607_status_ok;
 }
-# 336 "ms8607.c"
+# 337 "ms8607.c"
 enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status *bat)
 {
  enum ms8607_status status;
@@ -11645,7 +11646,7 @@ enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status *bat)
 
  return status;
 }
-# 361 "ms8607.c"
+# 362 "ms8607.c"
 enum ms8607_status ms8607_enable_heater(void)
 {
  enum ms8607_status status;
@@ -11663,7 +11664,7 @@ enum ms8607_status ms8607_enable_heater(void)
 
  return status;
 }
-# 387 "ms8607.c"
+# 388 "ms8607.c"
 enum ms8607_status ms8607_disable_heater(void)
 {
  enum ms8607_status status;
@@ -11681,7 +11682,7 @@ enum ms8607_status ms8607_disable_heater(void)
 
  return status;
 }
-# 417 "ms8607.c"
+# 418 "ms8607.c"
 enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status *heater)
 {
  enum ms8607_status status;
@@ -11699,7 +11700,7 @@ enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status *heater)
 
  return status;
 }
-# 444 "ms8607.c"
+# 445 "ms8607.c"
 _Bool hsensor_is_connected(void)
 {
  enum status_code i2c_status;
@@ -11716,7 +11717,7 @@ _Bool hsensor_is_connected(void)
 
  return 1;
 }
-# 469 "ms8607.c"
+# 470 "ms8607.c"
 enum ms8607_status hsensor_reset(void)
 {
  enum ms8607_status status;
@@ -11730,7 +11731,7 @@ enum ms8607_status hsensor_reset(void)
 
  return ms8607_status_ok;
 }
-# 493 "ms8607.c"
+# 494 "ms8607.c"
 enum ms8607_status hsensor_write_command( uint8_t cmd)
 {
  enum status_code i2c_status;
@@ -11752,7 +11753,7 @@ enum ms8607_status hsensor_write_command( uint8_t cmd)
 
  return ms8607_status_ok;
 }
-# 526 "ms8607.c"
+# 527 "ms8607.c"
 enum ms8607_status hsensor_write_command_no_stop( uint8_t cmd)
 {
  enum status_code i2c_status;
@@ -11775,7 +11776,7 @@ enum ms8607_status hsensor_write_command_no_stop( uint8_t cmd)
 
  return ms8607_status_ok;
 }
-# 559 "ms8607.c"
+# 560 "ms8607.c"
 enum ms8607_status hsensor_crc_check( uint16_t value, uint8_t crc)
 {
  uint32_t polynom = 0x988000;
@@ -11799,7 +11800,7 @@ enum ms8607_status hsensor_crc_check( uint16_t value, uint8_t crc)
  else
   return ms8607_status_crc_error;
 }
-# 593 "ms8607.c"
+# 594 "ms8607.c"
 enum ms8607_status hsensor_read_user_register(uint8_t *value)
 {
  enum ms8607_status status;
@@ -11829,7 +11830,7 @@ enum ms8607_status hsensor_read_user_register(uint8_t *value)
 
  return ms8607_status_ok;
 }
-# 634 "ms8607.c"
+# 635 "ms8607.c"
 enum ms8607_status hsensor_write_user_register(uint8_t value)
 {
  enum ms8607_status status;
@@ -11864,7 +11865,7 @@ enum ms8607_status hsensor_write_user_register(uint8_t value)
 
  return ms8607_status_ok;
 }
-# 680 "ms8607.c"
+# 681 "ms8607.c"
 enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
 {
  enum ms8607_status status = ms8607_status_ok;
@@ -11915,7 +11916,7 @@ enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
 
  return status;
 }
-# 742 "ms8607.c"
+# 743 "ms8607.c"
 enum ms8607_status hsensor_read_relative_humidity( float *humidity)
 {
  enum ms8607_status status;
@@ -11930,7 +11931,7 @@ enum ms8607_status hsensor_read_relative_humidity( float *humidity)
 
  return status;
 }
-# 769 "ms8607.c"
+# 770 "ms8607.c"
 enum ms8607_status ms8607_get_compensated_humidity( float temperature, float relative_humidity, float *compensated_humidity)
 {
  if( hsensor_heater_on )
@@ -11940,7 +11941,7 @@ enum ms8607_status ms8607_get_compensated_humidity( float temperature, float rel
 
  return ms8607_status_ok;
 }
-# 791 "ms8607.c"
+# 792 "ms8607.c"
 enum ms8607_status ms8607_get_dew_point(float temperature,float relative_humidity, float *dew_point)
 {
  double partial_pressure;
@@ -11955,7 +11956,7 @@ enum ms8607_status ms8607_get_dew_point(float temperature,float relative_humidit
 
  return ms8607_status_ok;
 }
-# 815 "ms8607.c"
+# 816 "ms8607.c"
 _Bool psensor_is_connected(void)
 {
  enum status_code i2c_status;
@@ -11972,12 +11973,12 @@ _Bool psensor_is_connected(void)
 
  return 1;
 }
-# 840 "ms8607.c"
+# 841 "ms8607.c"
 enum ms8607_status psensor_reset(void)
 {
  return psensor_write_command(0x1E);
 }
-# 855 "ms8607.c"
+# 856 "ms8607.c"
 enum ms8607_status psensor_write_command( uint8_t cmd)
 {
  enum status_code i2c_status;
@@ -12011,7 +12012,7 @@ void ms8607_set_pressure_resolution(enum ms8607_pressure_resolution res)
  psensor_resolution_osr = res;
  return;
 }
-# 901 "ms8607.c"
+# 902 "ms8607.c"
 enum ms8607_status psensor_read_eeprom_coeff(uint8_t command, uint16_t *coeff)
 {
  enum ms8607_status status;
@@ -12046,7 +12047,7 @@ enum ms8607_status psensor_read_eeprom_coeff(uint8_t command, uint16_t *coeff)
 
  return ms8607_status_ok;
 }
-# 945 "ms8607.c"
+# 946 "ms8607.c"
 enum ms8607_status psensor_read_eeprom(void)
 {
  enum ms8607_status status;
@@ -12066,7 +12067,7 @@ enum ms8607_status psensor_read_eeprom(void)
 
    return ms8607_status_ok;
 }
-# 976 "ms8607.c"
+# 977 "ms8607.c"
 static enum ms8607_status psensor_conversion_and_read_adc(uint8_t cmd, uint32_t *adc)
 {
  enum ms8607_status status;
@@ -12107,7 +12108,7 @@ static enum ms8607_status psensor_conversion_and_read_adc(uint8_t cmd, uint32_t 
 
  return status;
 }
-# 1029 "ms8607.c"
+# 1030 "ms8607.c"
 enum ms8607_status psensor_read_pressure_and_temperature( float *temperature, float *pressure)
 {
  enum ms8607_status status = ms8607_status_ok;
@@ -12181,7 +12182,7 @@ enum ms8607_status psensor_read_pressure_and_temperature( float *temperature, fl
 
  return status;
 }
-# 1111 "ms8607.c"
+# 1112 "ms8607.c"
 _Bool psensor_crc_check (uint16_t *n_prom, uint8_t crc)
 {
  uint8_t cnt, n_bit;

@@ -42,7 +42,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-
+#include "ms8607.h"
 /*
                          Main application
  */
@@ -90,7 +90,18 @@ void main(void)
 {
     // Initialize the device
     SYSTEM_Initialize();
-
+    ms8607_init();
+    if(ms8607_is_connected()){
+        for(int r=0;r<5;r++){
+            LEDB_SetHigh();
+            LEDG_SetHigh();
+            __delay_ms(100);
+            LEDB_SetLow();
+            LEDG_SetLow();
+            __delay_ms(100);
+        }
+ 
+    }
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
     // Use the following macros to:
@@ -108,17 +119,16 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
-    LEDB_SetHigh();
-    LEDG_SetHigh(); 
+
     
     while (1)
     {
         
-        if(BTN1_GetValue() == 0){
-            LEDG_SetHigh();
-        } else {
-            LEDG_SetLow();
-        }
+//        if(BTN1_GetValue() == 0){
+//            LEDG_SetHigh();
+//        } else {
+//            LEDG_SetLow();
+//        }
         
     }
 }

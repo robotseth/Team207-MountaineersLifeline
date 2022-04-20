@@ -206,6 +206,7 @@ void ms8607_init(void)
 bool ms8607_is_connected(void)
 {
 	return (hsensor_is_connected() && psensor_is_connected());
+    //return false;
 }
 
 /**

@@ -16,8 +16,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "179
 [; ;ms8607.c: 179: static _Bool psensor_is_connected(void);
 [v _psensor_is_connected `(a ~T0 @X0 0 sf ]
-"219
-[; ;ms8607.c: 219: enum ms8607_status ms8607_reset(void)
+"220
+[; ;ms8607.c: 220: enum ms8607_status ms8607_reset(void)
 [c E782 0 1 2 3 4 .. ]
 [n E782 ms8607_status ms8607_status_ok ms8607_status_no_i2c_acknowledge ms8607_status_i2c_transfer_error ms8607_status_crc_error ms8607_status_heater_on_error  ]
 "167
@@ -26,8 +26,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "178
 [; ;ms8607.c: 178: static enum ms8607_status psensor_reset(void);
 [v _psensor_reset `(E782 ~T0 @X0 0 sf ]
-"244
-[; ;ms8607.c: 244: enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution res)
+"245
+[; ;ms8607.c: 245: enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution res)
 [c E788 0 1 2 3 .. ]
 [n E788 ms8607_humidity_resolution ms8607_humidity_resolution_12b ms8607_humidity_resolution_8b ms8607_humidity_resolution_10b ms8607_humidity_resolution_11b  ]
 "172
@@ -42,16 +42,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "175
 [; ;ms8607.c: 175: static enum ms8607_status hsensor_read_relative_humidity(float *);
 [v _hsensor_read_relative_humidity `(E782 ~T0 @X0 0 sf1`*f ]
-"336
-[; ;ms8607.c: 336: enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status *bat)
+"337
+[; ;ms8607.c: 337: enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status *bat)
 [c E793 0 1 .. ]
 [n E793 ms8607_battery_status ms8607_battery_ok ms8607_battery_low  ]
-"417
-[; ;ms8607.c: 417: enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status *heater)
+"418
+[; ;ms8607.c: 418: enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status *heater)
 [c E796 0 1 .. ]
 [n E796 ms8607_heater_status ms8607_heater_off ms8607_heater_on  ]
-"446
-[; ;ms8607.c: 446:  enum status_code i2c_status;
+"447
+[; ;ms8607.c: 447:  enum status_code i2c_status;
 [c E7220 0 1 2 .. ]
 [n E7220 status_code STATUS_OK STATUS_ERR_OVERFLOW STATUS_ERR_TIMEOUT  ]
 "49 ./barometer_i2c.h
@@ -78,11 +78,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./barometer_i2c.h: 59: enum status_code i2c_master_read_packet_wait(struct i2c_master_packet *const packet);
 [v _i2c_master_read_packet_wait `(E7220 ~T0 @X0 0 ef1`C*S857 ]
 [v F665 `(f ~T0 @X0 1 tf2`f`f ]
-"324 C:\Program Files\Microchip\xc8\v2.36\pic\include\c99\math.h
-[; ;C:\Program Files\Microchip\xc8\v2.36\pic\include\c99\math.h: 324: __attribute__((nonreentrant)) float powf(float, float);
+"324 C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\math.h
+[; ;C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\math.h: 324: __attribute__((nonreentrant)) float powf(float, float);
 [v _powf `JF665 ~T0 @X0 0 e ]
 "252
-[; ;C:\Program Files\Microchip\xc8\v2.36\pic\include\c99\math.h: 252: float log10f(float);
+[; ;C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\math.h: 252: float log10f(float);
 [v _log10f `(f ~T0 @X0 0 ef1`f ]
 "180 ms8607.c
 [; ;ms8607.c: 180: static enum ms8607_status psensor_write_command(uint8_t);
@@ -1105,445 +1105,445 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ms8607.c: 208:  return (hsensor_is_connected() && psensor_is_connected());
 [e ) -> -> && != -> ( _hsensor_is_connected ..  `i -> 0 `i != -> ( _psensor_is_connected ..  `i -> 0 `i `i `a ]
 [e $UE 859  ]
-"209
-[; ;ms8607.c: 209: }
+"210
+[; ;ms8607.c: 210: }
 [e :UE 859 ]
 }
-"219
-[; ;ms8607.c: 219: enum ms8607_status ms8607_reset(void)
-[v _ms8607_reset `(E782 ~T0 @X0 1 ef ]
 "220
-[; ;ms8607.c: 220: {
+[; ;ms8607.c: 220: enum ms8607_status ms8607_reset(void)
+[v _ms8607_reset `(E782 ~T0 @X0 1 ef ]
+"221
+[; ;ms8607.c: 221: {
 {
 [e :U _ms8607_reset ]
 [f ]
-"221
-[; ;ms8607.c: 221:  enum ms8607_status status;
+"222
+[; ;ms8607.c: 222:  enum ms8607_status status;
 [v _status `E782 ~T0 @X0 1 a ]
-"223
-[; ;ms8607.c: 223:  status = hsensor_reset();
-[e = _status ( _hsensor_reset ..  ]
 "224
-[; ;ms8607.c: 224:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 861  ]
+[; ;ms8607.c: 224:  status = hsensor_reset();
+[e = _status ( _hsensor_reset ..  ]
 "225
-[; ;ms8607.c: 225:   return status;
+[; ;ms8607.c: 225:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 861  ]
+"226
+[; ;ms8607.c: 226:   return status;
 [e ) _status ]
 [e $UE 860  ]
 [e :U 861 ]
-"226
-[; ;ms8607.c: 226:  status = psensor_reset();
-[e = _status ( _psensor_reset ..  ]
 "227
-[; ;ms8607.c: 227:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 862  ]
+[; ;ms8607.c: 227:  status = psensor_reset();
+[e = _status ( _psensor_reset ..  ]
 "228
-[; ;ms8607.c: 228:   return status;
+[; ;ms8607.c: 228:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 862  ]
+"229
+[; ;ms8607.c: 229:   return status;
 [e ) _status ]
 [e $UE 860  ]
 [e :U 862 ]
-"230
-[; ;ms8607.c: 230:  return ms8607_status_ok;
+"231
+[; ;ms8607.c: 231:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 860  ]
-"231
-[; ;ms8607.c: 231: }
+"232
+[; ;ms8607.c: 232: }
 [e :UE 860 ]
 }
-"244
-[; ;ms8607.c: 244: enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution res)
-[v _ms8607_set_humidity_resolution `(E782 ~T0 @X0 1 ef1`E788 ]
 "245
-[; ;ms8607.c: 245: {
+[; ;ms8607.c: 245: enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution res)
+[v _ms8607_set_humidity_resolution `(E782 ~T0 @X0 1 ef1`E788 ]
+"246
+[; ;ms8607.c: 246: {
 {
 [e :U _ms8607_set_humidity_resolution ]
-"244
-[; ;ms8607.c: 244: enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution res)
-[v _res `E788 ~T0 @X0 1 r1 ]
 "245
-[; ;ms8607.c: 245: {
-[f ]
+[; ;ms8607.c: 245: enum ms8607_status ms8607_set_humidity_resolution(enum ms8607_humidity_resolution res)
+[v _res `E788 ~T0 @X0 1 r1 ]
 "246
-[; ;ms8607.c: 246:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
+[; ;ms8607.c: 246: {
+[f ]
 "247
-[; ;ms8607.c: 247:  uint8_t reg_value, tmp=0;
+[; ;ms8607.c: 247:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
+"248
+[; ;ms8607.c: 248:  uint8_t reg_value, tmp=0;
 [v _reg_value `uc ~T0 @X0 1 a ]
 [v _tmp `uc ~T0 @X0 1 a ]
 [e = _tmp -> -> 0 `i `uc ]
-"248
-[; ;ms8607.c: 248:  uint32_t conversion_time = 16000;
+"249
+[; ;ms8607.c: 249:  uint32_t conversion_time = 16000;
 [v _conversion_time `ul ~T0 @X0 1 a ]
 [e = _conversion_time -> -> -> 16000 `i `l `ul ]
-"250
-[; ;ms8607.c: 250:  if( res == ms8607_humidity_resolution_12b) {
+"251
+[; ;ms8607.c: 251:  if( res == ms8607_humidity_resolution_12b) {
 [e $ ! == -> _res `ui -> . `E788 0 `ui 864  ]
 {
-"251
-[; ;ms8607.c: 251:   tmp = 0x00;
-[e = _tmp -> -> 0 `i `uc ]
 "252
-[; ;ms8607.c: 252:   conversion_time = 16000;
-[e = _conversion_time -> -> -> 16000 `i `l `ul ]
+[; ;ms8607.c: 252:   tmp = 0x00;
+[e = _tmp -> -> 0 `i `uc ]
 "253
-[; ;ms8607.c: 253:  }
+[; ;ms8607.c: 253:   conversion_time = 16000;
+[e = _conversion_time -> -> -> 16000 `i `l `ul ]
+"254
+[; ;ms8607.c: 254:  }
 }
 [e $U 865  ]
-"254
-[; ;ms8607.c: 254:  else if( res == ms8607_humidity_resolution_10b) {
+"255
+[; ;ms8607.c: 255:  else if( res == ms8607_humidity_resolution_10b) {
 [e :U 864 ]
 [e $ ! == -> _res `ui -> . `E788 2 `ui 866  ]
 {
-"255
-[; ;ms8607.c: 255:   tmp = 0x80;
-[e = _tmp -> -> 128 `i `uc ]
 "256
-[; ;ms8607.c: 256:   conversion_time = 5000;
-[e = _conversion_time -> -> -> 5000 `i `l `ul ]
+[; ;ms8607.c: 256:   tmp = 0x80;
+[e = _tmp -> -> 128 `i `uc ]
 "257
-[; ;ms8607.c: 257:  }
+[; ;ms8607.c: 257:   conversion_time = 5000;
+[e = _conversion_time -> -> -> 5000 `i `l `ul ]
+"258
+[; ;ms8607.c: 258:  }
 }
 [e $U 867  ]
-"258
-[; ;ms8607.c: 258:  else if( res == ms8607_humidity_resolution_8b) {
+"259
+[; ;ms8607.c: 259:  else if( res == ms8607_humidity_resolution_8b) {
 [e :U 866 ]
 [e $ ! == -> _res `ui -> . `E788 1 `ui 868  ]
 {
-"259
-[; ;ms8607.c: 259:   tmp = 0x01;
-[e = _tmp -> -> 1 `i `uc ]
 "260
-[; ;ms8607.c: 260:   conversion_time = 3000;
-[e = _conversion_time -> -> -> 3000 `i `l `ul ]
+[; ;ms8607.c: 260:   tmp = 0x01;
+[e = _tmp -> -> 1 `i `uc ]
 "261
-[; ;ms8607.c: 261:  }
+[; ;ms8607.c: 261:   conversion_time = 3000;
+[e = _conversion_time -> -> -> 3000 `i `l `ul ]
+"262
+[; ;ms8607.c: 262:  }
 }
 [e $U 869  ]
-"262
-[; ;ms8607.c: 262:  else if( res == ms8607_humidity_resolution_11b) {
+"263
+[; ;ms8607.c: 263:  else if( res == ms8607_humidity_resolution_11b) {
 [e :U 868 ]
 [e $ ! == -> _res `ui -> . `E788 3 `ui 870  ]
 {
-"263
-[; ;ms8607.c: 263:   tmp = 0x81;
-[e = _tmp -> -> 129 `i `uc ]
 "264
-[; ;ms8607.c: 264:   conversion_time = 9000;
-[e = _conversion_time -> -> -> 9000 `i `l `ul ]
+[; ;ms8607.c: 264:   tmp = 0x81;
+[e = _tmp -> -> 129 `i `uc ]
 "265
-[; ;ms8607.c: 265:  }
+[; ;ms8607.c: 265:   conversion_time = 9000;
+[e = _conversion_time -> -> -> 9000 `i `l `ul ]
+"266
+[; ;ms8607.c: 266:  }
 }
 [e :U 870 ]
 [e :U 869 ]
 [e :U 867 ]
 [e :U 865 ]
-"267
-[; ;ms8607.c: 267:  status = hsensor_read_user_register(&reg_value);
-[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "268
-[; ;ms8607.c: 268:  if( status != ms8607_status_ok )
-[e $ ! != -> _status `ui -> . `E782 0 `ui 871  ]
+[; ;ms8607.c: 268:  status = hsensor_read_user_register(&reg_value);
+[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "269
-[; ;ms8607.c: 269:   return status;
+[; ;ms8607.c: 269:  if( status != ms8607_status_ok )
+[e $ ! != -> _status `ui -> . `E782 0 `ui 871  ]
+"270
+[; ;ms8607.c: 270:   return status;
 [e ) _status ]
 [e $UE 863  ]
 [e :U 871 ]
-"272
-[; ;ms8607.c: 272:  reg_value &= ~0x81;
-[e =& _reg_value -> ~ -> 129 `i `uc ]
 "273
-[; ;ms8607.c: 273:  reg_value |= tmp & 0x81;
+[; ;ms8607.c: 273:  reg_value &= ~0x81;
+[e =& _reg_value -> ~ -> 129 `i `uc ]
+"274
+[; ;ms8607.c: 274:  reg_value |= tmp & 0x81;
 [e =| _reg_value -> & -> _tmp `i -> 129 `i `uc ]
-"275
-[; ;ms8607.c: 275:  hsensor_conversion_time = conversion_time;
+"276
+[; ;ms8607.c: 276:  hsensor_conversion_time = conversion_time;
 [e = _hsensor_conversion_time _conversion_time ]
-"277
-[; ;ms8607.c: 277:  status = hsensor_write_user_register(reg_value);
+"278
+[; ;ms8607.c: 278:  status = hsensor_write_user_register(reg_value);
 [e = _status ( _hsensor_write_user_register (1 _reg_value ]
-"279
-[; ;ms8607.c: 279:  return status;
+"280
+[; ;ms8607.c: 280:  return status;
 [e ) _status ]
 [e $UE 863  ]
-"280
-[; ;ms8607.c: 280: }
+"281
+[; ;ms8607.c: 281: }
 [e :UE 863 ]
 }
-"290
-[; ;ms8607.c: 290: void ms8607_set_humidity_i2c_master_mode(enum ms8607_humidity_i2c_master_mode mode)
-[v _ms8607_set_humidity_i2c_master_mode `(v ~T0 @X0 1 ef1`E779 ]
 "291
-[; ;ms8607.c: 291: {
+[; ;ms8607.c: 291: void ms8607_set_humidity_i2c_master_mode(enum ms8607_humidity_i2c_master_mode mode)
+[v _ms8607_set_humidity_i2c_master_mode `(v ~T0 @X0 1 ef1`E779 ]
+"292
+[; ;ms8607.c: 292: {
 {
 [e :U _ms8607_set_humidity_i2c_master_mode ]
-"290
-[; ;ms8607.c: 290: void ms8607_set_humidity_i2c_master_mode(enum ms8607_humidity_i2c_master_mode mode)
-[v _mode `E779 ~T0 @X0 1 r1 ]
 "291
-[; ;ms8607.c: 291: {
-[f ]
+[; ;ms8607.c: 291: void ms8607_set_humidity_i2c_master_mode(enum ms8607_humidity_i2c_master_mode mode)
+[v _mode `E779 ~T0 @X0 1 r1 ]
 "292
-[; ;ms8607.c: 292:  hsensor_i2c_master_mode = mode;
-[e = _hsensor_i2c_master_mode _mode ]
+[; ;ms8607.c: 292: {
+[f ]
 "293
-[; ;ms8607.c: 293:  return;
-[e $UE 872  ]
+[; ;ms8607.c: 293:  hsensor_i2c_master_mode = mode;
+[e = _hsensor_i2c_master_mode _mode ]
 "294
-[; ;ms8607.c: 294: }
+[; ;ms8607.c: 294:  return;
+[e $UE 872  ]
+"295
+[; ;ms8607.c: 295: }
 [e :UE 872 ]
 }
-"309
-[; ;ms8607.c: 309: enum ms8607_status ms8607_read_temperature_pressure_humidity( float *t, float *p, float *h)
-[v _ms8607_read_temperature_pressure_humidity `(E782 ~T0 @X0 1 ef3`*f`*f`*f ]
 "310
-[; ;ms8607.c: 310: {
+[; ;ms8607.c: 310: enum ms8607_status ms8607_read_temperature_pressure_humidity( float *t, float *p, float *h)
+[v _ms8607_read_temperature_pressure_humidity `(E782 ~T0 @X0 1 ef3`*f`*f`*f ]
+"311
+[; ;ms8607.c: 311: {
 {
 [e :U _ms8607_read_temperature_pressure_humidity ]
-"309
-[; ;ms8607.c: 309: enum ms8607_status ms8607_read_temperature_pressure_humidity( float *t, float *p, float *h)
+"310
+[; ;ms8607.c: 310: enum ms8607_status ms8607_read_temperature_pressure_humidity( float *t, float *p, float *h)
 [v _t `*f ~T0 @X0 1 r1 ]
 [v _p `*f ~T0 @X0 1 r2 ]
 [v _h `*f ~T0 @X0 1 r3 ]
-"310
-[; ;ms8607.c: 310: {
-[f ]
 "311
-[; ;ms8607.c: 311:  enum ms8607_status status;
+[; ;ms8607.c: 311: {
+[f ]
+"312
+[; ;ms8607.c: 312:  enum ms8607_status status;
 [v _status `E782 ~T0 @X0 1 a ]
-"313
-[; ;ms8607.c: 313:  status = psensor_read_pressure_and_temperature(t,p);
-[e = _status ( _psensor_read_pressure_and_temperature (2 , _t _p ]
 "314
-[; ;ms8607.c: 314:  if(status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 874  ]
+[; ;ms8607.c: 314:  status = psensor_read_pressure_and_temperature(t,p);
+[e = _status ( _psensor_read_pressure_and_temperature (2 , _t _p ]
 "315
-[; ;ms8607.c: 315:   return status;
+[; ;ms8607.c: 315:  if(status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 874  ]
+"316
+[; ;ms8607.c: 316:   return status;
 [e ) _status ]
 [e $UE 873  ]
 [e :U 874 ]
-"317
-[; ;ms8607.c: 317:  status = hsensor_read_relative_humidity(h);
-[e = _status ( _hsensor_read_relative_humidity (1 _h ]
 "318
-[; ;ms8607.c: 318:  if(status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 875  ]
+[; ;ms8607.c: 318:  status = hsensor_read_relative_humidity(h);
+[e = _status ( _hsensor_read_relative_humidity (1 _h ]
 "319
-[; ;ms8607.c: 319:   return status;
+[; ;ms8607.c: 319:  if(status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 875  ]
+"320
+[; ;ms8607.c: 320:   return status;
 [e ) _status ]
 [e $UE 873  ]
 [e :U 875 ]
-"321
-[; ;ms8607.c: 321:  return ms8607_status_ok;
+"322
+[; ;ms8607.c: 322:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 873  ]
-"322
-[; ;ms8607.c: 322: }
+"323
+[; ;ms8607.c: 323: }
 [e :UE 873 ]
 }
-"336
-[; ;ms8607.c: 336: enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status *bat)
-[v _ms8607_get_battery_status `(E782 ~T0 @X0 1 ef1`*E793 ]
 "337
-[; ;ms8607.c: 337: {
+[; ;ms8607.c: 337: enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status *bat)
+[v _ms8607_get_battery_status `(E782 ~T0 @X0 1 ef1`*E793 ]
+"338
+[; ;ms8607.c: 338: {
 {
 [e :U _ms8607_get_battery_status ]
-"336
-[; ;ms8607.c: 336: enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status *bat)
-[v _bat `*E793 ~T0 @X0 1 r1 ]
 "337
-[; ;ms8607.c: 337: {
-[f ]
+[; ;ms8607.c: 337: enum ms8607_status ms8607_get_battery_status(enum ms8607_battery_status *bat)
+[v _bat `*E793 ~T0 @X0 1 r1 ]
 "338
-[; ;ms8607.c: 338:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
+[; ;ms8607.c: 338: {
+[f ]
 "339
-[; ;ms8607.c: 339:  uint8_t reg_value;
+[; ;ms8607.c: 339:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
+"340
+[; ;ms8607.c: 340:  uint8_t reg_value;
 [v _reg_value `uc ~T0 @X0 1 a ]
-"341
-[; ;ms8607.c: 341:  status = hsensor_read_user_register(&reg_value);
-[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "342
-[; ;ms8607.c: 342:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 877  ]
+[; ;ms8607.c: 342:  status = hsensor_read_user_register(&reg_value);
+[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "343
-[; ;ms8607.c: 343:   return status;
+[; ;ms8607.c: 343:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 877  ]
+"344
+[; ;ms8607.c: 344:   return status;
 [e ) _status ]
 [e $UE 876  ]
 [e :U 877 ]
-"345
-[; ;ms8607.c: 345:  if( reg_value & 0x40 )
-[e $ ! != & -> _reg_value `i -> 64 `i -> 0 `i 878  ]
 "346
-[; ;ms8607.c: 346:   *bat = ms8607_battery_low;
+[; ;ms8607.c: 346:  if( reg_value & 0x40 )
+[e $ ! != & -> _reg_value `i -> 64 `i -> 0 `i 878  ]
+"347
+[; ;ms8607.c: 347:   *bat = ms8607_battery_low;
 [e = *U _bat . `E793 1 ]
 [e $U 879  ]
-"347
-[; ;ms8607.c: 347:  else
-[e :U 878 ]
 "348
-[; ;ms8607.c: 348:   *bat = ms8607_battery_ok;
+[; ;ms8607.c: 348:  else
+[e :U 878 ]
+"349
+[; ;ms8607.c: 349:   *bat = ms8607_battery_ok;
 [e = *U _bat . `E793 0 ]
 [e :U 879 ]
-"350
-[; ;ms8607.c: 350:  return status;
+"351
+[; ;ms8607.c: 351:  return status;
 [e ) _status ]
 [e $UE 876  ]
-"351
-[; ;ms8607.c: 351: }
+"352
+[; ;ms8607.c: 352: }
 [e :UE 876 ]
 }
-"361
-[; ;ms8607.c: 361: enum ms8607_status ms8607_enable_heater(void)
-[v _ms8607_enable_heater `(E782 ~T0 @X0 1 ef ]
 "362
-[; ;ms8607.c: 362: {
+[; ;ms8607.c: 362: enum ms8607_status ms8607_enable_heater(void)
+[v _ms8607_enable_heater `(E782 ~T0 @X0 1 ef ]
+"363
+[; ;ms8607.c: 363: {
 {
 [e :U _ms8607_enable_heater ]
 [f ]
-"363
-[; ;ms8607.c: 363:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
 "364
-[; ;ms8607.c: 364:  uint8_t reg_value;
+[; ;ms8607.c: 364:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
+"365
+[; ;ms8607.c: 365:  uint8_t reg_value;
 [v _reg_value `uc ~T0 @X0 1 a ]
-"366
-[; ;ms8607.c: 366:  status = hsensor_read_user_register(&reg_value);
-[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "367
-[; ;ms8607.c: 367:  if( status != ms8607_status_ok )
-[e $ ! != -> _status `ui -> . `E782 0 `ui 881  ]
+[; ;ms8607.c: 367:  status = hsensor_read_user_register(&reg_value);
+[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "368
-[; ;ms8607.c: 368:   return status;
+[; ;ms8607.c: 368:  if( status != ms8607_status_ok )
+[e $ ! != -> _status `ui -> . `E782 0 `ui 881  ]
+"369
+[; ;ms8607.c: 369:   return status;
 [e ) _status ]
 [e $UE 880  ]
 [e :U 881 ]
-"371
-[; ;ms8607.c: 371:  reg_value |= 0x04;
-[e =| _reg_value -> -> 4 `i `uc ]
 "372
-[; ;ms8607.c: 372:  hsensor_heater_on = 1;
+[; ;ms8607.c: 372:  reg_value |= 0x04;
+[e =| _reg_value -> -> 4 `i `uc ]
+"373
+[; ;ms8607.c: 373:  hsensor_heater_on = 1;
 [e = _hsensor_heater_on -> -> 1 `i `a ]
-"374
-[; ;ms8607.c: 374:  status = hsensor_write_user_register(reg_value);
+"375
+[; ;ms8607.c: 375:  status = hsensor_write_user_register(reg_value);
 [e = _status ( _hsensor_write_user_register (1 _reg_value ]
-"376
-[; ;ms8607.c: 376:  return status;
+"377
+[; ;ms8607.c: 377:  return status;
 [e ) _status ]
 [e $UE 880  ]
-"377
-[; ;ms8607.c: 377: }
+"378
+[; ;ms8607.c: 378: }
 [e :UE 880 ]
 }
-"387
-[; ;ms8607.c: 387: enum ms8607_status ms8607_disable_heater(void)
-[v _ms8607_disable_heater `(E782 ~T0 @X0 1 ef ]
 "388
-[; ;ms8607.c: 388: {
+[; ;ms8607.c: 388: enum ms8607_status ms8607_disable_heater(void)
+[v _ms8607_disable_heater `(E782 ~T0 @X0 1 ef ]
+"389
+[; ;ms8607.c: 389: {
 {
 [e :U _ms8607_disable_heater ]
 [f ]
-"389
-[; ;ms8607.c: 389:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
 "390
-[; ;ms8607.c: 390:  uint8_t reg_value;
+[; ;ms8607.c: 390:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
+"391
+[; ;ms8607.c: 391:  uint8_t reg_value;
 [v _reg_value `uc ~T0 @X0 1 a ]
-"392
-[; ;ms8607.c: 392:  status = hsensor_read_user_register(&reg_value);
-[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "393
-[; ;ms8607.c: 393:  if( status != ms8607_status_ok )
-[e $ ! != -> _status `ui -> . `E782 0 `ui 883  ]
+[; ;ms8607.c: 393:  status = hsensor_read_user_register(&reg_value);
+[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "394
-[; ;ms8607.c: 394:   return status;
+[; ;ms8607.c: 394:  if( status != ms8607_status_ok )
+[e $ ! != -> _status `ui -> . `E782 0 `ui 883  ]
+"395
+[; ;ms8607.c: 395:   return status;
 [e ) _status ]
 [e $UE 882  ]
 [e :U 883 ]
-"397
-[; ;ms8607.c: 397:  reg_value &= ~0x04;
-[e =& _reg_value -> ~ -> 4 `i `uc ]
 "398
-[; ;ms8607.c: 398:  hsensor_heater_on = 0;
+[; ;ms8607.c: 398:  reg_value &= ~0x04;
+[e =& _reg_value -> ~ -> 4 `i `uc ]
+"399
+[; ;ms8607.c: 399:  hsensor_heater_on = 0;
 [e = _hsensor_heater_on -> -> 0 `i `a ]
-"400
-[; ;ms8607.c: 400:  status = hsensor_write_user_register(reg_value);
+"401
+[; ;ms8607.c: 401:  status = hsensor_write_user_register(reg_value);
 [e = _status ( _hsensor_write_user_register (1 _reg_value ]
-"402
-[; ;ms8607.c: 402:  return status;
+"403
+[; ;ms8607.c: 403:  return status;
 [e ) _status ]
 [e $UE 882  ]
-"403
-[; ;ms8607.c: 403: }
+"404
+[; ;ms8607.c: 404: }
 [e :UE 882 ]
 }
-"417
-[; ;ms8607.c: 417: enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status *heater)
-[v _ms8607_get_heater_status `(E782 ~T0 @X0 1 ef1`*E796 ]
 "418
-[; ;ms8607.c: 418: {
+[; ;ms8607.c: 418: enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status *heater)
+[v _ms8607_get_heater_status `(E782 ~T0 @X0 1 ef1`*E796 ]
+"419
+[; ;ms8607.c: 419: {
 {
 [e :U _ms8607_get_heater_status ]
-"417
-[; ;ms8607.c: 417: enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status *heater)
-[v _heater `*E796 ~T0 @X0 1 r1 ]
 "418
-[; ;ms8607.c: 418: {
-[f ]
+[; ;ms8607.c: 418: enum ms8607_status ms8607_get_heater_status(enum ms8607_heater_status *heater)
+[v _heater `*E796 ~T0 @X0 1 r1 ]
 "419
-[; ;ms8607.c: 419:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
+[; ;ms8607.c: 419: {
+[f ]
 "420
-[; ;ms8607.c: 420:  uint8_t reg_value;
+[; ;ms8607.c: 420:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
+"421
+[; ;ms8607.c: 421:  uint8_t reg_value;
 [v _reg_value `uc ~T0 @X0 1 a ]
-"422
-[; ;ms8607.c: 422:  status = hsensor_read_user_register(&reg_value);
-[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "423
-[; ;ms8607.c: 423:  if( status != ms8607_status_ok )
-[e $ ! != -> _status `ui -> . `E782 0 `ui 885  ]
+[; ;ms8607.c: 423:  status = hsensor_read_user_register(&reg_value);
+[e = _status ( _hsensor_read_user_register (1 &U _reg_value ]
 "424
-[; ;ms8607.c: 424:   return status;
+[; ;ms8607.c: 424:  if( status != ms8607_status_ok )
+[e $ ! != -> _status `ui -> . `E782 0 `ui 885  ]
+"425
+[; ;ms8607.c: 425:   return status;
 [e ) _status ]
 [e $UE 884  ]
 [e :U 885 ]
-"427
-[; ;ms8607.c: 427:  if( reg_value & 0x04)
-[e $ ! != & -> _reg_value `i -> 4 `i -> 0 `i 886  ]
 "428
-[; ;ms8607.c: 428:   *heater = ms8607_heater_on;
+[; ;ms8607.c: 428:  if( reg_value & 0x04)
+[e $ ! != & -> _reg_value `i -> 4 `i -> 0 `i 886  ]
+"429
+[; ;ms8607.c: 429:   *heater = ms8607_heater_on;
 [e = *U _heater . `E796 1 ]
 [e $U 887  ]
-"429
-[; ;ms8607.c: 429:  else
-[e :U 886 ]
 "430
-[; ;ms8607.c: 430:   *heater = ms8607_heater_off;
+[; ;ms8607.c: 430:  else
+[e :U 886 ]
+"431
+[; ;ms8607.c: 431:   *heater = ms8607_heater_off;
 [e = *U _heater . `E796 0 ]
 [e :U 887 ]
-"432
-[; ;ms8607.c: 432:  return status;
+"433
+[; ;ms8607.c: 433:  return status;
 [e ) _status ]
 [e $UE 884  ]
-"433
-[; ;ms8607.c: 433: }
+"434
+[; ;ms8607.c: 434: }
 [e :UE 884 ]
 }
-"444
-[; ;ms8607.c: 444: _Bool hsensor_is_connected(void)
-[v _hsensor_is_connected `(a ~T0 @X0 1 ef ]
 "445
-[; ;ms8607.c: 445: {
+[; ;ms8607.c: 445: _Bool hsensor_is_connected(void)
+[v _hsensor_is_connected `(a ~T0 @X0 1 ef ]
+"446
+[; ;ms8607.c: 446: {
 {
 [e :U _hsensor_is_connected ]
 [f ]
-"446
-[; ;ms8607.c: 446:  enum status_code i2c_status;
+"447
+[; ;ms8607.c: 447:  enum status_code i2c_status;
 [v _i2c_status `E7220 ~T0 @X0 1 a ]
 [v F7315 `S857 ~T0 @X0 1 s ]
 [i F7315
 :U ..
 :U ..
-"448
-[; ;ms8607.c: 448:  struct i2c_master_packet transfer = {
+"449
+[; ;ms8607.c: 449:  struct i2c_master_packet transfer = {
 -> -> 64 `i `us
 -> -> 0 `i `us
 -> -> -> 0 `i `*v `*uc
@@ -1552,89 +1552,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _transfer `S857 ~T0 @X0 1 a ]
 [e = _transfer F7315 ]
-"454
-[; ;ms8607.c: 454:  i2c_status = i2c_master_write_packet_wait(&transfer);
-[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "455
-[; ;ms8607.c: 455:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 889  ]
+[; ;ms8607.c: 455:  i2c_status = i2c_master_write_packet_wait(&transfer);
+[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "456
-[; ;ms8607.c: 456:   return 0;
+[; ;ms8607.c: 456:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 889  ]
+"457
+[; ;ms8607.c: 457:   return 0;
 [e ) -> -> 0 `i `a ]
 [e $UE 888  ]
 [e :U 889 ]
-"458
-[; ;ms8607.c: 458:  return 1;
+"459
+[; ;ms8607.c: 459:  return 1;
 [e ) -> -> 1 `i `a ]
 [e $UE 888  ]
-"459
-[; ;ms8607.c: 459: }
+"460
+[; ;ms8607.c: 460: }
 [e :UE 888 ]
 }
-"469
-[; ;ms8607.c: 469: enum ms8607_status hsensor_reset(void)
-[v _hsensor_reset `(E782 ~T0 @X0 1 ef ]
 "470
-[; ;ms8607.c: 470: {
+[; ;ms8607.c: 470: enum ms8607_status hsensor_reset(void)
+[v _hsensor_reset `(E782 ~T0 @X0 1 ef ]
+"471
+[; ;ms8607.c: 471: {
 {
 [e :U _hsensor_reset ]
 [f ]
-"471
-[; ;ms8607.c: 471:  enum ms8607_status status;
+"472
+[; ;ms8607.c: 472:  enum ms8607_status status;
 [v _status `E782 ~T0 @X0 1 a ]
-"473
-[; ;ms8607.c: 473:  status = hsensor_write_command(0xFE);
-[e = _status ( _hsensor_write_command (1 -> -> 254 `i `uc ]
 "474
-[; ;ms8607.c: 474:  if( status != ms8607_status_ok )
-[e $ ! != -> _status `ui -> . `E782 0 `ui 891  ]
+[; ;ms8607.c: 474:  status = hsensor_write_command(0xFE);
+[e = _status ( _hsensor_write_command (1 -> -> 254 `i `uc ]
 "475
-[; ;ms8607.c: 475:   return status;
+[; ;ms8607.c: 475:  if( status != ms8607_status_ok )
+[e $ ! != -> _status `ui -> . `E782 0 `ui 891  ]
+"476
+[; ;ms8607.c: 476:   return status;
 [e ) _status ]
 [e $UE 890  ]
 [e :U 891 ]
-"477
-[; ;ms8607.c: 477:  hsensor_conversion_time = 16000;
-[e = _hsensor_conversion_time -> -> -> 16000 `i `l `ul ]
 "478
-[; ;ms8607.c: 478:  _delay((unsigned long)((15)*(1000000/4000.0)));
+[; ;ms8607.c: 478:  hsensor_conversion_time = 16000;
+[e = _hsensor_conversion_time -> -> -> 16000 `i `l `ul ]
+"479
+[; ;ms8607.c: 479:  _delay((unsigned long)((15)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 15 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"480
-[; ;ms8607.c: 480:  return ms8607_status_ok;
+"481
+[; ;ms8607.c: 481:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 890  ]
-"481
-[; ;ms8607.c: 481: }
+"482
+[; ;ms8607.c: 482: }
 [e :UE 890 ]
 }
-"493
-[; ;ms8607.c: 493: enum ms8607_status hsensor_write_command( uint8_t cmd)
-[v _hsensor_write_command `(E782 ~T0 @X0 1 ef1`uc ]
 "494
-[; ;ms8607.c: 494: {
+[; ;ms8607.c: 494: enum ms8607_status hsensor_write_command( uint8_t cmd)
+[v _hsensor_write_command `(E782 ~T0 @X0 1 ef1`uc ]
+"495
+[; ;ms8607.c: 495: {
 {
 [e :U _hsensor_write_command ]
-"493
-[; ;ms8607.c: 493: enum ms8607_status hsensor_write_command( uint8_t cmd)
-[v _cmd `uc ~T0 @X0 1 r1 ]
 "494
-[; ;ms8607.c: 494: {
-[f ]
+[; ;ms8607.c: 494: enum ms8607_status hsensor_write_command( uint8_t cmd)
+[v _cmd `uc ~T0 @X0 1 r1 ]
 "495
-[; ;ms8607.c: 495:  enum status_code i2c_status;
-[v _i2c_status `E7220 ~T0 @X0 1 a ]
+[; ;ms8607.c: 495: {
+[f ]
 "496
-[; ;ms8607.c: 496:  uint8_t data[1];
+[; ;ms8607.c: 496:  enum status_code i2c_status;
+[v _i2c_status `E7220 ~T0 @X0 1 a ]
+"497
+[; ;ms8607.c: 497:  uint8_t data[1];
 [v _data `uc ~T0 @X0 -> -> 1 `i `ux a ]
-"498
-[; ;ms8607.c: 498:  data[0] = cmd;
+"499
+[; ;ms8607.c: 499:  data[0] = cmd;
 [e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _cmd ]
 [v F7323 `S857 ~T0 @X0 1 s ]
 [i F7323
 :U ..
 :U ..
-"500
-[; ;ms8607.c: 500:  struct i2c_master_packet transfer = {
+"501
+[; ;ms8607.c: 501:  struct i2c_master_packet transfer = {
 -> -> 0 `i `us
 -> -> 0 `i `us
 -> -> 0 `i `*uc
@@ -1644,61 +1644,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _transfer `S857 ~T0 @X0 1 a ]
 [e = _transfer F7323 ]
 [e ; = . _transfer 0 -> -> 64 `i `us ; = . _transfer 1 -> -> 1 `i `us = . _transfer 2 &U _data ]
-"506
-[; ;ms8607.c: 506:  i2c_status = i2c_master_write_packet_wait(&transfer);
-[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "507
-[; ;ms8607.c: 507:  if( i2c_status == STATUS_ERR_OVERFLOW )
-[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 893  ]
+[; ;ms8607.c: 507:  i2c_status = i2c_master_write_packet_wait(&transfer);
+[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "508
-[; ;ms8607.c: 508:   return ms8607_status_no_i2c_acknowledge;
+[; ;ms8607.c: 508:  if( i2c_status == STATUS_ERR_OVERFLOW )
+[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 893  ]
+"509
+[; ;ms8607.c: 509:   return ms8607_status_no_i2c_acknowledge;
 [e ) . `E782 1 ]
 [e $UE 892  ]
 [e :U 893 ]
-"509
-[; ;ms8607.c: 509:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 894  ]
 "510
-[; ;ms8607.c: 510:   return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 510:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 894  ]
+"511
+[; ;ms8607.c: 511:   return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 892  ]
 [e :U 894 ]
-"512
-[; ;ms8607.c: 512:  return ms8607_status_ok;
+"513
+[; ;ms8607.c: 513:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 892  ]
-"513
-[; ;ms8607.c: 513: }
+"514
+[; ;ms8607.c: 514: }
 [e :UE 892 ]
 }
-"526
-[; ;ms8607.c: 526: enum ms8607_status hsensor_write_command_no_stop( uint8_t cmd)
-[v _hsensor_write_command_no_stop `(E782 ~T0 @X0 1 ef1`uc ]
 "527
-[; ;ms8607.c: 527: {
+[; ;ms8607.c: 527: enum ms8607_status hsensor_write_command_no_stop( uint8_t cmd)
+[v _hsensor_write_command_no_stop `(E782 ~T0 @X0 1 ef1`uc ]
+"528
+[; ;ms8607.c: 528: {
 {
 [e :U _hsensor_write_command_no_stop ]
-"526
-[; ;ms8607.c: 526: enum ms8607_status hsensor_write_command_no_stop( uint8_t cmd)
-[v _cmd `uc ~T0 @X0 1 r1 ]
 "527
-[; ;ms8607.c: 527: {
-[f ]
+[; ;ms8607.c: 527: enum ms8607_status hsensor_write_command_no_stop( uint8_t cmd)
+[v _cmd `uc ~T0 @X0 1 r1 ]
 "528
-[; ;ms8607.c: 528:  enum status_code i2c_status;
-[v _i2c_status `E7220 ~T0 @X0 1 a ]
+[; ;ms8607.c: 528: {
+[f ]
 "529
-[; ;ms8607.c: 529:  uint8_t data[1];
+[; ;ms8607.c: 529:  enum status_code i2c_status;
+[v _i2c_status `E7220 ~T0 @X0 1 a ]
+"530
+[; ;ms8607.c: 530:  uint8_t data[1];
 [v _data `uc ~T0 @X0 -> -> 1 `i `ux a ]
-"531
-[; ;ms8607.c: 531:  data[0] = cmd;
+"532
+[; ;ms8607.c: 532:  data[0] = cmd;
 [e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _cmd ]
 [v F7329 `S857 ~T0 @X0 1 s ]
 [i F7329
 :U ..
 :U ..
-"533
-[; ;ms8607.c: 533:  struct i2c_master_packet transfer = {
+"534
+[; ;ms8607.c: 534:  struct i2c_master_packet transfer = {
 -> -> 0 `i `us
 -> -> 0 `i `us
 -> -> 0 `i `*uc
@@ -1708,143 +1708,143 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _transfer `S857 ~T0 @X0 1 a ]
 [e = _transfer F7329 ]
 [e ; = . _transfer 0 -> -> 64 `i `us ; = . _transfer 1 -> -> 1 `i `us = . _transfer 2 &U _data ]
-"540
-[; ;ms8607.c: 540:  i2c_status = i2c_master_write_packet_wait_no_stop(&transfer);
-[e = _i2c_status ( _i2c_master_write_packet_wait_no_stop (1 &U _transfer ]
 "541
-[; ;ms8607.c: 541:  if( i2c_status == STATUS_ERR_OVERFLOW )
-[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 896  ]
+[; ;ms8607.c: 541:  i2c_status = i2c_master_write_packet_wait_no_stop(&transfer);
+[e = _i2c_status ( _i2c_master_write_packet_wait_no_stop (1 &U _transfer ]
 "542
-[; ;ms8607.c: 542:   return ms8607_status_no_i2c_acknowledge;
+[; ;ms8607.c: 542:  if( i2c_status == STATUS_ERR_OVERFLOW )
+[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 896  ]
+"543
+[; ;ms8607.c: 543:   return ms8607_status_no_i2c_acknowledge;
 [e ) . `E782 1 ]
 [e $UE 895  ]
 [e :U 896 ]
-"543
-[; ;ms8607.c: 543:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 897  ]
 "544
-[; ;ms8607.c: 544:   return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 544:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 897  ]
+"545
+[; ;ms8607.c: 545:   return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 895  ]
 [e :U 897 ]
-"546
-[; ;ms8607.c: 546:  return ms8607_status_ok;
+"547
+[; ;ms8607.c: 547:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 895  ]
-"547
-[; ;ms8607.c: 547: }
+"548
+[; ;ms8607.c: 548: }
 [e :UE 895 ]
 }
-"559
-[; ;ms8607.c: 559: enum ms8607_status hsensor_crc_check( uint16_t value, uint8_t crc)
-[v _hsensor_crc_check `(E782 ~T0 @X0 1 ef2`us`uc ]
 "560
-[; ;ms8607.c: 560: {
+[; ;ms8607.c: 560: enum ms8607_status hsensor_crc_check( uint16_t value, uint8_t crc)
+[v _hsensor_crc_check `(E782 ~T0 @X0 1 ef2`us`uc ]
+"561
+[; ;ms8607.c: 561: {
 {
 [e :U _hsensor_crc_check ]
-"559
-[; ;ms8607.c: 559: enum ms8607_status hsensor_crc_check( uint16_t value, uint8_t crc)
+"560
+[; ;ms8607.c: 560: enum ms8607_status hsensor_crc_check( uint16_t value, uint8_t crc)
 [v _value `us ~T0 @X0 1 r1 ]
 [v _crc `uc ~T0 @X0 1 r2 ]
-"560
-[; ;ms8607.c: 560: {
-[f ]
 "561
-[; ;ms8607.c: 561:  uint32_t polynom = 0x988000;
+[; ;ms8607.c: 561: {
+[f ]
+"562
+[; ;ms8607.c: 562:  uint32_t polynom = 0x988000;
 [v _polynom `ul ~T0 @X0 1 a ]
 [e = _polynom -> -> 9994240 `l `ul ]
-"562
-[; ;ms8607.c: 562:  uint32_t msb = 0x800000;
+"563
+[; ;ms8607.c: 563:  uint32_t msb = 0x800000;
 [v _msb `ul ~T0 @X0 1 a ]
 [e = _msb -> -> 8388608 `l `ul ]
-"563
-[; ;ms8607.c: 563:  uint32_t mask = 0xFF8000;
+"564
+[; ;ms8607.c: 564:  uint32_t mask = 0xFF8000;
 [v _mask `ul ~T0 @X0 1 a ]
 [e = _mask -> -> 16744448 `l `ul ]
-"564
-[; ;ms8607.c: 564:  uint32_t result = (uint32_t)value<<8;
+"565
+[; ;ms8607.c: 565:  uint32_t result = (uint32_t)value<<8;
 [v _result `ul ~T0 @X0 1 a ]
 [e = _result << -> _value `ul -> 8 `i ]
-"566
-[; ;ms8607.c: 566:  while( msb != 0x80 ) {
+"567
+[; ;ms8607.c: 567:  while( msb != 0x80 ) {
 [e $U 899  ]
 [e :U 900 ]
 {
-"569
-[; ;ms8607.c: 569:   if( result & msb )
-[e $ ! != & _result _msb -> -> -> 0 `i `l `ul 902  ]
 "570
-[; ;ms8607.c: 570:    result = ((result ^ polynom) & mask) | ( result & ~mask);
+[; ;ms8607.c: 570:   if( result & msb )
+[e $ ! != & _result _msb -> -> -> 0 `i `l `ul 902  ]
+"571
+[; ;ms8607.c: 571:    result = ((result ^ polynom) & mask) | ( result & ~mask);
 [e = _result | & ^ _result _polynom _mask & _result ~ _mask ]
 [e :U 902 ]
-"573
-[; ;ms8607.c: 573:   msb >>= 1;
-[e =>> _msb -> -> 1 `i `ul ]
 "574
-[; ;ms8607.c: 574:   mask >>= 1;
-[e =>> _mask -> -> 1 `i `ul ]
+[; ;ms8607.c: 574:   msb >>= 1;
+[e =>> _msb -> -> 1 `i `ul ]
 "575
-[; ;ms8607.c: 575:   polynom >>=1;
-[e =>> _polynom -> -> 1 `i `ul ]
+[; ;ms8607.c: 575:   mask >>= 1;
+[e =>> _mask -> -> 1 `i `ul ]
 "576
-[; ;ms8607.c: 576:  }
+[; ;ms8607.c: 576:   polynom >>=1;
+[e =>> _polynom -> -> 1 `i `ul ]
+"577
+[; ;ms8607.c: 577:  }
 }
 [e :U 899 ]
-"566
-[; ;ms8607.c: 566:  while( msb != 0x80 ) {
+"567
+[; ;ms8607.c: 567:  while( msb != 0x80 ) {
 [e $ != _msb -> -> -> 128 `i `l `ul 900  ]
 [e :U 901 ]
-"577
-[; ;ms8607.c: 577:  if( result == crc )
-[e $ ! == _result -> _crc `ul 903  ]
 "578
-[; ;ms8607.c: 578:   return ms8607_status_ok;
+[; ;ms8607.c: 578:  if( result == crc )
+[e $ ! == _result -> _crc `ul 903  ]
+"579
+[; ;ms8607.c: 579:   return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 898  ]
 [e $U 904  ]
-"579
-[; ;ms8607.c: 579:  else
-[e :U 903 ]
 "580
-[; ;ms8607.c: 580:   return ms8607_status_crc_error;
+[; ;ms8607.c: 580:  else
+[e :U 903 ]
+"581
+[; ;ms8607.c: 581:   return ms8607_status_crc_error;
 [e ) . `E782 3 ]
 [e $UE 898  ]
 [e :U 904 ]
-"581
-[; ;ms8607.c: 581: }
+"582
+[; ;ms8607.c: 582: }
 [e :UE 898 ]
 }
-"593
-[; ;ms8607.c: 593: enum ms8607_status hsensor_read_user_register(uint8_t *value)
-[v _hsensor_read_user_register `(E782 ~T0 @X0 1 ef1`*uc ]
 "594
-[; ;ms8607.c: 594: {
+[; ;ms8607.c: 594: enum ms8607_status hsensor_read_user_register(uint8_t *value)
+[v _hsensor_read_user_register `(E782 ~T0 @X0 1 ef1`*uc ]
+"595
+[; ;ms8607.c: 595: {
 {
 [e :U _hsensor_read_user_register ]
-"593
-[; ;ms8607.c: 593: enum ms8607_status hsensor_read_user_register(uint8_t *value)
-[v _value `*uc ~T0 @X0 1 r1 ]
 "594
-[; ;ms8607.c: 594: {
-[f ]
+[; ;ms8607.c: 594: enum ms8607_status hsensor_read_user_register(uint8_t *value)
+[v _value `*uc ~T0 @X0 1 r1 ]
 "595
-[; ;ms8607.c: 595:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
+[; ;ms8607.c: 595: {
+[f ]
 "596
-[; ;ms8607.c: 596:  enum status_code i2c_status;
-[v _i2c_status `E7220 ~T0 @X0 1 a ]
+[; ;ms8607.c: 596:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
 "597
-[; ;ms8607.c: 597:  uint8_t buffer[1];
-[v _buffer `uc ~T0 @X0 -> -> 1 `i `ux a ]
+[; ;ms8607.c: 597:  enum status_code i2c_status;
+[v _i2c_status `E7220 ~T0 @X0 1 a ]
 "598
-[; ;ms8607.c: 598:  buffer[0] = 0;
+[; ;ms8607.c: 598:  uint8_t buffer[1];
+[v _buffer `uc ~T0 @X0 -> -> 1 `i `ux a ]
+"599
+[; ;ms8607.c: 599:  buffer[0] = 0;
 [e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
 [v F7343 `S857 ~T0 @X0 1 s ]
 [i F7343
 :U ..
 :U ..
-"601
-[; ;ms8607.c: 601:  struct i2c_master_packet read_transfer = {
+"602
+[; ;ms8607.c: 602:  struct i2c_master_packet read_transfer = {
 -> -> 0 `i `us
 -> -> 0 `i `us
 -> -> 0 `i `*uc
@@ -1854,101 +1854,101 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _read_transfer `S857 ~T0 @X0 1 a ]
 [e = _read_transfer F7343 ]
 [e ; = . _read_transfer 0 -> -> 64 `i `us ; = . _read_transfer 1 -> -> 1 `i `us = . _read_transfer 2 &U _buffer ]
-"608
-[; ;ms8607.c: 608:  status = hsensor_write_command(0xE7);
-[e = _status ( _hsensor_write_command (1 -> -> 231 `i `uc ]
 "609
-[; ;ms8607.c: 609:  if( status != ms8607_status_ok )
-[e $ ! != -> _status `ui -> . `E782 0 `ui 906  ]
+[; ;ms8607.c: 609:  status = hsensor_write_command(0xE7);
+[e = _status ( _hsensor_write_command (1 -> -> 231 `i `uc ]
 "610
-[; ;ms8607.c: 610:   return status;
+[; ;ms8607.c: 610:  if( status != ms8607_status_ok )
+[e $ ! != -> _status `ui -> . `E782 0 `ui 906  ]
+"611
+[; ;ms8607.c: 611:   return status;
 [e ) _status ]
 [e $UE 905  ]
 [e :U 906 ]
-"612
-[; ;ms8607.c: 612:  i2c_status = i2c_master_read_packet_wait(&read_transfer);
-[e = _i2c_status ( _i2c_master_read_packet_wait (1 &U _read_transfer ]
 "613
-[; ;ms8607.c: 613:  if( i2c_status == STATUS_ERR_OVERFLOW )
-[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 907  ]
+[; ;ms8607.c: 613:  i2c_status = i2c_master_read_packet_wait(&read_transfer);
+[e = _i2c_status ( _i2c_master_read_packet_wait (1 &U _read_transfer ]
 "614
-[; ;ms8607.c: 614:   return ms8607_status_no_i2c_acknowledge;
+[; ;ms8607.c: 614:  if( i2c_status == STATUS_ERR_OVERFLOW )
+[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 907  ]
+"615
+[; ;ms8607.c: 615:   return ms8607_status_no_i2c_acknowledge;
 [e ) . `E782 1 ]
 [e $UE 905  ]
 [e :U 907 ]
-"615
-[; ;ms8607.c: 615:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 908  ]
 "616
-[; ;ms8607.c: 616:   return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 616:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 908  ]
+"617
+[; ;ms8607.c: 617:   return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 905  ]
 [e :U 908 ]
-"618
-[; ;ms8607.c: 618:  *value = buffer[0];
+"619
+[; ;ms8607.c: 619:  *value = buffer[0];
 [e = *U _value *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux ]
-"620
-[; ;ms8607.c: 620:  return ms8607_status_ok;
+"621
+[; ;ms8607.c: 621:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 905  ]
-"621
-[; ;ms8607.c: 621: }
+"622
+[; ;ms8607.c: 622: }
 [e :UE 905 ]
 }
-"634
-[; ;ms8607.c: 634: enum ms8607_status hsensor_write_user_register(uint8_t value)
-[v _hsensor_write_user_register `(E782 ~T0 @X0 1 ef1`uc ]
 "635
-[; ;ms8607.c: 635: {
+[; ;ms8607.c: 635: enum ms8607_status hsensor_write_user_register(uint8_t value)
+[v _hsensor_write_user_register `(E782 ~T0 @X0 1 ef1`uc ]
+"636
+[; ;ms8607.c: 636: {
 {
 [e :U _hsensor_write_user_register ]
-"634
-[; ;ms8607.c: 634: enum ms8607_status hsensor_write_user_register(uint8_t value)
-[v _value `uc ~T0 @X0 1 r1 ]
 "635
-[; ;ms8607.c: 635: {
-[f ]
+[; ;ms8607.c: 635: enum ms8607_status hsensor_write_user_register(uint8_t value)
+[v _value `uc ~T0 @X0 1 r1 ]
 "636
-[; ;ms8607.c: 636:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
+[; ;ms8607.c: 636: {
+[f ]
 "637
-[; ;ms8607.c: 637:  enum status_code i2c_status;
-[v _i2c_status `E7220 ~T0 @X0 1 a ]
+[; ;ms8607.c: 637:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
 "638
-[; ;ms8607.c: 638:  uint8_t reg;
-[v _reg `uc ~T0 @X0 1 a ]
+[; ;ms8607.c: 638:  enum status_code i2c_status;
+[v _i2c_status `E7220 ~T0 @X0 1 a ]
 "639
-[; ;ms8607.c: 639:  uint8_t data[2];
+[; ;ms8607.c: 639:  uint8_t reg;
+[v _reg `uc ~T0 @X0 1 a ]
+"640
+[; ;ms8607.c: 640:  uint8_t data[2];
 [v _data `uc ~T0 @X0 -> 2 `i a ]
-"641
-[; ;ms8607.c: 641:  status = hsensor_read_user_register(&reg);
-[e = _status ( _hsensor_read_user_register (1 &U _reg ]
 "642
-[; ;ms8607.c: 642:  if( status != ms8607_status_ok )
-[e $ ! != -> _status `ui -> . `E782 0 `ui 910  ]
+[; ;ms8607.c: 642:  status = hsensor_read_user_register(&reg);
+[e = _status ( _hsensor_read_user_register (1 &U _reg ]
 "643
-[; ;ms8607.c: 643:   return status;
+[; ;ms8607.c: 643:  if( status != ms8607_status_ok )
+[e $ ! != -> _status `ui -> . `E782 0 `ui 910  ]
+"644
+[; ;ms8607.c: 644:   return status;
 [e ) _status ]
 [e $UE 909  ]
 [e :U 910 ]
-"646
-[; ;ms8607.c: 646:  reg &= (~( 0x81 | 0x40 | 0x4 | 0x2 ));
+"647
+[; ;ms8607.c: 647:  reg &= (~( 0x81 | 0x40 | 0x4 | 0x2 ));
 [e =& _reg -> ~ | | | -> 129 `i -> 64 `i -> 4 `i -> 2 `i `uc ]
-"648
-[; ;ms8607.c: 648:  reg |= (value & ~(~( 0x81 | 0x40 | 0x4 | 0x2 )));
+"649
+[; ;ms8607.c: 649:  reg |= (value & ~(~( 0x81 | 0x40 | 0x4 | 0x2 )));
 [e =| _reg -> & -> _value `i ~ ~ | | | -> 129 `i -> 64 `i -> 4 `i -> 2 `i `uc ]
-"650
-[; ;ms8607.c: 650:  data[0] = 0xE6;
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 230 `i `uc ]
 "651
-[; ;ms8607.c: 651:  data[1] = reg;
+[; ;ms8607.c: 651:  data[0] = 0xE6;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 230 `i `uc ]
+"652
+[; ;ms8607.c: 652:  data[1] = reg;
 [e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux _reg ]
 [v F7351 `S857 ~T0 @X0 1 s ]
 [i F7351
 :U ..
 :U ..
-"653
-[; ;ms8607.c: 653:  struct i2c_master_packet transfer = {
+"654
+[; ;ms8607.c: 654:  struct i2c_master_packet transfer = {
 -> -> 0 `i `us
 -> -> 0 `i `us
 -> -> 0 `i `*uc
@@ -1958,77 +1958,77 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _transfer `S857 ~T0 @X0 1 a ]
 [e = _transfer F7351 ]
 [e ; = . _transfer 0 -> -> 64 `i `us ; = . _transfer 1 -> -> 2 `i `us = . _transfer 2 &U _data ]
-"660
-[; ;ms8607.c: 660:  i2c_status = i2c_master_write_packet_wait(&transfer);
-[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "661
-[; ;ms8607.c: 661:  if( i2c_status == STATUS_ERR_OVERFLOW )
-[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 911  ]
+[; ;ms8607.c: 661:  i2c_status = i2c_master_write_packet_wait(&transfer);
+[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "662
-[; ;ms8607.c: 662:   return ms8607_status_no_i2c_acknowledge;
+[; ;ms8607.c: 662:  if( i2c_status == STATUS_ERR_OVERFLOW )
+[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 911  ]
+"663
+[; ;ms8607.c: 663:   return ms8607_status_no_i2c_acknowledge;
 [e ) . `E782 1 ]
 [e $UE 909  ]
 [e :U 911 ]
-"663
-[; ;ms8607.c: 663:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 912  ]
 "664
-[; ;ms8607.c: 664:   return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 664:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 912  ]
+"665
+[; ;ms8607.c: 665:   return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 909  ]
 [e :U 912 ]
-"666
-[; ;ms8607.c: 666:  return ms8607_status_ok;
+"667
+[; ;ms8607.c: 667:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 909  ]
-"667
-[; ;ms8607.c: 667: }
+"668
+[; ;ms8607.c: 668: }
 [e :UE 909 ]
 }
-"680
-[; ;ms8607.c: 680: enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
-[v _hsensor_humidity_conversion_and_read_adc `(E782 ~T0 @X0 1 ef1`*us ]
 "681
-[; ;ms8607.c: 681: {
+[; ;ms8607.c: 681: enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
+[v _hsensor_humidity_conversion_and_read_adc `(E782 ~T0 @X0 1 ef1`*us ]
+"682
+[; ;ms8607.c: 682: {
 {
 [e :U _hsensor_humidity_conversion_and_read_adc ]
-"680
-[; ;ms8607.c: 680: enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
-[v _adc `*us ~T0 @X0 1 r1 ]
 "681
-[; ;ms8607.c: 681: {
-[f ]
+[; ;ms8607.c: 681: enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
+[v _adc `*us ~T0 @X0 1 r1 ]
 "682
-[; ;ms8607.c: 682:  enum ms8607_status status = ms8607_status_ok;
+[; ;ms8607.c: 682: {
+[f ]
+"683
+[; ;ms8607.c: 683:  enum ms8607_status status = ms8607_status_ok;
 [v _status `E782 ~T0 @X0 1 a ]
 [e = _status . `E782 0 ]
-"683
-[; ;ms8607.c: 683:  enum status_code i2c_status;
-[v _i2c_status `E7220 ~T0 @X0 1 a ]
 "684
-[; ;ms8607.c: 684:  uint16_t _adc;
-[v __adc `us ~T0 @X0 1 a ]
+[; ;ms8607.c: 684:  enum status_code i2c_status;
+[v _i2c_status `E7220 ~T0 @X0 1 a ]
 "685
-[; ;ms8607.c: 685:  uint8_t buffer[3];
-[v _buffer `uc ~T0 @X0 -> 3 `i a ]
+[; ;ms8607.c: 685:  uint16_t _adc;
+[v __adc `us ~T0 @X0 1 a ]
 "686
-[; ;ms8607.c: 686:  uint8_t crc;
+[; ;ms8607.c: 686:  uint8_t buffer[3];
+[v _buffer `uc ~T0 @X0 -> 3 `i a ]
+"687
+[; ;ms8607.c: 687:  uint8_t crc;
 [v _crc `uc ~T0 @X0 1 a ]
-"688
-[; ;ms8607.c: 688:  buffer[0] = 0;
-[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
 "689
-[; ;ms8607.c: 689:  buffer[1] = 0;
-[e = *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
+[; ;ms8607.c: 689:  buffer[0] = 0;
+[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
 "690
-[; ;ms8607.c: 690:  buffer[2] = 0;
+[; ;ms8607.c: 690:  buffer[1] = 0;
+[e = *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
+"691
+[; ;ms8607.c: 691:  buffer[2] = 0;
 [e = *U + &U _buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
 [v F7360 `S857 ~T0 @X0 1 s ]
 [i F7360
 :U ..
 :U ..
-"693
-[; ;ms8607.c: 693:     struct i2c_master_packet read_transfer = {
+"694
+[; ;ms8607.c: 694:     struct i2c_master_packet read_transfer = {
 -> -> 0 `i `us
 -> -> 0 `i `us
 -> -> 0 `i `*uc
@@ -2038,234 +2038,234 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _read_transfer `S857 ~T0 @X0 1 a ]
 [e = _read_transfer F7360 ]
 [e ; = . _read_transfer 0 -> -> 64 `i `us ; = . _read_transfer 1 -> -> 3 `i `us = . _read_transfer 2 &U _buffer ]
-"699
-[; ;ms8607.c: 699:  if( hsensor_i2c_master_mode == ms8607_i2c_hold) {
+"700
+[; ;ms8607.c: 700:  if( hsensor_i2c_master_mode == ms8607_i2c_hold) {
 [e $ ! == -> _hsensor_i2c_master_mode `ui -> . `E779 0 `ui 914  ]
 {
-"700
-[; ;ms8607.c: 700:   status = hsensor_write_command_no_stop(0xE5);
-[e = _status ( _hsensor_write_command_no_stop (1 -> -> 229 `i `uc ]
 "701
-[; ;ms8607.c: 701:  }
+[; ;ms8607.c: 701:   status = hsensor_write_command_no_stop(0xE5);
+[e = _status ( _hsensor_write_command_no_stop (1 -> -> 229 `i `uc ]
+"702
+[; ;ms8607.c: 702:  }
 }
 [e $U 915  ]
-"702
-[; ;ms8607.c: 702:  else {
+"703
+[; ;ms8607.c: 703:  else {
 [e :U 914 ]
 {
-"703
-[; ;ms8607.c: 703:   status = hsensor_write_command(0xF5);
+"704
+[; ;ms8607.c: 704:   status = hsensor_write_command(0xF5);
 [e = _status ( _hsensor_write_command (1 -> -> 245 `i `uc ]
-"705
-[; ;ms8607.c: 705:         for(int K=0;K<hsensor_conversion_time/1000;K++){
+"706
+[; ;ms8607.c: 706:         for(int K=0;K<hsensor_conversion_time/1000;K++){
 {
 [v _K `i ~T0 @X0 1 a ]
 [e = _K -> 0 `i ]
 [e $U 919  ]
 [e :U 916 ]
 {
-"706
-[; ;ms8607.c: 706:             _delay((unsigned long)((1)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "707
-[; ;ms8607.c: 707:         }
+[; ;ms8607.c: 707:             _delay((unsigned long)((1)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"708
+[; ;ms8607.c: 708:         }
 }
 [e ++ _K -> 1 `i ]
 [e :U 919 ]
 [e $ < -> -> _K `l `ul / _hsensor_conversion_time -> -> -> 1000 `i `l `ul 916  ]
 [e :U 917 ]
 }
-"708
-[; ;ms8607.c: 708:  }
+"709
+[; ;ms8607.c: 709:  }
 }
 [e :U 915 ]
-"709
-[; ;ms8607.c: 709:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 920  ]
 "710
-[; ;ms8607.c: 710:   return status;
+[; ;ms8607.c: 710:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 920  ]
+"711
+[; ;ms8607.c: 711:   return status;
 [e ) _status ]
 [e $UE 913  ]
 [e :U 920 ]
-"712
-[; ;ms8607.c: 712:     i2c_status = i2c_master_read_packet_wait(&read_transfer);
-[e = _i2c_status ( _i2c_master_read_packet_wait (1 &U _read_transfer ]
 "713
-[; ;ms8607.c: 713:  if( i2c_status == STATUS_ERR_OVERFLOW )
-[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 921  ]
+[; ;ms8607.c: 713:     i2c_status = i2c_master_read_packet_wait(&read_transfer);
+[e = _i2c_status ( _i2c_master_read_packet_wait (1 &U _read_transfer ]
 "714
-[; ;ms8607.c: 714:   return ms8607_status_no_i2c_acknowledge;
+[; ;ms8607.c: 714:  if( i2c_status == STATUS_ERR_OVERFLOW )
+[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 921  ]
+"715
+[; ;ms8607.c: 715:   return ms8607_status_no_i2c_acknowledge;
 [e ) . `E782 1 ]
 [e $UE 913  ]
 [e :U 921 ]
-"715
-[; ;ms8607.c: 715:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 922  ]
 "716
-[; ;ms8607.c: 716:   return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 716:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 922  ]
+"717
+[; ;ms8607.c: 717:   return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 913  ]
 [e :U 922 ]
-"718
-[; ;ms8607.c: 718:  _adc = (buffer[0] << 8) | buffer[1];
-[e = __adc -> | << -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> 8 `i -> *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i `us ]
 "719
-[; ;ms8607.c: 719:  crc = buffer[2];
+[; ;ms8607.c: 719:  _adc = (buffer[0] << 8) | buffer[1];
+[e = __adc -> | << -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> 8 `i -> *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i `us ]
+"720
+[; ;ms8607.c: 720:  crc = buffer[2];
 [e = _crc *U + &U _buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _buffer `ui `ux ]
-"722
-[; ;ms8607.c: 722:  status = hsensor_crc_check(_adc,crc);
-[e = _status ( _hsensor_crc_check (2 , __adc _crc ]
 "723
-[; ;ms8607.c: 723:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 923  ]
+[; ;ms8607.c: 723:  status = hsensor_crc_check(_adc,crc);
+[e = _status ( _hsensor_crc_check (2 , __adc _crc ]
 "724
-[; ;ms8607.c: 724:   return status;
+[; ;ms8607.c: 724:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 923  ]
+"725
+[; ;ms8607.c: 725:   return status;
 [e ) _status ]
 [e $UE 913  ]
 [e :U 923 ]
-"726
-[; ;ms8607.c: 726:  *adc = _adc;
+"727
+[; ;ms8607.c: 727:  *adc = _adc;
 [e = *U _adc __adc ]
-"728
-[; ;ms8607.c: 728:  return status;
+"729
+[; ;ms8607.c: 729:  return status;
 [e ) _status ]
 [e $UE 913  ]
-"729
-[; ;ms8607.c: 729: }
+"730
+[; ;ms8607.c: 730: }
 [e :UE 913 ]
 }
-"742
-[; ;ms8607.c: 742: enum ms8607_status hsensor_read_relative_humidity( float *humidity)
-[v _hsensor_read_relative_humidity `(E782 ~T0 @X0 1 ef1`*f ]
 "743
-[; ;ms8607.c: 743: {
+[; ;ms8607.c: 743: enum ms8607_status hsensor_read_relative_humidity( float *humidity)
+[v _hsensor_read_relative_humidity `(E782 ~T0 @X0 1 ef1`*f ]
+"744
+[; ;ms8607.c: 744: {
 {
 [e :U _hsensor_read_relative_humidity ]
-"742
-[; ;ms8607.c: 742: enum ms8607_status hsensor_read_relative_humidity( float *humidity)
-[v _humidity `*f ~T0 @X0 1 r1 ]
 "743
-[; ;ms8607.c: 743: {
-[f ]
+[; ;ms8607.c: 743: enum ms8607_status hsensor_read_relative_humidity( float *humidity)
+[v _humidity `*f ~T0 @X0 1 r1 ]
 "744
-[; ;ms8607.c: 744:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
+[; ;ms8607.c: 744: {
+[f ]
 "745
-[; ;ms8607.c: 745:  uint16_t adc;
+[; ;ms8607.c: 745:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
+"746
+[; ;ms8607.c: 746:  uint16_t adc;
 [v _adc `us ~T0 @X0 1 a ]
-"747
-[; ;ms8607.c: 747:  status = hsensor_humidity_conversion_and_read_adc( &adc);
-[e = _status ( _hsensor_humidity_conversion_and_read_adc (1 &U _adc ]
 "748
-[; ;ms8607.c: 748:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 925  ]
+[; ;ms8607.c: 748:  status = hsensor_humidity_conversion_and_read_adc( &adc);
+[e = _status ( _hsensor_humidity_conversion_and_read_adc (1 &U _adc ]
 "749
-[; ;ms8607.c: 749:   return status;
+[; ;ms8607.c: 749:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 925  ]
+"750
+[; ;ms8607.c: 750:   return status;
 [e ) _status ]
 [e $UE 924  ]
 [e :U 925 ]
-"752
-[; ;ms8607.c: 752:  *humidity = (float)adc * (125) / (1UL<<16) + (-6);
+"753
+[; ;ms8607.c: 753:  *humidity = (float)adc * (125) / (1UL<<16) + (-6);
 [e = *U _humidity + / * -> _adc `f -> -> 125 `i `f -> << -> 1 `ul -> 16 `i `f -> -U -> 6 `i `f ]
-"754
-[; ;ms8607.c: 754:  return status;
+"755
+[; ;ms8607.c: 755:  return status;
 [e ) _status ]
 [e $UE 924  ]
-"755
-[; ;ms8607.c: 755: }
+"756
+[; ;ms8607.c: 756: }
 [e :UE 924 ]
 }
-"769
-[; ;ms8607.c: 769: enum ms8607_status ms8607_get_compensated_humidity( float temperature, float relative_humidity, float *compensated_humidity)
-[v _ms8607_get_compensated_humidity `(E782 ~T0 @X0 1 ef3`f`f`*f ]
 "770
-[; ;ms8607.c: 770: {
+[; ;ms8607.c: 770: enum ms8607_status ms8607_get_compensated_humidity( float temperature, float relative_humidity, float *compensated_humidity)
+[v _ms8607_get_compensated_humidity `(E782 ~T0 @X0 1 ef3`f`f`*f ]
+"771
+[; ;ms8607.c: 771: {
 {
 [e :U _ms8607_get_compensated_humidity ]
-"769
-[; ;ms8607.c: 769: enum ms8607_status ms8607_get_compensated_humidity( float temperature, float relative_humidity, float *compensated_humidity)
+"770
+[; ;ms8607.c: 770: enum ms8607_status ms8607_get_compensated_humidity( float temperature, float relative_humidity, float *compensated_humidity)
 [v _temperature `f ~T0 @X0 1 r1 ]
 [v _relative_humidity `f ~T0 @X0 1 r2 ]
 [v _compensated_humidity `*f ~T0 @X0 1 r3 ]
-"770
-[; ;ms8607.c: 770: {
-[f ]
 "771
-[; ;ms8607.c: 771:  if( hsensor_heater_on )
-[e $ ! != -> _hsensor_heater_on `i -> 0 `i 927  ]
+[; ;ms8607.c: 771: {
+[f ]
 "772
-[; ;ms8607.c: 772:   return ms8607_status_heater_on_error;
+[; ;ms8607.c: 772:  if( hsensor_heater_on )
+[e $ ! != -> _hsensor_heater_on `i -> 0 `i 927  ]
+"773
+[; ;ms8607.c: 773:   return ms8607_status_heater_on_error;
 [e ) . `E782 4 ]
 [e $UE 926  ]
 [e :U 927 ]
-"774
-[; ;ms8607.c: 774:  *compensated_humidity = ( relative_humidity + (25 - temperature) * (float)(-0.15));
+"775
+[; ;ms8607.c: 775:  *compensated_humidity = ( relative_humidity + (25 - temperature) * (float)(-0.15));
 [e = *U _compensated_humidity + _relative_humidity * - -> -> 25 `i `f _temperature -> -U .0.15 `f ]
-"776
-[; ;ms8607.c: 776:  return ms8607_status_ok;
+"777
+[; ;ms8607.c: 777:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 926  ]
-"777
-[; ;ms8607.c: 777: }
+"778
+[; ;ms8607.c: 778: }
 [e :UE 926 ]
 }
-"791
-[; ;ms8607.c: 791: enum ms8607_status ms8607_get_dew_point(float temperature,float relative_humidity, float *dew_point)
-[v _ms8607_get_dew_point `(E782 ~T0 @X0 1 ef3`f`f`*f ]
 "792
-[; ;ms8607.c: 792: {
+[; ;ms8607.c: 792: enum ms8607_status ms8607_get_dew_point(float temperature,float relative_humidity, float *dew_point)
+[v _ms8607_get_dew_point `(E782 ~T0 @X0 1 ef3`f`f`*f ]
+"793
+[; ;ms8607.c: 793: {
 {
 [e :U _ms8607_get_dew_point ]
-"791
-[; ;ms8607.c: 791: enum ms8607_status ms8607_get_dew_point(float temperature,float relative_humidity, float *dew_point)
+"792
+[; ;ms8607.c: 792: enum ms8607_status ms8607_get_dew_point(float temperature,float relative_humidity, float *dew_point)
 [v _temperature `f ~T0 @X0 1 r1 ]
 [v _relative_humidity `f ~T0 @X0 1 r2 ]
 [v _dew_point `*f ~T0 @X0 1 r3 ]
-"792
-[; ;ms8607.c: 792: {
-[f ]
 "793
-[; ;ms8607.c: 793:  double partial_pressure;
+[; ;ms8607.c: 793: {
+[f ]
+"794
+[; ;ms8607.c: 794:  double partial_pressure;
 [v _partial_pressure `d ~T0 @X0 1 a ]
-"795
-[; ;ms8607.c: 795:  if( hsensor_heater_on )
-[e $ ! != -> _hsensor_heater_on `i -> 0 `i 929  ]
 "796
-[; ;ms8607.c: 796:   return ms8607_status_heater_on_error;
+[; ;ms8607.c: 796:  if( hsensor_heater_on )
+[e $ ! != -> _hsensor_heater_on `i -> 0 `i 929  ]
+"797
+[; ;ms8607.c: 797:   return ms8607_status_heater_on_error;
 [e ) . `E782 4 ]
 [e $UE 928  ]
 [e :U 929 ]
-"799
-[; ;ms8607.c: 799:  partial_pressure = powf(10,(float)(8.1332) - (float)(1762.39) / (temperature + (float)(235.66)));
+"800
+[; ;ms8607.c: 800:  partial_pressure = powf(10,(float)(8.1332) - (float)(1762.39) / (temperature + (float)(235.66)));
 [e = _partial_pressure -> ( _powf (2 , -> -> 10 `i `f - -> .8.1332 `f / -> .1762.39 `f + _temperature -> .235.66 `f `d ]
-"801
-[; ;ms8607.c: 801:  *dew_point = - (float)(1762.39) / (log10f(relative_humidity * partial_pressure / 100) - (float)(8.1332)) - (float)(235.66);
+"802
+[; ;ms8607.c: 802:  *dew_point = - (float)(1762.39) / (log10f(relative_humidity * partial_pressure / 100) - (float)(8.1332)) - (float)(235.66);
 [e = *U _dew_point - / -U -> .1762.39 `f - ( _log10f (1 -> / * -> _relative_humidity `d _partial_pressure -> -> 100 `i `d `f -> .8.1332 `f -> .235.66 `f ]
-"803
-[; ;ms8607.c: 803:  return ms8607_status_ok;
+"804
+[; ;ms8607.c: 804:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 928  ]
-"804
-[; ;ms8607.c: 804: }
+"805
+[; ;ms8607.c: 805: }
 [e :UE 928 ]
 }
-"815
-[; ;ms8607.c: 815: _Bool psensor_is_connected(void)
-[v _psensor_is_connected `(a ~T0 @X0 1 ef ]
 "816
-[; ;ms8607.c: 816: {
+[; ;ms8607.c: 816: _Bool psensor_is_connected(void)
+[v _psensor_is_connected `(a ~T0 @X0 1 ef ]
+"817
+[; ;ms8607.c: 817: {
 {
 [e :U _psensor_is_connected ]
 [f ]
-"817
-[; ;ms8607.c: 817:  enum status_code i2c_status;
+"818
+[; ;ms8607.c: 818:  enum status_code i2c_status;
 [v _i2c_status `E7220 ~T0 @X0 1 a ]
 [v F7378 `S857 ~T0 @X0 1 s ]
 [i F7378
 :U ..
 :U ..
-"819
-[; ;ms8607.c: 819:  struct i2c_master_packet transfer = {
+"820
+[; ;ms8607.c: 820:  struct i2c_master_packet transfer = {
 -> -> 118 `i `us
 -> -> 0 `i `us
 -> -> -> 0 `i `*v `*uc
@@ -2274,69 +2274,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _transfer `S857 ~T0 @X0 1 a ]
 [e = _transfer F7378 ]
-"825
-[; ;ms8607.c: 825:  i2c_status = i2c_master_write_packet_wait(&transfer);
-[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "826
-[; ;ms8607.c: 826:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 931  ]
+[; ;ms8607.c: 826:  i2c_status = i2c_master_write_packet_wait(&transfer);
+[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "827
-[; ;ms8607.c: 827:   return 0;
+[; ;ms8607.c: 827:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 931  ]
+"828
+[; ;ms8607.c: 828:   return 0;
 [e ) -> -> 0 `i `a ]
 [e $UE 930  ]
 [e :U 931 ]
-"829
-[; ;ms8607.c: 829:  return 1;
+"830
+[; ;ms8607.c: 830:  return 1;
 [e ) -> -> 1 `i `a ]
 [e $UE 930  ]
-"830
-[; ;ms8607.c: 830: }
+"831
+[; ;ms8607.c: 831: }
 [e :UE 930 ]
 }
-"840
-[; ;ms8607.c: 840: enum ms8607_status psensor_reset(void)
-[v _psensor_reset `(E782 ~T0 @X0 1 ef ]
 "841
-[; ;ms8607.c: 841: {
+[; ;ms8607.c: 841: enum ms8607_status psensor_reset(void)
+[v _psensor_reset `(E782 ~T0 @X0 1 ef ]
+"842
+[; ;ms8607.c: 842: {
 {
 [e :U _psensor_reset ]
 [f ]
-"842
-[; ;ms8607.c: 842:  return psensor_write_command(0x1E);
+"843
+[; ;ms8607.c: 843:  return psensor_write_command(0x1E);
 [e ) ( _psensor_write_command (1 -> -> 30 `i `uc ]
 [e $UE 932  ]
-"843
-[; ;ms8607.c: 843: }
+"844
+[; ;ms8607.c: 844: }
 [e :UE 932 ]
 }
-"855
-[; ;ms8607.c: 855: enum ms8607_status psensor_write_command( uint8_t cmd)
-[v _psensor_write_command `(E782 ~T0 @X0 1 ef1`uc ]
 "856
-[; ;ms8607.c: 856: {
+[; ;ms8607.c: 856: enum ms8607_status psensor_write_command( uint8_t cmd)
+[v _psensor_write_command `(E782 ~T0 @X0 1 ef1`uc ]
+"857
+[; ;ms8607.c: 857: {
 {
 [e :U _psensor_write_command ]
-"855
-[; ;ms8607.c: 855: enum ms8607_status psensor_write_command( uint8_t cmd)
-[v _cmd `uc ~T0 @X0 1 r1 ]
 "856
-[; ;ms8607.c: 856: {
-[f ]
+[; ;ms8607.c: 856: enum ms8607_status psensor_write_command( uint8_t cmd)
+[v _cmd `uc ~T0 @X0 1 r1 ]
 "857
-[; ;ms8607.c: 857:  enum status_code i2c_status;
-[v _i2c_status `E7220 ~T0 @X0 1 a ]
+[; ;ms8607.c: 857: {
+[f ]
 "858
-[; ;ms8607.c: 858:  uint8_t data[1];
+[; ;ms8607.c: 858:  enum status_code i2c_status;
+[v _i2c_status `E7220 ~T0 @X0 1 a ]
+"859
+[; ;ms8607.c: 859:  uint8_t data[1];
 [v _data `uc ~T0 @X0 -> -> 1 `i `ux a ]
-"860
-[; ;ms8607.c: 860:  data[0] = cmd;
+"861
+[; ;ms8607.c: 861:  data[0] = cmd;
 [e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _cmd ]
 [v F7385 `S857 ~T0 @X0 1 s ]
 [i F7385
 :U ..
 :U ..
-"862
-[; ;ms8607.c: 862:  struct i2c_master_packet transfer = {
+"863
+[; ;ms8607.c: 863:  struct i2c_master_packet transfer = {
 -> -> 0 `i `us
 -> -> 0 `i `us
 -> -> 0 `i `*uc
@@ -2346,91 +2346,91 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _transfer `S857 ~T0 @X0 1 a ]
 [e = _transfer F7385 ]
 [e ; = . _transfer 0 -> -> 118 `i `us ; = . _transfer 1 -> -> 1 `i `us = . _transfer 2 &U _data ]
-"868
-[; ;ms8607.c: 868:  i2c_status = i2c_master_write_packet_wait(&transfer);
-[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "869
-[; ;ms8607.c: 869:  if( i2c_status == STATUS_ERR_OVERFLOW )
-[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 934  ]
+[; ;ms8607.c: 869:  i2c_status = i2c_master_write_packet_wait(&transfer);
+[e = _i2c_status ( _i2c_master_write_packet_wait (1 &U _transfer ]
 "870
-[; ;ms8607.c: 870:   return ms8607_status_no_i2c_acknowledge;
+[; ;ms8607.c: 870:  if( i2c_status == STATUS_ERR_OVERFLOW )
+[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 934  ]
+"871
+[; ;ms8607.c: 871:   return ms8607_status_no_i2c_acknowledge;
 [e ) . `E782 1 ]
 [e $UE 933  ]
 [e :U 934 ]
-"871
-[; ;ms8607.c: 871:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 935  ]
 "872
-[; ;ms8607.c: 872:   return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 872:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 935  ]
+"873
+[; ;ms8607.c: 873:   return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 933  ]
 [e :U 935 ]
-"874
-[; ;ms8607.c: 874:  return ms8607_status_ok;
+"875
+[; ;ms8607.c: 875:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 933  ]
-"875
-[; ;ms8607.c: 875: }
+"876
+[; ;ms8607.c: 876: }
 [e :UE 933 ]
 }
-"883
-[; ;ms8607.c: 883: void ms8607_set_pressure_resolution(enum ms8607_pressure_resolution res)
-[v _ms8607_set_pressure_resolution `(v ~T0 @X0 1 ef1`E799 ]
 "884
-[; ;ms8607.c: 884: {
+[; ;ms8607.c: 884: void ms8607_set_pressure_resolution(enum ms8607_pressure_resolution res)
+[v _ms8607_set_pressure_resolution `(v ~T0 @X0 1 ef1`E799 ]
+"885
+[; ;ms8607.c: 885: {
 {
 [e :U _ms8607_set_pressure_resolution ]
-"883
-[; ;ms8607.c: 883: void ms8607_set_pressure_resolution(enum ms8607_pressure_resolution res)
-[v _res `E799 ~T0 @X0 1 r1 ]
 "884
-[; ;ms8607.c: 884: {
-[f ]
+[; ;ms8607.c: 884: void ms8607_set_pressure_resolution(enum ms8607_pressure_resolution res)
+[v _res `E799 ~T0 @X0 1 r1 ]
 "885
-[; ;ms8607.c: 885:  psensor_resolution_osr = res;
-[e = _psensor_resolution_osr _res ]
+[; ;ms8607.c: 885: {
+[f ]
 "886
-[; ;ms8607.c: 886:  return;
-[e $UE 936  ]
+[; ;ms8607.c: 886:  psensor_resolution_osr = res;
+[e = _psensor_resolution_osr _res ]
 "887
-[; ;ms8607.c: 887: }
+[; ;ms8607.c: 887:  return;
+[e $UE 936  ]
+"888
+[; ;ms8607.c: 888: }
 [e :UE 936 ]
 }
-"901
-[; ;ms8607.c: 901: enum ms8607_status psensor_read_eeprom_coeff(uint8_t command, uint16_t *coeff)
-[v _psensor_read_eeprom_coeff `(E782 ~T0 @X0 1 ef2`uc`*us ]
 "902
-[; ;ms8607.c: 902: {
+[; ;ms8607.c: 902: enum ms8607_status psensor_read_eeprom_coeff(uint8_t command, uint16_t *coeff)
+[v _psensor_read_eeprom_coeff `(E782 ~T0 @X0 1 ef2`uc`*us ]
+"903
+[; ;ms8607.c: 903: {
 {
 [e :U _psensor_read_eeprom_coeff ]
-"901
-[; ;ms8607.c: 901: enum ms8607_status psensor_read_eeprom_coeff(uint8_t command, uint16_t *coeff)
+"902
+[; ;ms8607.c: 902: enum ms8607_status psensor_read_eeprom_coeff(uint8_t command, uint16_t *coeff)
 [v _command `uc ~T0 @X0 1 r1 ]
 [v _coeff `*us ~T0 @X0 1 r2 ]
-"902
-[; ;ms8607.c: 902: {
-[f ]
 "903
-[; ;ms8607.c: 903:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
+[; ;ms8607.c: 903: {
+[f ]
 "904
-[; ;ms8607.c: 904:  enum status_code i2c_status;
-[v _i2c_status `E7220 ~T0 @X0 1 a ]
+[; ;ms8607.c: 904:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
 "905
-[; ;ms8607.c: 905:  uint8_t buffer[2];
+[; ;ms8607.c: 905:  enum status_code i2c_status;
+[v _i2c_status `E7220 ~T0 @X0 1 a ]
+"906
+[; ;ms8607.c: 906:  uint8_t buffer[2];
 [v _buffer `uc ~T0 @X0 -> 2 `i a ]
-"907
-[; ;ms8607.c: 907:  buffer[0] = 0;
-[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
 "908
-[; ;ms8607.c: 908:  buffer[1] = 0;
+[; ;ms8607.c: 908:  buffer[0] = 0;
+[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
+"909
+[; ;ms8607.c: 909:  buffer[1] = 0;
 [e = *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
 [v F7395 `S857 ~T0 @X0 1 s ]
 [i F7395
 :U ..
 :U ..
-"911
-[; ;ms8607.c: 911:  struct i2c_master_packet read_transfer = {
+"912
+[; ;ms8607.c: 912:  struct i2c_master_packet read_transfer = {
 -> -> 0 `i `us
 -> -> 0 `i `us
 -> -> 0 `i `*uc
@@ -2440,154 +2440,154 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _read_transfer `S857 ~T0 @X0 1 a ]
 [e = _read_transfer F7395 ]
 [e ; = . _read_transfer 0 -> -> 118 `i `us ; = . _read_transfer 1 -> -> 2 `i `us = . _read_transfer 2 &U _buffer ]
-"918
-[; ;ms8607.c: 918:  status = psensor_write_command(command);
-[e = _status ( _psensor_write_command (1 _command ]
 "919
-[; ;ms8607.c: 919:  if(status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 938  ]
+[; ;ms8607.c: 919:  status = psensor_write_command(command);
+[e = _status ( _psensor_write_command (1 _command ]
 "920
-[; ;ms8607.c: 920:   return status;
+[; ;ms8607.c: 920:  if(status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 938  ]
+"921
+[; ;ms8607.c: 921:   return status;
 [e ) _status ]
 [e $UE 937  ]
 [e :U 938 ]
-"922
-[; ;ms8607.c: 922:  i2c_status = i2c_master_read_packet_wait(&read_transfer);
-[e = _i2c_status ( _i2c_master_read_packet_wait (1 &U _read_transfer ]
 "923
-[; ;ms8607.c: 923:  if( i2c_status == STATUS_ERR_OVERFLOW )
-[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 939  ]
+[; ;ms8607.c: 923:  i2c_status = i2c_master_read_packet_wait(&read_transfer);
+[e = _i2c_status ( _i2c_master_read_packet_wait (1 &U _read_transfer ]
 "924
-[; ;ms8607.c: 924:   return ms8607_status_no_i2c_acknowledge;
+[; ;ms8607.c: 924:  if( i2c_status == STATUS_ERR_OVERFLOW )
+[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 939  ]
+"925
+[; ;ms8607.c: 925:   return ms8607_status_no_i2c_acknowledge;
 [e ) . `E782 1 ]
 [e $UE 937  ]
 [e :U 939 ]
-"925
-[; ;ms8607.c: 925:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 940  ]
 "926
-[; ;ms8607.c: 926:   return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 926:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 940  ]
+"927
+[; ;ms8607.c: 927:   return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 937  ]
 [e :U 940 ]
-"928
-[; ;ms8607.c: 928:  *coeff = (buffer[0] << 8) | buffer[1];
+"929
+[; ;ms8607.c: 929:  *coeff = (buffer[0] << 8) | buffer[1];
 [e = *U _coeff -> | << -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> 8 `i -> *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i `us ]
-"930
-[; ;ms8607.c: 930:     if (*coeff == 0)
-[e $ ! == -> *U _coeff `ui -> -> 0 `i `ui 941  ]
 "931
-[; ;ms8607.c: 931:         return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 931:     if (*coeff == 0)
+[e $ ! == -> *U _coeff `ui -> -> 0 `i `ui 941  ]
+"932
+[; ;ms8607.c: 932:         return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 937  ]
 [e :U 941 ]
-"933
-[; ;ms8607.c: 933:  return ms8607_status_ok;
+"934
+[; ;ms8607.c: 934:  return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 937  ]
-"934
-[; ;ms8607.c: 934: }
+"935
+[; ;ms8607.c: 935: }
 [e :UE 937 ]
 }
-"945
-[; ;ms8607.c: 945: enum ms8607_status psensor_read_eeprom(void)
-[v _psensor_read_eeprom `(E782 ~T0 @X0 1 ef ]
 "946
-[; ;ms8607.c: 946: {
+[; ;ms8607.c: 946: enum ms8607_status psensor_read_eeprom(void)
+[v _psensor_read_eeprom `(E782 ~T0 @X0 1 ef ]
+"947
+[; ;ms8607.c: 947: {
 {
 [e :U _psensor_read_eeprom ]
 [f ]
-"947
-[; ;ms8607.c: 947:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
 "948
-[; ;ms8607.c: 948:  uint8_t i;
+[; ;ms8607.c: 948:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
+"949
+[; ;ms8607.c: 949:  uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"950
-[; ;ms8607.c: 950:  for( i=0 ; i< 7 ; i++)
+"951
+[; ;ms8607.c: 951:  for( i=0 ; i< 7 ; i++)
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 7 `i 943  ]
 [e $U 944  ]
 [e :U 943 ]
-"951
-[; ;ms8607.c: 951:  {
-{
 "952
-[; ;ms8607.c: 952:   status = psensor_read_eeprom_coeff( 0xA0 + i*2, eeprom_coeff+i);
-[e = _status ( _psensor_read_eeprom_coeff (2 , -> + -> 160 `i * -> _i `i -> 2 `i `uc + &U _eeprom_coeff * -> -> _i `i `x -> -> # *U &U _eeprom_coeff `i `x ]
+[; ;ms8607.c: 952:  {
+{
 "953
-[; ;ms8607.c: 953:   if(status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 946  ]
+[; ;ms8607.c: 953:   status = psensor_read_eeprom_coeff( 0xA0 + i*2, eeprom_coeff+i);
+[e = _status ( _psensor_read_eeprom_coeff (2 , -> + -> 160 `i * -> _i `i -> 2 `i `uc + &U _eeprom_coeff * -> -> _i `i `x -> -> # *U &U _eeprom_coeff `i `x ]
 "954
-[; ;ms8607.c: 954:    return status;
+[; ;ms8607.c: 954:   if(status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 946  ]
+"955
+[; ;ms8607.c: 955:    return status;
 [e ) _status ]
 [e $UE 942  ]
 [e :U 946 ]
-"955
-[; ;ms8607.c: 955:  }
+"956
+[; ;ms8607.c: 956:  }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 7 `i 943  ]
 [e :U 944 ]
 }
-"957
-[; ;ms8607.c: 957:  if( !psensor_crc_check( eeprom_coeff, (eeprom_coeff[0] & 0xF000)>>12 ) )
-[e $ ! ! != -> ( _psensor_crc_check (2 , &U _eeprom_coeff -> >> & -> *U + &U _eeprom_coeff * -> -> -> 0 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `ui -> 61440 `ui -> 12 `i `uc `i -> 0 `i 947  ]
 "958
-[; ;ms8607.c: 958:   return ms8607_status_crc_error;
+[; ;ms8607.c: 958:  if( !psensor_crc_check( eeprom_coeff, (eeprom_coeff[0] & 0xF000)>>12 ) )
+[e $ ! ! != -> ( _psensor_crc_check (2 , &U _eeprom_coeff -> >> & -> *U + &U _eeprom_coeff * -> -> -> 0 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `ui -> 61440 `ui -> 12 `i `uc `i -> 0 `i 947  ]
+"959
+[; ;ms8607.c: 959:   return ms8607_status_crc_error;
 [e ) . `E782 3 ]
 [e $UE 942  ]
 [e :U 947 ]
-"960
-[; ;ms8607.c: 960:  psensor_coeff_read = 1;
+"961
+[; ;ms8607.c: 961:  psensor_coeff_read = 1;
 [e = _psensor_coeff_read -> -> 1 `i `a ]
-"962
-[; ;ms8607.c: 962:    return ms8607_status_ok;
+"963
+[; ;ms8607.c: 963:    return ms8607_status_ok;
 [e ) . `E782 0 ]
 [e $UE 942  ]
-"963
-[; ;ms8607.c: 963: }
+"964
+[; ;ms8607.c: 964: }
 [e :UE 942 ]
 }
-"976
-[; ;ms8607.c: 976: static enum ms8607_status psensor_conversion_and_read_adc(uint8_t cmd, uint32_t *adc)
-[v _psensor_conversion_and_read_adc `(E782 ~T0 @X0 1 sf2`uc`*ul ]
 "977
-[; ;ms8607.c: 977: {
+[; ;ms8607.c: 977: static enum ms8607_status psensor_conversion_and_read_adc(uint8_t cmd, uint32_t *adc)
+[v _psensor_conversion_and_read_adc `(E782 ~T0 @X0 1 sf2`uc`*ul ]
+"978
+[; ;ms8607.c: 978: {
 {
 [e :U _psensor_conversion_and_read_adc ]
-"976
-[; ;ms8607.c: 976: static enum ms8607_status psensor_conversion_and_read_adc(uint8_t cmd, uint32_t *adc)
+"977
+[; ;ms8607.c: 977: static enum ms8607_status psensor_conversion_and_read_adc(uint8_t cmd, uint32_t *adc)
 [v _cmd `uc ~T0 @X0 1 r1 ]
 [v _adc `*ul ~T0 @X0 1 r2 ]
-"977
-[; ;ms8607.c: 977: {
-[f ]
 "978
-[; ;ms8607.c: 978:  enum ms8607_status status;
-[v _status `E782 ~T0 @X0 1 a ]
+[; ;ms8607.c: 978: {
+[f ]
 "979
-[; ;ms8607.c: 979:  enum status_code i2c_status;
-[v _i2c_status `E7220 ~T0 @X0 1 a ]
+[; ;ms8607.c: 979:  enum ms8607_status status;
+[v _status `E782 ~T0 @X0 1 a ]
 "980
-[; ;ms8607.c: 980:  uint8_t buffer[3];
+[; ;ms8607.c: 980:  enum status_code i2c_status;
+[v _i2c_status `E7220 ~T0 @X0 1 a ]
+"981
+[; ;ms8607.c: 981:  uint8_t buffer[3];
 [v _buffer `uc ~T0 @X0 -> 3 `i a ]
-"982
-[; ;ms8607.c: 982:  buffer[0] = 0;
-[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
 "983
-[; ;ms8607.c: 983:  buffer[1] = 0;
-[e = *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
+[; ;ms8607.c: 983:  buffer[0] = 0;
+[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
 "984
-[; ;ms8607.c: 984:  buffer[2] = 0;
+[; ;ms8607.c: 984:  buffer[1] = 0;
+[e = *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
+"985
+[; ;ms8607.c: 985:  buffer[2] = 0;
 [e = *U + &U _buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 0 `i `uc ]
 [v F7406 `S857 ~T0 @X0 1 s ]
 [i F7406
 :U ..
 :U ..
-"987
-[; ;ms8607.c: 987:     struct i2c_master_packet read_transfer = {
+"988
+[; ;ms8607.c: 988:     struct i2c_master_packet read_transfer = {
 -> -> 0 `i `us
 -> -> 0 `i `us
 -> -> 0 `i `*uc
@@ -2597,363 +2597,363 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _read_transfer `S857 ~T0 @X0 1 a ]
 [e = _read_transfer F7406 ]
 [e ; = . _read_transfer 0 -> -> 118 `i `us ; = . _read_transfer 1 -> -> 3 `i `us = . _read_transfer 2 &U _buffer ]
-"993
-[; ;ms8607.c: 993:  status = psensor_write_command(cmd);
+"994
+[; ;ms8607.c: 994:  status = psensor_write_command(cmd);
 [e = _status ( _psensor_write_command (1 _cmd ]
-"995
-[; ;ms8607.c: 995:     for(int K=0;K<psensor_conversion_time[ (cmd & 0x0F)/2 ]/1000;K++){
+"996
+[; ;ms8607.c: 996:     for(int K=0;K<psensor_conversion_time[ (cmd & 0x0F)/2 ]/1000;K++){
 {
 [v _K `i ~T0 @X0 1 a ]
 [e = _K -> 0 `i ]
 [e $U 952  ]
 [e :U 949 ]
 {
-"996
-[; ;ms8607.c: 996:         _delay((unsigned long)((1)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "997
-[; ;ms8607.c: 997:     }
+[; ;ms8607.c: 997:         _delay((unsigned long)((1)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"998
+[; ;ms8607.c: 998:     }
 }
 [e ++ _K -> 1 `i ]
 [e :U 952 ]
 [e $ < -> -> _K `l `ul / *U + &U _psensor_conversion_time * -> -> / & -> _cmd `i -> 15 `i -> 2 `i `ui `ux -> -> # *U &U _psensor_conversion_time `ui `ux -> -> -> 1000 `i `l `ul 949  ]
 [e :U 950 ]
 }
-"998
-[; ;ms8607.c: 998:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 953  ]
 "999
-[; ;ms8607.c: 999:   return status;
+[; ;ms8607.c: 999:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 953  ]
+"1000
+[; ;ms8607.c: 1000:   return status;
 [e ) _status ]
 [e $UE 948  ]
 [e :U 953 ]
-"1002
-[; ;ms8607.c: 1002:  status = psensor_write_command(0x00);
-[e = _status ( _psensor_write_command (1 -> -> 0 `i `uc ]
 "1003
-[; ;ms8607.c: 1003:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 954  ]
+[; ;ms8607.c: 1003:  status = psensor_write_command(0x00);
+[e = _status ( _psensor_write_command (1 -> -> 0 `i `uc ]
 "1004
-[; ;ms8607.c: 1004:   return status;
+[; ;ms8607.c: 1004:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 954  ]
+"1005
+[; ;ms8607.c: 1005:   return status;
 [e ) _status ]
 [e $UE 948  ]
 [e :U 954 ]
-"1006
-[; ;ms8607.c: 1006:     i2c_status = i2c_master_read_packet_wait(&read_transfer);
-[e = _i2c_status ( _i2c_master_read_packet_wait (1 &U _read_transfer ]
 "1007
-[; ;ms8607.c: 1007:  if( i2c_status == STATUS_ERR_OVERFLOW )
-[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 955  ]
+[; ;ms8607.c: 1007:     i2c_status = i2c_master_read_packet_wait(&read_transfer);
+[e = _i2c_status ( _i2c_master_read_packet_wait (1 &U _read_transfer ]
 "1008
-[; ;ms8607.c: 1008:   return ms8607_status_no_i2c_acknowledge;
+[; ;ms8607.c: 1008:  if( i2c_status == STATUS_ERR_OVERFLOW )
+[e $ ! == -> _i2c_status `ui -> . `E7220 1 `ui 955  ]
+"1009
+[; ;ms8607.c: 1009:   return ms8607_status_no_i2c_acknowledge;
 [e ) . `E782 1 ]
 [e $UE 948  ]
 [e :U 955 ]
-"1009
-[; ;ms8607.c: 1009:  if( i2c_status != STATUS_OK)
-[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 956  ]
 "1010
-[; ;ms8607.c: 1010:   return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 1010:  if( i2c_status != STATUS_OK)
+[e $ ! != -> _i2c_status `ui -> . `E7220 0 `ui 956  ]
+"1011
+[; ;ms8607.c: 1011:   return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 948  ]
 [e :U 956 ]
-"1012
-[; ;ms8607.c: 1012:  *adc = ((uint32_t)buffer[0] << 16) | ((uint32_t)buffer[1] << 8) | buffer[2];
+"1013
+[; ;ms8607.c: 1013:  *adc = ((uint32_t)buffer[0] << 16) | ((uint32_t)buffer[1] << 8) | buffer[2];
 [e = *U _adc | | << -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ul -> 16 `i << -> *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ul -> 8 `i -> *U + &U _buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ul ]
-"1014
-[; ;ms8607.c: 1014:  return status;
+"1015
+[; ;ms8607.c: 1015:  return status;
 [e ) _status ]
 [e $UE 948  ]
-"1015
-[; ;ms8607.c: 1015: }
+"1016
+[; ;ms8607.c: 1016: }
 [e :UE 948 ]
 }
-"1029
-[; ;ms8607.c: 1029: enum ms8607_status psensor_read_pressure_and_temperature( float *temperature, float *pressure)
-[v _psensor_read_pressure_and_temperature `(E782 ~T0 @X0 1 ef2`*f`*f ]
 "1030
-[; ;ms8607.c: 1030: {
+[; ;ms8607.c: 1030: enum ms8607_status psensor_read_pressure_and_temperature( float *temperature, float *pressure)
+[v _psensor_read_pressure_and_temperature `(E782 ~T0 @X0 1 ef2`*f`*f ]
+"1031
+[; ;ms8607.c: 1031: {
 {
 [e :U _psensor_read_pressure_and_temperature ]
-"1029
-[; ;ms8607.c: 1029: enum ms8607_status psensor_read_pressure_and_temperature( float *temperature, float *pressure)
+"1030
+[; ;ms8607.c: 1030: enum ms8607_status psensor_read_pressure_and_temperature( float *temperature, float *pressure)
 [v _temperature `*f ~T0 @X0 1 r1 ]
 [v _pressure `*f ~T0 @X0 1 r2 ]
-"1030
-[; ;ms8607.c: 1030: {
-[f ]
 "1031
-[; ;ms8607.c: 1031:  enum ms8607_status status = ms8607_status_ok;
+[; ;ms8607.c: 1031: {
+[f ]
+"1032
+[; ;ms8607.c: 1032:  enum ms8607_status status = ms8607_status_ok;
 [v _status `E782 ~T0 @X0 1 a ]
 [e = _status . `E782 0 ]
-"1032
-[; ;ms8607.c: 1032:  uint32_t adc_temperature, adc_pressure;
+"1033
+[; ;ms8607.c: 1033:  uint32_t adc_temperature, adc_pressure;
 [v _adc_temperature `ul ~T0 @X0 1 a ]
 [v _adc_pressure `ul ~T0 @X0 1 a ]
-"1033
-[; ;ms8607.c: 1033:  int32_t dT, TEMP;
+"1034
+[; ;ms8607.c: 1034:  int32_t dT, TEMP;
 [v _dT `l ~T0 @X0 1 a ]
 [v _TEMP `l ~T0 @X0 1 a ]
-"1034
-[; ;ms8607.c: 1034:  int64_t OFF, SENS, P, T2, OFF2, SENS2;
+"1035
+[; ;ms8607.c: 1035:  int64_t OFF, SENS, P, T2, OFF2, SENS2;
 [v _OFF `o ~T0 @X0 1 a ]
 [v _SENS `o ~T0 @X0 1 a ]
 [v _P `o ~T0 @X0 1 a ]
 [v _T2 `o ~T0 @X0 1 a ]
 [v _OFF2 `o ~T0 @X0 1 a ]
 [v _SENS2 `o ~T0 @X0 1 a ]
-"1035
-[; ;ms8607.c: 1035:  uint8_t cmd;
+"1036
+[; ;ms8607.c: 1036:  uint8_t cmd;
 [v _cmd `uc ~T0 @X0 1 a ]
-"1038
-[; ;ms8607.c: 1038:  if( psensor_coeff_read == 0 )
-[e $ ! == -> _psensor_coeff_read `i -> 0 `i 958  ]
 "1039
-[; ;ms8607.c: 1039:   status = psensor_read_eeprom();
+[; ;ms8607.c: 1039:  if( psensor_coeff_read == 0 )
+[e $ ! == -> _psensor_coeff_read `i -> 0 `i 958  ]
+"1040
+[; ;ms8607.c: 1040:   status = psensor_read_eeprom();
 [e = _status ( _psensor_read_eeprom ..  ]
 [e :U 958 ]
-"1040
-[; ;ms8607.c: 1040:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 959  ]
 "1041
-[; ;ms8607.c: 1041:   return status;
+[; ;ms8607.c: 1041:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 959  ]
+"1042
+[; ;ms8607.c: 1042:   return status;
 [e ) _status ]
 [e $UE 957  ]
 [e :U 959 ]
-"1044
-[; ;ms8607.c: 1044:  cmd = psensor_resolution_osr*2;
-[e = _cmd -> * -> _psensor_resolution_osr `ui -> -> 2 `i `ui `uc ]
 "1045
-[; ;ms8607.c: 1045:  cmd |= 0x50;
-[e =| _cmd -> -> 80 `i `uc ]
+[; ;ms8607.c: 1045:  cmd = psensor_resolution_osr*2;
+[e = _cmd -> * -> _psensor_resolution_osr `ui -> -> 2 `i `ui `uc ]
 "1046
-[; ;ms8607.c: 1046:  status = psensor_conversion_and_read_adc( cmd, &adc_temperature);
-[e = _status ( _psensor_conversion_and_read_adc (2 , _cmd &U _adc_temperature ]
+[; ;ms8607.c: 1046:  cmd |= 0x50;
+[e =| _cmd -> -> 80 `i `uc ]
 "1047
-[; ;ms8607.c: 1047:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 960  ]
+[; ;ms8607.c: 1047:  status = psensor_conversion_and_read_adc( cmd, &adc_temperature);
+[e = _status ( _psensor_conversion_and_read_adc (2 , _cmd &U _adc_temperature ]
 "1048
-[; ;ms8607.c: 1048:   return status;
+[; ;ms8607.c: 1048:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 960  ]
+"1049
+[; ;ms8607.c: 1049:   return status;
 [e ) _status ]
 [e $UE 957  ]
 [e :U 960 ]
-"1051
-[; ;ms8607.c: 1051:  cmd = psensor_resolution_osr*2;
-[e = _cmd -> * -> _psensor_resolution_osr `ui -> -> 2 `i `ui `uc ]
 "1052
-[; ;ms8607.c: 1052:  cmd |= 0x40;
-[e =| _cmd -> -> 64 `i `uc ]
+[; ;ms8607.c: 1052:  cmd = psensor_resolution_osr*2;
+[e = _cmd -> * -> _psensor_resolution_osr `ui -> -> 2 `i `ui `uc ]
 "1053
-[; ;ms8607.c: 1053:  status = psensor_conversion_and_read_adc( cmd, &adc_pressure);
-[e = _status ( _psensor_conversion_and_read_adc (2 , _cmd &U _adc_pressure ]
+[; ;ms8607.c: 1053:  cmd |= 0x40;
+[e =| _cmd -> -> 64 `i `uc ]
 "1054
-[; ;ms8607.c: 1054:  if( status != ms8607_status_ok)
-[e $ ! != -> _status `ui -> . `E782 0 `ui 961  ]
+[; ;ms8607.c: 1054:  status = psensor_conversion_and_read_adc( cmd, &adc_pressure);
+[e = _status ( _psensor_conversion_and_read_adc (2 , _cmd &U _adc_pressure ]
 "1055
-[; ;ms8607.c: 1055:   return status;
+[; ;ms8607.c: 1055:  if( status != ms8607_status_ok)
+[e $ ! != -> _status `ui -> . `E782 0 `ui 961  ]
+"1056
+[; ;ms8607.c: 1056:   return status;
 [e ) _status ]
 [e $UE 957  ]
 [e :U 961 ]
-"1057
-[; ;ms8607.c: 1057:     if (adc_temperature == 0 || adc_pressure == 0)
-[e $ ! || == _adc_temperature -> -> -> 0 `i `l `ul == _adc_pressure -> -> -> 0 `i `l `ul 962  ]
 "1058
-[; ;ms8607.c: 1058:         return ms8607_status_i2c_transfer_error;
+[; ;ms8607.c: 1058:     if (adc_temperature == 0 || adc_pressure == 0)
+[e $ ! || == _adc_temperature -> -> -> 0 `i `l `ul == _adc_pressure -> -> -> 0 `i `l `ul 962  ]
+"1059
+[; ;ms8607.c: 1059:         return ms8607_status_i2c_transfer_error;
 [e ) . `E782 2 ]
 [e $UE 957  ]
 [e :U 962 ]
-"1061
-[; ;ms8607.c: 1061:  dT = (int32_t)adc_temperature - ( (int32_t)eeprom_coeff[5] <<8 );
+"1062
+[; ;ms8607.c: 1062:  dT = (int32_t)adc_temperature - ( (int32_t)eeprom_coeff[5] <<8 );
 [e = _dT - -> _adc_temperature `l << -> *U + &U _eeprom_coeff * -> -> -> 5 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `l -> 8 `i ]
-"1064
-[; ;ms8607.c: 1064:  TEMP = 2000 + ((int64_t)dT * (int64_t)eeprom_coeff[6] >> 23) ;
+"1065
+[; ;ms8607.c: 1065:  TEMP = 2000 + ((int64_t)dT * (int64_t)eeprom_coeff[6] >> 23) ;
 [e = _TEMP -> + -> -> 2000 `i `o >> * -> _dT `o -> *U + &U _eeprom_coeff * -> -> -> 6 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `o -> 23 `i `l ]
-"1067
-[; ;ms8607.c: 1067:  if( TEMP < 2000 )
-[e $ ! < _TEMP -> -> 2000 `i `l 963  ]
 "1068
-[; ;ms8607.c: 1068:  {
-{
+[; ;ms8607.c: 1068:  if( TEMP < 2000 )
+[e $ ! < _TEMP -> -> 2000 `i `l 963  ]
 "1069
-[; ;ms8607.c: 1069:   T2 = ( 3 * ( (int64_t)dT * (int64_t)dT ) ) >> 33;
-[e = _T2 >> * -> -> 3 `i `o * -> _dT `o -> _dT `o -> 33 `i ]
-"1070
-[; ;ms8607.c: 1070:   OFF2 = 61 * ((int64_t)TEMP - 2000) * ((int64_t)TEMP - 2000) / 16 ;
-[e = _OFF2 / * * -> -> 61 `i `o - -> _TEMP `o -> -> 2000 `i `o - -> _TEMP `o -> -> 2000 `i `o -> -> 16 `i `o ]
-"1071
-[; ;ms8607.c: 1071:   SENS2 = 29 * ((int64_t)TEMP - 2000) * ((int64_t)TEMP - 2000) / 16 ;
-[e = _SENS2 / * * -> -> 29 `i `o - -> _TEMP `o -> -> 2000 `i `o - -> _TEMP `o -> -> 2000 `i `o -> -> 16 `i `o ]
-"1073
-[; ;ms8607.c: 1073:   if( TEMP < -1500 )
-[e $ ! < _TEMP -> -U -> 1500 `i `l 964  ]
-"1074
-[; ;ms8607.c: 1074:   {
+[; ;ms8607.c: 1069:  {
 {
+"1070
+[; ;ms8607.c: 1070:   T2 = ( 3 * ( (int64_t)dT * (int64_t)dT ) ) >> 33;
+[e = _T2 >> * -> -> 3 `i `o * -> _dT `o -> _dT `o -> 33 `i ]
+"1071
+[; ;ms8607.c: 1071:   OFF2 = 61 * ((int64_t)TEMP - 2000) * ((int64_t)TEMP - 2000) / 16 ;
+[e = _OFF2 / * * -> -> 61 `i `o - -> _TEMP `o -> -> 2000 `i `o - -> _TEMP `o -> -> 2000 `i `o -> -> 16 `i `o ]
+"1072
+[; ;ms8607.c: 1072:   SENS2 = 29 * ((int64_t)TEMP - 2000) * ((int64_t)TEMP - 2000) / 16 ;
+[e = _SENS2 / * * -> -> 29 `i `o - -> _TEMP `o -> -> 2000 `i `o - -> _TEMP `o -> -> 2000 `i `o -> -> 16 `i `o ]
+"1074
+[; ;ms8607.c: 1074:   if( TEMP < -1500 )
+[e $ ! < _TEMP -> -U -> 1500 `i `l 964  ]
 "1075
-[; ;ms8607.c: 1075:    OFF2 += 17 * ((int64_t)TEMP + 1500) * ((int64_t)TEMP + 1500) ;
-[e =+ _OFF2 * * -> -> 17 `i `o + -> _TEMP `o -> -> 1500 `i `o + -> _TEMP `o -> -> 1500 `i `o ]
+[; ;ms8607.c: 1075:   {
+{
 "1076
-[; ;ms8607.c: 1076:    SENS2 += 9 * ((int64_t)TEMP + 1500) * ((int64_t)TEMP + 1500) ;
-[e =+ _SENS2 * * -> -> 9 `i `o + -> _TEMP `o -> -> 1500 `i `o + -> _TEMP `o -> -> 1500 `i `o ]
+[; ;ms8607.c: 1076:    OFF2 += 17 * ((int64_t)TEMP + 1500) * ((int64_t)TEMP + 1500) ;
+[e =+ _OFF2 * * -> -> 17 `i `o + -> _TEMP `o -> -> 1500 `i `o + -> _TEMP `o -> -> 1500 `i `o ]
 "1077
-[; ;ms8607.c: 1077:   }
+[; ;ms8607.c: 1077:    SENS2 += 9 * ((int64_t)TEMP + 1500) * ((int64_t)TEMP + 1500) ;
+[e =+ _SENS2 * * -> -> 9 `i `o + -> _TEMP `o -> -> 1500 `i `o + -> _TEMP `o -> -> 1500 `i `o ]
+"1078
+[; ;ms8607.c: 1078:   }
 }
 [e :U 964 ]
-"1078
-[; ;ms8607.c: 1078:  }
+"1079
+[; ;ms8607.c: 1079:  }
 }
 [e $U 965  ]
-"1079
-[; ;ms8607.c: 1079:  else
-[e :U 963 ]
 "1080
-[; ;ms8607.c: 1080:  {
-{
+[; ;ms8607.c: 1080:  else
+[e :U 963 ]
 "1081
-[; ;ms8607.c: 1081:   T2 = ( 5 * ( (int64_t)dT * (int64_t)dT ) ) >> 38;
-[e = _T2 >> * -> -> 5 `i `o * -> _dT `o -> _dT `o -> 38 `i ]
+[; ;ms8607.c: 1081:  {
+{
 "1082
-[; ;ms8607.c: 1082:   OFF2 = 0 ;
-[e = _OFF2 -> -> 0 `i `o ]
+[; ;ms8607.c: 1082:   T2 = ( 5 * ( (int64_t)dT * (int64_t)dT ) ) >> 38;
+[e = _T2 >> * -> -> 5 `i `o * -> _dT `o -> _dT `o -> 38 `i ]
 "1083
-[; ;ms8607.c: 1083:   SENS2 = 0 ;
-[e = _SENS2 -> -> 0 `i `o ]
+[; ;ms8607.c: 1083:   OFF2 = 0 ;
+[e = _OFF2 -> -> 0 `i `o ]
 "1084
-[; ;ms8607.c: 1084:  }
+[; ;ms8607.c: 1084:   SENS2 = 0 ;
+[e = _SENS2 -> -> 0 `i `o ]
+"1085
+[; ;ms8607.c: 1085:  }
 }
 [e :U 965 ]
-"1087
-[; ;ms8607.c: 1087:  OFF = ( (int64_t)(eeprom_coeff[2]) << 17 ) + ( ( (int64_t)(eeprom_coeff[4]) * dT ) >> 6 ) ;
-[e = _OFF + << -> *U + &U _eeprom_coeff * -> -> -> 2 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `o -> 17 `i >> * -> *U + &U _eeprom_coeff * -> -> -> 4 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `o -> _dT `o -> 6 `i ]
 "1088
-[; ;ms8607.c: 1088:  OFF -= OFF2 ;
+[; ;ms8607.c: 1088:  OFF = ( (int64_t)(eeprom_coeff[2]) << 17 ) + ( ( (int64_t)(eeprom_coeff[4]) * dT ) >> 6 ) ;
+[e = _OFF + << -> *U + &U _eeprom_coeff * -> -> -> 2 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `o -> 17 `i >> * -> *U + &U _eeprom_coeff * -> -> -> 4 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `o -> _dT `o -> 6 `i ]
+"1089
+[; ;ms8607.c: 1089:  OFF -= OFF2 ;
 [e =- _OFF _OFF2 ]
-"1091
-[; ;ms8607.c: 1091:  SENS = ( (int64_t)eeprom_coeff[1] << 16 ) + ( ((int64_t)eeprom_coeff[3] * dT) >> 7 ) ;
-[e = _SENS + << -> *U + &U _eeprom_coeff * -> -> -> 1 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `o -> 16 `i >> * -> *U + &U _eeprom_coeff * -> -> -> 3 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `o -> _dT `o -> 7 `i ]
 "1092
-[; ;ms8607.c: 1092:  SENS -= SENS2 ;
+[; ;ms8607.c: 1092:  SENS = ( (int64_t)eeprom_coeff[1] << 16 ) + ( ((int64_t)eeprom_coeff[3] * dT) >> 7 ) ;
+[e = _SENS + << -> *U + &U _eeprom_coeff * -> -> -> 1 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `o -> 16 `i >> * -> *U + &U _eeprom_coeff * -> -> -> 3 `i `ui `ux -> -> # *U &U _eeprom_coeff `ui `ux `o -> _dT `o -> 7 `i ]
+"1093
+[; ;ms8607.c: 1093:  SENS -= SENS2 ;
 [e =- _SENS _SENS2 ]
-"1095
-[; ;ms8607.c: 1095:  P = ( ( (adc_pressure * SENS) >> 21 ) - OFF ) >> 15 ;
+"1096
+[; ;ms8607.c: 1096:  P = ( ( (adc_pressure * SENS) >> 21 ) - OFF ) >> 15 ;
 [e = _P >> - >> * -> _adc_pressure `o _SENS -> 21 `i _OFF -> 15 `i ]
-"1097
-[; ;ms8607.c: 1097:  *temperature = ( (float)TEMP - T2 ) / 100;
-[e = *U _temperature / - -> _TEMP `f -> _T2 `f -> -> 100 `i `f ]
 "1098
-[; ;ms8607.c: 1098:  *pressure = (float)P / 100;
+[; ;ms8607.c: 1098:  *temperature = ( (float)TEMP - T2 ) / 100;
+[e = *U _temperature / - -> _TEMP `f -> _T2 `f -> -> 100 `i `f ]
+"1099
+[; ;ms8607.c: 1099:  *pressure = (float)P / 100;
 [e = *U _pressure / -> _P `f -> -> 100 `i `f ]
-"1100
-[; ;ms8607.c: 1100:  return status;
+"1101
+[; ;ms8607.c: 1101:  return status;
 [e ) _status ]
 [e $UE 957  ]
-"1101
-[; ;ms8607.c: 1101: }
+"1102
+[; ;ms8607.c: 1102: }
 [e :UE 957 ]
 }
-"1111
-[; ;ms8607.c: 1111: _Bool psensor_crc_check (uint16_t *n_prom, uint8_t crc)
-[v _psensor_crc_check `(a ~T0 @X0 1 ef2`*us`uc ]
 "1112
-[; ;ms8607.c: 1112: {
+[; ;ms8607.c: 1112: _Bool psensor_crc_check (uint16_t *n_prom, uint8_t crc)
+[v _psensor_crc_check `(a ~T0 @X0 1 ef2`*us`uc ]
+"1113
+[; ;ms8607.c: 1113: {
 {
 [e :U _psensor_crc_check ]
-"1111
-[; ;ms8607.c: 1111: _Bool psensor_crc_check (uint16_t *n_prom, uint8_t crc)
+"1112
+[; ;ms8607.c: 1112: _Bool psensor_crc_check (uint16_t *n_prom, uint8_t crc)
 [v _n_prom `*us ~T0 @X0 1 r1 ]
 [v _crc `uc ~T0 @X0 1 r2 ]
-"1112
-[; ;ms8607.c: 1112: {
-[f ]
 "1113
-[; ;ms8607.c: 1113:  uint8_t cnt, n_bit;
+[; ;ms8607.c: 1113: {
+[f ]
+"1114
+[; ;ms8607.c: 1114:  uint8_t cnt, n_bit;
 [v _cnt `uc ~T0 @X0 1 a ]
 [v _n_bit `uc ~T0 @X0 1 a ]
-"1114
-[; ;ms8607.c: 1114:  uint16_t n_rem, crc_read;
+"1115
+[; ;ms8607.c: 1115:  uint16_t n_rem, crc_read;
 [v _n_rem `us ~T0 @X0 1 a ]
 [v _crc_read `us ~T0 @X0 1 a ]
-"1116
-[; ;ms8607.c: 1116:  n_rem = 0x00;
-[e = _n_rem -> -> 0 `i `us ]
 "1117
-[; ;ms8607.c: 1117:  crc_read = n_prom[0];
-[e = _crc_read *U + _n_prom * -> -> 0 `i `x -> -> # *U _n_prom `i `x ]
+[; ;ms8607.c: 1117:  n_rem = 0x00;
+[e = _n_rem -> -> 0 `i `us ]
 "1118
-[; ;ms8607.c: 1118:  n_prom[7] = 0;
-[e = *U + _n_prom * -> -> 7 `i `x -> -> # *U _n_prom `i `x -> -> 0 `i `us ]
+[; ;ms8607.c: 1118:  crc_read = n_prom[0];
+[e = _crc_read *U + _n_prom * -> -> 0 `i `x -> -> # *U _n_prom `i `x ]
 "1119
-[; ;ms8607.c: 1119:  n_prom[0] = (0x0FFF & (n_prom[0]));
+[; ;ms8607.c: 1119:  n_prom[7] = 0;
+[e = *U + _n_prom * -> -> 7 `i `x -> -> # *U _n_prom `i `x -> -> 0 `i `us ]
+"1120
+[; ;ms8607.c: 1120:  n_prom[0] = (0x0FFF & (n_prom[0]));
 [e = *U + _n_prom * -> -> 0 `i `x -> -> # *U _n_prom `i `x -> & -> -> 4095 `i `ui -> *U + _n_prom * -> -> 0 `i `x -> -> # *U _n_prom `i `x `ui `us ]
-"1121
-[; ;ms8607.c: 1121:  for( cnt = 0 ; cnt < (7 +1)*2 ; cnt++ ) {
+"1122
+[; ;ms8607.c: 1122:  for( cnt = 0 ; cnt < (7 +1)*2 ; cnt++ ) {
 {
 [e = _cnt -> -> 0 `i `uc ]
 [e $ < -> _cnt `i * + -> 7 `i -> 1 `i -> 2 `i 967  ]
 [e $U 968  ]
 [e :U 967 ]
 {
-"1124
-[; ;ms8607.c: 1124:   if (cnt%2 == 1)
-[e $ ! == % -> _cnt `i -> 2 `i -> 1 `i 970  ]
 "1125
-[; ;ms8607.c: 1125:    n_rem ^= n_prom[cnt>>1] & 0x00FF ;
+[; ;ms8607.c: 1125:   if (cnt%2 == 1)
+[e $ ! == % -> _cnt `i -> 2 `i -> 1 `i 970  ]
+"1126
+[; ;ms8607.c: 1126:    n_rem ^= n_prom[cnt>>1] & 0x00FF ;
 [e =^ _n_rem -> & -> *U + _n_prom * -> >> -> _cnt `i -> 1 `i `x -> -> # *U _n_prom `i `x `ui -> -> 255 `i `ui `us ]
 [e $U 971  ]
-"1126
-[; ;ms8607.c: 1126:   else
-[e :U 970 ]
 "1127
-[; ;ms8607.c: 1127:    n_rem ^= n_prom[cnt>>1]>>8 ;
+[; ;ms8607.c: 1127:   else
+[e :U 970 ]
+"1128
+[; ;ms8607.c: 1128:    n_rem ^= n_prom[cnt>>1]>>8 ;
 [e =^ _n_rem -> >> -> *U + _n_prom * -> >> -> _cnt `i -> 1 `i `x -> -> # *U _n_prom `i `x `ui -> 8 `i `us ]
 [e :U 971 ]
-"1129
-[; ;ms8607.c: 1129:   for( n_bit = 8; n_bit > 0 ; n_bit-- ) {
+"1130
+[; ;ms8607.c: 1130:   for( n_bit = 8; n_bit > 0 ; n_bit-- ) {
 {
 [e = _n_bit -> -> 8 `i `uc ]
 [e $ > -> _n_bit `i -> 0 `i 972  ]
 [e $U 973  ]
 [e :U 972 ]
 {
-"1131
-[; ;ms8607.c: 1131:    if( n_rem & 0x8000 )
-[e $ ! != & -> _n_rem `ui -> 32768 `ui -> -> 0 `i `ui 975  ]
 "1132
-[; ;ms8607.c: 1132:     n_rem = (n_rem << 1) ^ 0x3000;
+[; ;ms8607.c: 1132:    if( n_rem & 0x8000 )
+[e $ ! != & -> _n_rem `ui -> 32768 `ui -> -> 0 `i `ui 975  ]
+"1133
+[; ;ms8607.c: 1133:     n_rem = (n_rem << 1) ^ 0x3000;
 [e = _n_rem -> ^ << -> _n_rem `ui -> 1 `i -> -> 12288 `i `ui `us ]
 [e $U 976  ]
-"1133
-[; ;ms8607.c: 1133:    else
-[e :U 975 ]
 "1134
-[; ;ms8607.c: 1134:     n_rem <<= 1;
+[; ;ms8607.c: 1134:    else
+[e :U 975 ]
+"1135
+[; ;ms8607.c: 1135:     n_rem <<= 1;
 [e =<< _n_rem -> -> 1 `i `us ]
 [e :U 976 ]
-"1135
-[; ;ms8607.c: 1135:   }
+"1136
+[; ;ms8607.c: 1136:   }
 }
 [e -- _n_bit -> -> 1 `i `uc ]
 [e $ > -> _n_bit `i -> 0 `i 972  ]
 [e :U 973 ]
 }
-"1136
-[; ;ms8607.c: 1136:  }
+"1137
+[; ;ms8607.c: 1137:  }
 }
 [e ++ _cnt -> -> 1 `i `uc ]
 [e $ < -> _cnt `i * + -> 7 `i -> 1 `i -> 2 `i 967  ]
 [e :U 968 ]
 }
-"1137
-[; ;ms8607.c: 1137:  n_rem >>= 12;
-[e =>> _n_rem -> -> 12 `i `us ]
 "1138
-[; ;ms8607.c: 1138:  n_prom[0] = crc_read;
+[; ;ms8607.c: 1138:  n_rem >>= 12;
+[e =>> _n_rem -> -> 12 `i `us ]
+"1139
+[; ;ms8607.c: 1139:  n_prom[0] = crc_read;
 [e = *U + _n_prom * -> -> 0 `i `x -> -> # *U _n_prom `i `x _crc_read ]
-"1140
-[; ;ms8607.c: 1140:  return ( n_rem == crc );
+"1141
+[; ;ms8607.c: 1141:  return ( n_rem == crc );
 [e ) -> -> == -> _n_rem `ui -> _crc `ui `i `a ]
 [e $UE 966  ]
-"1141
-[; ;ms8607.c: 1141: }
+"1142
+[; ;ms8607.c: 1142: }
 [e :UE 966 ]
 }
