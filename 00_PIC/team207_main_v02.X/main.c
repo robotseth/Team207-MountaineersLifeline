@@ -43,7 +43,6 @@
 
 #include "mcc_generated_files/mcc.h"
 
-
 /*
                          Main application
  */
