@@ -1,0 +1,9 @@
+./build/
+./debug/
+./dist/
+**/build
+**/debug
+**/dist
+**/.build/
+**/.debug/
+**/.dist
