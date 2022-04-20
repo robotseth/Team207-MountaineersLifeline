@@ -11068,7 +11068,6 @@ void main(void)
         do { LATAbits.LATA6 = 1; } while(0);
 
         _delay((unsigned long)((100)*(48000000/4000.0)));
-<<<<<<< Updated upstream
         printf("Light Value = %d \r\n",convertedValue);
         printf("Battery Value = %d \r\n",BatteryValue);
 
@@ -11077,9 +11076,5 @@ void main(void)
 
 
 
-=======
-        printf("Testing\r\n");
-# 156 "main.c"
->>>>>>> Stashed changes
     }
 }
