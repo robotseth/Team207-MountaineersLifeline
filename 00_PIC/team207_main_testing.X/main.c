@@ -111,7 +111,7 @@ void main(void)
         //uint8_t read = I2C1_Write1ByteRegister(RGBLEDADDR, READ_REG);// read=-1;
         
         //printf(I2C1_Open(RGBLEDADDR));
-        
+        //Test commit
         //Write to RGB LED driver
         I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGA, 0x31);
         I2C1_Write1ByteRegister(RGBLEDADDR, RGB_REGEN, RGB_ALLON);
