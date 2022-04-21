@@ -35,6 +35,11 @@ extern "C" {
 #define RGB_ALLOFF 0x00
 #define RGB_MAX 0x12
     
+#define HR_MODE 0
+#define TEMP_MODE 1
+#define ALTI_MODE 2
+#define OFF_MODE 3
+    
 void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt);
 
 void updateAllDispVals(int hr, int temp, int alt);

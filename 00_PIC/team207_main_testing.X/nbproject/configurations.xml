@@ -20,6 +20,12 @@
         <itemPath>mcc_generated_files/tmr1.h</itemPath>
         <itemPath>mcc_generated_files/adc.h</itemPath>
       </logicalFolder>
+      <itemPath>barometer_i2c.h</itemPath>
+      <itemPath>ms8607.h</itemPath>
+      <itemPath>timers.h</itemPath>
+      <itemPath>rgbledfx.h</itemPath>
+      <itemPath>ESP32.h</itemPath>
+      <itemPath>heartrate.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -45,6 +51,12 @@
         <itemPath>mcc_generated_files/adc.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
+      <itemPath>barometer_i2c.c</itemPath>
+      <itemPath>ESP32.c</itemPath>
+      <itemPath>heartrate.c</itemPath>
+      <itemPath>ms8607.c</itemPath>
+      <itemPath>rgbledfx.c</itemPath>
+      <itemPath>timers.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -96,6 +108,10 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
+      <item path="ESP32.c" ex="true" overriding="false">
+      </item>
+      <item path="ESP32.h" ex="true" overriding="false">
+      </item>
       <HI-TECH-COMP>
         <property key="additional-warnings" value="true"/>
         <property key="asmlist" value="true"/>
@@ -195,6 +211,18 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
+      <item path="barometer_i2c.c" ex="true" overriding="false">
+      </item>
+      <item path="barometer_i2c.h" ex="true" overriding="false">
+      </item>
+      <item path="heartrate.c" ex="true" overriding="false">
+      </item>
+      <item path="heartrate.h" ex="true" overriding="false">
+      </item>
+      <item path="ms8607.c" ex="true" overriding="false">
+      </item>
+      <item path="ms8607.h" ex="true" overriding="false">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

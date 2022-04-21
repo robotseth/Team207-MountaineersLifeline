@@ -10,10 +10,9 @@
 #ifndef TIMERS_H
 #define	TIMERS_H
 
-uint16_t currentTime;
 float scale = 1;
 
-uint16_t millis(void);
+unsigned long millis(void);
 
 #endif	/* TIMERS_H */
 
