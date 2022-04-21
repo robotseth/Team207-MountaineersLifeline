@@ -1,6 +1,7 @@
 #include "timers.h"
 
-uint16_t millis(){
-    currentTime = TMR0_ReadTimer()*scale;
-    return currentTime;
+unsigned long millis(){
+    unsigned long returnTime = 0;
+    returnTime = TMR1_ReadTimer()*scale;
+    return returnTime;
 }

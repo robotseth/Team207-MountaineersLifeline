@@ -322,7 +322,7 @@ void setLED(uint8_t red, uint8_t green, uint8_t blue){
         enableByte = enableByte | RGB_BON;
     }
     
-    if(currentR == 0){
+    if(currentB == 0){
         enableByte = enableByte & RGB_ANMASK;
     } else {
         enableByte = enableByte | RGB_AON;
@@ -344,3 +344,52 @@ uint8_t byteMax(uint8_t a, uint8_t b){
 uint8_t byteMin(uint8_t a, uint8_t b){
     return (((a) < (b)) ? (a) : (b));
 }
+
+
+// Test code for main loop
+/*
+ for(uint8_t j = 0; j < 3; j++){
+            if(j == 0){
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    setLED(i, 0, 0);
+                    __delay_ms(250);
+                }
+                setLED(0,0,0);
+            } else if(j == 1){
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    setLED(0, i, 0);
+                    __delay_ms(250);
+                }
+                setLED(0,0,0);
+            } else {
+                for(uint8_t i = 0x00; i < 0x0D; i++){
+                    setLED(0, 0, i);
+                    __delay_ms(250);
+                } 
+                setLED(0,0,0);
+            }
+        }
+        
+        setLED(0, 0, 0);
+        
+        for(uint8_t i = 0; i < 10; i++){
+            setLED(i, 0, 0);
+            __delay_ms(250);
+            setLED(0, 0, 0);
+            __delay_ms(250);
+        }
+        
+        for(uint8_t i = 0; i < 10; i++){
+            setLED(0, i, 0);
+            __delay_ms(250);
+            setLED(0, 0, 0);
+            __delay_ms(250);
+        }
+        
+        for(uint8_t i = 0; i < 10; i++){
+            setLED(0, 0, i);
+            __delay_ms(250);
+            setLED(0, 0, 0);
+            __delay_ms(250);
+        }
+ */

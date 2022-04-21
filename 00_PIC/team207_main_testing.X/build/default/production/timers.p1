@@ -1,71 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F6653 `(v ~T0 @X0 0 tf ]
-[p mainexit ]
-"75 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"17488 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17488:     struct {
-[s S828 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S828 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"17498
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17498:     struct {
-[s S829 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S829 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"17508
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17508:     struct {
-[s S830 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S830 . . GIEL GIEH ]
-"17487
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17487: typedef union {
-[u S827 `S828 1 `S829 1 `S830 1 ]
-[n S827 . . . . ]
-"17514
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17514: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS827 ~T0 @X0 0 e@4082 ]
-"9269
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9269:     struct {
-[s S438 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S438 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
-"9279
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9279:     struct {
-[s S439 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S439 . LA0 LA1 LA2 LA3 . LA5 LA6 LA7 ]
-"9268
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9268: typedef union {
-[u S437 `S438 1 `S439 1 ]
-[n S437 . . . ]
-"9290
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9290: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
-[v _LATAbits `VS437 ~T0 @X0 0 e@3977 ]
-"9483
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9483:     struct {
-[s S444 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S444 . LATC0 LATC1 LATC2 . LATC6 LATC7 ]
-"9491
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9491:     struct {
-[s S445 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S445 . LC0 LC1 LC2 . LC6 LC7 ]
-"9482
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9482: typedef union {
-[u S443 `S444 1 `S445 1 ]
-[n S443 . . . ]
-"9500
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9500: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
-[v _LATCbits `VS443 ~T0 @X0 0 e@3979 ]
-"15 ./timers.h
-[; ;./timers.h: 15: unsigned long millis(void);
-[v _millis `(ul ~T0 @X0 0 ef ]
-"47 ./rgbledfx.h
-[; ;./rgbledfx.h: 47: void updateDispTemp(int temp);
-[v _updateDispTemp `(v ~T0 @X0 0 ef1`i ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
-"49 ./rgbledfx.h
-[; ;./rgbledfx.h: 49: void updateDispAnim(uint8_t mode);
-[v _updateDispAnim `(v ~T0 @X0 0 ef1`uc ]
+"196 ./mcc_generated_files/tmr1.h
+[; ;./mcc_generated_files/tmr1.h: 196: uint16_t TMR1_ReadTimer(void);
+[v _TMR1_ReadTimer `(us ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 55: __asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
@@ -1008,7 +945,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17908
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17908: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"213 ./mcc_generated_files/examples/../i2c1_master.h
+"213 ./mcc_generated_files/i2c1_master.h
+[; ;./mcc_generated_files/i2c1_master.h: 213: void (*MSSP1_InterruptHandler)(void);
 [v _MSSP1_InterruptHandler `*F6653 ~T0 @X0 1 e ]
 "13 ./timers.h
 [; ;./timers.h: 13: float scale = 1;
@@ -1016,131 +954,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _scale
 -> -> 1 `i `f
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"60 main.c
-[; ;main.c: 60: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"61
-[; ;main.c: 61: {
+"3 timers.c
+[; ;timers.c: 3: unsigned long millis(){
+[v _millis `(ul ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _millis ]
 [f ]
-"63
-[; ;main.c: 63:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"70
-[; ;main.c: 70:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"76
-[; ;main.c: 76:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"78
-[; ;main.c: 78:     do { LATAbits.LATA7 = 1; } while(0);
-[e :U 860 ]
-{
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 859 ]
-"79
-[; ;main.c: 79:     do { LATAbits.LATA6 = 1; } while(0);
-[e :U 863 ]
-{
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 862 ]
-"80
-[; ;main.c: 80:     do { LATCbits.LATC0 = 0; } while(0);
-[e :U 866 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 865 ]
-"83
-[; ;main.c: 83:     unsigned long currentMillis = 0;
-[v _currentMillis `ul ~T0 @X0 1 a ]
-[e = _currentMillis -> -> -> 0 `i `l `ul ]
-"84
-[; ;main.c: 84:     unsigned long previousMillis = 0;
-[v _previousMillis `ul ~T0 @X0 1 a ]
-[e = _previousMillis -> -> -> 0 `i `l `ul ]
-"85
-[; ;main.c: 85:     unsigned long updateDelay = 10000;
-[v _updateDelay `ul ~T0 @X0 1 a ]
-[e = _updateDelay -> -> -> 10000 `i `l `ul ]
-"87
-[; ;main.c: 87:     int tempTesting = 15;
-[v _tempTesting `i ~T0 @X0 1 a ]
-[e = _tempTesting -> 15 `i ]
-"101
-[; ;main.c: 101:     while (1)
-[e :U 868 ]
-"102
-[; ;main.c: 102:     {
-{
-"111
-[; ;main.c: 111:         currentMillis = millis();
-[e = _currentMillis ( _millis ..  ]
-"113
-[; ;main.c: 113:         if(currentMillis - previousMillis >= updateDelay){
-[e $ ! >= - _currentMillis _previousMillis _updateDelay 870  ]
-{
-"115
-[; ;main.c: 115:             previousMillis = currentMillis;
-[e = _previousMillis _currentMillis ]
-"116
-[; ;main.c: 116:             tempTesting++;
-[e ++ _tempTesting -> 1 `i ]
-"118
-[; ;main.c: 118:             if(tempTesting > 120){
-[e $ ! > _tempTesting -> 120 `i 871  ]
-{
-"119
-[; ;main.c: 119:                 tempTesting = 15;
-[e = _tempTesting -> 15 `i ]
-"120
-[; ;main.c: 120:             }
-}
-[e :U 871 ]
-"122
-[; ;main.c: 122:             updateDispTemp(tempTesting);
-[e ( _updateDispTemp (1 _tempTesting ]
-"124
-[; ;main.c: 124:             do { LATAbits.LATA7 = 0; } while(0);
-[e :U 874 ]
-{
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 873 ]
-"125
-[; ;main.c: 125:             _delay((unsigned long)((50)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"126
-[; ;main.c: 126:             do { LATAbits.LATA7 = 1; } while(0);
-[e :U 877 ]
-{
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 876 ]
-"127
-[; ;main.c: 127:             _delay((unsigned long)((50)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"129
-[; ;main.c: 129:         }
-}
-[e :U 870 ]
-"140
-[; ;main.c: 140:         updateDispAnim(1);
-[e ( _updateDispAnim (1 -> -> 1 `i `uc ]
-"141
-[; ;main.c: 141:         _delay((unsigned long)((20)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"144
-[; ;main.c: 144:     }
-}
-[e :U 867 ]
-[e $U 868  ]
-[e :U 869 ]
-"145
-[; ;main.c: 145: }
+"4
+[; ;timers.c: 4:     unsigned long returnTime = 0;
+[v _returnTime `ul ~T0 @X0 1 a ]
+[e = _returnTime -> -> -> 0 `i `l `ul ]
+"5
+[; ;timers.c: 5:     returnTime = TMR1_ReadTimer()*scale;
+[e = _returnTime -> * -> -> ( _TMR1_ReadTimer ..  `ui `f _scale `ul ]
+"6
+[; ;timers.c: 6:     return returnTime;
+[e ) _returnTime ]
+[e $UE 857  ]
+"7
+[; ;timers.c: 7: }
 [e :UE 857 ]
 }

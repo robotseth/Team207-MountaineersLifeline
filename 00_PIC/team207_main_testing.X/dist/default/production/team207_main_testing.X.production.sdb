@@ -64,14 +64,24 @@ HRIN 1
 channel_VDDCORE 14
 channel_VBG 15
 ]
-"692 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\doprnt.c
-[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
-"1390
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\__signbitf.c
+[v ___signbitf __signbitf `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\fminf.c
+[v _fminf fminf `(f  1 e 4 0 ]
 "86 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
 "54 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\ftdiv.c
@@ -80,12 +90,8 @@ channel_VBG 15
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\printf.c
-[v _printf printf `(i  1 e 2 0 ]
+"12 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\roundf.c
+[v _roundf roundf `(f  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -94,13 +100,15 @@ channel_VBG 15
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"68 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\main.c
+"10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"60 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "61 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -110,8 +118,6 @@ channel_VBG 15
 [v _EUSART2_Read EUSART2_Read `(uc  1 e 1 0 ]
 "173
 [v _EUSART2_Write EUSART2_Write `(v  1 e 1 0 ]
-"201
-[v _putch putch `(v  1 e 1 0 ]
 "206
 [v _EUSART2_Transmit_ISR EUSART2_Transmit_ISR `(v  1 e 1 0 ]
 "225
@@ -258,10 +264,32 @@ channel_VBG 15
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "63 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"98
+[v _TMR1_ReadTimer TMR1_ReadTimer `(us  1 e 2 0 ]
 "113
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
 "62 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"8 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\rgbledfx.c
+[v _updateLED updateLED `(v  1 e 1 0 ]
+"67
+[v _updateDispTemp updateDispTemp `(v  1 e 1 0 ]
+"77
+[v _updateDispAnim updateDispAnim `(v  1 e 1 0 ]
+"88
+[v _displayHR displayHR `(v  1 e 1 0 ]
+"127
+[v _displayTemp displayTemp `(v  1 e 1 0 ]
+"195
+[v _displayAlt displayAlt `(v  1 e 1 0 ]
+"296
+[v _displayOff displayOff `(v  1 e 1 0 ]
+"301
+[v _setLED setLED `(v  1 e 1 0 ]
+"344
+[v _byteMin byteMin `(uc  1 e 1 0 ]
+"3 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\timers.c
+[v _millis millis `(ul  1 e 4 0 ]
 "213 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X/mcc_generated_files/i2c1_master.h
 [v _MSSP1_InterruptHandler MSSP1_InterruptHandler `*.37(v  1 e 2 0 ]
 "53 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
@@ -866,12 +894,6 @@ channel_VBG 15
 ]
 [u S1422 . 1 `S1400 1 . 1 0 `S1409 1 . 1 0 `S1418 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES1422  1 e 1 @4082 ]
-"55 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\doprnt.c
-[v _flags flags `i  1 s 2 flags ]
-[v _prec prec `i  1 s 2 prec ]
-[v _width width `i  1 s 2 width ]
-"69
-[v _nout nout `i  1 s 2 nout ]
 "62 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/eusart2.c
 [v _eusart2TxHead eusart2TxHead `VEuc  1 e 1 0 ]
 "63
@@ -919,152 +941,273 @@ channel_VBG 15
 [v _I2C1_Status I2C1_Status `S605  1 e 36 0 ]
 "57 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
-"68 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\main.c
+"60 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"92
-[v main@buffer buffer `uc  1 a 1 23 ]
-"194
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\printf.c
-[v _printf printf `(i  1 e 2 0 ]
-{
-"8
-[v printf@ap ap `[1]*.39v  1 a 2 19 ]
-"5
-[v printf@fmt fmt `*.25Cuc  1 p 2 17 ]
-"13
-} 0
-"1390 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\doprnt.c
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
-{
-"1393
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 29 ]
-[s S2698 _IO_FILE 0 ]
-"1390
-[v vfprintf@fp fp `*.2S2698  1 p 2 11 ]
-[v vfprintf@fmt fmt `*.25Cuc  1 p 2 13 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 15 ]
-"1404
-} 0
-"692
-[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
-{
-[s S2698 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.2S2698  1 p 2 5 ]
-[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 7 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 9 ]
-"1387
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-{
-[v fputc@c c `i  1 p 2 25 ]
-[u S2677 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2680 _IO_FILE 11 `S2677 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.2S2680  1 p 2 27 ]
-"24
-} 0
-"201 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/eusart2.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-[v putch@txData txData `uc  1 a 1 wreg ]
-[v putch@txData txData `uc  1 a 1 wreg ]
-"203
-[v putch@txData txData `uc  1 a 1 24 ]
-"204
-} 0
-"173
-[v _EUSART2_Write EUSART2_Write `(v  1 e 1 0 ]
-{
-[v EUSART2_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART2_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART2_Write@txData txData `uc  1 a 1 23 ]
-"194
-} 0
-"50 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-{
-"61
-} 0
-"62 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/tmr2.c
-[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
-{
-"77
-} 0
-"63 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/tmr1.c
-[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
-{
+"83
+[v main@currentMillis currentMillis `ul  1 a 4 15 ]
 "84
+[v main@previousMillis previousMillis `ul  1 a 4 11 ]
+"85
+[v main@updateDelay updateDelay `ul  1 a 4 7 ]
+"87
+[v main@tempTesting tempTesting `i  1 a 2 19 ]
+"145
 } 0
-"52 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/pin_manager.c
-[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"67 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\rgbledfx.c
+[v _updateDispTemp updateDispTemp `(v  1 e 1 0 ]
 {
-"94
+[v updateDispTemp@temp temp `i  1 p 2 1 ]
+"69
 } 0
-"63 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/mcc.c
-[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"77
+[v _updateDispAnim updateDispAnim `(v  1 e 1 0 ]
 {
-"73
+[v updateDispAnim@mode mode `uc  1 a 1 wreg ]
+[v updateDispAnim@mode mode `uc  1 a 1 wreg ]
+"84
+[v updateDispAnim@mode mode `uc  1 a 1 1 ]
+"85
 } 0
-"52 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/interrupt_manager.c
-[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"8
+[v _updateLED updateLED `(v  1 e 1 0 ]
 {
+[v updateLED@update update `uc  1 a 1 wreg ]
+[v updateLED@update update `uc  1 a 1 wreg ]
+[v updateLED@mode mode `uc  1 p 1 114 ]
+[v updateLED@hr hr `i  1 p 2 115 ]
+[v updateLED@temp temp `i  1 p 2 117 ]
+[v updateLED@alt alt `i  1 p 2 119 ]
+"9
+[v updateLED@currentHR currentHR `i  1 s 2 currentHR ]
+"10
+[v updateLED@currentTemp currentTemp `i  1 s 2 currentTemp ]
+"11
+[v updateLED@currentAlt currentAlt `i  1 s 2 currentAlt ]
+"20
+[v updateLED@update update `uc  1 a 1 0 ]
 "56
 } 0
-"167 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/i2c1_master.c
-[v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
+"127
+[v _displayTemp displayTemp `(v  1 e 1 0 ]
 {
-"174
-} 0
-"88 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/eusart2.c
-[v _EUSART2_Initialize EUSART2_Initialize `(v  1 e 1 0 ]
-{
+"134
+[v displayTemp@currentDelay currentDelay `l  1 a 4 104 ]
+"133
+[v displayTemp@rapidDelay rapidDelay `l  1 a 4 97 ]
+"139
+[v displayTemp@calcB calcB `uc  1 a 1 103 ]
+"138
+[v displayTemp@calcG calcG `uc  1 a 1 102 ]
+"137
+[v displayTemp@calcR calcR `uc  1 a 1 101 ]
+"127
+[v displayTemp@temp temp `i  1 p 2 90 ]
 "130
+[v displayTemp@currentMillis currentMillis `l  1 s 4 currentMillis ]
+"131
+[v displayTemp@previousMillis previousMillis `l  1 s 4 previousMillis ]
+"135
+[v displayTemp@ledOn ledOn `uc  1 s 1 ledOn ]
+"193
 } 0
-"285
-[v _EUSART2_SetTxInterruptHandler EUSART2_SetTxInterruptHandler `(v  1 e 1 0 ]
+"296
+[v _displayOff displayOff `(v  1 e 1 0 ]
 {
-[v EUSART2_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
-"287
+"299
 } 0
-"289
-[v _EUSART2_SetRxInterruptHandler EUSART2_SetRxInterruptHandler `(v  1 e 1 0 ]
+"88
+[v _displayHR displayHR `(v  1 e 1 0 ]
 {
-[v EUSART2_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
-"291
+"110
+[v displayHR@beatDelay beatDelay `l  1 a 4 105 ]
+"109
+[v displayHR@currentHR currentHR `d  1 a 4 101 ]
+"100
+[v displayHR@fadeFactor fadeFactor `f  1 a 4 97 ]
+"98
+[v displayHR@levelFade levelFade `uc  1 a 1 113 ]
+"88
+[v displayHR@heartRate heartRate `i  1 p 2 90 ]
+"93
+[v displayHR@currentMillis currentMillis `l  1 s 4 currentMillis ]
+"94
+[v displayHR@previousMillis previousMillis `l  1 s 4 previousMillis ]
+"95
+[v displayHR@level level `uc  1 s 1 level ]
+"125
 } 0
-"277
-[v _EUSART2_SetOverrunErrorHandler EUSART2_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"12 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\roundf.c
+[v _roundf roundf `(f  1 e 4 0 ]
 {
-[v EUSART2_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
-"279
+"16
+[v roundf@y y `f  1 a 4 68 ]
+[u S2816 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"14
+[v roundf@u u `S2816  1 a 4 64 ]
+"15
+[v roundf@e e `i  1 a 2 58 ]
+"12
+[v roundf@x x `f  1 p 4 46 ]
+"13
+[v roundf@F527 F527 `S2816  1 s 4 F527 ]
+"36
 } 0
-"273
-[v _EUSART2_SetFramingErrorHandler EUSART2_SetFramingErrorHandler `(v  1 e 1 0 ]
+"245 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
 {
-[v EUSART2_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
-"275
+[v ___flsub@b b `d  1 p 4 39 ]
+[v ___flsub@a a `d  1 p 4 43 ]
+"250
 } 0
-"281
-[v _EUSART2_SetErrorHandler EUSART2_SetErrorHandler `(v  1 e 1 0 ]
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
 {
-[v EUSART2_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
-"283
+"17
+[v ___fladd@grs grs `uc  1 a 1 38 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 37 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 36 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 35 ]
+"10
+[v ___fladd@b b `d  1 p 4 23 ]
+[v ___fladd@a a `d  1 p 4 27 ]
+"237
 } 0
-"61 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/adc.c
-[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
 {
-"83
+[v ___flneg@f1 f1 `d  1 p 4 23 ]
+"20
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\fminf.c
+[v _fminf fminf `(f  1 e 4 0 ]
+{
+[v fminf@x x `f  1 p 4 21 ]
+[v fminf@y y `f  1 p 4 25 ]
+"13
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\__signbitf.c
+[v ___signbitf __signbitf `(i  1 e 2 0 ]
+{
+[u S2816 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"9
+[v ___signbitf@y y `S2816  1 a 4 31 ]
+"4
+[v ___signbitf@x x `f  1 p 4 23 ]
+"5
+[v ___signbitf@F526 F526 `S2816  1 s 4 F526 ]
+"11
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+{
+[u S2816 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v ___fpclassifyf@u u `S2816  1 a 4 33 ]
+"7
+[v ___fpclassifyf@e e `i  1 a 2 31 ]
+"4
+[v ___fpclassifyf@x x `f  1 p 4 23 ]
+"5
+[v ___fpclassifyf@F465 F465 `S2816  1 s 4 F465 ]
+"11
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 23 ]
+[v ___flge@ff2 ff2 `d  1 p 4 27 ]
+"19
+} 0
+"11 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 40 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 33 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 38 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 45 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 44 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 37 ]
+"11
+[v ___fldiv@b b `d  1 p 4 21 ]
+[v ___fldiv@a a `d  1 p 4 25 ]
+"185
+} 0
+"195 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\rgbledfx.c
+[v _displayAlt displayAlt `(v  1 e 1 0 ]
+{
+"210
+[v displayAlt@offNumDelay offNumDelay `i  1 a 2 100 ]
+"212
+[v displayAlt@completeDispDelay completeDispDelay `i  1 a 2 98 ]
+"211
+[v displayAlt@placeSeperatorDelay placeSeperatorDelay `i  1 a 2 96 ]
+"195
+[v displayAlt@alt alt `i  1 p 2 90 ]
+"204
+[v displayAlt@dispStep dispStep `uc  1 s 1 dispStep ]
+"205
+[v displayAlt@currentAlt currentAlt `i  1 s 2 currentAlt ]
+"206
+[v displayAlt@altThou altThou `i  1 s 2 altThou ]
+"207
+[v displayAlt@altHund altHund `i  1 s 2 altHund ]
+"214
+[v displayAlt@currentMillis currentMillis `l  1 s 4 currentMillis ]
+"215
+[v displayAlt@previousMillis previousMillis `l  1 s 4 previousMillis ]
+"216
+[v displayAlt@ledOn ledOn `uc  1 s 1 ledOn ]
+"217
+[v displayAlt@counter counter `uc  1 s 1 counter ]
+"294
+} 0
+"301
+[v _setLED setLED `(v  1 e 1 0 ]
+{
+[v setLED@red red `uc  1 a 1 wreg ]
+"310
+[v setLED@enableByte enableByte `uc  1 a 1 38 ]
+"301
+[v setLED@red red `uc  1 a 1 wreg ]
+[v setLED@green green `uc  1 p 1 35 ]
+[v setLED@blue blue `uc  1 p 1 36 ]
+"302
+[v setLED@currentR currentR `uc  1 s 1 currentR ]
+"303
+[v setLED@currentG currentG `uc  1 s 1 currentG ]
+"304
+[v setLED@currentB currentB `uc  1 s 1 currentB ]
+"306
+[v setLED@red red `uc  1 a 1 37 ]
+"338
+} 0
+"344
+[v _byteMin byteMin `(uc  1 e 1 0 ]
+{
+[v byteMin@a a `uc  1 a 1 wreg ]
+[v byteMin@a a `uc  1 a 1 wreg ]
+[v byteMin@b b `uc  1 p 1 23 ]
+[v byteMin@a a `uc  1 a 1 26 ]
+"346
 } 0
 "91 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/examples/i2c1_master_example.c
 [v _I2C1_Write1ByteRegister I2C1_Write1ByteRegister `(v  1 e 1 0 ]
 {
 [v I2C1_Write1ByteRegister@address address `uc  1 a 1 wreg ]
 [v I2C1_Write1ByteRegister@address address `uc  1 a 1 wreg ]
-[v I2C1_Write1ByteRegister@reg reg `uc  1 p 1 0 ]
-[v I2C1_Write1ByteRegister@data data `uc  1 p 1 1 ]
-[v I2C1_Write1ByteRegister@address address `uc  1 a 1 2 ]
+[v I2C1_Write1ByteRegister@reg reg `uc  1 p 1 32 ]
+[v I2C1_Write1ByteRegister@data data `uc  1 p 1 33 ]
+[v I2C1_Write1ByteRegister@address address `uc  1 a 1 34 ]
 "99
 } 0
 "274 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/i2c1_master.c
@@ -1170,6 +1313,170 @@ channel_VBG 15
 [v _I2C1_MasterClearIrq I2C1_MasterClearIrq `T(v  1 s 1 I2C1_MasterClearIrq ]
 {
 "645
+} 0
+"3 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\timers.c
+[v _millis millis `(ul  1 e 4 0 ]
+{
+"4
+[v millis@returnTime returnTime `ul  1 a 4 86 ]
+"7
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 41 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 40 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 31 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 39 ]
+"44
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 81 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 80 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 72 ]
+"70
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S2668 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S2673 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2676 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2668 1 fAsBytes 4 0 `S2673 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2676  1 a 4 15 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 10 ]
+[s S2744 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S2747 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2744 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2747  1 a 2 19 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 14 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 9 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 8 ]
+"8
+[v ___flmul@b b `d  1 p 4 0 ]
+[v ___flmul@a a `d  1 p 4 4 ]
+"205
+} 0
+"98 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/tmr1.c
+[v _TMR1_ReadTimer TMR1_ReadTimer `(us  1 e 2 0 ]
+{
+"100
+[v TMR1_ReadTimer@readVal readVal `us  1 a 2 27 ]
+"102
+[v TMR1_ReadTimer@readValLow readValLow `uc  1 a 1 30 ]
+"101
+[v TMR1_ReadTimer@readValHigh readValHigh `uc  1 a 1 29 ]
+"111
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 27 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 23 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 25 ]
+"53
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 34 ]
+[v ___awmod@counter counter `uc  1 a 1 33 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 29 ]
+[v ___awmod@divisor divisor `i  1 p 2 31 ]
+"34
+} 0
+"50 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"61
+} 0
+"62 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"63 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"84
+} 0
+"52 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"94
+} 0
+"63 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"73
+} 0
+"52 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"167 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/i2c1_master.c
+[v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
+{
+"174
+} 0
+"88 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/eusart2.c
+[v _EUSART2_Initialize EUSART2_Initialize `(v  1 e 1 0 ]
+{
+"130
+} 0
+"285
+[v _EUSART2_SetTxInterruptHandler EUSART2_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART2_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
+"287
+} 0
+"289
+[v _EUSART2_SetRxInterruptHandler EUSART2_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART2_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
+"291
+} 0
+"277
+[v _EUSART2_SetOverrunErrorHandler EUSART2_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART2_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
+"279
+} 0
+"273
+[v _EUSART2_SetFramingErrorHandler EUSART2_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART2_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
+"275
+} 0
+"281
+[v _EUSART2_SetErrorHandler EUSART2_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART2_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 23 ]
+"283
+} 0
+"61 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"83
 } 0
 "58 C:\Users\mx3de\Documents\ASU\SPRING2022\EGR314\EGR314\00_PIC\team207_main_testing.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]

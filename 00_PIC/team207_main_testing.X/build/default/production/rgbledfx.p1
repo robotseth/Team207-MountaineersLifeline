@@ -1,71 +1,35 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F6653 `(v ~T0 @X0 0 tf ]
-[p mainexit ]
-"75 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"17488 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17488:     struct {
-[s S828 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S828 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"17498
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17498:     struct {
-[s S829 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S829 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"17508
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17508:     struct {
-[s S830 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S830 . . GIEL GIEH ]
-"17487
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17487: typedef union {
-[u S827 `S828 1 `S829 1 `S830 1 ]
-[n S827 . . . . ]
-"17514
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17514: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS827 ~T0 @X0 0 e@4082 ]
-"9269
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9269:     struct {
-[s S438 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S438 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
-"9279
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9279:     struct {
-[s S439 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S439 . LA0 LA1 LA2 LA3 . LA5 LA6 LA7 ]
-"9268
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9268: typedef union {
-[u S437 `S438 1 `S439 1 ]
-[n S437 . . . ]
-"9290
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9290: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
-[v _LATAbits `VS437 ~T0 @X0 0 e@3977 ]
-"9483
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9483:     struct {
-[s S444 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S444 . LATC0 LATC1 LATC2 . LATC6 LATC7 ]
-"9491
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9491:     struct {
-[s S445 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S445 . LC0 LC1 LC2 . LC6 LC7 ]
-"9482
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9482: typedef union {
-[u S443 `S444 1 `S445 1 ]
-[n S443 . . . ]
-"9500
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 9500: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
-[v _LATCbits `VS443 ~T0 @X0 0 e@3979 ]
+[v F7077 `(v ~T0 @X0 0 tf ]
+"51 ./rgbledfx.h
+[; ;./rgbledfx.h: 51: void displayHR(int hr);
+[v _displayHR `(v ~T0 @X0 0 ef1`i ]
+"52
+[; ;./rgbledfx.h: 52: void displayTemp(int temp);
+[v _displayTemp `(v ~T0 @X0 0 ef1`i ]
+"53
+[; ;./rgbledfx.h: 53: void displayAlt(int alt);
+[v _displayAlt `(v ~T0 @X0 0 ef1`i ]
+"54
+[; ;./rgbledfx.h: 54: void displayOff(void);
+[v _displayOff `(v ~T0 @X0 0 ef ]
+"348 C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\math.h
+[; ;C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\math.h: 348: float roundf(float);
+[v _roundf `(f ~T0 @X0 0 ef1`f ]
 "15 ./timers.h
 [; ;./timers.h: 15: unsigned long millis(void);
 [v _millis `(ul ~T0 @X0 0 ef ]
-"47 ./rgbledfx.h
-[; ;./rgbledfx.h: 47: void updateDispTemp(int temp);
-[v _updateDispTemp `(v ~T0 @X0 0 ef1`i ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
-"49 ./rgbledfx.h
-[; ;./rgbledfx.h: 49: void updateDispAnim(uint8_t mode);
-[v _updateDispAnim `(v ~T0 @X0 0 ef1`uc ]
+"192 C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\math.h
+[; ;C:\Program Files\Microchip\xc8\v2.35\pic\include\c99\math.h: 192: float fminf(float, float);
+[v _fminf `(f ~T0 @X0 0 ef2`f`f ]
+"56 ./rgbledfx.h
+[; ;./rgbledfx.h: 56: void setLED(uint8_t red, uint8_t green, uint8_t blue);
+[v _setLED `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"59
+[; ;./rgbledfx.h: 59: uint8_t byteMin(uint8_t a, uint8_t b);
+[v _byteMin `(uc ~T0 @X0 0 ef2`uc`uc ]
+"56 ./mcc_generated_files/examples/i2c1_master_example.h
+[; ;./mcc_generated_files/examples/i2c1_master_example.h: 56: void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
+[v _I2C1_Write1ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 55: __asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
@@ -1009,138 +973,1002 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f26j53.h: 17908: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "213 ./mcc_generated_files/examples/../i2c1_master.h
-[v _MSSP1_InterruptHandler `*F6653 ~T0 @X0 1 e ]
+[v _MSSP1_InterruptHandler `*F7077 ~T0 @X0 1 e ]
 "13 ./timers.h
 [; ;./timers.h: 13: float scale = 1;
 [v _scale `f ~T0 @X0 1 e ]
 [i _scale
 -> -> 1 `i `f
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"60 main.c
-[; ;main.c: 60: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"61
-[; ;main.c: 61: {
+"8 rgbledfx.c
+[; ;rgbledfx.c: 8: void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt){
+[v _updateLED `(v ~T0 @X0 1 ef5`uc`uc`i`i`i ]
 {
-[e :U _main ]
+[e :U _updateLED ]
+[v _update `uc ~T0 @X0 1 r1 ]
+[v _mode `uc ~T0 @X0 1 r2 ]
+[v _hr `i ~T0 @X0 1 r3 ]
+[v _temp `i ~T0 @X0 1 r4 ]
+[v _alt `i ~T0 @X0 1 r5 ]
 [f ]
-"63
-[; ;main.c: 63:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"70
-[; ;main.c: 70:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"76
-[; ;main.c: 76:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"78
-[; ;main.c: 78:     do { LATAbits.LATA7 = 1; } while(0);
-[e :U 860 ]
+"9
+[; ;rgbledfx.c: 9:     static int currentHR = 0;
+[v F7238 `i ~T0 @X0 1 s currentHR ]
+[i F7238
+-> 0 `i
+]
+"10
+[; ;rgbledfx.c: 10:     static int currentTemp = 0;
+[v F7239 `i ~T0 @X0 1 s currentTemp ]
+[i F7239
+-> 0 `i
+]
+"11
+[; ;rgbledfx.c: 11:     static int currentAlt = 0;
+[v F7240 `i ~T0 @X0 1 s currentAlt ]
+[i F7240
+-> 0 `i
+]
+"20
+[; ;rgbledfx.c: 20:     if(update == 0){
+[e $ ! == -> _update `i -> 0 `i 858  ]
 {
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 859 ]
-"79
-[; ;main.c: 79:     do { LATAbits.LATA6 = 1; } while(0);
-[e :U 863 ]
+"22
+[; ;rgbledfx.c: 22:         switch(mode){
+[e $U 860  ]
 {
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-}
+"23
+[; ;rgbledfx.c: 23:             case 0:
+[e :U 861 ]
+"25
+[; ;rgbledfx.c: 25:                 displayHR(currentHR);
+[e ( _displayHR (1 F7238 ]
+"26
+[; ;rgbledfx.c: 26:                 break;
+[e $U 859  ]
+"27
+[; ;rgbledfx.c: 27:             case 1:
 [e :U 862 ]
-"80
-[; ;main.c: 80:     do { LATCbits.LATC0 = 0; } while(0);
-[e :U 866 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+"29
+[; ;rgbledfx.c: 29:                 displayTemp(currentTemp);
+[e ( _displayTemp (1 F7239 ]
+"30
+[; ;rgbledfx.c: 30:                 break;
+[e $U 859  ]
+"31
+[; ;rgbledfx.c: 31:             case 2:
+[e :U 863 ]
+"33
+[; ;rgbledfx.c: 33:                 displayAlt(currentAlt);
+[e ( _displayAlt (1 F7240 ]
+"34
+[; ;rgbledfx.c: 34:                 break;
+[e $U 859  ]
+"35
+[; ;rgbledfx.c: 35:             default:
+[e :U 864 ]
+"37
+[; ;rgbledfx.c: 37:                 displayOff();
+[e ( _displayOff ..  ]
+"38
+[; ;rgbledfx.c: 38:                 break;
+[e $U 859  ]
+"39
+[; ;rgbledfx.c: 39:         }
 }
-[e :U 865 ]
-"83
-[; ;main.c: 83:     unsigned long currentMillis = 0;
-[v _currentMillis `ul ~T0 @X0 1 a ]
-[e = _currentMillis -> -> -> 0 `i `l `ul ]
-"84
-[; ;main.c: 84:     unsigned long previousMillis = 0;
-[v _previousMillis `ul ~T0 @X0 1 a ]
-[e = _previousMillis -> -> -> 0 `i `l `ul ]
-"85
-[; ;main.c: 85:     unsigned long updateDelay = 10000;
-[v _updateDelay `ul ~T0 @X0 1 a ]
-[e = _updateDelay -> -> -> 10000 `i `l `ul ]
-"87
-[; ;main.c: 87:     int tempTesting = 15;
-[v _tempTesting `i ~T0 @X0 1 a ]
-[e = _tempTesting -> 15 `i ]
-"101
-[; ;main.c: 101:     while (1)
-[e :U 868 ]
-"102
-[; ;main.c: 102:     {
+[e $U 859  ]
+[e :U 860 ]
+[e [\ -> _mode `i , $ -> 0 `i 861
+ , $ -> 1 `i 862
+ , $ -> 2 `i 863
+ 864 ]
+[e :U 859 ]
+"42
+[; ;rgbledfx.c: 42:     } else if(update == 1){
+}
+[e $U 865  ]
+[e :U 858 ]
+[e $ ! == -> _update `i -> 1 `i 866  ]
 {
-"111
-[; ;main.c: 111:         currentMillis = millis();
-[e = _currentMillis ( _millis ..  ]
-"113
-[; ;main.c: 113:         if(currentMillis - previousMillis >= updateDelay){
-[e $ ! >= - _currentMillis _previousMillis _updateDelay 870  ]
+"44
+[; ;rgbledfx.c: 44:         currentHR = hr;
+[e = F7238 _hr ]
+"45
+[; ;rgbledfx.c: 45:         currentTemp = temp;
+[e = F7239 _temp ]
+"46
+[; ;rgbledfx.c: 46:         currentAlt = alt;
+[e = F7240 _alt ]
+"47
+[; ;rgbledfx.c: 47:     } else if(update == 2){
+}
+[e $U 867  ]
+[e :U 866 ]
+[e $ ! == -> _update `i -> 2 `i 868  ]
+{
+"48
+[; ;rgbledfx.c: 48:         currentHR = hr;
+[e = F7238 _hr ]
+"49
+[; ;rgbledfx.c: 49:     } else if(update == 3){
+}
+[e $U 869  ]
+[e :U 868 ]
+[e $ ! == -> _update `i -> 3 `i 870  ]
+{
+"50
+[; ;rgbledfx.c: 50:         currentTemp = temp;
+[e = F7239 _temp ]
+"51
+[; ;rgbledfx.c: 51:     } else if(update == 4){
+}
+[e $U 871  ]
+[e :U 870 ]
+[e $ ! == -> _update `i -> 4 `i 872  ]
+{
+"52
+[; ;rgbledfx.c: 52:         currentAlt = alt;
+[e = F7240 _alt ]
+"53
+[; ;rgbledfx.c: 53:     }
+}
+[e :U 872 ]
+[e :U 871 ]
+[e :U 869 ]
+[e :U 867 ]
+[e :U 865 ]
+"56
+[; ;rgbledfx.c: 56: }
+[e :UE 857 ]
+}
+"59
+[; ;rgbledfx.c: 59: void updateAllDispVals(int hr, int temp, int alt){
+[v _updateAllDispVals `(v ~T0 @X0 1 ef3`i`i`i ]
+{
+[e :U _updateAllDispVals ]
+[v _hr `i ~T0 @X0 1 r1 ]
+[v _temp `i ~T0 @X0 1 r2 ]
+[v _alt `i ~T0 @X0 1 r3 ]
+[f ]
+"60
+[; ;rgbledfx.c: 60:     updateLED(1, 0, hr, temp, alt);
+[e ( _updateLED (4 , , , , -> -> 1 `i `uc -> -> 0 `i `uc _hr _temp _alt ]
+"61
+[; ;rgbledfx.c: 61: }
+[e :UE 873 ]
+}
+"63
+[; ;rgbledfx.c: 63: void updateDispHeartRate(int hr){
+[v _updateDispHeartRate `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _updateDispHeartRate ]
+[v _hr `i ~T0 @X0 1 r1 ]
+[f ]
+"64
+[; ;rgbledfx.c: 64:     updateLED(2, 0, hr, 0, 0);
+[e ( _updateLED (4 , , , , -> -> 2 `i `uc -> -> 0 `i `uc _hr -> 0 `i -> 0 `i ]
+"65
+[; ;rgbledfx.c: 65: }
+[e :UE 874 ]
+}
+"67
+[; ;rgbledfx.c: 67: void updateDispTemp(int temp){
+[v _updateDispTemp `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _updateDispTemp ]
+[v _temp `i ~T0 @X0 1 r1 ]
+[f ]
+"68
+[; ;rgbledfx.c: 68:     updateLED(3, 0, 0, temp, 0);
+[e ( _updateLED (4 , , , , -> -> 3 `i `uc -> -> 0 `i `uc -> 0 `i _temp -> 0 `i ]
+"69
+[; ;rgbledfx.c: 69: }
+[e :UE 875 ]
+}
+"71
+[; ;rgbledfx.c: 71: void updateDispAltitude(int alt){
+[v _updateDispAltitude `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _updateDispAltitude ]
+[v _alt `i ~T0 @X0 1 r1 ]
+[f ]
+"72
+[; ;rgbledfx.c: 72:     updateLED(4, 0, 0, 0, alt);
+[e ( _updateLED (4 , , , , -> -> 4 `i `uc -> -> 0 `i `uc -> 0 `i -> 0 `i _alt ]
+"73
+[; ;rgbledfx.c: 73: }
+[e :UE 876 ]
+}
+"77
+[; ;rgbledfx.c: 77: void updateDispAnim(uint8_t mode){
+[v _updateDispAnim `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _updateDispAnim ]
+[v _mode `uc ~T0 @X0 1 r1 ]
+[f ]
+"84
+[; ;rgbledfx.c: 84:     updateLED(0, mode, 0, 0, 0);
+[e ( _updateLED (4 , , , , -> -> 0 `i `uc _mode -> 0 `i -> 0 `i -> 0 `i ]
+"85
+[; ;rgbledfx.c: 85: }
+[e :UE 877 ]
+}
+"88
+[; ;rgbledfx.c: 88: void displayHR(int heartRate){
+[v _displayHR `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _displayHR ]
+[v _heartRate `i ~T0 @X0 1 r1 ]
+[f ]
+"93
+[; ;rgbledfx.c: 93:     static long currentMillis = 0;
+[v F7255 `l ~T0 @X0 1 s currentMillis ]
+[i F7255
+-> -> 0 `i `l
+]
+"94
+[; ;rgbledfx.c: 94:     static long previousMillis = 0;
+[v F7256 `l ~T0 @X0 1 s previousMillis ]
+[i F7256
+-> -> 0 `i `l
+]
+"95
+[; ;rgbledfx.c: 95:     static uint8_t level = 0;
+[v F7257 `uc ~T0 @X0 1 s level ]
+[i F7257
+-> -> 0 `i `uc
+]
+"97
+[; ;rgbledfx.c: 97:     uint8_t maxLevel = 0x12;
+[v _maxLevel `uc ~T0 @X0 1 a ]
+[e = _maxLevel -> -> 18 `i `uc ]
+"98
+[; ;rgbledfx.c: 98:     uint8_t levelFade = 0;
+[v _levelFade `uc ~T0 @X0 1 a ]
+[e = _levelFade -> -> 0 `i `uc ]
+"100
+[; ;rgbledfx.c: 100:     float fadeFactor = 0.018;
+[v _fadeFactor `f ~T0 @X0 1 a ]
+[e = _fadeFactor -> .0.018 `f ]
+"109
+[; ;rgbledfx.c: 109:     double currentHR = (double) heartRate;
+[v _currentHR `d ~T0 @X0 1 a ]
+[e = _currentHR -> _heartRate `d ]
+"110
+[; ;rgbledfx.c: 110:     long beatDelay = (long) roundf(1000.0/(currentHR*0.0167));
+[v _beatDelay `l ~T0 @X0 1 a ]
+[e = _beatDelay -> ( _roundf (1 -> / .1000.0 * _currentHR .0.0167 `f `l ]
+"112
+[; ;rgbledfx.c: 112:     currentMillis = millis();
+[e = F7255 -> ( _millis ..  `l ]
+"114
+[; ;rgbledfx.c: 114:     if(currentMillis - previousMillis >= beatDelay){
+[e $ ! >= - F7255 F7256 _beatDelay 879  ]
 {
 "115
-[; ;main.c: 115:             previousMillis = currentMillis;
-[e = _previousMillis _currentMillis ]
+[; ;rgbledfx.c: 115:         level = maxLevel;
+[e = F7257 _maxLevel ]
 "116
-[; ;main.c: 116:             tempTesting++;
-[e ++ _tempTesting -> 1 `i ]
-"118
-[; ;main.c: 118:             if(tempTesting > 120){
-[e $ ! > _tempTesting -> 120 `i 871  ]
+[; ;rgbledfx.c: 116:         previousMillis = currentMillis;
+[e = F7256 F7255 ]
+"117
+[; ;rgbledfx.c: 117:     } else {
+}
+[e $U 880  ]
+[e :U 879 ]
 {
 "119
-[; ;main.c: 119:                 tempTesting = 15;
-[e = _tempTesting -> 15 `i ]
-"120
-[; ;main.c: 120:             }
-}
-[e :U 871 ]
+[; ;rgbledfx.c: 119:         levelFade = (uint8_t) fminf(fadeFactor*(currentMillis-previousMillis),(float) maxLevel);
+[e = _levelFade -> ( _fminf (2 , * _fadeFactor -> - F7255 F7256 `f -> _maxLevel `f `uc ]
 "122
-[; ;main.c: 122:             updateDispTemp(tempTesting);
-[e ( _updateDispTemp (1 _tempTesting ]
-"124
-[; ;main.c: 124:             do { LATAbits.LATA7 = 0; } while(0);
-[e :U 874 ]
-{
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[; ;rgbledfx.c: 122:     }
 }
-[e :U 873 ]
+[e :U 880 ]
+"123
+[; ;rgbledfx.c: 123:     setLED(maxLevel - levelFade, 0, 0);
+[e ( _setLED (3 , , -> - -> _maxLevel `i -> _levelFade `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "125
-[; ;main.c: 125:             _delay((unsigned long)((50)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"126
-[; ;main.c: 126:             do { LATAbits.LATA7 = 1; } while(0);
-[e :U 877 ]
-{
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[; ;rgbledfx.c: 125: }
+[e :UE 878 ]
 }
-[e :U 876 ]
 "127
-[; ;main.c: 127:             _delay((unsigned long)((50)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"129
-[; ;main.c: 129:         }
+[; ;rgbledfx.c: 127: void displayTemp(int temp){
+[v _displayTemp `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _displayTemp ]
+[v _temp `i ~T0 @X0 1 r1 ]
+[f ]
+"130
+[; ;rgbledfx.c: 130:     static long currentMillis = 0;
+[v F7265 `l ~T0 @X0 1 s currentMillis ]
+[i F7265
+-> -> 0 `i `l
+]
+"131
+[; ;rgbledfx.c: 131:     static long previousMillis = 0;
+[v F7266 `l ~T0 @X0 1 s previousMillis ]
+[i F7266
+-> -> 0 `i `l
+]
+"132
+[; ;rgbledfx.c: 132:     long blinkDelay = 750;
+[v _blinkDelay `l ~T0 @X0 1 a ]
+[e = _blinkDelay -> -> 750 `i `l ]
+"133
+[; ;rgbledfx.c: 133:     long rapidDelay = 250;
+[v _rapidDelay `l ~T0 @X0 1 a ]
+[e = _rapidDelay -> -> 250 `i `l ]
+"134
+[; ;rgbledfx.c: 134:     long currentDelay = 0;
+[v _currentDelay `l ~T0 @X0 1 a ]
+[e = _currentDelay -> -> 0 `i `l ]
+"135
+[; ;rgbledfx.c: 135:     static uint8_t ledOn = 0;
+[v F7270 `uc ~T0 @X0 1 s ledOn ]
+[i F7270
+-> -> 0 `i `uc
+]
+"137
+[; ;rgbledfx.c: 137:     uint8_t calcR = 0;
+[v _calcR `uc ~T0 @X0 1 a ]
+[e = _calcR -> -> 0 `i `uc ]
+"138
+[; ;rgbledfx.c: 138:     uint8_t calcG = 0;
+[v _calcG `uc ~T0 @X0 1 a ]
+[e = _calcG -> -> 0 `i `uc ]
+"139
+[; ;rgbledfx.c: 139:     uint8_t calcB = 0;
+[v _calcB `uc ~T0 @X0 1 a ]
+[e = _calcB -> -> 0 `i `uc ]
+"153
+[; ;rgbledfx.c: 153:     if(temp < 20){
+[e $ ! < _temp -> 20 `i 882  ]
+{
+"154
+[; ;rgbledfx.c: 154:         calcB = 0x12;
+[e = _calcB -> -> 18 `i `uc ]
+"155
+[; ;rgbledfx.c: 155:         currentDelay = rapidDelay;
+[e = _currentDelay _rapidDelay ]
+"156
+[; ;rgbledfx.c: 156:     } else if(temp >= 20 && temp < 32){
 }
-[e :U 870 ]
-"140
-[; ;main.c: 140:         updateDispAnim(1);
-[e ( _updateDispAnim (1 -> -> 1 `i `uc ]
-"141
-[; ;main.c: 141:         _delay((unsigned long)((20)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"144
-[; ;main.c: 144:     }
+[e $U 883  ]
+[e :U 882 ]
+[e $ ! && >= _temp -> 20 `i < _temp -> 32 `i 884  ]
+{
+"157
+[; ;rgbledfx.c: 157:         calcB = 0x12;
+[e = _calcB -> -> 18 `i `uc ]
+"158
+[; ;rgbledfx.c: 158:         currentDelay = blinkDelay;
+[e = _currentDelay _blinkDelay ]
+"159
+[; ;rgbledfx.c: 159:     } else if(temp >= 32 && temp < 45){
 }
-[e :U 867 ]
-[e $U 868  ]
-[e :U 869 ]
-"145
-[; ;main.c: 145: }
-[e :UE 857 ]
+[e $U 885  ]
+[e :U 884 ]
+[e $ ! && >= _temp -> 32 `i < _temp -> 45 `i 886  ]
+{
+"160
+[; ;rgbledfx.c: 160:         calcB = 0x12;
+[e = _calcB -> -> 18 `i `uc ]
+"161
+[; ;rgbledfx.c: 161:     } else if(temp >= 45 && temp < 65){
+}
+[e $U 887  ]
+[e :U 886 ]
+[e $ ! && >= _temp -> 45 `i < _temp -> 65 `i 888  ]
+{
+"162
+[; ;rgbledfx.c: 162:         calcB = 0x12;
+[e = _calcB -> -> 18 `i `uc ]
+"163
+[; ;rgbledfx.c: 163:         calcG = 0x12;
+[e = _calcG -> -> 18 `i `uc ]
+"164
+[; ;rgbledfx.c: 164:     } else if(temp >= 65 && temp < 75){
+}
+[e $U 889  ]
+[e :U 888 ]
+[e $ ! && >= _temp -> 65 `i < _temp -> 75 `i 890  ]
+{
+"165
+[; ;rgbledfx.c: 165:         calcG = 0x12;
+[e = _calcG -> -> 18 `i `uc ]
+"166
+[; ;rgbledfx.c: 166:     } else if(temp >= 75 && temp < 85){
+}
+[e $U 891  ]
+[e :U 890 ]
+[e $ ! && >= _temp -> 75 `i < _temp -> 85 `i 892  ]
+{
+"167
+[; ;rgbledfx.c: 167:         calcG = 0x12;
+[e = _calcG -> -> 18 `i `uc ]
+"168
+[; ;rgbledfx.c: 168:     } else if(temp >= 85 && temp < 95){
+}
+[e $U 893  ]
+[e :U 892 ]
+[e $ ! && >= _temp -> 85 `i < _temp -> 95 `i 894  ]
+{
+"169
+[; ;rgbledfx.c: 169:         calcG = 0x12;
+[e = _calcG -> -> 18 `i `uc ]
+"170
+[; ;rgbledfx.c: 170:         calcR = 0x12;
+[e = _calcR -> -> 18 `i `uc ]
+"171
+[; ;rgbledfx.c: 171:     } else if(temp >= 95 && temp < 105){
+}
+[e $U 895  ]
+[e :U 894 ]
+[e $ ! && >= _temp -> 95 `i < _temp -> 105 `i 896  ]
+{
+"172
+[; ;rgbledfx.c: 172:         calcR = 0x12;
+[e = _calcR -> -> 18 `i `uc ]
+"173
+[; ;rgbledfx.c: 173:     } else if(temp >= 105 && temp < 115){
+}
+[e $U 897  ]
+[e :U 896 ]
+[e $ ! && >= _temp -> 105 `i < _temp -> 115 `i 898  ]
+{
+"174
+[; ;rgbledfx.c: 174:         calcR = 0x12;
+[e = _calcR -> -> 18 `i `uc ]
+"175
+[; ;rgbledfx.c: 175:         currentDelay = blinkDelay;
+[e = _currentDelay _blinkDelay ]
+"176
+[; ;rgbledfx.c: 176:     } else if(temp >= 115){
+}
+[e $U 899  ]
+[e :U 898 ]
+[e $ ! >= _temp -> 115 `i 900  ]
+{
+"177
+[; ;rgbledfx.c: 177:         calcR = 0x12;
+[e = _calcR -> -> 18 `i `uc ]
+"178
+[; ;rgbledfx.c: 178:         currentDelay = rapidDelay;
+[e = _currentDelay _rapidDelay ]
+"179
+[; ;rgbledfx.c: 179:     }
+}
+[e :U 900 ]
+[e :U 899 ]
+[e :U 897 ]
+[e :U 895 ]
+[e :U 893 ]
+[e :U 891 ]
+[e :U 889 ]
+[e :U 887 ]
+[e :U 885 ]
+[e :U 883 ]
+"181
+[; ;rgbledfx.c: 181:     if(currentDelay > 0){
+[e $ ! > _currentDelay -> -> 0 `i `l 901  ]
+{
+"182
+[; ;rgbledfx.c: 182:         currentMillis = millis();
+[e = F7265 -> ( _millis ..  `l ]
+"183
+[; ;rgbledfx.c: 183:         if(currentMillis - previousMillis >= currentDelay){
+[e $ ! >= - F7265 F7266 _currentDelay 902  ]
+{
+"184
+[; ;rgbledfx.c: 184:             previousMillis = currentMillis;
+[e = F7266 F7265 ]
+"185
+[; ;rgbledfx.c: 185:             ledOn = !ledOn;
+[e = F7270 -> -> ! != -> F7270 `i -> 0 `i `i `uc ]
+"186
+[; ;rgbledfx.c: 186:         }
+}
+[e :U 902 ]
+"187
+[; ;rgbledfx.c: 187:     } else {
+}
+[e $U 903  ]
+[e :U 901 ]
+{
+"188
+[; ;rgbledfx.c: 188:         ledOn = 1;
+[e = F7270 -> -> 1 `i `uc ]
+"189
+[; ;rgbledfx.c: 189:     }
+}
+[e :U 903 ]
+"191
+[; ;rgbledfx.c: 191:     setLED(calcR*ledOn, calcG*ledOn, calcB*ledOn);
+[e ( _setLED (3 , , -> * -> _calcR `i -> F7270 `i `uc -> * -> _calcG `i -> F7270 `i `uc -> * -> _calcB `i -> F7270 `i `uc ]
+"193
+[; ;rgbledfx.c: 193: }
+[e :UE 881 ]
+}
+"195
+[; ;rgbledfx.c: 195: void displayAlt(int alt){
+[v _displayAlt `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _displayAlt ]
+[v _alt `i ~T0 @X0 1 r1 ]
+[f ]
+"204
+[; ;rgbledfx.c: 204:     static uint8_t dispStep = 0;
+[v F7276 `uc ~T0 @X0 1 s dispStep ]
+[i F7276
+-> -> 0 `i `uc
+]
+"205
+[; ;rgbledfx.c: 205:     static int currentAlt = 0;
+[v F7277 `i ~T0 @X0 1 s currentAlt ]
+[i F7277
+-> 0 `i
+]
+"206
+[; ;rgbledfx.c: 206:     static int altThou = 0;
+[v F7278 `i ~T0 @X0 1 s altThou ]
+[i F7278
+-> 0 `i
+]
+"207
+[; ;rgbledfx.c: 207:     static int altHund = 0;
+[v F7279 `i ~T0 @X0 1 s altHund ]
+[i F7279
+-> 0 `i
+]
+"209
+[; ;rgbledfx.c: 209:     int onNumDelay = 250;
+[v _onNumDelay `i ~T0 @X0 1 a ]
+[e = _onNumDelay -> 250 `i ]
+"210
+[; ;rgbledfx.c: 210:     int offNumDelay = 500;
+[v _offNumDelay `i ~T0 @X0 1 a ]
+[e = _offNumDelay -> 500 `i ]
+"211
+[; ;rgbledfx.c: 211:     int placeSeperatorDelay = 1000;
+[v _placeSeperatorDelay `i ~T0 @X0 1 a ]
+[e = _placeSeperatorDelay -> 1000 `i ]
+"212
+[; ;rgbledfx.c: 212:     int completeDispDelay = 5000;
+[v _completeDispDelay `i ~T0 @X0 1 a ]
+[e = _completeDispDelay -> 5000 `i ]
+"214
+[; ;rgbledfx.c: 214:     static long currentMillis = 0;
+[v F7284 `l ~T0 @X0 1 s currentMillis ]
+[i F7284
+-> -> 0 `i `l
+]
+"215
+[; ;rgbledfx.c: 215:     static long previousMillis = 0;
+[v F7285 `l ~T0 @X0 1 s previousMillis ]
+[i F7285
+-> -> 0 `i `l
+]
+"216
+[; ;rgbledfx.c: 216:     static uint8_t ledOn = 0;
+[v F7286 `uc ~T0 @X0 1 s ledOn ]
+[i F7286
+-> -> 0 `i `uc
+]
+"217
+[; ;rgbledfx.c: 217:     static uint8_t counter = 0;
+[v F7287 `uc ~T0 @X0 1 s counter ]
+[i F7287
+-> -> 0 `i `uc
+]
+"219
+[; ;rgbledfx.c: 219:     currentMillis = millis();
+[e = F7284 -> ( _millis ..  `l ]
+"221
+[; ;rgbledfx.c: 221:     if (dispStep == 0){
+[e $ ! == -> F7276 `i -> 0 `i 905  ]
+{
+"223
+[; ;rgbledfx.c: 223:         currentAlt = alt;
+[e = F7277 _alt ]
+"224
+[; ;rgbledfx.c: 224:         altThou = alt % 1000;
+[e = F7278 % _alt -> 1000 `i ]
+"225
+[; ;rgbledfx.c: 225:         altHund = (alt - altThou*1000) % 100;
+[e = F7279 % - _alt * F7278 -> 1000 `i -> 100 `i ]
+"226
+[; ;rgbledfx.c: 226:         dispStep = 1;
+[e = F7276 -> -> 1 `i `uc ]
+"227
+[; ;rgbledfx.c: 227:     } else if(dispStep == 1){
+}
+[e $U 906  ]
+[e :U 905 ]
+[e $ ! == -> F7276 `i -> 1 `i 907  ]
+{
+"229
+[; ;rgbledfx.c: 229:         if(ledOn == 1){
+[e $ ! == -> F7286 `i -> 1 `i 908  ]
+{
+"230
+[; ;rgbledfx.c: 230:             if(currentMillis - previousMillis >= onNumDelay){
+[e $ ! >= - F7284 F7285 -> _onNumDelay `l 909  ]
+{
+"231
+[; ;rgbledfx.c: 231:                 previousMillis = currentMillis;
+[e = F7285 F7284 ]
+"232
+[; ;rgbledfx.c: 232:                 ledOn = 0;
+[e = F7286 -> -> 0 `i `uc ]
+"233
+[; ;rgbledfx.c: 233:             }
+}
+[e :U 909 ]
+"234
+[; ;rgbledfx.c: 234:         } else {
+}
+[e $U 910  ]
+[e :U 908 ]
+{
+"235
+[; ;rgbledfx.c: 235:             if(currentMillis - previousMillis >= offNumDelay){
+[e $ ! >= - F7284 F7285 -> _offNumDelay `l 911  ]
+{
+"236
+[; ;rgbledfx.c: 236:                 previousMillis = currentMillis;
+[e = F7285 F7284 ]
+"237
+[; ;rgbledfx.c: 237:                 ledOn = 1;
+[e = F7286 -> -> 1 `i `uc ]
+"238
+[; ;rgbledfx.c: 238:                 counter++;
+[e ++ F7287 -> -> 1 `i `uc ]
+"239
+[; ;rgbledfx.c: 239:             }
+}
+[e :U 911 ]
+"240
+[; ;rgbledfx.c: 240:         }
+}
+[e :U 910 ]
+"242
+[; ;rgbledfx.c: 242:         if(counter >= altThou){
+[e $ ! >= -> F7287 `i F7278 912  ]
+{
+"243
+[; ;rgbledfx.c: 243:             dispStep = 2;
+[e = F7276 -> -> 2 `i `uc ]
+"244
+[; ;rgbledfx.c: 244:             counter = 0;
+[e = F7287 -> -> 0 `i `uc ]
+"245
+[; ;rgbledfx.c: 245:             ledOn = 0;
+[e = F7286 -> -> 0 `i `uc ]
+"246
+[; ;rgbledfx.c: 246:         }
+}
+[e :U 912 ]
+"248
+[; ;rgbledfx.c: 248:     } else if (dispStep == 2){
+}
+[e $U 913  ]
+[e :U 907 ]
+[e $ ! == -> F7276 `i -> 2 `i 914  ]
+{
+"250
+[; ;rgbledfx.c: 250:         if(currentMillis - previousMillis >= placeSeperatorDelay){
+[e $ ! >= - F7284 F7285 -> _placeSeperatorDelay `l 915  ]
+{
+"251
+[; ;rgbledfx.c: 251:             previousMillis = currentMillis;
+[e = F7285 F7284 ]
+"252
+[; ;rgbledfx.c: 252:             dispStep = 3;
+[e = F7276 -> -> 3 `i `uc ]
+"253
+[; ;rgbledfx.c: 253:         }
+}
+[e :U 915 ]
+"254
+[; ;rgbledfx.c: 254:     } else if (dispStep == 3){
+}
+[e $U 916  ]
+[e :U 914 ]
+[e $ ! == -> F7276 `i -> 3 `i 917  ]
+{
+"256
+[; ;rgbledfx.c: 256:         if(ledOn == 1){
+[e $ ! == -> F7286 `i -> 1 `i 918  ]
+{
+"257
+[; ;rgbledfx.c: 257:             if(currentMillis - previousMillis >= onNumDelay){
+[e $ ! >= - F7284 F7285 -> _onNumDelay `l 919  ]
+{
+"258
+[; ;rgbledfx.c: 258:                 previousMillis = currentMillis;
+[e = F7285 F7284 ]
+"259
+[; ;rgbledfx.c: 259:                 ledOn = 0;
+[e = F7286 -> -> 0 `i `uc ]
+"260
+[; ;rgbledfx.c: 260:             }
+}
+[e :U 919 ]
+"261
+[; ;rgbledfx.c: 261:         } else {
+}
+[e $U 920  ]
+[e :U 918 ]
+{
+"262
+[; ;rgbledfx.c: 262:             if(currentMillis - previousMillis >= offNumDelay){
+[e $ ! >= - F7284 F7285 -> _offNumDelay `l 921  ]
+{
+"263
+[; ;rgbledfx.c: 263:                 previousMillis = currentMillis;
+[e = F7285 F7284 ]
+"264
+[; ;rgbledfx.c: 264:                 ledOn = 1;
+[e = F7286 -> -> 1 `i `uc ]
+"265
+[; ;rgbledfx.c: 265:                 counter++;
+[e ++ F7287 -> -> 1 `i `uc ]
+"266
+[; ;rgbledfx.c: 266:             }
+}
+[e :U 921 ]
+"267
+[; ;rgbledfx.c: 267:         }
+}
+[e :U 920 ]
+"270
+[; ;rgbledfx.c: 270:         if(counter >= altHund){
+[e $ ! >= -> F7287 `i F7279 922  ]
+{
+"271
+[; ;rgbledfx.c: 271:             dispStep = 4;
+[e = F7276 -> -> 4 `i `uc ]
+"272
+[; ;rgbledfx.c: 272:             counter = 0;
+[e = F7287 -> -> 0 `i `uc ]
+"273
+[; ;rgbledfx.c: 273:             ledOn = 0;
+[e = F7286 -> -> 0 `i `uc ]
+"274
+[; ;rgbledfx.c: 274:         }
+}
+[e :U 922 ]
+"275
+[; ;rgbledfx.c: 275:     } else if (dispStep == 4){
+}
+[e $U 923  ]
+[e :U 917 ]
+[e $ ! == -> F7276 `i -> 4 `i 924  ]
+{
+"277
+[; ;rgbledfx.c: 277:         if(currentMillis - previousMillis >= completeDispDelay){
+[e $ ! >= - F7284 F7285 -> _completeDispDelay `l 925  ]
+{
+"278
+[; ;rgbledfx.c: 278:             previousMillis = currentMillis;
+[e = F7285 F7284 ]
+"279
+[; ;rgbledfx.c: 279:             dispStep = 0;
+[e = F7276 -> -> 0 `i `uc ]
+"280
+[; ;rgbledfx.c: 280:         }
+}
+[e :U 925 ]
+"281
+[; ;rgbledfx.c: 281:     } else {
+}
+[e $U 926  ]
+[e :U 924 ]
+{
+"282
+[; ;rgbledfx.c: 282:         dispStep = 0;
+[e = F7276 -> -> 0 `i `uc ]
+"283
+[; ;rgbledfx.c: 283:     }
+}
+[e :U 926 ]
+[e :U 923 ]
+[e :U 916 ]
+[e :U 913 ]
+[e :U 906 ]
+"285
+[; ;rgbledfx.c: 285:     if(ledOn == 1 && dispStep == 1){
+[e $ ! && == -> F7286 `i -> 1 `i == -> F7276 `i -> 1 `i 927  ]
+{
+"286
+[; ;rgbledfx.c: 286:         setLED(0x12, 0x12, 0x12);
+[e ( _setLED (3 , , -> -> 18 `i `uc -> -> 18 `i `uc -> -> 18 `i `uc ]
+"287
+[; ;rgbledfx.c: 287:     } else if (ledOn == 1 && dispStep == 3) {
+}
+[e $U 928  ]
+[e :U 927 ]
+[e $ ! && == -> F7286 `i -> 1 `i == -> F7276 `i -> 3 `i 929  ]
+{
+"288
+[; ;rgbledfx.c: 288:         setLED(0, 0, 0x12);
+[e ( _setLED (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 18 `i `uc ]
+"289
+[; ;rgbledfx.c: 289:     } else {
+}
+[e $U 930  ]
+[e :U 929 ]
+{
+"290
+[; ;rgbledfx.c: 290:         setLED(0, 0x12, 0);
+[e ( _setLED (3 , , -> -> 0 `i `uc -> -> 18 `i `uc -> -> 0 `i `uc ]
+"291
+[; ;rgbledfx.c: 291:     }
+}
+[e :U 930 ]
+[e :U 928 ]
+"294
+[; ;rgbledfx.c: 294: }
+[e :UE 904 ]
+}
+"296
+[; ;rgbledfx.c: 296: void displayOff(void){
+[v _displayOff `(v ~T0 @X0 1 ef ]
+{
+[e :U _displayOff ]
+[f ]
+"298
+[; ;rgbledfx.c: 298:     setLED(0, 0, 0);
+[e ( _setLED (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"299
+[; ;rgbledfx.c: 299: }
+[e :UE 931 ]
+}
+"301
+[; ;rgbledfx.c: 301: void setLED(uint8_t red, uint8_t green, uint8_t blue){
+[v _setLED `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+{
+[e :U _setLED ]
+[v _red `uc ~T0 @X0 1 r1 ]
+[v _green `uc ~T0 @X0 1 r2 ]
+[v _blue `uc ~T0 @X0 1 r3 ]
+[f ]
+"302
+[; ;rgbledfx.c: 302:     static uint8_t currentR = 0;
+[v F7293 `uc ~T0 @X0 1 s currentR ]
+[i F7293
+-> -> 0 `i `uc
+]
+"303
+[; ;rgbledfx.c: 303:     static uint8_t currentG = 0;
+[v F7294 `uc ~T0 @X0 1 s currentG ]
+[i F7294
+-> -> 0 `i `uc
+]
+"304
+[; ;rgbledfx.c: 304:     static uint8_t currentB = 0;
+[v F7295 `uc ~T0 @X0 1 s currentB ]
+[i F7295
+-> -> 0 `i `uc
+]
+"306
+[; ;rgbledfx.c: 306:     currentR = byteMin(red, 0x12);
+[e = F7293 ( _byteMin (2 , _red -> -> 18 `i `uc ]
+"307
+[; ;rgbledfx.c: 307:     currentG = byteMin(green, 0x12);
+[e = F7294 ( _byteMin (2 , _green -> -> 18 `i `uc ]
+"308
+[; ;rgbledfx.c: 308:     currentB = byteMin(blue, 0x12);
+[e = F7295 ( _byteMin (2 , _blue -> -> 18 `i `uc ]
+"310
+[; ;rgbledfx.c: 310:     uint8_t enableByte = 0x00;
+[v _enableByte `uc ~T0 @X0 1 a ]
+[e = _enableByte -> -> 0 `i `uc ]
+"313
+[; ;rgbledfx.c: 313:     if(currentR == 0){
+[e $ ! == -> F7293 `i -> 0 `i 933  ]
+{
+"314
+[; ;rgbledfx.c: 314:         enableByte = enableByte & 0x0F;
+[e = _enableByte -> & -> _enableByte `i -> 15 `i `uc ]
+"315
+[; ;rgbledfx.c: 315:     } else {
+}
+[e $U 934  ]
+[e :U 933 ]
+{
+"316
+[; ;rgbledfx.c: 316:         enableByte = enableByte | 0x30;
+[e = _enableByte -> | -> _enableByte `i -> 48 `i `uc ]
+"317
+[; ;rgbledfx.c: 317:     }
+}
+[e :U 934 ]
+"319
+[; ;rgbledfx.c: 319:     if(currentG == 0){
+[e $ ! == -> F7294 `i -> 0 `i 935  ]
+{
+"320
+[; ;rgbledfx.c: 320:         enableByte = enableByte & 0x33;
+[e = _enableByte -> & -> _enableByte `i -> 51 `i `uc ]
+"321
+[; ;rgbledfx.c: 321:     } else {
+}
+[e $U 936  ]
+[e :U 935 ]
+{
+"322
+[; ;rgbledfx.c: 322:         enableByte = enableByte | 0x0C;
+[e = _enableByte -> | -> _enableByte `i -> 12 `i `uc ]
+"323
+[; ;rgbledfx.c: 323:     }
+}
+[e :U 936 ]
+"325
+[; ;rgbledfx.c: 325:     if(currentB == 0){
+[e $ ! == -> F7295 `i -> 0 `i 937  ]
+{
+"326
+[; ;rgbledfx.c: 326:         enableByte = enableByte & 0x3C;
+[e = _enableByte -> & -> _enableByte `i -> 60 `i `uc ]
+"327
+[; ;rgbledfx.c: 327:     } else {
+}
+[e $U 938  ]
+[e :U 937 ]
+{
+"328
+[; ;rgbledfx.c: 328:         enableByte = enableByte | 0x03;
+[e = _enableByte -> | -> _enableByte `i -> 3 `i `uc ]
+"329
+[; ;rgbledfx.c: 329:     }
+}
+[e :U 938 ]
+"332
+[; ;rgbledfx.c: 332:     I2C1_Write1ByteRegister(0x66, 0x03, enableByte);
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 3 `i `uc _enableByte ]
+"335
+[; ;rgbledfx.c: 335:     I2C1_Write1ByteRegister(0x66, 0x02, currentR);
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 2 `i `uc F7293 ]
+"336
+[; ;rgbledfx.c: 336:     I2C1_Write1ByteRegister(0x66, 0x01, currentG);
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 1 `i `uc F7294 ]
+"337
+[; ;rgbledfx.c: 337:     I2C1_Write1ByteRegister(0x66, 0x00, currentB);
+[e ( _I2C1_Write1ByteRegister (3 , , -> -> 102 `i `uc -> -> 0 `i `uc F7295 ]
+"338
+[; ;rgbledfx.c: 338: }
+[e :UE 932 ]
+}
+"340
+[; ;rgbledfx.c: 340: uint8_t byteMax(uint8_t a, uint8_t b){
+[v _byteMax `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _byteMax ]
+[v _a `uc ~T0 @X0 1 r1 ]
+[v _b `uc ~T0 @X0 1 r2 ]
+[f ]
+"341
+[; ;rgbledfx.c: 341:     return (((a) > (b)) ? (a) : (b));
+[e ) -> ? > -> _a `i -> _b `i : -> _a `i -> _b `i `uc ]
+[e $UE 939  ]
+"342
+[; ;rgbledfx.c: 342: }
+[e :UE 939 ]
+}
+"344
+[; ;rgbledfx.c: 344: uint8_t byteMin(uint8_t a, uint8_t b){
+[v _byteMin `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _byteMin ]
+[v _a `uc ~T0 @X0 1 r1 ]
+[v _b `uc ~T0 @X0 1 r2 ]
+[f ]
+"345
+[; ;rgbledfx.c: 345:     return (((a) < (b)) ? (a) : (b));
+[e ) -> ? < -> _a `i -> _b `i : -> _a `i -> _b `i `uc ]
+[e $UE 940  ]
+"346
+[; ;rgbledfx.c: 346: }
+[e :UE 940 ]
 }
