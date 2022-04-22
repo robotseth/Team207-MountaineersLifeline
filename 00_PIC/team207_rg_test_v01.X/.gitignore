@@ -1,0 +1,15 @@
+**/build/*
+**/dist/*
+**/debug/*
+
+**/build/
+**/dist/
+**/debug/
+
+/build/
+/dist/
+/debug/
+
+build/
+dist/
+debug/

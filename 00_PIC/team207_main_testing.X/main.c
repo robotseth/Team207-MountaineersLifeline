@@ -97,16 +97,28 @@ void main(void)
     
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-
+    unsigned long convertedValue = 0;
+    HRLED_SetHigh();
     while (1)
     {
-        
+        convertedValue = ADC_GetConversion(HRIN);
+        if (convertedValue >= 32000)
+        {
+            GDBG_SetLow();
+        } else {
+            GDBG_SetHigh();
+        }
+        printf("Value = %d \r\n",convertedValue); // Add your application code  
+        //printf("TEST"); // Add your application code  
+        __delay_ms(1);
 //        BDBG_SetLow();
 //        __delay_ms(50);
 //        BDBG_SetHigh();
 //        __delay_ms(50);
 //        printf("testing");
         //I2C1_SetBuffer(*bufferPointer, i2cSize);
+        
+        /*
         
         currentMillis = millis();
         
@@ -141,7 +153,10 @@ void main(void)
         __delay_ms(20);
         
         //__delay_ms(5);
-    }
+    
+        */
+        }
+    
 }
 /**
  End of File
