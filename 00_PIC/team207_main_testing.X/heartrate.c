@@ -5,6 +5,8 @@
 
 // Main function that handles sensor polling
 
+static float dataArray[128] = {0};
+
 struct HrResults pollHR(uint8_t mode) {
     struct HrResults currentResults;
 
@@ -17,12 +19,12 @@ struct HrResults pollHR(uint8_t mode) {
     static unsigned int currentHR = 0;
 
     // holds the index of the scan data in the array
-    int arrayLen = 32;
-    static float dataArray[32] = {0};
+    int arrayLen = 1000;
+    
     static int currentScan = 0;
     int deltaT;
 
-    float triggerThreshold = 32000;
+    float triggerThreshold = 31800;
 
     // Modes: 
     // - 0: Polling, will not do anything if it hasn't been triggered. 
@@ -60,7 +62,8 @@ struct HrResults pollHR(uint8_t mode) {
             currentResults.status = 1;
         }
         dataArray[currentScan] = (float) ADC_GetConversion(HRIN);
-        //printf("Sample recorded - %f \n\r", (float) ADC_GetConversion(HRIN));
+        
+        //printf("Sample recorded - %f \n\r", dataArray[currentScan]);
         //printf("Index: %i", currentScan);
 
         currentScan++;
@@ -99,15 +102,18 @@ unsigned int detectBeats(float threshold, int time) {
             printf("Data above threshold: %f \n\r", (float) dataArray[i]);
             currentPeak = 1; // set to true and to ignore the future value above threshold
         } else {
+            //printf("Data below threshold: %f \n\r", (float) dataArray[i]);
             currentPeak = 0; // if its below the threshold set to false )
         }
     }
     
     printf("Num peaks: %i \n\r", peaks);
-
-    unsigned int BPM = (unsigned int) (peaks / time)*60000; // how many beats counted so far divided by time started in millis and then convert to minute
+    printf("Time: %i \n\r", time);
+    long BPM = (peaks / time)*-60000; // how many beats counted so far divided by time started in millis and then convert to minute
+    printf("BPM: %i \n\r", (int) BPM);
+    
     // Write function that takes in either a single reading or a data array,
     // decides if there is a heart beat present, and uses a buffer to 
     // figure out what the current estimated heart rate is.
-    return BPM;
+    return (unsigned int) BPM;
 }

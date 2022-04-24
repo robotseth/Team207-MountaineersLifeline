@@ -48,10 +48,10 @@ struct HrResults pollHR(uint8_t mode);
 void triggerHR();
 
 // Placeholder function for beat detection
-unsigned int detectBeats();
+unsigned int detectBeats(float threshold, int time);
 
 int arrayLen;
-static float dataArray[32];
+//static float dataArray[32];
 
 #ifdef	__cplusplus
 }

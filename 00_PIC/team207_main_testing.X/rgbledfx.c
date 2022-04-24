@@ -211,8 +211,8 @@ void displayAlt(int alt){
     int placeSeperatorDelay = 1000;
     int completeDispDelay = 5000;
     
-    static long currentMillis = 0;
-    static long previousMillis = 0;
+    static unsigned long currentMillis = 0;
+    static unsigned long previousMillis = 0;
     static uint8_t ledOn = 0;
     static uint8_t counter = 0;
     

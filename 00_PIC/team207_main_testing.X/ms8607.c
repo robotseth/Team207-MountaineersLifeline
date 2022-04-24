@@ -714,7 +714,7 @@ enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
 	if( i2c_status != STATUS_OK)
 		return ms8607_status_i2c_transfer_error;
 
-	_adc = (buffer[0] << 8) | buffer[1];
+	_adc = (int) (buffer[0] << 8) | buffer[1];
 	crc = buffer[2];
 	
 	// compute CRC
@@ -924,7 +924,7 @@ enum ms8607_status psensor_read_eeprom_coeff(uint8_t command, uint16_t *coeff)
 	if( i2c_status != STATUS_OK)
 		return ms8607_status_i2c_transfer_error;
 		
-	*coeff = (buffer[0] << 8) | buffer[1];
+	*coeff = (uint16_t) (buffer[0] << 8) | buffer[1];
     
     if (*coeff == 0)
         return ms8607_status_i2c_transfer_error;
