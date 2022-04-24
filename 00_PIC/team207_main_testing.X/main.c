@@ -48,6 +48,7 @@
 #include <stdio.h>
 #include "rgbledfx.h"
 #include "timers.h"
+#include "heartrate.h"
 //#include "ms8607.h"
 
 #define TCaddress 0x48 //TC74A0 1001 000
@@ -97,20 +98,48 @@ void main(void)
     
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-    unsigned long convertedValue = 0;
+    //unsigned long convertedValue = 0;
+    
+    struct HrResults currentResults;
+    currentResults.hr = 0.0;
+    currentResults.status = 0;
+    struct HrResults prevResults;
+    prevResults.hr = 0.0;
+    prevResults.status = 0;
+    
     HRLED_SetHigh();
     while (1)
     {
-        convertedValue = ADC_GetConversion(HRIN);
-        if (convertedValue >= 32000)
-        {
-            GDBG_SetLow();
-        } else {
-            GDBG_SetHigh();
-        }
-        printf("Value = %d \r\n",convertedValue); // Add your application code  
-        //printf("TEST"); // Add your application code  
-        __delay_ms(1);
+        currentResults = pollHR(1);
+        __delay_ms(10);
+        
+        
+//        if (currentResults.hr != prevResults.hr){
+//            BDBG_SetLow();
+//            __delay_ms(500);
+//            BDBG_SetHigh();
+//            prevResults = currentResults;
+//            printf("Heart Rate: %f \n\r", currentResults.hr);
+//        } else {
+//            printf("Heart Rate: %f \n\r", currentResults.hr);
+//        }
+        
+        
+        
+        
+//        
+//        convertedValue = ADC_GetConversion(HRIN);
+//        if (convertedValue >= 32000)
+//        {
+//            GDBG_SetLow();
+//        } else {
+//            GDBG_SetHigh();
+//        }
+//        printf("Value = %d \r\n",convertedValue); // Add your application code  
+//        //printf("TEST"); // Add your application code  
+//        __delay_ms(1);
+//        
+        
 //        BDBG_SetLow();
 //        __delay_ms(50);
 //        BDBG_SetHigh();

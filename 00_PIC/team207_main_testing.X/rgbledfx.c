@@ -90,8 +90,8 @@ void displayHR(int heartRate){
     // pulse (other?) LED at heart rate
     // Heart rate units are in BPM
     
-    static long currentMillis = 0;
-    static long previousMillis = 0; 
+    static unsigned long currentMillis = 0;
+    static unsigned long previousMillis = 0; 
     static uint8_t level = 0; 
        
     uint8_t maxLevel = RGB_MAX; 

@@ -37,7 +37,7 @@ extern "C" {
 // - 2: Polling complete
 struct HrResults {
     uint8_t status;
-    double hr;
+    unsigned int hr;
 };
    
 
@@ -48,9 +48,10 @@ struct HrResults pollHR(uint8_t mode);
 void triggerHR();
 
 // Placeholder function for beat detection
-double detectBeats();
+unsigned int detectBeats();
 
-
+int arrayLen;
+static float dataArray[32];
 
 #ifdef	__cplusplus
 }
