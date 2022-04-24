@@ -112,50 +112,28 @@ void main(void)
     //float hrArray[hrArrayLen] = {0};
     
     uint8_t hrIndex = 0;
+    float heartRate = 0;
+    float maxSafeHR = 80;
     
     while (1)
     {
+        heartRate = avgHR();
+        if (heartRate > maxSafeHR) {
+            printf("Warning! Heart rate is dangerously high: %f BPM\n\r", heartRate) // sends message to MQTT server
+        }
         
-//        if (hrIndex >= hrArrayLen) {
-//            hrIndex = 0;
-//            float avgHR;
-//            double runningTotal = 0;
-//            for (int i = 0; i < hrArrayLen; i++){
-//                runningTotal = runningTotal + hrArray[i];
-//                //printf("HR value at index %i is %f \r\n", i, hrArray[i]);
-//            }
-//            //("Running Total: %f \r\n", runningTotal);
-//            avgHR = (float) (runningTotal / hrArrayLen);
-//            printf("AVG HR is %f \n\r", avgHR);
-//        }
-//        float currentHR = pollHR(1).hr;
-//        //printf("Heart rate polled and returned %f \r\n",currentHR);
-//        if (currentHR != hrArray[hrIndex]){
-//            hrIndex++;
-//            hrArray[hrIndex] = currentHR;
-//        }
+        // if battery low, send message to MQTT server
         
-        printf("Heart rate: %f\n\r",avgHR());
+        // if UART available, read UART
+        // if UART message == "Display Heart Rate"
+        // display heart rate with RGB LED
+        // else if message == "Low Battery"
+        // display battery warning on RBG LED
         
-        //printf("Sample at index %i is %f \n\r", i, dataArray[i]);
-        //currentResults = pollHR(1);
+        printf("Heart rate: %f\n\r", heartRate); // avgHR() returns a float of the last heart rate value that it calculated - this updates every 30 seconds or so with a 10ms delay
+
         __delay_ms(10);
-        
-        
-//        if (currentResults.hr != prevResults.hr){
-//            BDBG_SetLow();
-//            __delay_ms(500);
-//            BDBG_SetHigh();
-//            prevResults = currentResults;
-//            printf("Heart Rate: %f \n\r", currentResults.hr);
-//        } else {
-//            printf("Heart Rate: %f \n\r", currentResults.hr);
-//        }
-        
-        
-        
-        
-//        
+
         convertedValue = ADC_GetConversion(HRIN);
         if (convertedValue >= 32000)
         {
