@@ -37,7 +37,7 @@ extern "C" {
 // - 2: Polling complete
 struct HrResults {
     uint8_t status;
-    unsigned int hr;
+    float hr; // float heart rate that is to be averaged over a number of samples
 };
    
 
@@ -48,7 +48,7 @@ struct HrResults pollHR(uint8_t mode);
 void triggerHR();
 
 // Placeholder function for beat detection
-unsigned int detectBeats(float threshold, int time);
+float detectBeats(float threshold, int time);
 
 int arrayLen;
 //static float dataArray[32];
