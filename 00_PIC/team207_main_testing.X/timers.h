@@ -10,7 +10,7 @@
 #ifndef TIMERS_H
 #define	TIMERS_H
 
-float scale = 1;
+unsigned long scale = 1;
 
 unsigned long millis(void);
 

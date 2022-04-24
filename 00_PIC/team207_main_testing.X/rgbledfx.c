@@ -127,8 +127,8 @@ void displayHR(int heartRate){
 void displayTemp(int temp){
     // set LED color based on temp
     
-    static long currentMillis = 0;
-    static long previousMillis = 0;
+    static unsigned long currentMillis = 0;
+    static unsigned long previousMillis = 0;
     long blinkDelay = 750;
     long rapidDelay = 250;
     long currentDelay = 0;
