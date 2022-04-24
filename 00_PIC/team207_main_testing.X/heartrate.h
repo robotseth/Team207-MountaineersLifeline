@@ -28,7 +28,8 @@ extern "C" {
     
 // Set up constants for calibration here
 #define CAPTURE_TIME 10000
-    
+#define hrSubSampleArrayLen 50
+#define hrAvgArrayLen 50
     
 // HrResults holds the return value of the HR sensor API
 // Status key: 
@@ -49,6 +50,8 @@ void triggerHR();
 
 // Placeholder function for beat detection
 float detectBeats(float threshold, int time);
+
+float avgHR(void);
 
 int arrayLen;
 //static float dataArray[32];

@@ -53,9 +53,8 @@
 
 #define TCaddress 0x48 //TC74A0 1001 000
 #define READ_REG 0x00
-#define hrArrayLen 10
 
-
+uint16_t convertedValue;
 /*
                          Main application
  */
@@ -110,31 +109,34 @@ void main(void)
     
     HRLED_SetHigh();
     
-    float hrArray[hrArrayLen] = {0};
+    //float hrArray[hrArrayLen] = {0};
     
     uint8_t hrIndex = 0;
     
     while (1)
     {
         
-        if (hrIndex >= hrArrayLen) {
-            hrIndex = 0;
-            float avgHR;
-            double runningTotal = 0;
-            for (int i = 0; i < hrArrayLen; i++){
-                runningTotal = runningTotal + hrArray[i];
-                //printf("HR value at index %i is %f \r\n", i, hrArray[i]);
-            }
-            //("Running Total: %f \r\n", runningTotal);
-            avgHR = (float) (runningTotal / hrArrayLen);
-            printf("AVG HR is %f \n\r", avgHR);
-        }
-        float currentHR = pollHR(1).hr;
-        //printf("Heart rate polled and returned %f \r\n",currentHR);
-        if (currentHR != hrArray[hrIndex]){
-            hrIndex++;
-            hrArray[hrIndex] = currentHR;
-        }
+//        if (hrIndex >= hrArrayLen) {
+//            hrIndex = 0;
+//            float avgHR;
+//            double runningTotal = 0;
+//            for (int i = 0; i < hrArrayLen; i++){
+//                runningTotal = runningTotal + hrArray[i];
+//                //printf("HR value at index %i is %f \r\n", i, hrArray[i]);
+//            }
+//            //("Running Total: %f \r\n", runningTotal);
+//            avgHR = (float) (runningTotal / hrArrayLen);
+//            printf("AVG HR is %f \n\r", avgHR);
+//        }
+//        float currentHR = pollHR(1).hr;
+//        //printf("Heart rate polled and returned %f \r\n",currentHR);
+//        if (currentHR != hrArray[hrIndex]){
+//            hrIndex++;
+//            hrArray[hrIndex] = currentHR;
+//        }
+        
+        printf("Heart rate: %f\n\r",avgHR());
+        
         //printf("Sample at index %i is %f \n\r", i, dataArray[i]);
         //currentResults = pollHR(1);
         __delay_ms(10);
@@ -154,13 +156,13 @@ void main(void)
         
         
 //        
-//        convertedValue = ADC_GetConversion(HRIN);
-//        if (convertedValue >= 32000)
-//        {
-//            GDBG_SetLow();
-//        } else {
-//            GDBG_SetHigh();
-//        }
+        convertedValue = ADC_GetConversion(HRIN);
+        if (convertedValue >= 32000)
+        {
+            GDBG_SetLow();
+        } else {
+            GDBG_SetHigh();
+        }
 //        printf("Value = %d \r\n",convertedValue); // Add your application code  
 //        //printf("TEST"); // Add your application code  
 //        __delay_ms(1);
