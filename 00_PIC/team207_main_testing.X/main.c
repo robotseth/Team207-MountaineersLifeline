@@ -119,7 +119,7 @@ void main(void)
     {
         heartRate = avgHR();
         if (heartRate > maxSafeHR) {
-            printf("Warning! Heart rate is dangerously high: %f BPM\n\r", heartRate) // sends message to MQTT server
+            printf("Warning! Heart rate is dangerously high: %f BPM\n\r", heartRate); // sends message to MQTT server
         }
         
         // if battery low, send message to MQTT server
