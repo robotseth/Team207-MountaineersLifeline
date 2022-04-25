@@ -48,12 +48,13 @@
 #include <stdio.h>
 #include "rgbledfx.h"
 #include "timers.h"
+#include "heartrate.h"
 //#include "ms8607.h"
 
 #define TCaddress 0x48 //TC74A0 1001 000
 #define READ_REG 0x00
 
-
+uint16_t convertedValue;
 /*
                          Main application
  */
@@ -97,10 +98,42 @@ void main(void)
     
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-    unsigned long convertedValue = 0;
+    //unsigned long convertedValue = 0;
+    
+    struct HrResults currentResults;
+    currentResults.hr = 0.0;
+    currentResults.status = 0;
+    struct HrResults prevResults;
+    prevResults.hr = 0.0;
+    prevResults.status = 0;
+    
     HRLED_SetHigh();
+    
+    //float hrArray[hrArrayLen] = {0};
+    
+    uint8_t hrIndex = 0;
+    float heartRate = 0;
+    float maxSafeHR = 80;
+    
     while (1)
     {
+        heartRate = avgHR();
+        if (heartRate > maxSafeHR) {
+            printf("Warning! Heart rate is dangerously high: %f BPM\n\r", heartRate); // sends message to MQTT server
+        }
+        
+        // if battery low, send message to MQTT server
+        
+        // if UART available, read UART
+        // if UART message == "Display Heart Rate"
+        // display heart rate with RGB LED
+        // else if message == "Low Battery"
+        // display battery warning on RBG LED
+        
+        printf("Heart rate: %f\n\r", heartRate); // avgHR() returns a float of the last heart rate value that it calculated - this updates every 30 seconds or so with a 10ms delay
+
+        __delay_ms(10);
+
         convertedValue = ADC_GetConversion(HRIN);
         if (convertedValue >= 32000)
         {
@@ -108,9 +141,11 @@ void main(void)
         } else {
             GDBG_SetHigh();
         }
-        printf("Value = %d \r\n",convertedValue); // Add your application code  
-        //printf("TEST"); // Add your application code  
-        __delay_ms(1);
+//        printf("Value = %d \r\n",convertedValue); // Add your application code  
+//        //printf("TEST"); // Add your application code  
+//        __delay_ms(1);
+//        
+        
 //        BDBG_SetLow();
 //        __delay_ms(50);
 //        BDBG_SetHigh();

@@ -28,7 +28,8 @@ extern "C" {
     
 // Set up constants for calibration here
 #define CAPTURE_TIME 10000
-    
+#define hrSubSampleArrayLen 50
+#define hrAvgArrayLen 50
     
 // HrResults holds the return value of the HR sensor API
 // Status key: 
@@ -37,7 +38,7 @@ extern "C" {
 // - 2: Polling complete
 struct HrResults {
     uint8_t status;
-    double hr;
+    float hr; // float heart rate that is to be averaged over a number of samples
 };
    
 
@@ -48,9 +49,12 @@ struct HrResults pollHR(uint8_t mode);
 void triggerHR();
 
 // Placeholder function for beat detection
-double detectBeats();
+float detectBeats(float threshold, int time);
 
+float avgHR(void);
 
+int arrayLen;
+//static float dataArray[32];
 
 #ifdef	__cplusplus
 }

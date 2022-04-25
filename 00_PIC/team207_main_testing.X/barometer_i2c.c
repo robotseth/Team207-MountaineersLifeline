@@ -64,8 +64,8 @@ void i2c_master_init(void){
 enum status_code i2c_master_read_packet_wait(struct i2c_master_packet *const packet){
     enum status_code status;
     
-    uint8_t address = packet->address;
-    uint16_t len = packet->data_length;
+    uint8_t address = (uint8_t) packet->address;
+    uint16_t len = (uint16_t) packet->data_length;
     uint8_t* dataptr = packet->data;
     
     i2c1_error_t output_status;
@@ -92,8 +92,8 @@ enum status_code i2c_master_read_packet_wait(struct i2c_master_packet *const pac
 enum status_code i2c_master_write_packet_wait(struct i2c_master_packet *const packet){
     enum status_code status;
     
-    uint8_t address = packet->address;
-    uint16_t len = packet->data_length;
+    uint8_t address = (uint8_t) packet->address;
+    uint16_t len = (uint16_t) packet->data_length;
     uint8_t* dataptr = packet->data;
     
     i2c1_error_t output_status;
@@ -121,8 +121,8 @@ enum status_code i2c_master_write_packet_wait(struct i2c_master_packet *const pa
 enum status_code i2c_master_write_packet_wait_no_stop(struct i2c_master_packet *const packet){
     enum status_code status;
     
-    uint8_t address = packet->address;
-    uint16_t len = packet->data_length;
+    uint8_t address = (uint8_t) packet->address;
+    uint16_t len = (uint16_t) packet->data_length;
     uint8_t* dataptr = packet->data;
     
     i2c1_error_t output_status;

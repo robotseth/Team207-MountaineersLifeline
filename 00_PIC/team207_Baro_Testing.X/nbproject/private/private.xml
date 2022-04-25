@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Max/Dropbox%20(ASU)/PC%20(2)/Documents/GitHub/Team207-MountaineersLifeline/00_PIC/team207_main_v02.X/heartrate.c</file>
-            <file>file:/C:/Users/Max/Dropbox%20(ASU)/PC%20(2)/Documents/GitHub/Team207-MountaineersLifeline/00_PIC/team207_main_v02.X/display.c</file>
-            <file>file:/C:/Users/Max/Dropbox%20(ASU)/PC%20(2)/Documents/GitHub/Team207-MountaineersLifeline/00_PIC/team207_main_v02.X/ESP32.c</file>
-            <file>file:/C:/Users/Max/Dropbox%20(ASU)/PC%20(2)/Documents/GitHub/Team207-MountaineersLifeline/00_PIC/team207_main_v02.X/ms8607.c</file>
-            <file>file:/C:/Users/Max/Dropbox%20(ASU)/PC%20(2)/Documents/GitHub/Team207-MountaineersLifeline/00_PIC/team207_main_v02.X/barometer_i2c.c</file>
-            <file>file:/C:/Users/Max/Dropbox%20(ASU)/PC%20(2)/Documents/GitHub/Team207-MountaineersLifeline/00_PIC/team207_main_v02.X/rgbledfx.c</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

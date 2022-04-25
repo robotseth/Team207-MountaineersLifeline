@@ -5,20 +5,23 @@
 
 // Main function that handles sensor polling
 
+static float dataArray[hrSubSampleArrayLen] = {0};
+
 struct HrResults pollHR(uint8_t mode) {
     struct HrResults currentResults;
 
-    static uint8_t scanning = 0;
+    static uint8_t scanning = 0; // what does this do?
 
     static unsigned long currentMillis = 0;
     static unsigned long startScanMillis = 0;
 
-    static double currentReading = 0;
-    static double currentHR = 0;
+    static float currentReading = 0;
+    static float currentHR = 0;
+   
+    static int currentScan = 0;
+    int deltaT;
 
-    int currentScan[128] = {0};
-
-    int triggerThreshold = 32000;
+    float triggerThreshold = 32000;
 
     // Modes: 
     // - 0: Polling, will not do anything if it hasn't been triggered. 
@@ -37,22 +40,35 @@ struct HrResults pollHR(uint8_t mode) {
     if (mode == 1 && scanning == 0) {
         scanning = 1;
         startScanMillis = currentMillis;
-    } else if (scanning == 1) {
-        if (currentScan > 127) {
+    }
+    if (scanning == 1) {
+        if (currentScan >= hrSubSampleArrayLen) {
+            //printf("Heart Rate Triggered");
+            // only measure time between filling the array not each time it runs
+            deltaT = (int) (currentMillis - startScanMillis);
+            //printf("HR sample array full \n\r");
+            currentHR = detectBeats(triggerThreshold, deltaT);
+            //printf("Heart Rate: %i, Last sample: %d \n\r", currentHR, ADC_GetConversion(HRIN));
+//            for (int i = 0; i < arrayLen; i++) {
+//                printf("Sample at index %i is %f \n\r", i, dataArray[i]);
+//            }
             currentScan = 0;
+            scanning = 0;
+            mode = 0;
+            currentResults.status = 2;
+                    // Default values while polling
+            currentResults.hr = currentHR;
+            currentResults.status = 1;
         }
-        currentReading[currentScan] = ADC_GetConversion(0);
+        dataArray[currentScan] = (float) ADC_GetConversion(HRIN);
+        
+        //printf("Sample recorded - %f \n\r", dataArray[currentScan]);
+        //printf("Index: %i", currentScan);
+
         currentScan++;
-        int deltaT = currentMillis - startScanMillis;
-
-        // Placeholder for math
-        currentHR = detectBeats(currentReading, 128, triggerThreshold, deltaT);
-
-        // Default values while polling
-        currentResults.hr = currentHR;
-        currentResults.status = 1;
 
         // If the scan timer has run out, 
+        /*
         if (currentMillis - startScanMillis >= CAPTURE_TIME) {
             scanning = 0;
             startScanMillis = currentMillis;
@@ -62,6 +78,7 @@ struct HrResults pollHR(uint8_t mode) {
             currentResults.status = 2;
 
         }
+        */
     }
 
     return currentResults;
@@ -73,23 +90,54 @@ void triggerHR() {
     pollHR(1);
 }
 
-// Placeholder function for beat detection
+// function for beat detection
 
-float detectBeats(float data[], int len, int threshold, int time) {
+float detectBeats(float threshold, int time) {
     bool currentPeak = 0; //if it pass the threshold count it, starts false
     int peaks = 0; //how many beats counted
-    for (int i = 0; i <= len; i++) {
-        if (data[i] > threshold && currentPeak == 0) {// if data is bigger than threshold and it has not passed the threshold yet (False)
+    for (int i = 0; i <= hrSubSampleArrayLen; i++) {
+        if (dataArray[i] > threshold && currentPeak == 0) {// if data is bigger than threshold and it has not passed the threshold yet (False)
             peaks++; // count 1 beat
+            //printf("Data above threshold: %f \n\r", (float) dataArray[i]);
             currentPeak = 1; // set to true and to ignore the future value above threshold
         } else {
+            //printf("Data below threshold: %f \n\r", (float) dataArray[i]);
             currentPeak = 0; // if its below the threshold set to false )
         }
     }
-
-    float BPM = (peaks / time)*60000; // how many beats counted so far divided by time started in millis and then convert to minute
+    
+    //printf("Num peaks: %i \n\r", peaks);
+    //printf("Time: %i \n\r", time);
+    float BPM = (60000 * peaks) / time; // how many beats counted so far divided by time started in millis and then convert to minute
+    //printf("BPM: %i \n\r", (int) BPM);
+    
     // Write function that takes in either a single reading or a data array,
     // decides if there is a heart beat present, and uses a buffer to 
     // figure out what the current estimated heart rate is.
     return BPM;
+}
+
+float avgHR(){
+    static uint8_t hrIndex = 0;
+    static float hrArray[hrAvgArrayLen] = {0};
+    static float avgHRVal;
+    static double runningTotal;
+    if (hrIndex >= hrAvgArrayLen) {
+            hrIndex = 0;
+            runningTotal = 0;
+            for (int i = 0; i < hrAvgArrayLen; i++){
+                runningTotal = runningTotal + hrArray[i];
+                //printf("HR value at index %i is %f \r\n", i, hrArray[i]);
+            }
+            //("Running Total: %f \r\n", runningTotal);
+            avgHRVal = (float) (runningTotal / hrAvgArrayLen);
+            //printf("AVG HR is %f \n\r", avgHR);
+        }
+        float currentHR = pollHR(1).hr;
+        //printf("Heart rate polled and returned %f \r\n",currentHR);
+        if (currentHR != hrArray[hrIndex]){
+            hrIndex++;
+            hrArray[hrIndex] = currentHR;
+        }
+        return avgHRVal;
 }

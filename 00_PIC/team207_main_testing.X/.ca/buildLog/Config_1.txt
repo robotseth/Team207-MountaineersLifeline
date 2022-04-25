@@ -1,0 +1,120 @@
+make -f nbproject/Makefile-Config_1.mk SUBPROJECTS= .clean-conf
+make[1]: Entering directory 'C:/Users/Seth/Documents/school/Team207-MountaineersLifeline/00_PIC/team207_main_testing.X'
+rm -f  -r .ca/build/Config_1/production
+rm -f  -r .ca/dist/Config_1/production
+make[1]: Leaving directory 'C:/Users/Seth/Documents/school/Team207-MountaineersLifeline/00_PIC/team207_main_testing.X'
+[32mCLEAN SUCCESSFUL (total time: 102ms)[0m
+make -f nbproject/Makefile-Config_1.mk SUBPROJECTS= .build-conf
+make[1]: Entering directory 'C:/Users/Seth/Documents/school/Team207-MountaineersLifeline/00_PIC/team207_main_testing.X'
+make  -f nbproject/Makefile-Config_1.mk .ca/dist/Config_1/production/team207_main_testing.X.production.hex
+make[2]: Entering directory 'C:/Users/Seth/Documents/school/Team207-MountaineersLifeline/00_PIC/team207_main_testing.X'
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/examples/i2c1_master_example.p1 mcc_generated_files/examples/i2c1_master_example.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/eusart2.p1 mcc_generated_files/eusart2.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/mcc.p1 mcc_generated_files/mcc.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/i2c1_master.p1 mcc_generated_files/i2c1_master.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/pin_manager.p1 mcc_generated_files/pin_manager.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/tmr2.p1 mcc_generated_files/tmr2.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/interrupt_manager.p1 mcc_generated_files/interrupt_manager.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/device_config.p1 mcc_generated_files/device_config.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/tmr1.p1 mcc_generated_files/tmr1.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/mcc_generated_files/adc.p1 mcc_generated_files/adc.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/heartrate.p1 heartrate.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/rgbledfx.p1 rgbledfx.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/main.p1 main.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/barometer_i2c.p1 barometer_i2c.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/Config_1/production/timers.p1 timers.c 
+timers.c:5:50: warning: implicit conversion turns floating-point number into integer: 'float' to 'unsigned long' [-Wfloat-conversion]
+    returnTime = (unsigned long) TMR1_ReadTimer()*scale;
+               ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+rgbledfx.c:182:25: warning: implicit conversion changes signedness: 'unsigned long' to 'long' [-Wsign-conversion]
+        currentMillis = millis();
+                      ~ ^~~~~~~~
+1 warning generated.
+1 warning generated.
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=18F26J53 -Wl,-Map=.ca/dist/Config_1/production/team207_main_testing.X.production.map  -DXPRJ_Config_1=Config_1  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto      -Wl,--memorysummary,.ca/dist/Config_1/production/memoryfile.xml -o .ca/dist/Config_1/production/team207_main_testing.X.production.elf  .ca/build/Config_1/production/mcc_generated_files/examples/i2c1_master_example.p1 .ca/build/Config_1/production/mcc_generated_files/eusart2.p1 .ca/build/Config_1/production/mcc_generated_files/mcc.p1 .ca/build/Config_1/production/mcc_generated_files/i2c1_master.p1 .ca/build/Config_1/production/mcc_generated_files/pin_manager.p1 .ca/build/Config_1/production/mcc_generated_files/tmr2.p1 .ca/build/Config_1/production/mcc_generated_files/interrupt_manager.p1 .ca/build/Config_1/production/mcc_generated_files/device_config.p1 .ca/build/Config_1/production/mcc_generated_files/tmr1.p1 .ca/build/Config_1/production/mcc_generated_files/adc.p1 .ca/build/Config_1/production/main.p1 .ca/build/Config_1/production/barometer_i2c.p1 .ca/build/Config_1/production/heartrate.p1 .ca/build/Config_1/production/rgbledfx.p1 .ca/build/Config_1/production/timers.p1     
+./timers.h:13:: warning: (1478) initial value for "_scale" differs to that in ./timers.h:13
+mcc_generated_files/examples/i2c1_master_example.c:63:: warning: (520) function "_I2C1_Read1ByteRegister" is never called
+mcc_generated_files/examples/i2c1_master_example.c:77:: warning: (520) function "_I2C1_Read2ByteRegister" is never called
+mcc_generated_files/examples/i2c1_master_example.c:91:: warning: (520) function "_I2C1_Write1ByteRegister" is never called
+mcc_generated_files/examples/i2c1_master_example.c:101:: warning: (520) function "_I2C1_Write2ByteRegister" is never called
+mcc_generated_files/examples/i2c1_master_example.c:111:: warning: (520) function "_I2C1_WriteNBytes" is never called
+mcc_generated_files/examples/i2c1_master_example.c:120:: warning: (520) function "_I2C1_ReadNBytes" is never called
+mcc_generated_files/examples/i2c1_master_example.c:128:: warning: (520) function "_I2C1_ReadDataBlock" is never called
+mcc_generated_files/eusart2.c:132:: warning: (520) function "_EUSART2_is_tx_ready" is never called
+mcc_generated_files/eusart2.c:137:: warning: (520) function "_EUSART2_is_rx_ready" is never called
+mcc_generated_files/eusart2.c:142:: warning: (520) function "_EUSART2_is_tx_done" is never called
+mcc_generated_files/eusart2.c:147:: warning: (520) function "_EUSART2_get_last_status" is never called
+mcc_generated_files/eusart2.c:151:: warning: (520) function "_EUSART2_Read" is never called
+mcc_generated_files/eusart2.c:196:: warning: (520) function "_getch" is never called
+mcc_generated_files/i2c1_master.c:176:: warning: (520) function "_I2C1_Open" is never called
+mcc_generated_files/i2c1_master.c:211:: warning: (520) function "_I2C1_Close" is never called
+mcc_generated_files/i2c1_master.c:226:: warning: (520) function "_I2C1_MasterOperation" is never called
+mcc_generated_files/i2c1_master.c:247:: warning: (520) function "_I2C1_MasterRead" is never called
+mcc_generated_files/i2c1_master.c:252:: warning: (520) function "_I2C1_MasterWrite" is never called
+mcc_generated_files/i2c1_master.c:257:: warning: (520) function "_I2C1_SetTimeOut" is never called
+mcc_generated_files/i2c1_master.c:279:: warning: (520) function "_I2C1_SetWriteCollisionCallback" is never called
+mcc_generated_files/i2c1_master.c:284:: warning: (520) function "_I2C1_SetAddressNackCallback" is never called
+mcc_generated_files/i2c1_master.c:289:: warning: (520) function "_I2C1_SetDataNackCallback" is never called
+mcc_generated_files/i2c1_master.c:294:: warning: (520) function "_I2C1_SetTimeoutCallback" is never called
+mcc_generated_files/i2c1_master.c:299:: warning: (520) function "_I2C1_SetInterruptHandler" is never called
+mcc_generated_files/i2c1_master.c:428:: warning: (520) function "_I2C1_DO_RX_EMPTY" is never called
+mcc_generated_files/i2c1_master.c:515:: warning: (520) function "_I2C1_BusCollisionIsr" is never called
+mcc_generated_files/i2c1_master.c:531:: warning: (520) function "_I2C1_CallbackRestartWrite" is never called
+mcc_generated_files/i2c1_master.c:536:: warning: (520) function "_I2C1_CallbackRestartRead" is never called
+mcc_generated_files/i2c1_master.c:544:: warning: (2053) function "_I2C1_MasterOpen" is never called
+mcc_generated_files/i2c1_master.c:558:: warning: (2053) function "_I2C1_MasterClose" is never called
+mcc_generated_files/i2c1_master.c:579:: warning: (2053) function "_I2C1_MasterDisableRestart" is never called
+mcc_generated_files/i2c1_master.c:589:: warning: (2053) function "_I2C1_MasterStart" is never called
+mcc_generated_files/i2c1_master.c:616:: warning: (2053) function "_I2C1_MasterClearBusCollision" is never called
+mcc_generated_files/i2c1_master.c:622:: warning: (2053) function "_I2C1_MasterIsRxBufFull" is never called
+mcc_generated_files/i2c1_master.c:627:: warning: (2053) function "_I2C1_MasterEnableIrq" is never called
+mcc_generated_files/i2c1_master.c:632:: warning: (2053) function "_I2C1_MasterIsIrqEnabled" is never called
+mcc_generated_files/i2c1_master.c:637:: warning: (2053) function "_I2C1_MasterDisableIrq" is never called
+mcc_generated_files/i2c1_master.c:652:: warning: (2053) function "_I2C1_MasterWaitForEvent" is never called
+mcc_generated_files/pin_manager.c:96:: warning: (520) function "_PIN_MANAGER_IOC" is never called
+mcc_generated_files/tmr2.c:79:: warning: (520) function "_TMR2_StartTimer" is never called
+mcc_generated_files/tmr2.c:85:: warning: (520) function "_TMR2_StopTimer" is never called
+mcc_generated_files/tmr2.c:91:: warning: (520) function "_TMR2_ReadTimer" is never called
+mcc_generated_files/tmr2.c:100:: warning: (520) function "_TMR2_WriteTimer" is never called
+mcc_generated_files/tmr2.c:106:: warning: (520) function "_TMR2_LoadPeriodRegister" is never called
+mcc_generated_files/tmr2.c:111:: warning: (520) function "_TMR2_HasOverflowOccured" is never called
+mcc_generated_files/tmr1.c:86:: warning: (520) function "_TMR1_StartTimer" is never called
+mcc_generated_files/tmr1.c:92:: warning: (520) function "_TMR1_StopTimer" is never called
+mcc_generated_files/tmr1.c:113:: warning: (520) function "_TMR1_WriteTimer" is never called
+mcc_generated_files/tmr1.c:135:: warning: (520) function "_TMR1_Reload" is never called
+mcc_generated_files/tmr1.c:140:: warning: (520) function "_TMR1_StartSinglePulseAcquisition" is never called
+mcc_generated_files/tmr1.c:145:: warning: (520) function "_TMR1_CheckGateValueStatus" is never called
+mcc_generated_files/tmr1.c:150:: warning: (520) function "_TMR1_HasOverflowOccured" is never called
+mcc_generated_files/adc.c:85:: warning: (520) function "_ADC_SelectChannel" is never called
+mcc_generated_files/adc.c:93:: warning: (520) function "_ADC_StartConversion" is never called
+mcc_generated_files/adc.c:100:: warning: (520) function "_ADC_IsConversionDone" is never called
+mcc_generated_files/adc.c:106:: warning: (520) function "_ADC_GetConversionResult" is never called
+mcc_generated_files/adc.c:132:: warning: (520) function "_ADC_TemperatureAcquisitionDelay" is never called
+barometer_i2c.c:58:: warning: (520) function "_i2c_master_init" is never called
+barometer_i2c.c:64:: warning: (520) function "_i2c_master_read_packet_wait" is never called
+barometer_i2c.c:92:: warning: (520) function "_i2c_master_write_packet_wait" is never called
+barometer_i2c.c:121:: warning: (520) function "_i2c_master_write_packet_wait_no_stop" is never called
+heartrate.c:90:: warning: (520) function "_triggerHR" is never called
+rgbledfx.c:8:: warning: (520) function "_updateLED" is never called
+rgbledfx.c:59:: warning: (520) function "_updateAllDispVals" is never called
+rgbledfx.c:63:: warning: (520) function "_updateDispHeartRate" is never called
+rgbledfx.c:67:: warning: (520) function "_updateDispTemp" is never called
+rgbledfx.c:71:: warning: (520) function "_updateDispAltitude" is never called
+rgbledfx.c:77:: warning: (520) function "_updateDispAnim" is never called
+rgbledfx.c:88:: warning: (520) function "_displayHR" is never called
+rgbledfx.c:127:: warning: (520) function "_displayTemp" is never called
+rgbledfx.c:195:: warning: (520) function "_displayAlt" is never called
+rgbledfx.c:296:: warning: (520) function "_displayOff" is never called
+rgbledfx.c:301:: warning: (520) function "_setLED" is never called
+rgbledfx.c:340:: warning: (520) function "_byteMax" is never called
+rgbledfx.c:344:: warning: (520) function "_byteMin" is never called
+barometer_i2c.c:78:: warning: (1257) local variable "_output_status" is used but never given a value
+
+Memory Summary:
+    Program space        used  32D4h ( 13012) of  FFF8h bytes   ( 19.9%)
+    Data space           used   3E3h (   995) of   EB0h bytes   ( 26.5%)
+    Configuration bits   used     4h (     4) of     4h words   (100.0%)
+
+make[2]: Leaving directory 'C:/Users/Seth/Documents/school/Team207-MountaineersLifeline/00_PIC/team207_main_testing.X'
+make[1]: Leaving directory 'C:/Users/Seth/Documents/school/Team207-MountaineersLifeline/00_PIC/team207_main_testing.X'
+[32mBUILD SUCCESSFUL (total time: 3s)[0m
