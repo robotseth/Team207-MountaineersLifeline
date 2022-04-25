@@ -2,7 +2,7 @@
 
 bool publishAlert(char alert[]){
   while(!EUSART2_is_tx_ready()){}
-  EUSART2_Write(alert);
+  EUSART2_Write((uint8_t) alert);
   return 1;
 }
 /*
@@ -13,6 +13,6 @@ bool publishAlert(char alert[]){
  */
 bool publishLog(char log[]){
   while(!EUSART2_is_tx_ready()){}
-  EUSART2_Write(log);
+  EUSART2_Write((uint8_t) log);
   return 1;
 }

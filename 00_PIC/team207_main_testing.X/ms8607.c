@@ -714,7 +714,7 @@ enum ms8607_status hsensor_humidity_conversion_and_read_adc( uint16_t *adc)
 	if( i2c_status != STATUS_OK)
 		return ms8607_status_i2c_transfer_error;
 
-	_adc = (int) (buffer[0] << 8) | buffer[1];
+	_adc = (uint16_t) ((buffer[0] << 8) | buffer[1]);
 	crc = buffer[2];
 	
 	// compute CRC
@@ -1058,7 +1058,7 @@ enum ms8607_status psensor_read_pressure_and_temperature( float *temperature, fl
 	dT = (int32_t)adc_temperature - ( (int32_t)eeprom_coeff[REFERENCE_TEMPERATURE_INDEX] <<8 );
 	
 	// Actual temperature = 2000 + dT * TEMPSENS
-	TEMP = 2000 + ((int64_t)dT * (int64_t)eeprom_coeff[TEMP_COEFF_OF_TEMPERATURE_INDEX] >> 23) ;
+	TEMP = (int32_t) (2000 + ((int64_t)dT * (int64_t)eeprom_coeff[TEMP_COEFF_OF_TEMPERATURE_INDEX] >> 23)) ;
 	
 	// Second order temperature compensation
 	if( TEMP < 2000 )

@@ -81,8 +81,8 @@ void main(void)
     HRLED_SetLow();
     
     
-    unsigned long currentMillis = 0;
-    unsigned long previousMillis = 0;
+    uint32_t currentMillis = 0;
+    uint32_t previousMillis = 0;
     unsigned long updateDelay = 10000;
     
     int tempTesting = 15;
