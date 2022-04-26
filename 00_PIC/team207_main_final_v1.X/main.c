@@ -113,6 +113,9 @@ void main(void)
     unsigned long hrDispDelay = 20000;
     unsigned long previousHRDisp = 0;
     
+    unsigned long hrMQTTDelay = 5000;
+    unsigned long previousHRMQTT = 0;
+    
     int tempTesting = 15;
     
     uint8_t currentMode = 0;
@@ -204,6 +207,7 @@ void main(void)
                     }
                 }
                 
+                
                 currentMode = 1;
                 previousHRDisp = currentMillis;
                 
@@ -225,8 +229,26 @@ void main(void)
                 }
                 
             }
-
             
+            // If in alert mode, be stuck in alert mode until the end of the display period
+            if(currentMode == 11){
+                if(currentMillis - previousHRCheck >= hrCheckDelay){
+                    heartRate = avgHR();
+                    
+                    updateDispHeartRate(heartRate);
+                    previousHRCheck = currentMillis;
+                }
+            }
+            
+            // If in either mode, send heart rate to MQTT
+            if(currentMode == 1 || currentMode == 11){
+                if(currentMillis - previousHRMQTT >= hrMQTTDelay){
+                    // print out BPM
+                    previousHRMQTT = currentMillis;
+                }
+            }
+            
+            // Timer to update the RGB LED continuously
             if(currentMillis - previousDispUpdate >= dispUpdateDelay){
                 updateDispAnim(currentMode);
                 previousDispUpdate = currentMillis; 
