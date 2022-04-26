@@ -124,7 +124,7 @@ void displayHR(int heartRate){
         // Output color
         
     }
-    setLED(maxLevel - levelFade, 0, 0);
+    setLED(0, maxLevel - levelFade, maxLevel - levelFade);
     
 }
 

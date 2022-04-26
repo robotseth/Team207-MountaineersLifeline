@@ -68,9 +68,11 @@ void loopTriggerCallback(){
 }
 
 
+/*
 void buttonPressedCallback(){
     buttonTriggered = 1; 
 }
+*/
 
 
 void main(void)
@@ -97,7 +99,7 @@ void main(void)
     
     TMR2_SetInterruptHandler(&loopTriggerCallback);
     
-    INT1_SetInterruptHandler(&buttonPressedCallback);
+    //INT1_SetInterruptHandler(&buttonPressedCallback);
     
     unsigned long currentMillis = 0;
     unsigned long previousMillis = 0;
@@ -108,11 +110,8 @@ void main(void)
     unsigned long hrCheckDelay = 10;
     unsigned long previousHRCheck = 0;
     
-    unsigned long tempCheckDelay = 1000;
-    unsigned long previousTempCheck = 0;
-    
-    unsigned long altCheckDelay = 5000;
-    unsigned long previousAltCheck = 0;
+    unsigned long hrDispDelay = 20000;
+    unsigned long previousHRDisp = 0;
     
     int tempTesting = 15;
     
@@ -138,6 +137,9 @@ void main(void)
     prevResults.hr = 0.0;
     prevResults.status = 0;
     
+    uint8_t rxBufferLen = 30;
+    char rxBuffer[rxBufferLen];
+    
     HRLED_SetHigh();
     
     //float hrArray[hrArrayLen] = {0};
@@ -158,20 +160,14 @@ void main(void)
             //   saving. 
             // - The main loop is triggered by a timer interrupt that ensures it 
             //   runs at 1 ms, relatively precisely
-            // - The button is what cycles through standard modes. 
             // - Modes: 
             //   - 0: No display
             //   - 1: Heart rate display
-            //   - 2: Temperature display
-            //   - 3: Altitude display
-            //   - 11: Alert mode (inaccessible using button)
+            //   - 11: Alert mode
             
-            
-            // - Determine what sensors should be polled
-            //   - If it is in heart rate display mode or the heart rate has 
-            //     been requested in the past 60 seconds, then poll heart rate
-            //   - Same for temp or altitude (if working)
-            //   - If in alert mode, then always poll heart rate
+            // - If the display heartbeat message is sent over MQTT, start 
+            //   displaying the heartbeat and send the heartrate
+            // - After 20 seconds, stop showing the heart rate
             
             // - Set RGB LED display
             //   - While the sensors are polling, update their values
@@ -180,6 +176,7 @@ void main(void)
             currentMillis = millis();
             
             // Increment the mode
+            /*
             if(buttonTriggered && currentMode != 11){
                 currentMode++;
                 
@@ -189,7 +186,28 @@ void main(void)
                 
                 buttonTriggered = 0;
             }
+            */
             
+            // If a disp heartrate message is received
+            if(EUSART2_is_rx_ready()){
+                
+                // Clear the buffer
+                for(uint8_t i = 0; i < rxBufferLen; i++){
+                    rxBuffer[i] = " ";
+                }
+                
+                // Write RX data to the buffer 
+                for(uint8_t i = 0; i < rxBufferLen; i++){
+                    rxBuffer[i] = EUSART2_Read();
+                    if((rxBuffer[i] == 0x00) || (rxBuffer[i] == 0x0A)){
+                        break;
+                    }
+                }
+                
+                currentMode = 1;
+                previousHRDisp = currentMillis;
+                
+            }
             
             
             if(currentMode == 1){
@@ -212,6 +230,13 @@ void main(void)
             if(currentMillis - previousDispUpdate >= dispUpdateDelay){
                 updateDispAnim(currentMode);
                 previousDispUpdate = currentMillis; 
+            }
+            
+            
+            // If it has been longer than 20 seconds since the last time heart 
+            // rate was displayed, then turn it off.
+            if(currentMode != 0 && (currentMillis - previousHRDisp >= hrDispDelay)){
+                currentMode = 0; 
             }
             
             // if battery low, send message to MQTT server
