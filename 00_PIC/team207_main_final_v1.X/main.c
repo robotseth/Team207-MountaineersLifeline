@@ -60,11 +60,16 @@ uint16_t convertedValue;
  */
 
 uint8_t loopTrigger = 0;
+int testCounter = 0;
 uint8_t buttonTriggered = 0;
 
 
 void loopTriggerCallback(){
-    loopTrigger = 1;
+    testCounter++;
+    if(testCounter > 500){
+        testCounter = 0;
+        loopTrigger = 1;
+    }
 }
 
 
@@ -152,9 +157,17 @@ void main(void)
     long double maxSafeHR = 80;
     
     printf("Test \n\r");
+    setLED(0,RGB_MAX,0);
     
     while (1)
     {
+        
+        if(loopTrigger){
+            BDBG_SetHigh();
+        } else {
+            BDBG_SetLow();
+        }
+            
         // loopTrigger should ensure that the loop runs every 1 ms or greater
         if(loopTrigger){
             
@@ -237,6 +250,8 @@ void main(void)
                     previousHRMQTT = currentMillis;
                 }
             }
+            
+            updateDispHeartRate(60);
             
             // Timer to update the RGB LED continuously
             if(currentMillis - previousDispUpdate >= dispUpdateDelay){
