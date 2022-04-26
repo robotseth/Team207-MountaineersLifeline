@@ -123,21 +123,21 @@ float avgHR(){
     static float avgHRVal;
     static double runningTotal;
     if (hrIndex >= hrAvgArrayLen) {
-        hrIndex = 0;
-        runningTotal = 0;
-        for (int i = 0; i < hrAvgArrayLen; i++){
-            runningTotal = runningTotal + hrArray[i];
-            //printf("HR value at index %i is %f \r\n", i, hrArray[i]);
+            hrIndex = 0;
+            runningTotal = 0;
+            for (int i = 0; i < hrAvgArrayLen; i++){
+                runningTotal = runningTotal + hrArray[i];
+                //printf("HR value at index %i is %f \r\n", i, hrArray[i]);
+            }
+            //("Running Total: %f \r\n", runningTotal);
+            avgHRVal = (float) (runningTotal / hrAvgArrayLen);
+            //printf("AVG HR is %f \n\r", avgHR);
         }
-        //("Running Total: %f \r\n", runningTotal);
-        avgHRVal = (float) (runningTotal / hrAvgArrayLen);
-        //printf("AVG HR is %f \n\r", avgHR);
-    }
-    float currentHR = pollHR(1).hr;
-    //printf("Heart rate polled and returned %f \r\n",currentHR);
-    if (currentHR != hrArray[hrIndex]){
-        hrIndex++;
-        hrArray[hrIndex] = currentHR;
-    }
-    return avgHRVal;
+        float currentHR = pollHR(1).hr;
+        //printf("Heart rate polled and returned %f \r\n",currentHR);
+        if (currentHR != hrArray[hrIndex]){
+            hrIndex++;
+            hrArray[hrIndex] = currentHR;
+        }
+        return avgHRVal;
 }
