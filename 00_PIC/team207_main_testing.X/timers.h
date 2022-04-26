@@ -10,9 +10,9 @@
 #ifndef TIMERS_H
 #define	TIMERS_H
 
-unsigned long scale = 1;
+long scale = 1;
 
-unsigned long millis(void);
+long millis(void);
 
 #endif	/* TIMERS_H */
 

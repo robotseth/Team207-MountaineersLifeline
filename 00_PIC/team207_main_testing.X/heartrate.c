@@ -7,13 +7,14 @@
 
 static float dataArray[hrSubSampleArrayLen] = {0};
 
+static long currentMillis = 0;
+static long startScanMillis = 0;
+
+
 struct HrResults pollHR(uint8_t mode) {
     struct HrResults currentResults;
 
     static uint8_t scanning = 0; // what does this do?
-
-    static unsigned long currentMillis = 0;
-    static unsigned long startScanMillis = 0;
 
     static float currentReading = 0;
     static long double currentHR = 0;
@@ -105,10 +106,11 @@ long double detectBeats(float threshold, int time) {
             currentPeak = 0; // if its below the threshold set to false )
         }
     }
-    
+    long double test = 9;
     //printf("Num peaks: %i \n\r", peaks);
     //printf("Time: %i \n\r", time);
-    long double BPM = (long double) 100; // ((60000 * peaks) / time)
+    long double BPM = (long double) abs((240000 * peaks) / time);
+    
     //printf("BPM: %i \n\r", (int) BPM);
     
     // Write function that takes in either a single reading or a data array,

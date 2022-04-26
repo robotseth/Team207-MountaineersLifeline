@@ -46,6 +46,7 @@
 #include <stdint.h>        /* For uint8_t definition */
 #include <stdbool.h>
 #include <stdio.h>
+#include <math.h>
 #include "rgbledfx.h"
 #include "timers.h"
 #include "heartrate.h"
@@ -58,6 +59,14 @@ uint16_t convertedValue;
 /*
                          Main application
  */
+
+//void runEvery (num) {
+//    static int i = 0;
+//    if (i < num) {
+//        pass
+//    }
+//}
+
 void main(void)
 {
     // Initialize the device
@@ -112,14 +121,14 @@ void main(void)
     //float hrArray[hrArrayLen] = {0};
     
     uint8_t hrIndex = 0;
-    float heartRate = 0;
+    long double heartRate = 0;
     float maxSafeHR = 80;
     
     while (1)
     {
         heartRate = avgHR();
         if (heartRate > maxSafeHR) {
-            printf("Warning! Heart rate is dangerously high: %f BPM\n\r", heartRate); // sends message to MQTT server
+            //printf("Warning! Heart rate is dangerously high: %Lf BPM\n\r", heartRate); // sends message to MQTT server
         }
         
         // if battery low, send message to MQTT server
@@ -130,7 +139,7 @@ void main(void)
         // else if message == "Low Battery"
         // display battery warning on RBG LED
         
-        printf("Heart rate: %f\n\r", heartRate); // avgHR() returns a float of the last heart rate value that it calculated - this updates every 30 seconds or so with a 10ms delay
+        printf("Heart rate: %f \n\r", (float) heartRate); // avgHR() returns a float of the last heart rate value that it calculated - this updates every 30 seconds or so with a 10ms delay
 
         __delay_ms(10);
 
