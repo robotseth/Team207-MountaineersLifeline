@@ -101,17 +101,17 @@ void main(void)
     
     //INT1_SetInterruptHandler(&buttonPressedCallback);
     
-    unsigned long currentMillis = 0;
-    unsigned long previousMillis = 0;
+    long currentMillis = 0;
+    long previousMillis = 0;
     
-    unsigned long dispUpdateDelay = 20;
-    unsigned long previousDispUpdate = 0;
+    long dispUpdateDelay = 20;
+    long previousDispUpdate = 0;
     
-    unsigned long hrCheckDelay = 10;
-    unsigned long previousHRCheck = 0;
+    long hrCheckDelay = 10;
+    long previousHRCheck = 0;
     
-    unsigned long hrDispDelay = 20000;
-    unsigned long previousHRDisp = 0;
+    long hrDispDelay = 20000;
+    long previousHRDisp = 0;
     
     int tempTesting = 15;
     
@@ -137,7 +137,7 @@ void main(void)
     prevResults.hr = 0.0;
     prevResults.status = 0;
     
-    uint8_t rxBufferLen = 30;
+    #define rxBufferLen 30
     char rxBuffer[rxBufferLen];
     
     HRLED_SetHigh();
@@ -145,8 +145,8 @@ void main(void)
     //float hrArray[hrArrayLen] = {0};
     
     uint8_t hrIndex = 0;
-    float heartRate = 0;
-    float maxSafeHR = 80;
+    long double heartRate = 0;
+    long double maxSafeHR = 80;
     
     while (1)
     {
@@ -191,11 +191,10 @@ void main(void)
             // If a disp heartrate message is received
             if(EUSART2_is_rx_ready()){
                 
-                // Clear the buffer
-                for(uint8_t i = 0; i < rxBufferLen; i++){
-                    rxBuffer[i] = " ";
+                char character = EUSART2_Read();
+                if (character == "\r"){
+                    sprintf("no u \n\r");
                 }
-                
                 // Write RX data to the buffer 
                 for(uint8_t i = 0; i < rxBufferLen; i++){
                     rxBuffer[i] = EUSART2_Read();
@@ -216,10 +215,10 @@ void main(void)
                     heartRate = avgHR();
                     if(heartRate > maxSafeHR){
                         // Set to alert mode
-                        printf("Warning! Heart rate is dangerously high: %f BPM\n\r", heartRate); // sends message to MQTT server
+                        printf("Warning! Heart rate is dangerously high: %f BPM\n\r", (float) heartRate); // sends message to MQTT server
                         currentMode = 11;
                     } else {
-                        updateDispHeartRate(heartRate);
+                        updateDispHeartRate((int) heartRate);
                     }
                     previousHRCheck = currentMillis;
                 }

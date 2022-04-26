@@ -110,7 +110,7 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
-      <item path="ESP32.c" ex="false" overriding="false">
+      <item path="ESP32.c" ex="true" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
         <HI-TECH-LINK>
@@ -120,7 +120,7 @@
         <XC8-config-global>
         </XC8-config-global>
       </item>
-      <item path="ESP32.h" ex="false" overriding="false">
+      <item path="ESP32.h" ex="true" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
         <HI-TECH-LINK>

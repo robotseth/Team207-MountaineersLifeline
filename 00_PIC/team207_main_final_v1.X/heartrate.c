@@ -7,16 +7,17 @@
 
 static float dataArray[hrSubSampleArrayLen] = {0};
 
+static long currentMillis = 0;
+static long startScanMillis = 0;
+
+
 struct HrResults pollHR(uint8_t mode) {
     struct HrResults currentResults;
 
     static uint8_t scanning = 0; // what does this do?
 
-    static unsigned long currentMillis = 0;
-    static unsigned long startScanMillis = 0;
-
     static float currentReading = 0;
-    static float currentHR = 0;
+    static long double currentHR = 0;
    
     static int currentScan = 0;
     int deltaT;
@@ -92,7 +93,7 @@ void triggerHR() {
 
 // function for beat detection
 
-float detectBeats(float threshold, int time) {
+long double detectBeats(float threshold, int time) {
     bool currentPeak = 0; //if it pass the threshold count it, starts false
     int peaks = 0; //how many beats counted
     for (int i = 0; i <= hrSubSampleArrayLen; i++) {
@@ -105,10 +106,11 @@ float detectBeats(float threshold, int time) {
             currentPeak = 0; // if its below the threshold set to false )
         }
     }
-    
+    long double test = 9;
     //printf("Num peaks: %i \n\r", peaks);
     //printf("Time: %i \n\r", time);
-    float BPM = (60000 * peaks) / time; // how many beats counted so far divided by time started in millis and then convert to minute
+    long double BPM = (long double) abs((240000 * peaks) / time);
+    
     //printf("BPM: %i \n\r", (int) BPM);
     
     // Write function that takes in either a single reading or a data array,
@@ -117,11 +119,11 @@ float detectBeats(float threshold, int time) {
     return BPM;
 }
 
-float avgHR(){
+long double avgHR(){
     static uint8_t hrIndex = 0;
-    static float hrArray[hrAvgArrayLen] = {0};
-    static float avgHRVal;
-    static double runningTotal;
+    static long double hrArray[hrAvgArrayLen] = {0};
+    static long double avgHRVal;
+    static long double runningTotal;
     if (hrIndex >= hrAvgArrayLen) {
             hrIndex = 0;
             runningTotal = 0;
@@ -130,10 +132,10 @@ float avgHR(){
                 //printf("HR value at index %i is %f \r\n", i, hrArray[i]);
             }
             //("Running Total: %f \r\n", runningTotal);
-            avgHRVal = (float) (runningTotal / hrAvgArrayLen);
+            avgHRVal = (long double) (runningTotal / hrAvgArrayLen);
             //printf("AVG HR is %f \n\r", avgHR);
         }
-        float currentHR = pollHR(1).hr;
+        long double currentHR = pollHR(1).hr;
         //printf("Heart rate polled and returned %f \r\n",currentHR);
         if (currentHR != hrArray[hrIndex]){
             hrIndex++;
