@@ -87,6 +87,7 @@ void PIN_MANAGER_Initialize(void)
     /**
     RPINRx and RPORx registers
     */
+    RPINR1 = 0x04;   //RB1->EXT_INT:INT1;
     RPINR16 = 0x12;   //RC7->EUSART2:RX2;
     RPOR17 = 0x06;   //RC6->EUSART2:TX2;
    

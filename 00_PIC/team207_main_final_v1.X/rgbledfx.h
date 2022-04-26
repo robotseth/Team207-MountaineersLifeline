@@ -51,6 +51,8 @@ void updateDispAnim(uint8_t mode);
 void displayHR(int hr);
 void displayTemp(int temp);
 void displayAlt(int alt);
+void displayAlert(void);
+void displayBattWarn(void);
 void displayOff(void);
 
 void setLED(uint8_t red, uint8_t green, uint8_t blue);

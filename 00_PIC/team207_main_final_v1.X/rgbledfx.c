@@ -20,18 +20,21 @@ void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt){
     if(update == 0){
         // Depending on the current display mode, call the appropriate function
         switch(mode){
-            case 0:
+            case 1:
                 // Heart rate display
                 displayHR(currentHR);
                 break;
-            case 1:
+            case 2:
                 // Temperature display
                 displayTemp(currentTemp);
                 break;
-            case 2:
+            case 3:
                 // Altitude display
                 displayAlt(currentAlt);
                 break;
+            case 11: 
+                // Alert display
+                displayAlert();
             default:
                 // Turn display off
                 displayOff();
@@ -77,10 +80,11 @@ void updateDispAltitude(int alt){
 void updateDispAnim(uint8_t mode){
     // Loads function with some default values that will not be accepted
     // Modes: 
-    //  0 = Heart rate
-    //  1 = Temperature
-    //  2 = Altitude
-    // >2 = Display off
+    //  0 = Display off
+    //  1 = Heart rate
+    //  2 = Temperature
+    //  3 = Altitude
+    // 11 = Alert mode
     updateLED(0, mode, 0, 0, 0);
 }
 
@@ -293,6 +297,32 @@ void displayAlt(int alt){
     
 }
 
+void displayAlert(void){
+    
+    static unsigned long currentMillis = 0;
+    static unsigned long previousMillis = 0;
+    static uint8_t ledOn = 0;
+    static uint8_t counter = 0;
+    unsigned long blinkDelay = 75;
+    
+    currentMillis = millis();
+    
+    if(currentMillis - previousMillis >= blinkDelay){
+        if(ledOn){
+            ledOn = 0;
+        } else {
+            ledOn = 1;
+        }
+        previousMillis = currentMillis;
+    }
+    
+    setLED(RGB_MAX*ledOn, 0, 0);
+    
+}
+
+// Implement if we have time
+//void displayBattWarn(void);
+
 void displayOff(void){
     // turn off LED
     setLED(0, 0, 0);
@@ -348,48 +378,48 @@ uint8_t byteMin(uint8_t a, uint8_t b){
 
 // Test code for main loop
 /*
- for(uint8_t j = 0; j < 3; j++){
-            if(j == 0){
-                for(uint8_t i = 0x00; i < 0x0D; i++){
-                    setLED(i, 0, 0);
-                    __delay_ms(250);
-                }
-                setLED(0,0,0);
-            } else if(j == 1){
-                for(uint8_t i = 0x00; i < 0x0D; i++){
-                    setLED(0, i, 0);
-                    __delay_ms(250);
-                }
-                setLED(0,0,0);
-            } else {
-                for(uint8_t i = 0x00; i < 0x0D; i++){
-                    setLED(0, 0, i);
-                    __delay_ms(250);
-                } 
-                setLED(0,0,0);
-            }
-        }
-        
-        setLED(0, 0, 0);
-        
-        for(uint8_t i = 0; i < 10; i++){
+for(uint8_t j = 0; j < 3; j++){
+    if(j == 0){
+        for(uint8_t i = 0x00; i < 0x0D; i++){
             setLED(i, 0, 0);
             __delay_ms(250);
-            setLED(0, 0, 0);
-            __delay_ms(250);
         }
-        
-        for(uint8_t i = 0; i < 10; i++){
+        setLED(0,0,0);
+    } else if(j == 1){
+        for(uint8_t i = 0x00; i < 0x0D; i++){
             setLED(0, i, 0);
             __delay_ms(250);
-            setLED(0, 0, 0);
-            __delay_ms(250);
         }
-        
-        for(uint8_t i = 0; i < 10; i++){
+        setLED(0,0,0);
+    } else {
+        for(uint8_t i = 0x00; i < 0x0D; i++){
             setLED(0, 0, i);
             __delay_ms(250);
-            setLED(0, 0, 0);
-            __delay_ms(250);
-        }
+        } 
+        setLED(0,0,0);
+    }
+}
+
+setLED(0, 0, 0);
+
+for(uint8_t i = 0; i < 10; i++){
+    setLED(i, 0, 0);
+    __delay_ms(250);
+    setLED(0, 0, 0);
+    __delay_ms(250);
+}
+
+for(uint8_t i = 0; i < 10; i++){
+    setLED(0, i, 0);
+    __delay_ms(250);
+    setLED(0, 0, 0);
+    __delay_ms(250);
+}
+
+for(uint8_t i = 0; i < 10; i++){
+    setLED(0, 0, i);
+    __delay_ms(250);
+    setLED(0, 0, 0);
+    __delay_ms(250);
+}
  */

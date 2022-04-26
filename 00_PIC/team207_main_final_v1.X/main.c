@@ -58,6 +58,21 @@ uint16_t convertedValue;
 /*
                          Main application
  */
+
+uint8_t loopTrigger = 0;
+uint8_t buttonTriggered = 0;
+
+
+void loopTriggerCallback(){
+    loopTrigger = 1;
+}
+
+
+void buttonPressedCallback(){
+    buttonTriggered = 1; 
+}
+
+
 void main(void)
 {
     // Initialize the device
@@ -80,12 +95,28 @@ void main(void)
     BDBG_SetHigh();
     HRLED_SetLow();
     
+    TMR2_SetInterruptHandler(&loopTriggerCallback);
+    
+    INT1_SetInterruptHandler(&buttonPressedCallback);
     
     unsigned long currentMillis = 0;
     unsigned long previousMillis = 0;
-    unsigned long updateDelay = 10000;
+    
+    unsigned long dispUpdateDelay = 20;
+    unsigned long previousDispUpdate = 0;
+    
+    unsigned long hrCheckDelay = 10;
+    unsigned long previousHRCheck = 0;
+    
+    unsigned long tempCheckDelay = 1000;
+    unsigned long previousTempCheck = 0;
+    
+    unsigned long altCheckDelay = 5000;
+    unsigned long previousAltCheck = 0;
     
     int tempTesting = 15;
+    
+    uint8_t currentMode = 0;
     
 //    ms8607_init();
 //    if(ms8607_is_connected()){
@@ -117,80 +148,100 @@ void main(void)
     
     while (1)
     {
-        heartRate = avgHR();
-        if (heartRate > maxSafeHR) {
-            printf("Warning! Heart rate is dangerously high: %f BPM\n\r", heartRate); // sends message to MQTT server
-        }
-        
-        // if battery low, send message to MQTT server
-        
-        // if UART available, read UART
-        // if UART message == "Display Heart Rate"
-        // display heart rate with RGB LED
-        // else if message == "Low Battery"
-        // display battery warning on RBG LED
-        
-        printf("Heart rate: %f\n\r", heartRate); // avgHR() returns a float of the last heart rate value that it calculated - this updates every 30 seconds or so with a 10ms delay
-
-        __delay_ms(10);
-
-        convertedValue = ADC_GetConversion(HRIN);
-        if (convertedValue >= 32000)
-        {
-            GDBG_SetLow();
-        } else {
-            GDBG_SetHigh();
-        }
-//        printf("Value = %d \r\n",convertedValue); // Add your application code  
-//        //printf("TEST"); // Add your application code  
-//        __delay_ms(1);
-//        
-        
-//        BDBG_SetLow();
-//        __delay_ms(50);
-//        BDBG_SetHigh();
-//        __delay_ms(50);
-//        printf("testing");
-        //I2C1_SetBuffer(*bufferPointer, i2cSize);
-        
-        /*
-        
-        currentMillis = millis();
-        
-        if(currentMillis - previousMillis >= updateDelay){
+        // loopTrigger should ensure that the loop runs every 1 ms or greater
+        if(loopTrigger){
             
-            previousMillis = currentMillis;
-            tempTesting++;
             
-            if(tempTesting > 120){
-                tempTesting = 15; 
+            // Main control logic: 
+            // - On startup, connect to the MQTT server and set everything up as
+            //   if it was running at full-functionality. We're skipping battery
+            //   saving. 
+            // - The main loop is triggered by a timer interrupt that ensures it 
+            //   runs at 1 ms, relatively precisely
+            // - The button is what cycles through standard modes. 
+            // - Modes: 
+            //   - 0: No display
+            //   - 1: Heart rate display
+            //   - 2: Temperature display
+            //   - 3: Altitude display
+            //   - 11: Alert mode (inaccessible using button)
+            
+            
+            // - Determine what sensors should be polled
+            //   - If it is in heart rate display mode or the heart rate has 
+            //     been requested in the past 60 seconds, then poll heart rate
+            //   - Same for temp or altitude (if working)
+            //   - If in alert mode, then always poll heart rate
+            
+            // - Set RGB LED display
+            //   - While the sensors are polling, update their values
+            //   - Update frames for the correct mode every 20 ms
+            
+            currentMillis = millis();
+            
+            // Increment the mode
+            if(buttonTriggered && currentMode != 11){
+                currentMode++;
+                
+                if(currentMode > 3){
+                    currentMode = 0; 
+                }
+                
+                buttonTriggered = 0;
             }
             
-            updateDispTemp(tempTesting);
             
-            GDBG_SetLow();
-            __delay_ms(50);
-            GDBG_SetHigh();
-            __delay_ms(50);
+            
+            if(currentMode == 1){
+                
+                if(currentMillis - previousHRCheck >= hrCheckDelay){
+                    heartRate = avgHR();
+                    if(heartRate > maxSafeHR){
+                        // Set to alert mode
+                        printf("Warning! Heart rate is dangerously high: %f BPM\n\r", heartRate); // sends message to MQTT server
+                        currentMode = 11;
+                    } else {
+                        updateDispHeartRate(heartRate);
+                    }
+                    previousHRCheck = currentMillis;
+                }
+                
+            }
+
+            
+            if(currentMillis - previousDispUpdate >= dispUpdateDelay){
+                updateDispAnim(currentMode);
+                previousDispUpdate = currentMillis; 
+            }
+            
+            // if battery low, send message to MQTT server
+
+            // if UART available, read UART
+            // if UART message == "Display Heart Rate"
+            // display heart rate with RGB LED
+            // else if message == "Low Battery"
+            // display battery warning on RGB LED
+
+            /*
+            printf("Heart rate: %f\n\r", heartRate); // avgHR() returns a float of the last heart rate value that it calculated - this updates every 30 seconds or so with a 10ms delay
+
+            __delay_ms(10);
+
+            convertedValue = ADC_GetConversion(HRIN);
+            if (convertedValue >= 32000)
+            {
+                GDBG_SetLow();
+            } else {
+                GDBG_SetHigh();
+            }
+            */
+            
+            // Readies the loop to be triggered again
+            loopTrigger = 0;
             
         }
-        
-        //READ TC74A0
-        //printf("Read attempt \r\n");
-        //uint8_t read = I2C1_Write1ByteRegister(RGBLEDADDR, READ_REG);// read=-1;
-        
-        //printf(I2C1_Open(RGBLEDADDR));
-        //Test commit
-        //Write to RGB LED driver
-        //I2C1_Write1ByteRegister(0x40, 0xFE, 0x00);
-        
-        updateDispAnim(TEMP_MODE);
-        __delay_ms(20);
-        
-        //__delay_ms(5);
-    
-        */
-        }
+            
+    }
     
 }
 /**
