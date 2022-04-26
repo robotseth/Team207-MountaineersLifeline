@@ -113,8 +113,8 @@ void main(void)
     long hrDispDelay = 20000;
     long previousHRDisp = 0;
     
-    unsigned long hrMQTTDelay = 5000;
-    unsigned long previousHRMQTT = 0;
+    long hrMQTTDelay = 5000;
+    long previousHRMQTT = 0;
     
     int tempTesting = 15;
     
@@ -194,22 +194,11 @@ void main(void)
             // If a disp heartrate message is received
             if(EUSART2_is_rx_ready()){
                 
-                char character = EUSART2_Read();
-                if (character == "\r"){
-                    sprintf("no u \n\r");
-                }
-                // Write RX data to the buffer 
-                for(uint8_t i = 0; i < rxBufferLen; i++){
-                    rxBuffer[i] = EUSART2_Read();
-                    if((rxBuffer[i] == 0x00) || (rxBuffer[i] == 0x0A)){
-                        break;
-                    }
-                }
-                
-                
-                currentMode = 1;
-                previousHRDisp = currentMillis;
-                
+                uint8_t character = EUSART2_Read();
+                if (character == '\r'){
+                    currentMode = 1;
+                    previousHRDisp = currentMillis;
+                }                
             }
             
             
@@ -234,7 +223,7 @@ void main(void)
                 if(currentMillis - previousHRCheck >= hrCheckDelay){
                     heartRate = avgHR();
                     
-                    updateDispHeartRate(heartRate);
+                    updateDispHeartRate((int) heartRate);
                     previousHRCheck = currentMillis;
                 }
             }
@@ -242,7 +231,7 @@ void main(void)
             // If in either mode, send heart rate to MQTT
             if(currentMode == 1 || currentMode == 11){
                 if(currentMillis - previousHRMQTT >= hrMQTTDelay){
-                    // print out BPM
+                    printf("Heart rate: %f \n\r", (float) heartRate);
                     previousHRMQTT = currentMillis;
                 }
             }
