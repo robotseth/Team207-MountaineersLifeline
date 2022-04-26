@@ -94,8 +94,8 @@ void displayHR(int heartRate){
     // pulse (other?) LED at heart rate
     // Heart rate units are in BPM
     
-    static unsigned long currentMillis = 0;
-    static unsigned long previousMillis = 0; 
+    static long currentMillis = 0;
+    static long previousMillis = 0; 
     static uint8_t level = 0; 
        
     uint8_t maxLevel = RGB_MAX; 
@@ -131,8 +131,8 @@ void displayHR(int heartRate){
 void displayTemp(int temp){
     // set LED color based on temp
     
-    static unsigned long currentMillis = 0;
-    static unsigned long previousMillis = 0;
+    static long currentMillis = 0;
+    static long previousMillis = 0;
     long blinkDelay = 750;
     long rapidDelay = 250;
     long currentDelay = 0;
@@ -215,8 +215,8 @@ void displayAlt(int alt){
     int placeSeperatorDelay = 1000;
     int completeDispDelay = 5000;
     
-    static unsigned long currentMillis = 0;
-    static unsigned long previousMillis = 0;
+    static long currentMillis = 0;
+    static long previousMillis = 0;
     static uint8_t ledOn = 0;
     static uint8_t counter = 0;
     
@@ -299,11 +299,11 @@ void displayAlt(int alt){
 
 void displayAlert(void){
     
-    static unsigned long currentMillis = 0;
-    static unsigned long previousMillis = 0;
+    static long currentMillis = 0;
+    static long previousMillis = 0;
     static uint8_t ledOn = 0;
     static uint8_t counter = 0;
-    unsigned long blinkDelay = 75;
+    long blinkDelay = 75;
     
     currentMillis = millis();
     

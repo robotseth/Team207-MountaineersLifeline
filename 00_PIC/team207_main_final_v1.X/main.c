@@ -151,6 +151,8 @@ void main(void)
     long double heartRate = 0;
     long double maxSafeHR = 80;
     
+    printf("Test \n\r");
+    
     while (1)
     {
         // loopTrigger should ensure that the loop runs every 1 ms or greater
