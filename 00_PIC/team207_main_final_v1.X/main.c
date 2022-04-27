@@ -191,8 +191,6 @@ void main(void) {
         //   - While the sensors are polling, update their values
         //   - Update frames for the correct mode every 20 ms
 
-        currentMillis = millis();
-
         // Increment the mode
         /*
         if(buttonTriggered && currentMode != 11){
@@ -213,7 +211,7 @@ void main(void) {
             if (character == 'a') {
                 currentMode = 1;
                 startTime = millis();
-                previousHRDisp = currentMillis;
+                previousHRDisp = millis();
                 printf("message received %i \n\r", character);
                 __delay_ms(1000);
                 if (heartRate >= 80) {
@@ -260,18 +258,20 @@ void main(void) {
 //                previousHRMQTT = currentMillis;
 //            }
 //        }
-        if (currentMode == 1 && millis() - startTime <= 30000) {
+        
+        currentMillis = millis();
+        
+        if ((currentMode == 1) && (currentMillis - startTime <= 30000)) {
             updateDispHeartRate((int) heartRate);
         }
 
         // Timer to update the RGB LED continuously
-//        if (currentMillis - previousDispUpdate >= dispUpdateDelay) {
-//            updateDispAnim(currentMode);
-//            previousDispUpdate = currentMillis;
-//        }
-
-        if (millis() - startTime >= 30000) {
+        if (currentMillis - previousDispUpdate >= dispUpdateDelay) {
             updateDispAnim(currentMode);
+            previousDispUpdate = currentMillis;
+        }
+
+        if (currentMillis - startTime >= 30000) {
             //previousDispUpdate = currentMillis;
             currentMode = 0;
         }
