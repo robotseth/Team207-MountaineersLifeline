@@ -218,14 +218,15 @@ void main(void) {
          */
 
         // If a disp heartrate message is received
-        while (EUSART2_is_rx_ready()) {
+        if (EUSART2_is_rx_ready()) {
             //printf("Uart ready \n\r");
             character = EUSART2_Read();
             if (character == 'a') {
+                character = ' ';
                 currentMode = 1;
                 startTime = millis();
                 previousHRDisp = millis();
-                printf("message received %i \n\r", character);
+                //printf("message received %i \n\r", character);
                 //__delay_ms(1000);
                 if (heartRate >= 80) {
                     printf("Warning! Heart rate is dangerously high: %i BPM\n\r", (int) heartRate); // sends message to MQTT server
@@ -271,7 +272,7 @@ void main(void) {
 //                previousHRMQTT = currentMillis;
 //            }
 //        }
-        if (currentMode == 1 && millis() - startTime <= 5000) {
+        if (currentMode == 1 && millis() - startTime >= 5000) {
             currentMode = 0;
         }
         
@@ -318,7 +319,7 @@ void main(void) {
          */
         
         updateDispAnim(currentMode);
-        __delay_ms(20);
+        __delay_ms(10);
         //printf(" \r\n");
 
     }
