@@ -288,7 +288,7 @@ void main(void) {
         //updateDispHeartRate((int) heartRate);
         
         if(currentMode == 1){
-            displaySimpleHR((int) heartRate);
+            displaySimpleHR((int) 200);
         }
         
         
