@@ -49,6 +49,7 @@ void updateDispAltitude(int alt);
 void updateDispAnim(uint8_t mode);
 
 void displayHR(int hr);
+void displaySimpleHR(int heartRate);
 void displayTemp(int temp);
 void displayAlt(int alt);
 void displayAlert(void);
