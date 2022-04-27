@@ -286,7 +286,10 @@ void main(void) {
         
         
         //updateDispHeartRate((int) heartRate);
-        displaySimpleHR((int) heartRate);
+        
+        if(currentMode == 1){
+            displaySimpleHR((int) heartRate);
+        }
         
         
         
@@ -336,7 +339,7 @@ void main(void) {
          */
         
         
-        updateDispAnim(currentMode);
+        //updateDispAnim(currentMode);
         
         
         __delay_ms(10);
