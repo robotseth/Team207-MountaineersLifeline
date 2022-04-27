@@ -175,7 +175,7 @@ void main(void) {
     long double maxSafeHR = 80;
 
     printf("Initialize \n\r");
-    setLED(RGB_MAX, 0, 0);
+    //setLED(RGB_MAX, 0, 0);
 
     while (1) {
         //GDBG_Toggle();
@@ -276,7 +276,24 @@ void main(void) {
             currentMode = 0;
         }
         
-        updateDispHeartRate((int) heartRate);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //updateDispHeartRate((int) heartRate);
+        displaySimpleHR((int) heartRate);
+        
+        
+        
+        
+        
+        
+        //displaySimpleHR((int) heartRate);
 
         // Timer to update the RGB LED continuously
 //        if (currentMillis - previousDispUpdate >= dispUpdateDelay) {
@@ -318,7 +335,10 @@ void main(void) {
         }
          */
         
+        
         updateDispAnim(currentMode);
+        
+        
         __delay_ms(10);
         //printf(" \r\n");
 
