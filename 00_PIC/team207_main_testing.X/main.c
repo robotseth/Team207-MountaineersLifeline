@@ -55,6 +55,8 @@
 #define TCaddress 0x48 //TC74A0 1001 000
 #define READ_REG 0x00
 
+long double heartRate = 0;
+
 uint16_t convertedValue;
 /*
                          Main application
@@ -66,6 +68,10 @@ uint16_t convertedValue;
 //        pass
 //    }
 //}
+
+void updateHRValue(){
+    heartRate = avgHR();
+}
 
 void main(void)
 {
@@ -121,12 +127,10 @@ void main(void)
     //float hrArray[hrArrayLen] = {0};
     
     uint8_t hrIndex = 0;
-    long double heartRate = 0;
     float maxSafeHR = 80;
     
     while (1)
     {
-        heartRate = avgHR();
         if (heartRate > maxSafeHR) {
             //printf("Warning! Heart rate is dangerously high: %Lf BPM\n\r", heartRate); // sends message to MQTT server
         }
