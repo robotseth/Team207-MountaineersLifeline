@@ -109,7 +109,7 @@ long double detectBeats(float threshold, int time) {
     long double test = 9;
     //printf("Num peaks: %i \n\r", peaks);
     //printf("Time: %i \n\r", time);
-    long double BPM = (long double) abs((240000 * peaks) / time);
+    long double BPM = (long double) abs((120000 * peaks) / time);
     
     //printf("BPM: %i \n\r", (int) BPM);
     
