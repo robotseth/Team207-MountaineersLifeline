@@ -2,10 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< Updated upstream
         <group>
             <file>file:/G:/My%20Drive/EGR314/REPO/00_PIC/team207_main_testing.X/timers.c</file>
             <file>file:/G:/My%20Drive/EGR314/REPO/00_PIC/team207_main_testing.X/timers.h</file>
             <file>file:/G:/My%20Drive/EGR314/REPO/00_PIC/team207_main_testing.X/mcc_generated_files/eusart2.h</file>
         </group>
+=======
+        <group/>
+>>>>>>> Stashed changes
     </open-files>
 </project-private>

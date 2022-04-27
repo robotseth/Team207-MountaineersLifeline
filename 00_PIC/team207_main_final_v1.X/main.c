@@ -204,8 +204,6 @@ void main(void) {
         //   - While the sensors are polling, update their values
         //   - Update frames for the correct mode every 20 ms
 
-        currentMillis = millis();
-
         // Increment the mode
         /*
         if(buttonTriggered && currentMode != 11){
@@ -226,7 +224,7 @@ void main(void) {
             if (character == 'a') {
                 currentMode = 1;
                 startTime = millis();
-                previousHRDisp = currentMillis;
+                previousHRDisp = millis();
                 printf("message received %i \n\r", character);
                 //__delay_ms(1000);
                 if (heartRate >= 80) {
