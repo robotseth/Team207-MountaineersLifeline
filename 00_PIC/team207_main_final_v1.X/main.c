@@ -58,6 +58,9 @@
 long double heartRate = 0;
 
 uint16_t convertedValue;
+
+
+uint8_t currentMode = 0;
 /*
                          Main application
  */
@@ -76,6 +79,17 @@ void loopTriggerCallback() {
 
 void updateHRValue() {
     heartRate = avgHR();
+    //(currentMode);
+    static int i = 0;
+    if( i < 400 ){
+        //setLED(0, 0, RGB_MAX);
+        i++;
+    } else {
+        i = 0;
+        GDBG_Toggle();
+        //updateDispAnim(currentMode);
+        //setLED(0, 0, RGB_MAX);
+    }
 }
 
 /*
@@ -127,7 +141,6 @@ void main(void) {
 
     int tempTesting = 15;
 
-    uint8_t currentMode = 0;
     long startTime = 0;
     
     uint8_t character;
@@ -162,10 +175,10 @@ void main(void) {
     long double maxSafeHR = 80;
 
     printf("Initialize \n\r");
-    setLED(0, RGB_MAX, 0);
+    setLED(RGB_MAX, 0, 0);
 
     while (1) {
-        GDBG_Toggle();
+        //GDBG_Toggle();
         //printf("Warning! Heart rate is dangerously high: %i BPM\n\r", (int) heartRate); // sends message to MQTT server
 
         // loopTrigger should ensure that the loop runs every 1 ms or greater
@@ -215,7 +228,7 @@ void main(void) {
                 startTime = millis();
                 previousHRDisp = currentMillis;
                 printf("message received %i \n\r", character);
-                __delay_ms(1000);
+                //__delay_ms(1000);
                 if (heartRate >= 80) {
                     printf("Warning! Heart rate is dangerously high: %i BPM\n\r", (int) heartRate); // sends message to MQTT server
                 } else {
@@ -260,9 +273,11 @@ void main(void) {
 //                previousHRMQTT = currentMillis;
 //            }
 //        }
-        if (currentMode == 1 && millis() - startTime <= 30000) {
-            updateDispHeartRate((int) heartRate);
+        if (currentMode == 1 && millis() - startTime <= 5000) {
+            currentMode = 0;
         }
+        
+        updateDispHeartRate((int) heartRate);
 
         // Timer to update the RGB LED continuously
 //        if (currentMillis - previousDispUpdate >= dispUpdateDelay) {
@@ -270,11 +285,11 @@ void main(void) {
 //            previousDispUpdate = currentMillis;
 //        }
 
-        if (millis() - startTime >= 30000) {
-            updateDispAnim(currentMode);
-            //previousDispUpdate = currentMillis;
-            currentMode = 0;
-        }
+//        if (millis() - startTime >= 30000) {
+//            updateDispAnim(currentMode);
+//            //previousDispUpdate = currentMillis;
+//            currentMode = 0;
+//        }
 
         // If it has been longer than 20 seconds since the last time heart 
         // rate was displayed, then turn it off.
@@ -303,7 +318,10 @@ void main(void) {
             GDBG_SetHigh();
         }
          */
-        __delay_ms(1000);
+        
+        updateDispAnim(currentMode);
+        __delay_ms(20);
+        //printf(" \r\n");
 
     }
 }
