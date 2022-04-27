@@ -22,7 +22,7 @@ void updateLED(uint8_t update, uint8_t mode, int hr, int temp, int alt){
         switch(mode){
             case 1:
                 // Heart rate display
-                displayHR(currentHR);
+                displaySimpleHR(currentHR);
                 break;
             case 2:
                 // Temperature display
@@ -127,6 +127,40 @@ void displayHR(int heartRate){
     setLED(0, maxLevel - levelFade, maxLevel - levelFade);
     
 }
+
+
+void displaySimpleHR(int heartRate){
+    // turn on blue LED
+    // pulse (other?) LED at heart rate
+    // Heart rate units are in BPM
+    
+    static long currentMillis = 0;
+    static long previousMillis = 0; 
+    static uint8_t ledOn = 0; 
+    
+    long onDelay = 100;
+    
+    // Calculate the delay between beats: 
+    int beatDelay = beatToDelay[heartRate - beatToDelayOffset];
+    
+    currentMillis = millis();
+    
+    if(ledOn == 0){
+        if(currentMillis - previousMillis >= beatDelay){
+            ledOn = 1;
+            previousMillis = currentMillis;
+        }
+    } else {
+        if(currentMillis - previousMillis >= onDelay){
+            ledOn = 0;
+            previousMillis = currentMillis;
+        }
+    }
+    
+    setLED(RGB_MAX*ledOn, 0, 0);
+    
+}
+
 
 void displayTemp(int temp){
     // set LED color based on temp
