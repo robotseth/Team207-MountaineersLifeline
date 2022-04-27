@@ -128,6 +128,8 @@ void main(void) {
     int tempTesting = 15;
 
     uint8_t currentMode = 0;
+    
+    uint8_t character;
 
     //    ms8607_init();
     //    if(ms8607_is_connected()){
@@ -158,12 +160,12 @@ void main(void) {
     uint8_t hrIndex = 0;
     long double maxSafeHR = 80;
 
-    printf("Test \n\r");
+    printf("Initialize \n\r");
     setLED(0, RGB_MAX, 0);
 
     while (1) {
         BDBG_Toggle();
-        printf("Warning! Heart rate is dangerously high: %f BPM\n\r", (float) heartRate); // sends message to MQTT server
+        //printf("Warning! Heart rate is dangerously high: %i BPM\n\r", (int) heartRate); // sends message to MQTT server
 
         // loopTrigger should ensure that the loop runs every 1 ms or greater
 
@@ -204,12 +206,20 @@ void main(void) {
          */
 
         // If a disp heartrate message is received
-        if (EUSART2_is_rx_ready()) {
-
-            uint8_t character = EUSART2_Read();
-            if (character == '\r') {
+        while (EUSART2_is_rx_ready()) {
+            //printf("Uart ready \n\r");
+            character = EUSART2_Read();
+            if (character == 'a') {
                 currentMode = 1;
                 previousHRDisp = currentMillis;
+                printf("message received %i \n\r", character);
+                __delay_ms(1000);
+                if (heartRate >= 80) {
+                    printf("Warning! Heart rate is dangerously high: %i BPM\n\r", (int) heartRate); // sends message to MQTT server
+                } else {
+                    printf("Heart rate is : %i BPM\n\r", (int) heartRate); // sends message to MQTT server
+                }
+                
             }
         }
 
@@ -220,7 +230,7 @@ void main(void) {
                 heartRate = avgHR();
                 if (heartRate > maxSafeHR) {
                     // Set to alert mode
-                    printf("Warning! Heart rate is dangerously high: %f BPM\n\r", (float) heartRate); // sends message to MQTT server
+                    //printf("Warning! Heart rate is dangerously high: %i BPM\n\r", (int) heartRate); // sends message to MQTT server
                     currentMode = 11;
                 } else {
                     updateDispHeartRate((int) heartRate);
@@ -243,7 +253,7 @@ void main(void) {
         // If in either mode, send heart rate to MQTT
         if (currentMode == 1 || currentMode == 11) {
             if (currentMillis - previousHRMQTT >= hrMQTTDelay) {
-                printf("Heart rate: %f \n\r", (float) heartRate);
+                //printf("Heart rate: %f \n\r", (float) heartRate);
                 previousHRMQTT = currentMillis;
             }
         }
