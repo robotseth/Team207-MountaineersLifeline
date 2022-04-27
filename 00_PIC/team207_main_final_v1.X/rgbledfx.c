@@ -145,14 +145,14 @@ void displaySimpleHR(int heartRate){
     
     currentMillis = millis();
     
-    if(ledOn == 0){
-        if(currentMillis - previousMillis >= beatDelay){
-            ledOn = 1;
+    if(ledOn == 1){
+        if(currentMillis - previousMillis >= onDelay){
+            ledOn = 0;
             previousMillis = currentMillis;
         }
     } else {
-        if(currentMillis - previousMillis >= onDelay){
-            ledOn = 0;
+        if(currentMillis - previousMillis >= beatDelay){
+            ledOn = 1;
             previousMillis = currentMillis;
         }
     }
