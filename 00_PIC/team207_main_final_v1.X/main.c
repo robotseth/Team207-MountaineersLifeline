@@ -128,6 +128,7 @@ void main(void) {
     int tempTesting = 15;
 
     uint8_t currentMode = 0;
+    long startTime = 0;
     
     uint8_t character;
 
@@ -164,7 +165,7 @@ void main(void) {
     setLED(0, RGB_MAX, 0);
 
     while (1) {
-        BDBG_Toggle();
+        GDBG_Toggle();
         //printf("Warning! Heart rate is dangerously high: %i BPM\n\r", (int) heartRate); // sends message to MQTT server
 
         // loopTrigger should ensure that the loop runs every 1 ms or greater
@@ -211,6 +212,7 @@ void main(void) {
             character = EUSART2_Read();
             if (character == 'a') {
                 currentMode = 1;
+                startTime = millis();
                 previousHRDisp = currentMillis;
                 printf("message received %i \n\r", character);
                 __delay_ms(1000);
@@ -224,54 +226,61 @@ void main(void) {
         }
 
 
-        if (currentMode == 1) {
-
-            if (currentMillis - previousHRCheck >= hrCheckDelay) {
-                heartRate = avgHR();
-                if (heartRate > maxSafeHR) {
-                    // Set to alert mode
-                    //printf("Warning! Heart rate is dangerously high: %i BPM\n\r", (int) heartRate); // sends message to MQTT server
-                    currentMode = 11;
-                } else {
-                    updateDispHeartRate((int) heartRate);
-                }
-                previousHRCheck = currentMillis;
-            }
-
-        }
-
+//        if (currentMode == 1) {
+//
+//            if (currentMillis - previousHRCheck >= hrCheckDelay) {
+//                heartRate = avgHR();
+//                if (heartRate > maxSafeHR) {
+//                    // Set to alert mode
+//                    //printf("Warning! Heart rate is dangerously high: %i BPM\n\r", (int) heartRate); // sends message to MQTT server
+//                    currentMode = 11;
+//                } else {
+//                    updateDispHeartRate((int) heartRate);
+//                }
+//                previousHRCheck = currentMillis;
+//            }
+//
+//        }
+       
+        
         // If in alert mode, be stuck in alert mode until the end of the display period
-        if (currentMode == 11) {
-            if (currentMillis - previousHRCheck >= hrCheckDelay) {
-                heartRate = avgHR();
-
-                updateDispHeartRate((int) heartRate);
-                previousHRCheck = currentMillis;
-            }
-        }
+//        if (currentMode == 11) {
+//            if (currentMillis - previousHRCheck >= hrCheckDelay) {
+//                heartRate = avgHR();
+//
+//                updateDispHeartRate((int) heartRate);
+//                previousHRCheck = currentMillis;
+//            }
+//        }
 
         // If in either mode, send heart rate to MQTT
-        if (currentMode == 1 || currentMode == 11) {
-            if (currentMillis - previousHRMQTT >= hrMQTTDelay) {
-                //printf("Heart rate: %f \n\r", (float) heartRate);
-                previousHRMQTT = currentMillis;
-            }
+//        if (currentMode == 1 || currentMode == 11) {
+//            if (currentMillis - previousHRMQTT >= hrMQTTDelay) {
+//                //printf("Heart rate: %f \n\r", (float) heartRate);
+//                previousHRMQTT = currentMillis;
+//            }
+//        }
+        if (currentMode == 1 && millis() - startTime <= 30000) {
+            updateDispHeartRate((int) heartRate);
         }
-
-        updateDispHeartRate(60);
 
         // Timer to update the RGB LED continuously
-        if (currentMillis - previousDispUpdate >= dispUpdateDelay) {
-            updateDispAnim(currentMode);
-            previousDispUpdate = currentMillis;
-        }
+//        if (currentMillis - previousDispUpdate >= dispUpdateDelay) {
+//            updateDispAnim(currentMode);
+//            previousDispUpdate = currentMillis;
+//        }
 
+        if (millis() - startTime >= 30000) {
+            updateDispAnim(currentMode);
+            //previousDispUpdate = currentMillis;
+            currentMode = 0;
+        }
 
         // If it has been longer than 20 seconds since the last time heart 
         // rate was displayed, then turn it off.
-        if (currentMode != 0 && (currentMillis - previousHRDisp >= hrDispDelay)) {
-            currentMode = 0;
-        }
+//        if (currentMode != 0 && (currentMillis - previousHRDisp >= hrDispDelay)) {
+//            currentMode = 0;
+//        }
 
         // if battery low, send message to MQTT server
 
