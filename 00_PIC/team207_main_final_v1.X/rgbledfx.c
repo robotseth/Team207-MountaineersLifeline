@@ -138,11 +138,10 @@ void displaySimpleHR(int heartRate){
     static long previousMillis = 0; 
     static uint8_t ledOn = 0; 
     
-    long onDelay = 500;
+    long onDelay = 100;
     
     // Calculate the delay between beats: 
-    double currentHR = (double) heartRate;
-    long beatDelay = (long) round(1000.0/(currentHR*0.0167));
+    int beatDelay = beatToDelay[heartRate - beatToDelayOffset];
     
     currentMillis = millis();
     
